@@ -1,0 +1,12 @@
+syntax = "proto3";
+package sheprotocol.shechain.epoch;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/she-protocol/she-chain/x/epoch/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}

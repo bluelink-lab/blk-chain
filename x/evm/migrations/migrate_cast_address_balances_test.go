@@ -1,0 +1,37 @@
+package migrations_test
+
+import (
+	"testing"
+	"time"
+
+	sdk "github.com/cosmos/cosmos-sdk/types"
+	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
+	"github.com/she-protocol/she-chain/x/evm/migrations"
+	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/stretchr/testify/require"
+)
+
+func TestMigrateCastAddressBalances(t *testing.T) {
+	k := testkeeper.EVMTestApp.EvmKeeper
+	ctx := testkeeper.EVMTestApp.GetContextForDeliverTx([]byte{}).WithBlockTime(time.Now())
+	require.Nil(t, k.BankKeeper().MintCoins(ctx, types.ModuleName, testkeeper.UsheCoins(100)))
+	// unassociated account with funds
+	sheAddr1, evmAddr1 := testkeeper.MockAddressPair()
+	require.Nil(t, k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(evmAddr1[:]), testkeeper.UsheCoins(10)))
+	// associated account without funds
+	sheAddr2, evmAddr2 := testkeeper.MockAddressPair()
+	k.SetAddressMapping(ctx, sheAddr2, evmAddr2)
+	// associated account with funds
+	sheAddr3, evmAddr3 := testkeeper.MockAddressPair()
+	require.Nil(t, k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(evmAddr3[:]), testkeeper.UsheCoins(10)))
+	k.SetAddressMapping(ctx, sheAddr3, evmAddr3)
+
+	require.Nil(t, migrations.MigrateCastAddressBalances(ctx, &k))
+
+	require.Equal(t, sdk.NewInt(10), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr1[:]), "ushe").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sheAddr1, "ushe").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr2[:]), "ushe").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sheAddr2, "ushe").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr3[:]), "ushe").Amount)
+	require.Equal(t, sdk.NewInt(10), k.BankKeeper().GetBalance(ctx, sheAddr3, "ushe").Amount)
+}

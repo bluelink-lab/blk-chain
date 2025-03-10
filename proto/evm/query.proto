@@ -1,0 +1,92 @@
+syntax = "proto3";
+package sheprotocol.shechain.evm;
+
+import "google/api/annotations.proto";
+import "evm/enums.proto";
+
+option go_package = "github.com/she-protocol/she-chain/x/evm/types";
+
+// Query defines the gRPC querier service.
+service Query {
+    rpc SheAddressByEVMAddress(QuerySheAddressByEVMAddressRequest) returns (QuerySheAddressByEVMAddressResponse) {
+        option (google.api.http).get = "/she-protocol/shechain/evm/she_address";
+    }
+
+    rpc EVMAddressBySheAddress(QueryEVMAddressBySheAddressRequest) returns (QueryEVMAddressBySheAddressResponse) {
+        option (google.api.http).get = "/she-protocol/shechain/evm/evm_address";
+    }
+
+    rpc StaticCall(QueryStaticCallRequest) returns (QueryStaticCallResponse) {
+        option (google.api.http).get = "/she-protocol/shechain/evm/static_call";
+    }
+
+    rpc Pointer(QueryPointerRequest) returns (QueryPointerResponse) {
+        option (google.api.http).get = "/she-protocol/shechain/evm/pointer";
+    }
+
+    rpc PointerVersion(QueryPointerVersionRequest) returns (QueryPointerVersionResponse) {
+        option (google.api.http).get = "/she-protocol/shechain/evm/pointer_version";
+    }
+
+    rpc Pointee(QueryPointeeRequest) returns (QueryPointeeResponse) {
+        option (google.api.http).get = "/she-protocol/shechain/evm/pointee";
+    }
+}
+
+message QuerySheAddressByEVMAddressRequest {
+    string evm_address = 1;
+}
+
+message QuerySheAddressByEVMAddressResponse {
+    string she_address = 1;
+    bool associated = 2;
+}
+
+message QueryEVMAddressBySheAddressRequest {
+    string she_address = 1;
+}
+
+message QueryEVMAddressBySheAddressResponse {
+    string evm_address = 1;
+    bool associated = 2;
+}
+
+message QueryStaticCallRequest {
+    bytes data = 1;
+    string to = 2;
+}
+
+message QueryStaticCallResponse {
+    bytes data = 1;
+}
+
+message QueryPointerRequest {
+    PointerType pointer_type = 1;
+    string pointee = 2;
+}
+
+message QueryPointerResponse {
+    string pointer = 1;
+    uint32 version = 2;
+    bool exists = 3;
+}
+
+message QueryPointerVersionRequest {
+    PointerType pointer_type = 1;
+}
+
+message QueryPointerVersionResponse {
+    uint32 version = 1;
+    uint64 cw_code_id = 2;
+}
+
+message QueryPointeeRequest {
+    PointerType pointer_type = 1;
+    string pointer = 2;
+}
+
+message QueryPointeeResponse {
+    string pointee = 1;
+    uint32 version = 2;
+    bool exists = 3;
+}

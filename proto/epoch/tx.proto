@@ -1,0 +1,13 @@
+syntax = "proto3";
+package sheprotocol.shechain.epoch;
+
+// this line is used by starport scaffolding # proto/tx/import
+
+option go_package = "github.com/she-protocol/she-chain/x/epoch/types";
+
+// Msg defines the Msg service.
+service Msg {
+    // this line is used by starport scaffolding # proto/tx/rpc
+}
+
+// this line is used by starport scaffolding # proto/tx/message
