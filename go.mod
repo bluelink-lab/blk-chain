@@ -265,8 +265,8 @@ require (
 	github.com/sasha-s/go-deadlock v0.3.1 // indirect
 	github.com/savaki/jq v0.0.0-20161209013833-0e6baecebbf8 // indirect
 	github.com/securego/gosec/v2 v2.11.0 // indirect
-	github.com/she-protocol/she-tm-db v0.0.5 // indirect
 	github.com/shazow/go-diff v0.0.0-20160112020656-b6b7b6733b8c // indirect
+	github.com/she-protocol/she-tm-db v0.0.5 // indirect
 	github.com/shirou/gopsutil v3.21.4-0.20210419000835-c7a38de76ee5+incompatible // indirect
 	github.com/sirupsen/logrus v1.9.0 // indirect
 	github.com/sivchari/containedctx v1.0.2 // indirect
@@ -348,10 +348,10 @@ require (
 )
 
 replace (
-	github.com/CosmWasm/wasmd => github.com/she-protocol/she-wasmd v0.3.0
-	github.com/CosmWasm/wasmvm => github.com/she-protocol/she-wasmvm v1.5.4-she.0.0.1
+	github.com/CosmWasm/wasmd => github.com/she-protocol/she-wasmd v0.3.1
+	github.com/CosmWasm/wasmvm => github.com/she-protocol/she-wasmvm v1.5.4-she.0.0.2
 	github.com/confio/ics23/go => github.com/cosmos/cosmos-sdk/ics23/go v0.8.0
-	github.com/cosmos/cosmos-sdk => github.com/she-protocol/she-cosmos v0.3.54
+	github.com/cosmos/cosmos-sdk => github.com/she-protocol/she-cosmos v0.3.55
 	github.com/cosmos/iavl => github.com/she-protocol/she-iavl v0.2.0
 	github.com/cosmos/ibc-go/v3 => github.com/she-protocol/she-ibc-go/v3 v3.3.5
 	github.com/ethereum/go-ethereum => github.com/she-protocol/go-ethereum v1.13.5-she-27
@@ -359,7 +359,7 @@ replace (
 	github.com/she-protocol/she-db => github.com/she-protocol/she-db v0.0.47
 	// Latest goleveldb is broken, we have to stick to this version
 	github.com/syndtr/goleveldb => github.com/syndtr/goleveldb v1.0.1-0.20210819022825-2ae1ddf74ef7
-	github.com/tendermint/tendermint => github.com/she-protocol/she-tendermint v0.5.2
+	github.com/tendermint/tendermint => github.com/she-protocol/she-tendermint v0.5.3
 	github.com/tendermint/tm-db => github.com/she-protocol/tm-db v0.0.4
 	google.golang.org/grpc => google.golang.org/grpc v1.33.2
 )
