@@ -353,7 +353,7 @@ replace (
 	github.com/confio/ics23/go => github.com/cosmos/cosmos-sdk/ics23/go v0.8.0
 	github.com/cosmos/cosmos-sdk => github.com/she-protocol/she-cosmos v0.3.55
 	github.com/cosmos/iavl => github.com/she-protocol/she-iavl v0.2.0
-	github.com/cosmos/ibc-go/v3 => github.com/she-protocol/she-ibc-go/v3 v3.3.5
+	github.com/cosmos/ibc-go/v3 => github.com/she-protocol/she-ibc-go/v3 v3.3.5-she.0.0.1
 	github.com/ethereum/go-ethereum => github.com/she-protocol/go-ethereum v1.13.5-she-27
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/she-protocol/she-db => github.com/she-protocol/she-db v0.0.47

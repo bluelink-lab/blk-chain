@@ -1357,8 +1357,8 @@ github.com/she-protocol/she-db v0.0.47 h1:6D59AsvBhl5xr0PaZpSeHe9OOFSDzxjJcHWx9s
 github.com/she-protocol/she-db v0.0.47/go.mod h1:NWcLa9jY/j0vTyC5bpYG0wWl75Qk4o3piQH6dxpJPuU=
 github.com/she-protocol/she-iavl v0.2.0 h1:r2VU+OyhXGuOUxPLK4ccbdypgXvJJxkFle6iG8I8fN8=
 github.com/she-protocol/she-iavl v0.2.0/go.mod h1:qRf8QYUPfrAO7K6VDB2B2l/N7K5L76OorioGBcJBIbw=
-github.com/she-protocol/she-ibc-go/v3 v3.3.5 h1:rvNS4U67YgO2ydEIHNL/fQqkDCRtAodI5M1Plq7fLoo=
-github.com/she-protocol/she-ibc-go/v3 v3.3.5/go.mod h1:VwB/vWu4ysT5DN2aF78d17LYmx3omSAdq6gpKvM7XRA=
+github.com/she-protocol/she-ibc-go/v3 v3.3.5-she.0.0.1 h1:YdP2gUgdfRDRRFPRafoLCnx0tjj+ttmfwPrhKoD5jYM=
+github.com/she-protocol/she-ibc-go/v3 v3.3.5-she.0.0.1/go.mod h1:VwB/vWu4ysT5DN2aF78d17LYmx3omSAdq6gpKvM7XRA=
 github.com/she-protocol/she-tendermint v0.5.3 h1:FHtFWuh0uwVlUdw++S21a/6oiwLE399SIHKd97G1D1Y=
 github.com/she-protocol/she-tendermint v0.5.3/go.mod h1:4LSlJdhl3nf3OmohliwRNUFLOB1XWlrmSodrIP7fLh4=
 github.com/she-protocol/she-tm-db v0.0.5 h1:jKjMYBq5cPbm0D09S+eekrdDBcw+Zktmqoy82IeX5zw=
