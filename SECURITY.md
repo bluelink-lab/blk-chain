@@ -8,7 +8,7 @@ Security researchers are essential in identifying vulnerabilities that may impac
 
 1. **Refrain from testing vulnerabilities on our publicly accessible environments**, including but not limited to:
 
-- SHE mainnet `pacific-1`
+- SHE mainnet `she-mainnet`
 - SHE frontend
 - SHE public testnets
 - SHE testnet frontend

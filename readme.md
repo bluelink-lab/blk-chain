@@ -25,7 +25,7 @@ All these features combine to unlock a brand new, scalable design space for the 
 **How to validate on the SHE Testnet**
 *This is the SHE Atlantic-2 Testnet ()*
 
-> Genesis [Published](https://github.com/she-protocol/testnet/blob/main/atlantic-2/genesis.json)
+> Genesis [Published](https://github.com/she-protocol/testnet/blob/main/she-testnet/genesis.json)
 
 ## Hardware Requirements
 **Minimum**

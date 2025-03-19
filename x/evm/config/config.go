@@ -6,15 +6,13 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-const DefaultChainID = int64(713715)
+const DefaultChainID = int64(8372)
 
 // ChainIDMapping is a mapping of cosmos chain IDs to their respective chain IDs.
 var ChainIDMapping = map[string]int64{
-	// pacific-1 chain ID == 0x531
-	"pacific-1": int64(1329),
-	// atlantic-2 chain ID == 0x530
-	"atlantic-2": int64(1328),
-	"arctic-1":   int64(713715),
+	"she-mainnet": int64(7270),
+	"she-testnet": int64(7269),
+	"she-devnet":   int64(8372),
 }
 
 func GetEVMChainID(cosmosChainID string) *big.Int {

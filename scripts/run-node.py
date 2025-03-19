@@ -34,9 +34,9 @@ DEVNET_VERSION = "v5.9.0-hotfix"
 # Map env to chain ID and optional manual version override
 ENV_TO_CONFIG = {
     "local": {"chain_id": None, "version": "latest"},
-    "devnet": {"chain_id": "arctic-1", "version": DEVNET_VERSION},
-    "testnet": {"chain_id": "atlantic-2", "version": TESTNET_VERSION},
-    "mainnet": {"chain_id": "pacific-1", "version": MAINNET_VERSION}
+    "devnet": {"chain_id": "she-devnet", "version": DEVNET_VERSION},
+    "testnet": {"chain_id": "she-testnet", "version": TESTNET_VERSION},
+    "mainnet": {"chain_id": "she-mainnet", "version": MAINNET_VERSION}
 }
 
 def print_ascii_and_intro():
@@ -290,7 +290,7 @@ def get_state_sync_params(rpc_url, trust_height_delta, chain_id):
     sync_block_height = latest_height - trust_height_delta if latest_height > trust_height_delta else latest_height
     
     # Determine the rounding based on the chain_id
-    if chain_id.lower() == 'pacific-1':
+    if chain_id.lower() == 'she-mainnet':
         # Round sync block height to the next 100,000 + add 2 for mainnet
         rounded_sync_block_height = math.floor(sync_block_height / 100000) * 100000 + 2
     else:

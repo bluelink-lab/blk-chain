@@ -41,14 +41,14 @@ func TestGetChainID(t *testing.T) {
 	k, ctx := keeper.MockEVMKeeper()
 	require.Equal(t, config.DefaultChainID, k.ChainID(ctx).Int64())
 
-	ctx = ctx.WithChainID("pacific-1")
-	require.Equal(t, int64(1329), k.ChainID(ctx).Int64())
+	ctx = ctx.WithChainID("she-mainnet")
+	require.Equal(t, int64(7270), k.ChainID(ctx).Int64())
 
-	ctx = ctx.WithChainID("atlantic-2")
-	require.Equal(t, int64(1328), k.ChainID(ctx).Int64())
+	ctx = ctx.WithChainID("she-testnet")
+	require.Equal(t, int64(7269), k.ChainID(ctx).Int64())
 
-	ctx = ctx.WithChainID("arctic-1")
-	require.Equal(t, int64(713715), k.ChainID(ctx).Int64())
+	ctx = ctx.WithChainID("she-devnet")
+	require.Equal(t, int64(8372), k.ChainID(ctx).Int64())
 }
 
 func TestGetVMBlockContext(t *testing.T) {
