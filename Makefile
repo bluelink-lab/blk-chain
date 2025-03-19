@@ -6,7 +6,7 @@ COMMIT := $(shell git log -1 --format='%H')
 BUILDDIR ?= $(CURDIR)/build
 INVARIANT_CHECK_INTERVAL ?= $(INVARIANT_CHECK_INTERVAL:-0)
 export PROJECT_HOME=$(shell git rev-parse --show-toplevel)
-export GO_PKG_PATH=$(HOME)/go/pkg
+export GO_PKG_PATH=$(shell go env GOPATH)/go/pkg
 export GO111MODULE = on
 
 # process build tags
@@ -143,12 +143,15 @@ run-local-node: kill-she-node build-docker-node
 	@rm -rf $(PROJECT_HOME)/build/generated
 	docker run --rm \
 	--name she-node \
-	--network host \
 	--user="$(shell id -u):$(shell id -g)" \
 	-v $(PROJECT_HOME):/she-protocol/she-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
 	--platform linux/x86_64 \
+	-p 26656-26658:26656-26658 \
+	-p 9090-9091:9090-9091 \
+	-p 8545-8546:8545-8546 \
+	-p 7171:7171 \
 	she-chain/localnode
 .PHONY: run-local-node
 
@@ -159,12 +162,9 @@ run-rpc-node: build-rpc-node
 	--network docker_localnet \
 	--user="$(shell id -u):$(shell id -g)" \
 	-v $(PROJECT_HOME):/she-protocol/she-chain:Z \
-	-v $(PROJECT_HOME)/../she-tendermint:/she-protocol/she-tendermint:Z \
-    -v $(PROJECT_HOME)/../she-cosmos:/she-protocol/she-cosmos:Z \
-    -v $(PROJECT_HOME)/../she-db:/she-protocol/she-db:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
-	-p 26668-26670:26656-26658 \
+	-p 26656-26658:26656-26658 \
 	--platform linux/x86_64 \
 	she-chain/rpcnode
 .PHONY: run-rpc-node
@@ -175,12 +175,9 @@ run-rpc-node-skipbuild: build-rpc-node
 	--network docker_localnet \
 	--user="$(shell id -u):$(shell id -g)" \
 	-v $(PROJECT_HOME):/she-protocol/she-chain:Z \
-	-v $(PROJECT_HOME)/../she-tendermint:/she-protocol/she-tendermint:Z \
-    -v $(PROJECT_HOME)/../she-cosmos:/she-protocol/she-cosmos:Z \
-    -v $(PROJECT_HOME)/../she-db:/she-protocol/she-db:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
-	-p 26668-26670:26656-26658 \
+	-p 26656-26658:26656-26658 \
 	--platform linux/x86_64 \
 	--env SKIP_BUILD=true \
 	she-chain/rpcnode
