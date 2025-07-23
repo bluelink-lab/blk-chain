@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/cosmos/cosmos-sdk/client"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 //nolint:unused,deadcode

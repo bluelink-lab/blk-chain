@@ -7,8 +7,8 @@ import (
 	wasmvmtypes "github.com/CosmWasm/wasmvm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	evmwasm "github.com/she-protocol/she-chain/x/evm/client/wasm"
-	tokenfactorywasm "github.com/she-protocol/she-chain/x/tokenfactory/client/wasm"
+	evmwasm "github.com/bluelink-lab/blk-chain/x/evm/client/wasm"
+	tokenfactorywasm "github.com/bluelink-lab/blk-chain/x/tokenfactory/client/wasm"
 )
 
 type SheWasmMessage struct {

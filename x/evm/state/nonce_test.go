@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/evm/state"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
 )
 
 func TestNonce(t *testing.T) {

@@ -6,8 +6,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 func InitGenesis(ctx sdk.Context, k *keeper.Keeper, genState types.GenesisState) {

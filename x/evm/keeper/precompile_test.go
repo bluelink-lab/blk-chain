@@ -6,11 +6,11 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/require"
 
-	"github.com/she-protocol/she-chain/precompiles/bank"
-	"github.com/she-protocol/she-chain/precompiles/gov"
-	"github.com/she-protocol/she-chain/precompiles/staking"
-	"github.com/she-protocol/she-chain/testutil/keeper"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/precompiles/bank"
+	"github.com/bluelink-lab/blk-chain/precompiles/gov"
+	"github.com/bluelink-lab/blk-chain/precompiles/staking"
+	"github.com/bluelink-lab/blk-chain/testutil/keeper"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
 )
 
 func toAddr(addr string) *common.Address {

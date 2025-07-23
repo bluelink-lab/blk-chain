@@ -37,9 +37,9 @@ import (
 	"golang.org/x/sync/semaphore"
 	"golang.org/x/time/rate"
 
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	tokenfactorytypes "github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	tokenfactorytypes "github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 var TestConfig EncodingConfig

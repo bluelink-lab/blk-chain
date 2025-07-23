@@ -10,8 +10,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/types"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/types"
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
 	"github.com/gorilla/websocket"

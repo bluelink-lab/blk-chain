@@ -2,8 +2,8 @@ package epoch
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/epoch/keeper"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/epoch/keeper"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 // InitGenesis initializes the capability module's state from a provided genesis

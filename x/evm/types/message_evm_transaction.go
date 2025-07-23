@@ -6,7 +6,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/gogo/protobuf/proto"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 )
 
 const TypeMsgEVMTransaction = "evm_transaction"

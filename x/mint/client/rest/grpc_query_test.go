@@ -15,7 +15,7 @@ import (
 	"github.com/stretchr/testify/suite"
 
 	"github.com/cosmos/cosmos-sdk/testutil/network"
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 type IntegrationTestSuite struct {

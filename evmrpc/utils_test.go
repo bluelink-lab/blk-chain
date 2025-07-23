@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/evmrpc"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
 	"github.com/stretchr/testify/require"
 )
 

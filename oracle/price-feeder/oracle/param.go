@@ -1,6 +1,6 @@
 package oracle
 
-import oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+import oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 
 const (
 	// paramsCacheInterval represents the amount of blocks

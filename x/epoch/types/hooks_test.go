@@ -5,8 +5,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/store"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/epoch/keeper"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/epoch/keeper"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	tmdb "github.com/tendermint/tm-db"

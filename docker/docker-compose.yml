@@ -16,7 +16,7 @@ services:
       - INVARIANT_CHECK_INTERVAL
       - UPGRADE_VERSION_LIST
     volumes:
-      - "${PROJECT_HOME}:/she-protocol/she-chain:Z"
+      - "${PROJECT_HOME}:/bluelink-lab/blk-chain:Z"
       - "${GO_PKG_PATH}/mod:/root/go/pkg/mod:Z"
       - "${GOCACHE}:/root/.cache/go-build:Z"
     networks:
@@ -39,7 +39,7 @@ services:
       - INVARIANT_CHECK_INTERVAL
       - UPGRADE_VERSION_LIST
     volumes:
-      - "${PROJECT_HOME}:/she-protocol/she-chain:Z"
+      - "${PROJECT_HOME}:/bluelink-lab/blk-chain:Z"
       - "${PROJECT_HOME}/../she-tendermint:/she-protocol/she-tendermint:Z"
       - "${PROJECT_HOME}/../she-cosmos:/she-protocol/she-cosmos:Z"
       - "${PROJECT_HOME}/../she-db:/she-protocol/she-db:Z"
@@ -66,7 +66,7 @@ services:
       - "26662-26664:26656-26658"
       - "9094-9095:9090-9091"
     volumes:
-      - "${PROJECT_HOME}:/she-protocol/she-chain:Z"
+      - "${PROJECT_HOME}:/bluelink-lab/blk-chain:Z"
       - "${PROJECT_HOME}/../she-tendermint:/she-protocol/she-tendermint:Z"
       - "${PROJECT_HOME}/../she-cosmos:/she-protocol/she-cosmos:Z"
       - "${PROJECT_HOME}/../she-db:/she-protocol/she-db:Z"
@@ -93,7 +93,7 @@ services:
       - "26665-26667:26656-26658"
       - "9096-9097:9090-9091"
     volumes:
-      - "${PROJECT_HOME}:/she-protocol/she-chain:Z"
+      - "${PROJECT_HOME}:/bluelink-lab/blk-chain:Z"
       - "${PROJECT_HOME}/../she-tendermint:/she-protocol/she-tendermint:Z"
       - "${PROJECT_HOME}/../she-cosmos:/she-protocol/she-cosmos:Z"
       - "${PROJECT_HOME}/../she-db:/she-protocol/she-db:Z"

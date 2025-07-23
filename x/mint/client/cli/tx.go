@@ -13,8 +13,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	govclient "github.com/cosmos/cosmos-sdk/x/gov/client"
-	mintrest "github.com/she-protocol/she-chain/x/mint/client/rest"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	mintrest "github.com/bluelink-lab/blk-chain/x/mint/client/rest"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 var UpdateMinterHandler = govclient.NewProposalHandler(MsgUpdateMinterProposalCmd, mintrest.UpdateResourceDependencyProposalRESTHandler)

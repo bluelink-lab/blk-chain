@@ -4,7 +4,7 @@ import (
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 func (suite *KeeperTestSuite) TestGenesis() {

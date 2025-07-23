@@ -12,9 +12,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/crypto"
 
-	"github.com/she-protocol/she-chain/app"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/app"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 var EVMTestApp = app.Setup(false, true)

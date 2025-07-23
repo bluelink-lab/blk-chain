@@ -15,8 +15,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/auth/signing"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 	"github.com/cosmos/go-bip39"
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/utils"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/utils"
 	"github.com/tendermint/tendermint/abci/types"
 	tmtypes "github.com/tendermint/tendermint/types"
 )

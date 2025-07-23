@@ -12,13 +12,13 @@ import (
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
 	"github.com/cosmos/cosmos-sdk/x/staking/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	stakingacl "github.com/she-protocol/she-chain/aclmapping/staking"
-	aclutils "github.com/she-protocol/she-chain/aclmapping/utils"
-	"github.com/she-protocol/she-chain/app/apptesting"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	stakingacl "github.com/bluelink-lab/blk-chain/aclmapping/staking"
+	aclutils "github.com/bluelink-lab/blk-chain/aclmapping/utils"
+	"github.com/bluelink-lab/blk-chain/app/apptesting"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 
 	acltypes "github.com/cosmos/cosmos-sdk/x/accesscontrol/types"
-	"github.com/she-protocol/she-chain/app"
+	"github.com/bluelink-lab/blk-chain/app"
 	"github.com/stretchr/testify/require"
 	"github.com/stretchr/testify/suite"
 )

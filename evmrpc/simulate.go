@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/she-protocol/she-chain/precompiles/wasmd"
+	"github.com/bluelink-lab/blk-chain/precompiles/wasmd"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -27,10 +27,10 @@ import (
 	"github.com/ethereum/go-ethereum/lib/ethapi"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/state"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
 	"github.com/tendermint/tendermint/rpc/coretypes"

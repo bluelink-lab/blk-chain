@@ -15,8 +15,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/go-bip39"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/evmrpc"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 	"github.com/stretchr/testify/require"
 )
 

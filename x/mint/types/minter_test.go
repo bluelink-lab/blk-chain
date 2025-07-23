@@ -7,9 +7,9 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/app"
-	epochTypes "github.com/she-protocol/she-chain/x/epoch/types"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/app"
+	epochTypes "github.com/bluelink-lab/blk-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/gorilla/websocket"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
 	"github.com/stretchr/testify/require"
 )
 

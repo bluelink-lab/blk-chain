@@ -11,7 +11,7 @@ import (
 	"github.com/ethereum/go-ethereum/crypto/kzg4844"
 	"github.com/ethereum/go-ethereum/params"
 	"github.com/holiman/uint256"
-	"github.com/she-protocol/she-chain/utils"
+	"github.com/bluelink-lab/blk-chain/utils"
 )
 
 func NewBlobTx(tx *ethtypes.Transaction) (*BlobTx, error) {

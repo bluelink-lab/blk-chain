@@ -5,8 +5,8 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	epochTypes "github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	epochTypes "github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 // NewMinter returns a new Minter object with the given inflation and annual

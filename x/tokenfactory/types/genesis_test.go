@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 func TestGenesisState_Validate(t *testing.T) {

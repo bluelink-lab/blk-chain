@@ -8,9 +8,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 func MigrateERCNativePointers(ctx sdk.Context, k *keeper.Keeper) error {

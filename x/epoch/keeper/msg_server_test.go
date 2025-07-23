@@ -3,8 +3,8 @@ package keeper_test
 import (
 	"testing"
 
-	keepertest "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/epoch/keeper"
+	keepertest "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/epoch/keeper"
 	"github.com/stretchr/testify/require"
 )
 

@@ -6,7 +6,7 @@ CLUSTER_SIZE=${CLUSTER_SIZE:-1}
 # Clean up and env set up
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export BUILD_PATH=/she-protocol/she-chain/build
+export BUILD_PATH=/bluelink-lab/blk-chain/build
 export PATH=$GOBIN:$PATH:/usr/local/go/bin:$BUILD_PATH
 echo "export GOPATH=$HOME/go" >> "$HOME/.bashrc"
 echo "GOBIN=$GOPATH/bin" >> "$HOME/.bashrc"

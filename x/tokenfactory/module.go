@@ -24,9 +24,9 @@ import (
 	"github.com/spf13/cobra"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/she-protocol/she-chain/x/tokenfactory/client/cli"
-	"github.com/she-protocol/she-chain/x/tokenfactory/keeper"
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/client/cli"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/keeper"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 )

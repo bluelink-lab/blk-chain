@@ -13,8 +13,8 @@ import (
 	"math/big"
 
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/utils/helpers"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/utils/helpers"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/accounts/abi"
@@ -22,9 +22,9 @@ import (
 	"github.com/ethereum/go-ethereum/core/vm"
 
 	cryptotypes "github.com/cosmos/cosmos-sdk/crypto/types"
-	pcommon "github.com/she-protocol/she-chain/precompiles/common"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	pcommon "github.com/bluelink-lab/blk-chain/precompiles/common"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 const (

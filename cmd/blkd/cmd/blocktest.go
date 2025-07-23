@@ -17,8 +17,8 @@ import (
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	aclkeeper "github.com/cosmos/cosmos-sdk/x/accesscontrol/keeper"
 	ethtests "github.com/ethereum/go-ethereum/tests"
-	"github.com/she-protocol/she-chain/app"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/app"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 	"github.com/tendermint/tendermint/libs/log"
 
 	//nolint:gosec,G108

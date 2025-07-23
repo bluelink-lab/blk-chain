@@ -4,7 +4,7 @@ import (
 	"context"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 var _ types.QueryServer = Querier{}

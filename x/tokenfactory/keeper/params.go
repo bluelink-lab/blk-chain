@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

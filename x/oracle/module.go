@@ -19,11 +19,11 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/she-protocol/she-chain/x/oracle/client/cli"
-	"github.com/she-protocol/she-chain/x/oracle/client/rest"
-	"github.com/she-protocol/she-chain/x/oracle/keeper"
-	"github.com/she-protocol/she-chain/x/oracle/simulation"
-	"github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/client/cli"
+	"github.com/bluelink-lab/blk-chain/x/oracle/client/rest"
+	"github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	"github.com/bluelink-lab/blk-chain/x/oracle/simulation"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 var (

@@ -9,8 +9,8 @@ import (
 	aclkeeper "github.com/cosmos/cosmos-sdk/x/accesscontrol/keeper"
 	acltypes "github.com/cosmos/cosmos-sdk/x/accesscontrol/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	utils "github.com/she-protocol/she-chain/aclmapping/utils"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	utils "github.com/bluelink-lab/blk-chain/aclmapping/utils"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 var ErrorInvalidMsgType = fmt.Errorf("invalid message received for oracle module")

@@ -8,8 +8,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/accesscontrol"
 	acltypes "github.com/cosmos/cosmos-sdk/x/accesscontrol/types"
 	paramtypes "github.com/cosmos/cosmos-sdk/x/params/types"
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/app/antedecorators"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/app/antedecorators"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/proto/tendermint/types"
 )

@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/cosmos/cosmos-sdk/client/grpc/tmservice"
-	"github.com/she-protocol/she-chain/tools/tx-scanner/client"
+	"github.com/bluelink-lab/blk-chain/tools/tx-scanner/client"
 )
 
 // GetLatestBlock query the latest block data

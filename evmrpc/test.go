@@ -3,7 +3,7 @@ package evmrpc
 import (
 	"errors"
 
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw20"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw20"
 )
 
 type TestAPI struct{}

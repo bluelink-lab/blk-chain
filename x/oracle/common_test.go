@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/she-protocol/she-chain/x/oracle"
-	"github.com/she-protocol/she-chain/x/oracle/keeper"
-	"github.com/she-protocol/she-chain/x/oracle/utils"
+	"github.com/bluelink-lab/blk-chain/x/oracle"
+	"github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	"github.com/bluelink-lab/blk-chain/x/oracle/utils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/staking"

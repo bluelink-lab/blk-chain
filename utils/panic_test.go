@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/she-protocol/she-chain/utils"
+	"github.com/bluelink-lab/blk-chain/utils"
 	"github.com/stretchr/testify/require"
 )
 

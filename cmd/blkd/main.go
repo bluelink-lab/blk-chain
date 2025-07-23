@@ -3,11 +3,11 @@ package main
 import (
 	"os"
 
-	"github.com/she-protocol/she-chain/app/params"
-	"github.com/she-protocol/she-chain/cmd/blkd/cmd"
+	"github.com/bluelink-lab/blk-chain/app/params"
+	"github.com/bluelink-lab/blk-chain/cmd/blkd/cmd"
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
-	"github.com/she-protocol/she-chain/app"
+	"github.com/bluelink-lab/blk-chain/app"
 )
 
 func main() {

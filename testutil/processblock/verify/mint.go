@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/x/auth/signing"
-	"github.com/she-protocol/she-chain/testutil/processblock"
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/testutil/processblock"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

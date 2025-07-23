@@ -1,5 +1,5 @@
 version: v1
-name: buf.build/she-protocol/she-chain
+name: buf.build/bluelink-lab/blk-chain
 deps:
   - buf.build/she-protocol/cosmos-sdk
 breaking:

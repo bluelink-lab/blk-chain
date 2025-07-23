@@ -8,8 +8,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/utils"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/utils"
 	"github.com/stretchr/testify/require"
 )
 

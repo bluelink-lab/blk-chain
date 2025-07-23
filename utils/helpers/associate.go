@@ -5,7 +5,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/ethereum/go-ethereum/common"
-	pcommon "github.com/she-protocol/she-chain/precompiles/common"
+	pcommon "github.com/bluelink-lab/blk-chain/precompiles/common"
 )
 
 type AssociationHelper struct {

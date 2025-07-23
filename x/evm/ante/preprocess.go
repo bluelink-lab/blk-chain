@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/she-protocol/she-chain/utils/helpers"
+	"github.com/bluelink-lab/blk-chain/utils/helpers"
 
 	"github.com/btcsuite/btcd/btcec"
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
@@ -20,13 +20,13 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/params"
-	"github.com/she-protocol/she-chain/app/antedecorators"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	"github.com/she-protocol/she-chain/x/evm/derived"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	"github.com/bluelink-lab/blk-chain/app/antedecorators"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/x/evm/derived"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 )
 
 // Accounts need to have at least 1She to force association. Note that account won't be charged.

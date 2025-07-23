@@ -5,10 +5,10 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/evm/ante"
-	"github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/ante"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 	"github.com/stretchr/testify/require"
 )
 

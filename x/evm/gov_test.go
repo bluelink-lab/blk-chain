@@ -3,10 +3,10 @@ package evm_test
 import (
 	"testing"
 
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/evm"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 	"github.com/stretchr/testify/require"
 )
 

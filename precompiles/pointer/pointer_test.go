@@ -9,11 +9,11 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core"
 	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/she-protocol/she-chain/precompiles/pointer"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
-	"github.com/she-protocol/she-chain/x/evm/state"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/precompiles/pointer"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 	"github.com/stretchr/testify/require"
 )
 

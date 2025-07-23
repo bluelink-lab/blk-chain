@@ -12,8 +12,8 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/stretchr/testify/suite"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
-	v1 "github.com/she-protocol/she-chain/oracle/price-feeder/router/v1"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
+	v1 "github.com/bluelink-lab/blk-chain/oracle/price-feeder/router/v1"
 
 	"github.com/cosmos/cosmos-sdk/telemetry"
 )

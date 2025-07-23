@@ -13,9 +13,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/bank"
 	"github.com/cosmos/cosmos-sdk/x/bank/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	aclutils "github.com/she-protocol/she-chain/aclmapping/utils"
-	utils "github.com/she-protocol/she-chain/aclmapping/utils"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	aclutils "github.com/bluelink-lab/blk-chain/aclmapping/utils"
+	utils "github.com/bluelink-lab/blk-chain/aclmapping/utils"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

@@ -4,10 +4,10 @@ import (
 	"testing"
 	"time"
 
-	keepertest "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/testutil/nullify"
-	"github.com/she-protocol/she-chain/x/epoch"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	keepertest "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/testutil/nullify"
+	"github.com/bluelink-lab/blk-chain/x/epoch"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 	"github.com/stretchr/testify/require"
 )
 

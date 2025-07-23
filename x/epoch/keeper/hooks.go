@@ -2,7 +2,7 @@ package keeper
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 func (k Keeper) AfterEpochEnd(ctx sdk.Context, epoch types.Epoch) {

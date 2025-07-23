@@ -2,8 +2,8 @@ package migrations
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 func MigrateBlockBloom(ctx sdk.Context, k *keeper.Keeper) error {

@@ -16,11 +16,11 @@ import (
 	"github.com/stretchr/testify/suite"
 	"golang.org/x/exp/slices"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/client"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/provider"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/types"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/client"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/provider"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/types"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 type mockTelemetry struct {

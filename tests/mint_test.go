@@ -5,8 +5,8 @@ import (
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/x/auth/signing"
-	"github.com/she-protocol/she-chain/testutil/processblock"
-	"github.com/she-protocol/she-chain/testutil/processblock/verify"
+	"github.com/bluelink-lab/blk-chain/testutil/processblock"
+	"github.com/bluelink-lab/blk-chain/testutil/processblock/verify"
 )
 
 func TestMint(t *testing.T) {

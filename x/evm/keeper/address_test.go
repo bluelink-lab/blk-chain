@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/testutil/keeper"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/testutil/keeper"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
 	"github.com/stretchr/testify/require"
 )
 

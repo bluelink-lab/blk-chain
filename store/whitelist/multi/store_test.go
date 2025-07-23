@@ -5,8 +5,8 @@ import (
 
 	storetypes "github.com/cosmos/cosmos-sdk/store/types"
 	"github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/store"
-	"github.com/she-protocol/she-chain/store/whitelist/multi"
+	"github.com/bluelink-lab/blk-chain/store"
+	"github.com/bluelink-lab/blk-chain/store/whitelist/multi"
 	"github.com/stretchr/testify/require"
 )
 

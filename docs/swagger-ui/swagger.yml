@@ -35716,7 +35716,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /she-protocol/she-chain/oracle/denoms/actives:
+  /bluelink-lab/blk-chain/oracle/denoms/actives:
     get:
       summary: Actives returns all active denoms
       operationId: SheprotocolShechainOracleActives
@@ -35756,7 +35756,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /she-protocol/she-chain/oracle/denoms/exchange_rates:
+  /bluelink-lab/blk-chain/oracle/denoms/exchange_rates:
     get:
       summary: ExchangeRates returns exchange rates of all denoms
       operationId: SheprotocolShechainOracleExchangeRates
@@ -35809,7 +35809,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /she-protocol/she-chain/oracle/denoms/price_snapshot_history:
+  /bluelink-lab/blk-chain/oracle/denoms/price_snapshot_history:
     get:
       summary: >-
         PriceSnapshotHistory returns the history of price snapshots for all
@@ -35866,7 +35866,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/she-protocol/she-chain/oracle/denoms/twaps/{lookback_seconds}':
+  '/bluelink-lab/blk-chain/oracle/denoms/twaps/{lookback_seconds}':
     get:
       operationId: SheprotocolShechainOracleTwaps
       responses:
@@ -35913,7 +35913,7 @@ paths:
           format: uint64
       tags:
         - Query
-  /she-protocol/she-chain/oracle/denoms/vote_targets:
+  /bluelink-lab/blk-chain/oracle/denoms/vote_targets:
     get:
       summary: VoteTargets returns all vote target denoms
       operationId: SheprotocolShechainOracleVoteTargets
@@ -35955,7 +35955,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/she-protocol/she-chain/oracle/denoms/{denom}/exchange_rate':
+  '/bluelink-lab/blk-chain/oracle/denoms/{denom}/exchange_rate':
     get:
       summary: ExchangeRate returns exchange rate of a denom
       operationId: SheprotocolShechainOracleExchangeRate
@@ -36007,7 +36007,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/she-chain/oracle/params:
+  /bluelink-lab/blk-chain/oracle/params:
     get:
       summary: Params queries all parameters.
       operationId: SheprotocolShechainOracleParams
@@ -36082,7 +36082,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /she-protocol/she-chain/oracle/slash_window:
+  /bluelink-lab/blk-chain/oracle/slash_window:
     get:
       summary: SlashWindow returns slash window information
       operationId: SheprotocolShechainOracleSlashWindow
@@ -36121,7 +36121,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  '/she-protocol/she-chain/oracle/validators/{validator_addr}/feeder':
+  '/bluelink-lab/blk-chain/oracle/validators/{validator_addr}/feeder':
     get:
       summary: FeederDelegation returns feeder delegation of a validator
       operationId: SheprotocolShechainOracleFeederDelegation
@@ -36163,7 +36163,7 @@ paths:
           type: string
       tags:
         - Query
-  '/she-protocol/she-chain/oracle/validators/{validator_addr}/vote_penalty_counter':
+  '/bluelink-lab/blk-chain/oracle/validators/{validator_addr}/vote_penalty_counter':
     get:
       summary: MissCounter returns oracle miss counter of a validator
       operationId: SheprotocolShechainOracleVotePenaltyCounter

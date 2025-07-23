@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	epochsimulation "github.com/she-protocol/she-chain/x/epoch/simulation"
+	epochsimulation "github.com/bluelink-lab/blk-chain/x/epoch/simulation"
 
 	"github.com/stretchr/testify/require"
 )

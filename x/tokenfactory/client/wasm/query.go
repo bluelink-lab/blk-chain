@@ -2,8 +2,8 @@ package wasm
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	tokenfactorykeeper "github.com/she-protocol/she-chain/x/tokenfactory/keeper"
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	tokenfactorykeeper "github.com/bluelink-lab/blk-chain/x/tokenfactory/keeper"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 type TokenFactoryWasmQueryHandler struct {

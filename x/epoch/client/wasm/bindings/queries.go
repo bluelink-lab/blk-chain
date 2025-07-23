@@ -1,6 +1,6 @@
 package bindings
 
-import "github.com/she-protocol/she-chain/x/epoch/types"
+import "github.com/bluelink-lab/blk-chain/x/epoch/types"
 
 type SheEpochQuery struct {
 	// queries the current Epoch

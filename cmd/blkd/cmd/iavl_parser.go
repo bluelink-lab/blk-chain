@@ -8,8 +8,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/she-protocol/she-chain/app/params"
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/app/params"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 type ModuleParser func([]byte) ([]string, error)

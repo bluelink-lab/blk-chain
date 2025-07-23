@@ -16,8 +16,8 @@ import (
 	ibctypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/she-protocol/she-chain/utils"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/utils"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 type BankKeeper interface {

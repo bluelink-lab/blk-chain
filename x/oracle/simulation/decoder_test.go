@@ -11,10 +11,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/kv"
 
-	"github.com/she-protocol/she-chain/x/oracle/keeper"
-	sim "github.com/she-protocol/she-chain/x/oracle/simulation"
-	"github.com/she-protocol/she-chain/x/oracle/types"
-	"github.com/she-protocol/she-chain/x/oracle/utils"
+	"github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	sim "github.com/bluelink-lab/blk-chain/x/oracle/simulation"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/utils"
 )
 
 var (

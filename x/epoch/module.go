@@ -18,10 +18,10 @@ import (
 	cdctypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	"github.com/she-protocol/she-chain/x/epoch/client/cli"
-	"github.com/she-protocol/she-chain/x/epoch/keeper"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/x/epoch/client/cli"
+	"github.com/bluelink-lab/blk-chain/x/epoch/keeper"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 var (

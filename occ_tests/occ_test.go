@@ -8,8 +8,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/server/config"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/occ_tests/messages"
-	"github.com/she-protocol/she-chain/occ_tests/utils"
+	"github.com/bluelink-lab/blk-chain/occ_tests/messages"
+	"github.com/bluelink-lab/blk-chain/occ_tests/utils"
 	"github.com/stretchr/testify/require"
 	"github.com/tendermint/tendermint/abci/types"
 )

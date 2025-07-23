@@ -7,7 +7,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/crypto/keys/secp256k1"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	app "github.com/she-protocol/she-chain/app"
+	app "github.com/bluelink-lab/blk-chain/app"
 	"github.com/stretchr/testify/require"
 )
 

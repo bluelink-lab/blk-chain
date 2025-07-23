@@ -3,9 +3,9 @@ package tools
 import (
 	"github.com/spf13/cobra"
 
-	hasher "github.com/she-protocol/she-chain/tools/hash_verification/cmd"
-	migration "github.com/she-protocol/she-chain/tools/migration/cmd"
-	scanner "github.com/she-protocol/she-chain/tools/tx-scanner/cmd"
+	hasher "github.com/bluelink-lab/blk-chain/tools/hash_verification/cmd"
+	migration "github.com/bluelink-lab/blk-chain/tools/migration/cmd"
+	scanner "github.com/bluelink-lab/blk-chain/tools/tx-scanner/cmd"
 )
 
 func ToolCmd() *cobra.Command {

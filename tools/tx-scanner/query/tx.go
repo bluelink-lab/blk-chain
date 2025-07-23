@@ -5,7 +5,7 @@ import (
 	"fmt"
 
 	txtypes "github.com/cosmos/cosmos-sdk/types/tx"
-	"github.com/she-protocol/she-chain/tools/tx-scanner/client"
+	"github.com/bluelink-lab/blk-chain/tools/tx-scanner/client"
 )
 
 // GetTxsEvent query the detailed transaction data, same as `blkd q txs --events`

@@ -8,10 +8,10 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/tx"
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/evmrpc"
-	"github.com/she-protocol/she-chain/precompiles"
-	"github.com/she-protocol/she-chain/precompiles/pointer"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
+	"github.com/bluelink-lab/blk-chain/precompiles"
+	"github.com/bluelink-lab/blk-chain/precompiles/pointer"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 	"github.com/spf13/cobra"
 )
 

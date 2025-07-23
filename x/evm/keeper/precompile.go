@@ -2,10 +2,10 @@ package keeper
 
 import (
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/precompiles/bank"
-	"github.com/she-protocol/she-chain/precompiles/gov"
-	"github.com/she-protocol/she-chain/precompiles/staking"
-	"github.com/she-protocol/she-chain/precompiles/wasmd"
+	"github.com/bluelink-lab/blk-chain/precompiles/bank"
+	"github.com/bluelink-lab/blk-chain/precompiles/gov"
+	"github.com/bluelink-lab/blk-chain/precompiles/staking"
+	"github.com/bluelink-lab/blk-chain/precompiles/wasmd"
 )
 
 // add any payable precompiles here

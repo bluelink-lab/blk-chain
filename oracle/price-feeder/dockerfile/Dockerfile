@@ -1,8 +1,8 @@
 FROM golang:alpine AS oracle
 RUN apk add --no-cache git make gcc libc-dev
 WORKDIR /go/src/github.com/she-protocol
-RUN git clone https://github.com/she-protocol/she-chain.git
-WORKDIR /go/src/github.com/she-protocol/she-chain/oracle/price-feeder
+RUN git clone https://github.com/bluelink-lab/blk-chain.git
+WORKDIR /go/src/github.com/bluelink-lab/blk-chain/oracle/price-feeder
 RUN wget -O /lib/libwasmvm_muslc.a https://github.com/CosmWasm/wasmvm/releases/download/v1.0.0/libwasmvm_muslc.x86_64.a
 ARG VERSION=main
 RUN git checkout ${VERSION}
@@ -11,8 +11,8 @@ RUN COMMIT="$(git rev-parse HEAD)"; BUILD_TAGS=muslc CGO_ENABLED=1 go install -m
 FROM golang:alpine AS she
 RUN apk add --no-cache git make gcc libc-dev
 WORKDIR /go/src/github.com/she-protocol
-RUN git clone https://github.com/she-protocol/she-chain.git
-WORKDIR /go/src/github.com/she-protocol/she-chain
+RUN git clone https://github.com/bluelink-lab/blk-chain.git
+WORKDIR /go/src/github.com/bluelink-lab/blk-chain
 RUN wget -O /lib/libwasmvm_muslc.a https://github.com/CosmWasm/wasmvm/releases/download/v1.0.0/libwasmvm_muslc.x86_64.a
 ARG VERSION=main
 RUN git checkout ${VERSION}

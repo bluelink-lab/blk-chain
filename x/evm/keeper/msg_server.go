@@ -22,13 +22,13 @@ import (
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/core/vm"
 
-	"github.com/she-protocol/she-chain/precompiles/wasmd"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/erc1155"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/erc20"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/erc721"
-	"github.com/she-protocol/she-chain/x/evm/state"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/precompiles/wasmd"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/erc1155"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/erc20"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/erc721"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 type msgServer struct {

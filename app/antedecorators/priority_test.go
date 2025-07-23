@@ -6,8 +6,8 @@ import (
 	"math"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/app/antedecorators"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/app/antedecorators"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

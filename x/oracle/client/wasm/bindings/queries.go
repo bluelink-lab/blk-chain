@@ -1,6 +1,6 @@
 package bindings
 
-import "github.com/she-protocol/she-chain/x/oracle/types"
+import "github.com/bluelink-lab/blk-chain/x/oracle/types"
 
 type SheOracleQuery struct {
 	// queries the oracle exchange rates

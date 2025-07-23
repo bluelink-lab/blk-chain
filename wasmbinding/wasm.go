@@ -8,14 +8,14 @@ import (
 	aclkeeper "github.com/cosmos/cosmos-sdk/x/accesscontrol/keeper"
 	authkeeper "github.com/cosmos/cosmos-sdk/x/auth/keeper"
 	stakingkeeper "github.com/cosmos/cosmos-sdk/x/staking/keeper"
-	epochwasm "github.com/she-protocol/she-chain/x/epoch/client/wasm"
-	epochkeeper "github.com/she-protocol/she-chain/x/epoch/keeper"
-	evmwasm "github.com/she-protocol/she-chain/x/evm/client/wasm"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	oraclewasm "github.com/she-protocol/she-chain/x/oracle/client/wasm"
-	oraclekeeper "github.com/she-protocol/she-chain/x/oracle/keeper"
-	tokenfactorywasm "github.com/she-protocol/she-chain/x/tokenfactory/client/wasm"
-	tokenfactorykeeper "github.com/she-protocol/she-chain/x/tokenfactory/keeper"
+	epochwasm "github.com/bluelink-lab/blk-chain/x/epoch/client/wasm"
+	epochkeeper "github.com/bluelink-lab/blk-chain/x/epoch/keeper"
+	evmwasm "github.com/bluelink-lab/blk-chain/x/evm/client/wasm"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	oraclewasm "github.com/bluelink-lab/blk-chain/x/oracle/client/wasm"
+	oraclekeeper "github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	tokenfactorywasm "github.com/bluelink-lab/blk-chain/x/tokenfactory/client/wasm"
+	tokenfactorykeeper "github.com/bluelink-lab/blk-chain/x/tokenfactory/keeper"
 )
 
 func RegisterCustomPlugins(

@@ -2,7 +2,7 @@ package types
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/utils"
+	"github.com/bluelink-lab/blk-chain/utils"
 )
 
 type EpochHooks interface {

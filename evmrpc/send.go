@@ -16,10 +16,10 @@ import (
 	"github.com/ethereum/go-ethereum/lib/ethapi"
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/ethereum/go-ethereum/signer/core/apitypes"
-	"github.com/she-protocol/she-chain/precompiles/wasmd"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	"github.com/bluelink-lab/blk-chain/precompiles/wasmd"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
 )
 

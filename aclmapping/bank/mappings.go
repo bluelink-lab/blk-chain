@@ -10,7 +10,7 @@ import (
 	acltypes "github.com/cosmos/cosmos-sdk/x/accesscontrol/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	utils "github.com/she-protocol/she-chain/aclmapping/utils"
+	utils "github.com/bluelink-lab/blk-chain/aclmapping/utils"
 )
 
 var ErrorInvalidMsgType = fmt.Errorf("invalid message received for bank module")

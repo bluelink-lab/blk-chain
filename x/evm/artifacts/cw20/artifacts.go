@@ -10,7 +10,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 
-	"github.com/she-protocol/she-chain/x/evm/config"
+	"github.com/bluelink-lab/blk-chain/x/evm/config"
 )
 
 const currentVersion uint16 = 2

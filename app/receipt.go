@@ -12,10 +12,10 @@ import (
 	authsigning "github.com/cosmos/cosmos-sdk/x/auth/signing"
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw1155"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw1155"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 	abci "github.com/tendermint/tendermint/abci/types"
 )
 

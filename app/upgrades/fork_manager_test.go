@@ -6,8 +6,8 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/app/apptesting"
-	"github.com/she-protocol/she-chain/app/upgrades"
+	"github.com/bluelink-lab/blk-chain/app/apptesting"
+	"github.com/bluelink-lab/blk-chain/app/upgrades"
 	"github.com/stretchr/testify/suite"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmtypes "github.com/tendermint/tendermint/proto/tendermint/types"

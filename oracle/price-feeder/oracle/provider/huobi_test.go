@@ -5,8 +5,8 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/types"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/rs/zerolog"

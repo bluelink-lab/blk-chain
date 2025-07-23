@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )

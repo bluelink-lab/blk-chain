@@ -14,13 +14,13 @@ import (
 	"github.com/stretchr/testify/require"
 	tmtypes "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	pcommon "github.com/she-protocol/she-chain/precompiles/common"
-	"github.com/she-protocol/she-chain/precompiles/gov"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/evm/ante"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	pcommon "github.com/bluelink-lab/blk-chain/precompiles/common"
+	"github.com/bluelink-lab/blk-chain/precompiles/gov"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/ante"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 )
 
 //go:embed abi.json

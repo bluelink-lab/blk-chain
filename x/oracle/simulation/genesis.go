@@ -10,8 +10,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 
-	"github.com/she-protocol/she-chain/x/oracle/types"
-	"github.com/she-protocol/she-chain/x/oracle/utils"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/utils"
 )
 
 // Simulation parameter constants

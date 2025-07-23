@@ -14,10 +14,10 @@ import (
 	"github.com/ethereum/go-ethereum/core/vm"
 	"github.com/ethereum/go-ethereum/params"
 
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	"github.com/she-protocol/she-chain/x/evm/state"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 type EVMCallFunc func(caller vm.ContractRef, addr *common.Address, input []byte, gas uint64, value *big.Int) (ret []byte, leftOverGas uint64, err error)

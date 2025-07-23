@@ -4,11 +4,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/testutil/nullify"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/testutil/nullify"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

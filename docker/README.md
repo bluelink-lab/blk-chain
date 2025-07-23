@@ -18,7 +18,7 @@ https://docs.docker.com/compose/install/other/
 
 ## Local Cluster
 
-Detailed instruction: see the `Makefile` in the root of [the repo](https://github.com/she-protocol/she-chain/blob/main/Makefile)
+Detailed instruction: see the `Makefile` in the root of [the repo](https://github.com/bluelink-lab/blk-chain/blob/main/Makefile)
 
 **To start a single local node (Not Recommended)**
 

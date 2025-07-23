@@ -9,8 +9,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/rpc"
-	evmCfg "github.com/she-protocol/she-chain/x/evm/config"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
+	evmCfg "github.com/bluelink-lab/blk-chain/x/evm/config"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
 	"github.com/tendermint/tendermint/libs/log"
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
 )

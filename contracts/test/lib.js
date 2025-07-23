@@ -508,8 +508,8 @@ async function isDocker() {
 
 async function executeOnAllNodes(command, interaction=`printf "12345678\\n"`){
     if (await isDocker()) {
-        command = command.replace(/\.\.\//g, "/she-protocol/she-chain/");
-        command = command.replace("/she-protocol/she-chain//she-protocol/she-chain/", "/she-protocol/she-chain/")
+        command = command.replace(/\.\.\//g, "/bluelink-lab/blk-chain/");
+        command = command.replace("/bluelink-lab/blk-chain//bluelink-lab/blk-chain/", "/bluelink-lab/blk-chain/")
         let response;
         for(let i=0; i<4; i++) {
             const nodeCommand = `docker exec she-node-${i} /bin/bash -c 'export PATH=$PATH:/root/go/bin:/root/.foundry/bin && ${interaction} | ${command}'`;
@@ -522,8 +522,8 @@ async function executeOnAllNodes(command, interaction=`printf "12345678\\n"`){
 
 async function execute(command, interaction=`printf "12345678\\n"`){
     if (await isDocker()) {
-        command = command.replace(/\.\.\//g, "/she-protocol/she-chain/");
-        command = command.replace("/she-protocol/she-chain//she-protocol/she-chain/", "/she-protocol/she-chain/")
+        command = command.replace(/\.\.\//g, "/bluelink-lab/blk-chain/");
+        command = command.replace("/bluelink-lab/blk-chain//bluelink-lab/blk-chain/", "/bluelink-lab/blk-chain/")
         command = `docker exec she-node-0 /bin/bash -c 'export PATH=$PATH:/root/go/bin:/root/.foundry/bin && ${interaction} | ${command}'`;
     }
     return await execCommand(command);

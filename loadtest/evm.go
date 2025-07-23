@@ -19,9 +19,9 @@ import (
 	"github.com/ethereum/go-ethereum/crypto"
 	"github.com/ethereum/go-ethereum/ethclient"
 
-	"github.com/she-protocol/she-chain/loadtest/contracts/evm/bindings/erc20"
-	"github.com/she-protocol/she-chain/loadtest/contracts/evm/bindings/erc721"
-	"github.com/she-protocol/she-chain/loadtest/contracts/evm/bindings/univ2_swapper"
+	"github.com/bluelink-lab/blk-chain/loadtest/contracts/evm/bindings/erc20"
+	"github.com/bluelink-lab/blk-chain/loadtest/contracts/evm/bindings/erc721"
+	"github.com/bluelink-lab/blk-chain/loadtest/contracts/evm/bindings/univ2_swapper"
 )
 
 var (

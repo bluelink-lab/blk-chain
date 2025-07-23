@@ -6,13 +6,13 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
-	epochTypes "github.com/she-protocol/she-chain/x/epoch/types"
-	"github.com/she-protocol/she-chain/x/mint/keeper"
-	mintKeeper "github.com/she-protocol/she-chain/x/mint/keeper"
-	"github.com/she-protocol/she-chain/x/mint/types"
-	mintTypes "github.com/she-protocol/she-chain/x/mint/types"
+	epochTypes "github.com/bluelink-lab/blk-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/keeper"
+	mintKeeper "github.com/bluelink-lab/blk-chain/x/mint/keeper"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
+	mintTypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 	"github.com/stretchr/testify/require"
 )
 

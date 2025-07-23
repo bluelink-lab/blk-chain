@@ -125,7 +125,7 @@ def get_rpc_server(chain_id):
 # Fetch latest version from GitHub for local environment
 def fetch_latest_version():
     try:
-        response = requests.get("https://api.github.com/repos/she-protocol/she-chain/releases/latest")
+        response = requests.get("https://api.github.com/repos/bluelink-lab/blk-chain/releases/latest")
         response.raise_for_status()
         latest_version = response.json()["tag_name"]
         logging.info(f"Fetched latest version {latest_version} from GitHub API")
@@ -146,7 +146,7 @@ def compute_sha256(file_path):
 def compile_and_install_release(version):
     logging.info(f"Starting compilation and installation for version: {version}")
     try:
-        zip_url = f"https://github.com/she-protocol/she-chain/archive/refs/tags/{version}.zip"
+        zip_url = f"https://github.com/bluelink-lab/blk-chain/archive/refs/tags/{version}.zip"
         logging.info(f"Constructed zip URL: {zip_url}")
 
         logging.info("Initiating download of the release zip file...")

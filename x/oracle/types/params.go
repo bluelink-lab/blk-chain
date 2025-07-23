@@ -5,7 +5,7 @@ import (
 
 	"gopkg.in/yaml.v2"
 
-	"github.com/she-protocol/she-chain/x/oracle/utils"
+	"github.com/bluelink-lab/blk-chain/x/oracle/utils"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"

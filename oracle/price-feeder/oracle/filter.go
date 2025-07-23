@@ -6,7 +6,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/rs/zerolog"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/provider"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/provider"
 )
 
 // defaultDeviationThreshold defines how many 𝜎 a provider can be away

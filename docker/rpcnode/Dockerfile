@@ -8,7 +8,7 @@ RUN mkdir -p /root/go/pkg/mod && \
     chmod -R a+rwX /root
 SHELL ["/bin/bash", "-c"]
 
-WORKDIR /she-protocol/she-chain
+WORKDIR /bluelink-lab/blk-chain
 
 EXPOSE 26656 26657 26658 9090 9091
 

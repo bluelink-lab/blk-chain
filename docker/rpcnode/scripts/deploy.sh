@@ -5,7 +5,7 @@ SKIP_BUILD=${SKIP_BUILD:-""}
 # Set up env
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
-export BUILD_PATH=/she-protocol/she-chain/build
+export BUILD_PATH=/bluelink-lab/blk-chain/build
 export PATH=$GOBIN:$PATH:/usr/local/go/bin:$BUILD_PATH
 echo "export GOPATH=$HOME/go" >> /root/.bashrc
 echo "GOBIN=$GOPATH/bin" >> /root/.bashrc

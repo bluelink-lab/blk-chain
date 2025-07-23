@@ -10,10 +10,10 @@ import (
 	acltypes "github.com/cosmos/cosmos-sdk/x/accesscontrol/types"
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/she-protocol/she-chain/x/evm/ante"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/state"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/ante"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 var ErrInvalidMessageType = fmt.Errorf("invalid message received for EVM Module")

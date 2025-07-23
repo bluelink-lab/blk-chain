@@ -2,8 +2,8 @@ package ante
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 const (

@@ -18,7 +18,7 @@
 
 - name: Clone repo and checkout latest branch #confirmed
   ansible.builtin.git:
-    repo: "https://{{ lookup('env', 'GIT_USER') }}:{{ lookup('env', 'GIT_ACCESS_TOKEN') }}@github.com/she-protocol/she-chain.git"
+    repo: "https://{{ lookup('env', 'GIT_USER') }}:{{ lookup('env', 'GIT_ACCESS_TOKEN') }}@github.com/bluelink-lab/blk-chain.git"
     dest: /home/ubuntu/she-chain/
     single_branch: yes
     version: latest

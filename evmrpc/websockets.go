@@ -3,7 +3,7 @@ package evmrpc
 import (
 	"net/http"
 
-	"github.com/she-protocol/she-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
 )
 
 type wsConnectionHandler struct {

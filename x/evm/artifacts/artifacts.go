@@ -4,10 +4,10 @@ import (
 	"fmt"
 
 	"github.com/ethereum/go-ethereum/accounts/abi"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw1155"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw20"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw721"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw1155"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw20"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw721"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
 )
 
 func GetParsedABI(typ string) *abi.ABI {

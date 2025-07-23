@@ -6,7 +6,7 @@ import (
 	"github.com/CosmWasm/wasmd/x/wasm"
 	wasmkeeper "github.com/CosmWasm/wasmd/x/wasm/keeper"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/app/upgrades"
+	"github.com/bluelink-lab/blk-chain/app/upgrades"
 )
 
 const (

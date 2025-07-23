@@ -13,9 +13,9 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/tracing"
 	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/she-protocol/she-chain/utils/metrics"
-	"github.com/she-protocol/she-chain/x/evm/state"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 const UnknownMethodCallGas uint64 = 3000

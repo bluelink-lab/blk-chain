@@ -3,7 +3,7 @@ package keeper_test
 import (
 	"testing"
 
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
 	"github.com/stretchr/testify/require"
 )
 

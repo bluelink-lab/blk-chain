@@ -144,7 +144,7 @@ run-local-node: kill-she-node build-docker-node
 	docker run --rm \
 	--name she-node \
 	--user="$(shell id -u):$(shell id -g)" \
-	-v $(PROJECT_HOME):/she-protocol/she-chain:Z \
+	-v $(PROJECT_HOME):/bluelink-lab/blk-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
 	--platform linux/x86_64 \
@@ -161,7 +161,7 @@ run-rpc-node: build-rpc-node
 	--name she-rpc-node \
 	--network docker_localnet \
 	--user="$(shell id -u):$(shell id -g)" \
-	-v $(PROJECT_HOME):/she-protocol/she-chain:Z \
+	-v $(PROJECT_HOME):/bluelink-lab/blk-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
 	-p 26656-26658:26656-26658 \
@@ -174,7 +174,7 @@ run-rpc-node-skipbuild: build-rpc-node
 	--name she-rpc-node \
 	--network docker_localnet \
 	--user="$(shell id -u):$(shell id -g)" \
-	-v $(PROJECT_HOME):/she-protocol/she-chain:Z \
+	-v $(PROJECT_HOME):/bluelink-lab/blk-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
 	-p 26656-26658:26656-26658 \

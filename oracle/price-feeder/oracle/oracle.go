@@ -18,12 +18,12 @@ import (
 	"golang.org/x/sync/errgroup"
 	"google.golang.org/grpc"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/client"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/provider"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/oracle/types"
-	pfsync "github.com/she-protocol/she-chain/oracle/price-feeder/pkg/sync"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/client"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/provider"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/oracle/types"
+	pfsync "github.com/bluelink-lab/blk-chain/oracle/price-feeder/pkg/sync"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 // Oracle implements the core component responsible for fetching exchange rates

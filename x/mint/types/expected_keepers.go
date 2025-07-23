@@ -3,7 +3,7 @@ package types // noalias
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/x/auth/types"
-	epochtypes "github.com/she-protocol/she-chain/x/epoch/types"
+	epochtypes "github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 // StakingKeeper defines the expected staking keeper

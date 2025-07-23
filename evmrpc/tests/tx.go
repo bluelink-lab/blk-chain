@@ -8,9 +8,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/she-protocol/she-chain/precompiles"
-	"github.com/she-protocol/she-chain/precompiles/pointer"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/precompiles"
+	"github.com/bluelink-lab/blk-chain/precompiles/pointer"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
 )
 
 func send(nonce uint64) ethtypes.TxData {

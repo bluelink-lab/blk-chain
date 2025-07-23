@@ -13,9 +13,9 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/rpc"
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/evmrpc"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 )

@@ -5,9 +5,9 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/wasmbinding/bindings"
-	tokenfactorywasm "github.com/she-protocol/she-chain/x/tokenfactory/client/wasm"
-	tokenfactorytypes "github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/wasmbinding/bindings"
+	tokenfactorywasm "github.com/bluelink-lab/blk-chain/x/tokenfactory/client/wasm"
+	tokenfactorytypes "github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 	"github.com/stretchr/testify/require"
 )
 

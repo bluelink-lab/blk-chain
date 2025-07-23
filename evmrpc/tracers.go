@@ -14,7 +14,7 @@ import (
 	"github.com/ethereum/go-ethereum/lib/ethapi"
 	"github.com/ethereum/go-ethereum/rpc"
 	"github.com/hashicorp/golang-lru/v2/expirable"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
 	rpcclient "github.com/tendermint/tendermint/rpc/client"
 )
 

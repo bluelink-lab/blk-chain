@@ -8,8 +8,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	"github.com/she-protocol/she-chain/x/tokenfactory/keeper"
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/keeper"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 func (suite *KeeperTestSuite) TestDenomMetadataRequest() {

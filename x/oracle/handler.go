@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/she-protocol/she-chain/x/oracle/keeper"
-	"github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 // NewHandler returns a handler for "oracle" type messages.

@@ -2,8 +2,8 @@ package wasm
 
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	oraclekeeper "github.com/she-protocol/she-chain/x/oracle/keeper"
-	"github.com/she-protocol/she-chain/x/oracle/types"
+	oraclekeeper "github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 type OracleWasmQueryHandler struct {

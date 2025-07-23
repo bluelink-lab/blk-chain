@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/she-protocol/she-chain/tools/tx-scanner/client"
-	"github.com/she-protocol/she-chain/tools/tx-scanner/query"
-	"github.com/she-protocol/she-chain/tools/tx-scanner/state"
+	"github.com/bluelink-lab/blk-chain/tools/tx-scanner/client"
+	"github.com/bluelink-lab/blk-chain/tools/tx-scanner/query"
+	"github.com/bluelink-lab/blk-chain/tools/tx-scanner/state"
 	"github.com/spf13/cobra"
 	"golang.org/x/time/rate"
 )

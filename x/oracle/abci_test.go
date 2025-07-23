@@ -11,10 +11,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/she-protocol/she-chain/x/oracle"
-	"github.com/she-protocol/she-chain/x/oracle/keeper"
-	"github.com/she-protocol/she-chain/x/oracle/types"
-	"github.com/she-protocol/she-chain/x/oracle/utils"
+	"github.com/bluelink-lab/blk-chain/x/oracle"
+	"github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/utils"
 )
 
 func TestOracleThreshold(t *testing.T) {

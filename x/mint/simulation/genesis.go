@@ -10,7 +10,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 // RandomizedGenState generates a random GenesisState for mint.

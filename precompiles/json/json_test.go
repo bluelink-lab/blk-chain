@@ -10,8 +10,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
-	"github.com/she-protocol/she-chain/precompiles/json"
-	"github.com/she-protocol/she-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/precompiles/json"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
 	"github.com/stretchr/testify/require"
 )
 

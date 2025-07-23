@@ -11,10 +11,10 @@ import (
 	feegranttypes "github.com/cosmos/cosmos-sdk/x/feegrant"
 	slashingtypes "github.com/cosmos/cosmos-sdk/x/slashing/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	epochtypes "github.com/she-protocol/she-chain/x/epoch/types"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
-	tokenfactorytypes "github.com/she-protocol/she-chain/x/tokenfactory/types"
+	epochtypes "github.com/bluelink-lab/blk-chain/x/epoch/types"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
+	tokenfactorytypes "github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 const (

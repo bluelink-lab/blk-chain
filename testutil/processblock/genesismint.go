@@ -3,7 +3,7 @@ package processblock
 import (
 	"time"
 
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 func (a *App) NewMinter(amount uint64) {

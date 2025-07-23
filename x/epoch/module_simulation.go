@@ -9,9 +9,9 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	"github.com/cosmos/cosmos-sdk/x/simulation"
-	"github.com/she-protocol/she-chain/testutil/sample"
-	epochsimulation "github.com/she-protocol/she-chain/x/epoch/simulation"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/testutil/sample"
+	epochsimulation "github.com/bluelink-lab/blk-chain/x/epoch/simulation"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 // avoid unused import issue

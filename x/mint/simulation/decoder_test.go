@@ -8,8 +8,8 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/simapp"
 	"github.com/cosmos/cosmos-sdk/types/kv"
-	"github.com/she-protocol/she-chain/x/mint/simulation"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/simulation"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 func TestDecodeStore(t *testing.T) {

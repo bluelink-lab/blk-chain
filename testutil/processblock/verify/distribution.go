@@ -9,8 +9,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	"github.com/cosmos/cosmos-sdk/x/distribution/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	"github.com/she-protocol/she-chain/testutil/processblock"
-	"github.com/she-protocol/she-chain/utils"
+	"github.com/bluelink-lab/blk-chain/testutil/processblock"
+	"github.com/bluelink-lab/blk-chain/utils"
 	"github.com/stretchr/testify/require"
 )
 

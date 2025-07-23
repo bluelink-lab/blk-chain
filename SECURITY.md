@@ -23,7 +23,7 @@ Send your detailed vulnerability report to `protocol-eng@shenetwork.io`.
 
 ### 2. GitHub Private Vulnerability Reporting
 
-Utilize [GitHub's Private Vulnerability Reporting](https://github.com/she-protocol/she-chain/security/advisories/new) for confidential disclosure.
+Utilize [GitHub's Private Vulnerability Reporting](https://github.com/bluelink-lab/blk-chain/security/advisories/new) for confidential disclosure.
 
 ## Submit Vulnerability Report
 

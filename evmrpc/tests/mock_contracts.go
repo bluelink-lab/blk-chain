@@ -6,7 +6,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/app"
+	"github.com/bluelink-lab/blk-chain/app"
 )
 
 func cw20Initializer(mnemonic string) func(ctx sdk.Context, a *app.App) {

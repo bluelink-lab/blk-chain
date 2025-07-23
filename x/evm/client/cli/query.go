@@ -23,12 +23,12 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/flags"
-	"github.com/she-protocol/she-chain/evmrpc"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw1155"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw20"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw721"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw1155"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw20"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw721"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 const TrueStr = "true"

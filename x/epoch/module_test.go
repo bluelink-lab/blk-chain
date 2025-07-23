@@ -7,9 +7,9 @@ import (
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/app"
-	epoch "github.com/she-protocol/she-chain/x/epoch"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/app"
+	epoch "github.com/bluelink-lab/blk-chain/x/epoch"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 	"github.com/stretchr/testify/require"
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"

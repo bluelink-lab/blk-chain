@@ -1,11 +1,11 @@
 package keeper_test
 
 import (
-	"github.com/she-protocol/she-chain/app"
+	"github.com/bluelink-lab/blk-chain/app"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 // returns context and an app with updated mint keeper

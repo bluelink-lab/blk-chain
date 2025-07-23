@@ -4,7 +4,7 @@ import (
 	"math/big"
 	"testing"
 
-	"github.com/she-protocol/she-chain/x/evm/state"
+	"github.com/bluelink-lab/blk-chain/x/evm/state"
 	"github.com/stretchr/testify/require"
 )
 

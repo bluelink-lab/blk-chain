@@ -20,11 +20,11 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
-	"github.com/she-protocol/she-chain/x/mint/client/cli"
-	"github.com/she-protocol/she-chain/x/mint/client/rest"
-	"github.com/she-protocol/she-chain/x/mint/keeper"
-	"github.com/she-protocol/she-chain/x/mint/simulation"
-	"github.com/she-protocol/she-chain/x/mint/types"
+	"github.com/bluelink-lab/blk-chain/x/mint/client/cli"
+	"github.com/bluelink-lab/blk-chain/x/mint/client/rest"
+	"github.com/bluelink-lab/blk-chain/x/mint/keeper"
+	"github.com/bluelink-lab/blk-chain/x/mint/simulation"
+	"github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 var (

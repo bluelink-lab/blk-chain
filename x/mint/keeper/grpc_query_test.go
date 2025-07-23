@@ -4,16 +4,16 @@ import (
 	gocontext "context"
 	"testing"
 
-	"github.com/she-protocol/she-chain/x/mint/keeper"
+	"github.com/bluelink-lab/blk-chain/x/mint/keeper"
 
-	"github.com/she-protocol/she-chain/app"
+	"github.com/bluelink-lab/blk-chain/app"
 
 	"github.com/stretchr/testify/suite"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
 	"github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/x/mint/types" // TODO: Replace this with she-chain. Leaving it for now otherwise tests fail
+	"github.com/bluelink-lab/blk-chain/x/mint/types" // TODO: Replace this with she-chain. Leaving it for now otherwise tests fail
 )
 
 type MintTestSuite struct {

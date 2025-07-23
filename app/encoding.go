@@ -2,7 +2,7 @@ package app
 
 import (
 	"github.com/cosmos/cosmos-sdk/std"
-	"github.com/she-protocol/she-chain/app/params"
+	"github.com/bluelink-lab/blk-chain/app/params"
 )
 
 // MakeEncodingConfig creates an EncodingConfig for testing.

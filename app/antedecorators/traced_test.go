@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
-	"github.com/she-protocol/she-chain/app/antedecorators"
-	"github.com/she-protocol/she-chain/utils"
+	"github.com/bluelink-lab/blk-chain/app/antedecorators"
+	"github.com/bluelink-lab/blk-chain/utils"
 	"github.com/stretchr/testify/require"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )

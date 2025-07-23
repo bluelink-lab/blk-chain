@@ -8,10 +8,10 @@ import (
 	sdkacltypes "github.com/cosmos/cosmos-sdk/types/accesscontrol"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
-	oraclekeeper "github.com/she-protocol/she-chain/x/oracle/keeper"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
+	oraclekeeper "github.com/bluelink-lab/blk-chain/x/oracle/keeper"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 type GaslessDecorator struct {

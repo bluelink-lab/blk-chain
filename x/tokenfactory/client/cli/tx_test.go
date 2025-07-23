@@ -14,7 +14,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec"
 	"github.com/cosmos/cosmos-sdk/testutil"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 	"github.com/stretchr/testify/require"
 )
 

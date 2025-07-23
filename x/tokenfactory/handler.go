@@ -5,7 +5,7 @@ import (
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	"github.com/she-protocol/she-chain/x/tokenfactory/keeper"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/keeper"
 )
 
 func NewProposalHandler(_ keeper.Keeper) govtypes.Handler {

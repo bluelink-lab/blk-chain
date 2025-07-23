@@ -10,9 +10,9 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/zerolog"
 
-	"github.com/she-protocol/she-chain/oracle/price-feeder/config"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/pkg/httputil"
-	"github.com/she-protocol/she-chain/oracle/price-feeder/router/middleware"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/config"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/pkg/httputil"
+	"github.com/bluelink-lab/blk-chain/oracle/price-feeder/router/middleware"
 )
 
 const (

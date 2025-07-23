@@ -8,12 +8,12 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/stretchr/testify/require"
 
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw1155"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw20"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw721"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw1155"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw20"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw721"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
 )
 
 // allows us to permutate different pointer combinations

@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/require"
 
-	appparams "github.com/she-protocol/she-chain/app/params"
-	"github.com/she-protocol/she-chain/x/tokenfactory/types"
+	appparams "github.com/bluelink-lab/blk-chain/app/params"
+	"github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 func TestDecomposeDenoms(t *testing.T) {

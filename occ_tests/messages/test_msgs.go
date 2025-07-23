@@ -10,10 +10,10 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 
-	"github.com/she-protocol/she-chain/occ_tests/utils"
-	"github.com/she-protocol/she-chain/x/evm/config"
-	"github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	"github.com/bluelink-lab/blk-chain/occ_tests/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/config"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 )
 
 const instantiateMsg = `{"whitelist": ["she1h9yjz89tl0dl6zu65dpxcqnxfhq60wxx8s5kag"],

@@ -12,8 +12,8 @@ import (
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
-	pcommon "github.com/she-protocol/she-chain/precompiles/common"
-	"github.com/she-protocol/she-chain/utils"
+	pcommon "github.com/bluelink-lab/blk-chain/precompiles/common"
+	"github.com/bluelink-lab/blk-chain/utils"
 	"github.com/tendermint/tendermint/libs/log"
 )
 

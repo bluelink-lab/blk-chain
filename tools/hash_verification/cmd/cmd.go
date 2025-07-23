@@ -5,8 +5,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/she-protocol/she-chain/tools/hash_verification/iavl"
-	"github.com/she-protocol/she-chain/tools/hash_verification/pebbledb"
+	"github.com/bluelink-lab/blk-chain/tools/hash_verification/iavl"
+	"github.com/bluelink-lab/blk-chain/tools/hash_verification/pebbledb"
 	"github.com/she-protocol/she-db/config"
 	sstypes "github.com/she-protocol/she-db/ss"
 	"github.com/tendermint/tendermint/libs/log"

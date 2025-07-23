@@ -4,7 +4,7 @@ package sheprotocol.shechain.evm;
 import "gogoproto/gogo.proto";
 import "evm/params.proto";
 
-option go_package = "github.com/she-protocol/she-chain/x/evm/types";
+option go_package = "github.com/bluelink-lab/blk-chain/x/evm/types";
 
 // AddressAssociation represents an association between a Cosmos and an Ethereum address.
 message AddressAssociation {

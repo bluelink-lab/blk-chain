@@ -4,7 +4,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/she-protocol/she-chain/utils/datastructures"
+	"github.com/bluelink-lab/blk-chain/utils/datastructures"
 	"github.com/stretchr/testify/require"
 )
 

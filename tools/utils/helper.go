@@ -20,11 +20,11 @@ import (
 	upgradetypes "github.com/cosmos/cosmos-sdk/x/upgrade/types"
 	ibctransfertypes "github.com/cosmos/ibc-go/v3/modules/apps/transfer/types"
 	ibchost "github.com/cosmos/ibc-go/v3/modules/core/24-host"
-	epochmoduletypes "github.com/she-protocol/she-chain/x/epoch/types"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
-	tokenfactorytypes "github.com/she-protocol/she-chain/x/tokenfactory/types"
+	epochmoduletypes "github.com/bluelink-lab/blk-chain/x/epoch/types"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
+	tokenfactorytypes "github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 )
 
 var ModuleKeys = sdk.NewKVStoreKeys(

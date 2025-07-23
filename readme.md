@@ -55,7 +55,7 @@ All these features combine to unlock a brand new, scalable design space for the 
 **Clone git repository**
 
 ```bash
-git clone https://github.com/she-protocol/she-chain
+git clone https://github.com/bluelink-lab/blk-chain
 cd she-chain
 git checkout $VERSION
 make install

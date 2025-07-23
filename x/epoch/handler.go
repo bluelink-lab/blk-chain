@@ -5,8 +5,8 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
-	"github.com/she-protocol/she-chain/x/epoch/keeper"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/epoch/keeper"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 )
 
 func NewHandler(_ keeper.Keeper) sdk.Handler {

@@ -28,13 +28,13 @@ import (
 	"github.com/cosmos/cosmos-sdk/codec/legacy"
 	"github.com/cosmos/cosmos-sdk/crypto/keyring"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
-	"github.com/she-protocol/she-chain/evmrpc"
-	"github.com/she-protocol/she-chain/precompiles"
-	"github.com/she-protocol/she-chain/utils"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/wshe"
-	"github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
+	"github.com/bluelink-lab/blk-chain/precompiles"
+	"github.com/bluelink-lab/blk-chain/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/wshe"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 )
 
 const (

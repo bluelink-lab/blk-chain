@@ -12,12 +12,12 @@ import (
 	paramskeeper "github.com/cosmos/cosmos-sdk/x/params/keeper"
 	ibcante "github.com/cosmos/ibc-go/v3/modules/core/ante"
 	ibckeeper "github.com/cosmos/ibc-go/v3/modules/core/keeper"
-	"github.com/she-protocol/she-chain/app/antedecorators"
-	"github.com/she-protocol/she-chain/app/antedecorators/depdecorators"
-	evmante "github.com/she-protocol/she-chain/x/evm/ante"
-	evmkeeper "github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/oracle"
-	oraclekeeper "github.com/she-protocol/she-chain/x/oracle/keeper"
+	"github.com/bluelink-lab/blk-chain/app/antedecorators"
+	"github.com/bluelink-lab/blk-chain/app/antedecorators/depdecorators"
+	evmante "github.com/bluelink-lab/blk-chain/x/evm/ante"
+	evmkeeper "github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/oracle"
+	oraclekeeper "github.com/bluelink-lab/blk-chain/x/oracle/keeper"
 )
 
 // HandlerOptions extend the SDK's AnteHandler options by requiring the IBC

@@ -1,4 +1,4 @@
-module github.com/she-protocol/she-chain
+module github.com/bluelink-lab/blk-chain
 
 go 1.21
 

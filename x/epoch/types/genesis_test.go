@@ -3,7 +3,7 @@ package types_test
 import (
 	"testing"
 
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 	"github.com/stretchr/testify/require"
 )
 

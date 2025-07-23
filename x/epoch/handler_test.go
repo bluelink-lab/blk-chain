@@ -8,9 +8,9 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/testutil/testdata"
 
-	"github.com/she-protocol/she-chain/app"
-	"github.com/she-protocol/she-chain/x/epoch"
-	"github.com/she-protocol/she-chain/x/epoch/types"
+	"github.com/bluelink-lab/blk-chain/app"
+	"github.com/bluelink-lab/blk-chain/x/epoch"
+	"github.com/bluelink-lab/blk-chain/x/epoch/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 )
 

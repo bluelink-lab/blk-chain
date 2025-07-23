@@ -9,13 +9,13 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	ethtypes "github.com/ethereum/go-ethereum/core/types"
 	"github.com/ethereum/go-ethereum/crypto"
-	"github.com/she-protocol/she-chain/app"
-	testkeeper "github.com/she-protocol/she-chain/testutil/keeper"
+	"github.com/bluelink-lab/blk-chain/app"
+	testkeeper "github.com/bluelink-lab/blk-chain/testutil/keeper"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/x/evm/derived"
-	"github.com/she-protocol/she-chain/x/evm/types"
-	"github.com/she-protocol/she-chain/x/evm/types/ethtx"
+	"github.com/bluelink-lab/blk-chain/x/evm/derived"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/types/ethtx"
 	"github.com/stretchr/testify/require"
 )
 

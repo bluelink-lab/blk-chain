@@ -3,8 +3,8 @@ package kv_test
 import (
 	"testing"
 
-	"github.com/she-protocol/she-chain/store"
-	"github.com/she-protocol/she-chain/store/whitelist/kv"
+	"github.com/bluelink-lab/blk-chain/store"
+	"github.com/bluelink-lab/blk-chain/store/whitelist/kv"
 	"github.com/stretchr/testify/require"
 )
 

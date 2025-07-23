@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/she-protocol/she-chain/x/oracle/types"
-	"github.com/she-protocol/she-chain/x/oracle/utils"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/utils"
 	"github.com/stretchr/testify/require"
 
 	"github.com/tendermint/tendermint/crypto"

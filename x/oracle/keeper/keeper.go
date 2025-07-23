@@ -5,7 +5,7 @@ import (
 	"math"
 	"sort"
 
-	"github.com/she-protocol/she-chain/utils/metrics"
+	"github.com/bluelink-lab/blk-chain/utils/metrics"
 
 	"github.com/tendermint/tendermint/libs/log"
 
@@ -15,7 +15,7 @@ import (
 	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	"github.com/she-protocol/she-chain/x/oracle/types"
+	"github.com/bluelink-lab/blk-chain/x/oracle/types"
 )
 
 // Keeper of the oracle store

@@ -9,7 +9,7 @@ import (
 
 	"github.com/cosmos/go-bip39"
 	"github.com/pkg/errors"
-	"github.com/she-protocol/she-chain/app/params"
+	"github.com/bluelink-lab/blk-chain/app/params"
 	"github.com/spf13/cobra"
 	tmcfg "github.com/tendermint/tendermint/config"
 	"github.com/tendermint/tendermint/libs/cli"

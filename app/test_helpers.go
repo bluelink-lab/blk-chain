@@ -22,7 +22,7 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	minttypes "github.com/she-protocol/she-chain/x/mint/types"
+	minttypes "github.com/bluelink-lab/blk-chain/x/mint/types"
 )
 
 const TestContract = "TEST"

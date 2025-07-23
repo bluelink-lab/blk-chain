@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-ENV HOME="/root" PATH="/root/go/bin:/she-protocol/she-chain/integration_test/upgrade_module/scripts/:$PATH"
+ENV HOME="/root" PATH="/root/go/bin:/bluelink-lab/blk-chain/integration_test/upgrade_module/scripts/:$PATH"
 RUN apt-get update && apt-get install -y make build-essential git jq python3 curl vim uuid-runtime
 RUN curl -L https://go.dev/dl/go1.21.12.linux-amd64.tar.gz | tar xvzf - -C /usr/local/
 RUN curl -L https://foundry.paradigm.xyz | bash
@@ -10,7 +10,7 @@ RUN mkdir -p /root/go/pkg/mod && \
     chmod -R a+rwX /root
 SHELL ["/bin/bash", "-c"]
 
-WORKDIR /she-protocol/she-chain
+WORKDIR /bluelink-lab/blk-chain
 
 EXPOSE 26656 26657 26658 9090 9091 7171
 

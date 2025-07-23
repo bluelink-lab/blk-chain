@@ -8,9 +8,9 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/store/rootmulti"
 	"github.com/cosmos/iavl"
-	"github.com/she-protocol/she-chain/tools/migration/sc"
-	"github.com/she-protocol/she-chain/tools/migration/ss"
-	"github.com/she-protocol/she-chain/tools/utils"
+	"github.com/bluelink-lab/blk-chain/tools/migration/sc"
+	"github.com/bluelink-lab/blk-chain/tools/migration/ss"
+	"github.com/bluelink-lab/blk-chain/tools/utils"
 	"github.com/she-protocol/she-db/config"
 	sstypes "github.com/she-protocol/she-db/ss"
 	"github.com/spf13/cobra"

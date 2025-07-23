@@ -14,11 +14,11 @@ import (
 	"github.com/ethereum/go-ethereum/trie/triedb/hashdb"
 	"github.com/ethereum/go-ethereum/trie/triedb/pathdb"
 
-	"github.com/she-protocol/she-chain/x/evm/artifacts/erc1155"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/erc20"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/erc721"
-	artifactsutils "github.com/she-protocol/she-chain/x/evm/artifacts/utils"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/erc1155"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/erc20"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/erc721"
+	artifactsutils "github.com/bluelink-lab/blk-chain/x/evm/artifacts/utils"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 var ethReplayInitialied = false

@@ -14,8 +14,8 @@ import (
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/core/vm"
 
-	pcommon "github.com/she-protocol/she-chain/precompiles/common"
-	evmtypes "github.com/she-protocol/she-chain/x/evm/types"
+	pcommon "github.com/bluelink-lab/blk-chain/precompiles/common"
+	evmtypes "github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 const (

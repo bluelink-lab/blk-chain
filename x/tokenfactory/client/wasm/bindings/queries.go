@@ -1,6 +1,6 @@
 package bindings
 
-import "github.com/she-protocol/she-chain/x/tokenfactory/types"
+import "github.com/bluelink-lab/blk-chain/x/tokenfactory/types"
 
 type SheTokenFactoryQuery struct {
 	// queries the tokenfactory authority metadata

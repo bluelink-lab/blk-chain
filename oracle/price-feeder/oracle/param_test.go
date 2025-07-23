@@ -3,7 +3,7 @@ package oracle
 import (
 	"testing"
 
-	oracletypes "github.com/she-protocol/she-chain/x/oracle/types"
+	oracletypes "github.com/bluelink-lab/blk-chain/x/oracle/types"
 	"github.com/stretchr/testify/require"
 )
 

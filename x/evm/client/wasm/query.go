@@ -10,12 +10,12 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw1155"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/cw721"
-	"github.com/she-protocol/she-chain/x/evm/artifacts/native"
-	"github.com/she-protocol/she-chain/x/evm/client/wasm/bindings"
-	"github.com/she-protocol/she-chain/x/evm/keeper"
-	"github.com/she-protocol/she-chain/x/evm/types"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw1155"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/cw721"
+	"github.com/bluelink-lab/blk-chain/x/evm/artifacts/native"
+	"github.com/bluelink-lab/blk-chain/x/evm/client/wasm/bindings"
+	"github.com/bluelink-lab/blk-chain/x/evm/keeper"
+	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
 type EVMQueryHandler struct {

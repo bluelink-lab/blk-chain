@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/ethereum/go-ethereum/common"
-	"github.com/she-protocol/she-chain/evmrpc"
+	"github.com/bluelink-lab/blk-chain/evmrpc"
 	"github.com/stretchr/testify/require"
 )
 

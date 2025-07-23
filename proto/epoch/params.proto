@@ -3,7 +3,7 @@ package sheprotocol.shechain.epoch;
 
 import "gogoproto/gogo.proto";
 
-option go_package = "github.com/she-protocol/she-chain/x/epoch/types";
+option go_package = "github.com/bluelink-lab/blk-chain/x/epoch/types";
 
 // Params defines the parameters for the module.
 message Params {
