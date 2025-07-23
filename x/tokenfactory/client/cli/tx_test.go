@@ -98,12 +98,12 @@ func Test_ParseAllowListJSON(t *testing.T) {
 		errMock bool
 	}{
 		{
-			name: "valid allow list with BLK addresses",
+			name: "valid allow list with BLT addresses",
 			json: fmt.Sprintf(`{"addresses": ["%s", "%s"]}`, sheAddr1, sheAddr2),
 			want: banktypes.AllowList{Addresses: []string{sheAddr1, sheAddr2}},
 		},
 		{
-			name: "valid allow list with BLK and EVM addresses",
+			name: "valid allow list with BLT and EVM addresses",
 			json: fmt.Sprintf(`{"addresses": ["%s", "%s", "%s"]}`, sheAddr1, sheAddr2, evmAddr),
 			want: banktypes.AllowList{Addresses: []string{sheAddr1, sheAddr2, convertedSheAddr}},
 		},
@@ -113,7 +113,7 @@ func Test_ParseAllowListJSON(t *testing.T) {
 			wantErr: "invalid character '[' looking for beginning of object key string",
 		},
 		{
-			name:    "invalid BLK address",
+			name:    "invalid BLT address",
 			json:    `{"addresses": ["invalid_she_address"]}`,
 			wantErr: "invalid address invalid_she_address: decoding bech32 failed: invalid separator index -1",
 		},
@@ -123,7 +123,7 @@ func Test_ParseAllowListJSON(t *testing.T) {
 			wantErr: "invalid address 0xinvalid_evm_address: decoding bech32 failed: invalid separator index -1",
 		},
 		{
-			name:    "EVM address error on getting BLK address",
+			name:    "EVM address error on getting BLT address",
 			json:    fmt.Sprintf(`{"addresses": ["%s"]}`, evmAddr),
 			wantErr: "address is not associated",
 			errMock: true,

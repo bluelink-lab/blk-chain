@@ -16,7 +16,7 @@ VOTE_TMPL = (
 )
 
 KEY = "default_account"
-CHAIN_ID = "blk-testnet-2"
+CHAIN_ID = "blt-testnet-2"
 PASSWORD = ""
 ADDR = ""
 VAL_ADDR = ""

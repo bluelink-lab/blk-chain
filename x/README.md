@@ -1,6 +1,6 @@
-# BLK modules
+# BLT modules
 
-BLK implements the following custom modules:
+BLT implements the following custom modules:
 * `dex` -
 * `epoch` -
 * `oracle` -

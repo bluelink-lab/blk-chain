@@ -982,7 +982,7 @@ func sendRequest(t *testing.T, port int, method string, params ...interface{}) m
 }
 
 func sendSheRequest(t *testing.T, port int, method string, params ...interface{}) map[string]interface{} {
-	return sendRequestWithNamespace(t, "blk", port, method, params...)
+	return sendRequestWithNamespace(t, "blt", port, method, params...)
 }
 
 func sendRequestWithNamespace(t *testing.T, namespace string, port int, method string, params ...interface{}) map[string]interface{} {

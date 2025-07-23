@@ -9,8 +9,8 @@ const evmRpcUrls = {
 }
 
 const chainIds = {
-    "testnet": "blk-testnet",
-    "devnet": "blk-devnet"
+    "testnet": "blt-testnet",
+    "devnet": "blt-devnet"
 }
 
 module.exports = {

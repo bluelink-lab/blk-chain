@@ -1,6 +1,6 @@
 # Price Oracle Script
-This is a simple oracle script that fetchs market prices of different token pairs from the CoinGecko. BLK team will add multiple 
-price sources in this script so that BLK can decentralize the oracle prices.
+This is a simple oracle script that fetchs market prices of different token pairs from the CoinGecko. BLT team will add multiple 
+price sources in this script so that BLT can decentralize the oracle prices.
 
 # Setup (Local)
 Install the coingecko api on your instance

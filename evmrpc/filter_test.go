@@ -193,10 +193,10 @@ func TestFilterGetLogs(t *testing.T) {
 
 func TestFilterSheGetLogs(t *testing.T) {
 	// make sure we pass all the eth_ namespace tests
-	testFilterGetLogs(t, "blk", getCommonFilterLogTests())
+	testFilterGetLogs(t, "blt", getCommonFilterLogTests())
 
 	// test where we get a synthetic log
-	testFilterGetLogs(t, "blk", []GetFilterLogTests{
+	testFilterGetLogs(t, "blt", []GetFilterLogTests{
 		{
 			name:      "filter by single synthetic address",
 			fromBlock: "0x64",
@@ -265,7 +265,7 @@ func testFilterGetLogs(t *testing.T, namespace string, tests []GetFilterLogTests
 			var resObj map[string]interface{}
 			if namespace == "eth" {
 				resObj = sendRequestGood(t, "getLogs", filterCriteria)
-			} else if namespace == "blk" {
+			} else if namespace == "blt" {
 				resObj = sendSheRequestGood(t, "getLogs", filterCriteria)
 			} else {
 				panic("unknown namespace")

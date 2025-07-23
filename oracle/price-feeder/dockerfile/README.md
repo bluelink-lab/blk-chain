@@ -35,7 +35,7 @@ threshold = "2"
 address = "she..."
 chain_id = "she-chain"
 validator = "shevaloper..."
-prefix = "blk"
+prefix = "blt"
 
 [keyring]
 backend = "file"

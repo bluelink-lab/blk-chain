@@ -19,7 +19,7 @@ import (
 //	she_sudo_duration_miliseconds_sum
 func MeasureSudoExecutionDuration(start time.Time, msgType string) {
 	metrics.MeasureSinceWithLabels(
-		[]string{"blk", "sudo", "duration", "milliseconds"},
+		[]string{"blt", "sudo", "duration", "milliseconds"},
 		start.UTC(),
 		[]metrics.Label{telemetry.NewLabel("type", msgType)},
 	)
@@ -31,7 +31,7 @@ func MeasureSudoExecutionDuration(start time.Time, msgType string) {
 //	she_sudo_error_count
 func IncrementSudoFailCount(msgType string) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "sudo", "error", "count"},
+		[]string{"blt", "sudo", "error", "count"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("type", msgType)},
 	)
@@ -52,7 +52,7 @@ func GaugeShedVersionAndCommit(version string, commit string) {
 // she_tx_process_type_count
 func IncrTxProcessTypeCounter(processType string) {
 	metrics.IncrCounterWithLabels(
-		[]string{"blk", "tx", "process", "type"},
+		[]string{"blt", "tx", "process", "type"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("type", processType)},
 	)
@@ -66,7 +66,7 @@ func IncrTxProcessTypeCounter(processType string) {
 //	she_process_block_miliseconds_sum
 func BlockProcessLatency(start time.Time, processType string) {
 	metrics.MeasureSinceWithLabels(
-		[]string{"blk", "process", "block", "milliseconds"},
+		[]string{"blt", "process", "block", "milliseconds"},
 		start.UTC(),
 		[]metrics.Label{telemetry.NewLabel("type", processType)},
 	)
@@ -78,7 +78,7 @@ func BlockProcessLatency(start time.Time, processType string) {
 //	she_tx_process_type_count
 func IncrDagBuildErrorCounter(reason string) {
 	metrics.IncrCounterWithLabels(
-		[]string{"blk", "dag", "build", "error"},
+		[]string{"blt", "dag", "build", "error"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("reason", reason)},
 	)
@@ -90,7 +90,7 @@ func IncrDagBuildErrorCounter(reason string) {
 //	she_tx_concurrent_delivertx_error
 func IncrFailedConcurrentDeliverTxCounter() {
 	metrics.IncrCounterWithLabels(
-		[]string{"blk", "tx", "concurrent", "delievertx", "error"},
+		[]string{"blt", "tx", "concurrent", "delievertx", "error"},
 		1,
 		[]metrics.Label{},
 	)
@@ -102,7 +102,7 @@ func IncrFailedConcurrentDeliverTxCounter() {
 //	she_log_not_done_after_counter
 func IncrLogIfNotDoneAfter(label string) {
 	metrics.IncrCounterWithLabels(
-		[]string{"blk", "log", "not", "done", "after"},
+		[]string{"blt", "log", "not", "done", "after"},
 		1,
 		[]metrics.Label{
 			telemetry.NewLabel("label", label),
@@ -118,7 +118,7 @@ func IncrLogIfNotDoneAfter(label string) {
 //	she_deliver_tx_duration_miliseconds_sum
 func MeasureDeliverTxDuration(start time.Time) {
 	metrics.MeasureSince(
-		[]string{"blk", "deliver", "tx", "milliseconds"},
+		[]string{"blt", "deliver", "tx", "milliseconds"},
 		start.UTC(),
 	)
 }
@@ -131,7 +131,7 @@ func MeasureDeliverTxDuration(start time.Time) {
 //	she_deliver_batch_tx_duration_miliseconds_sum
 func MeasureDeliverBatchTxDuration(start time.Time) {
 	metrics.MeasureSince(
-		[]string{"blk", "deliver", "batch", "tx", "milliseconds"},
+		[]string{"blt", "deliver", "batch", "tx", "milliseconds"},
 		start.UTC(),
 	)
 }
@@ -139,7 +139,7 @@ func MeasureDeliverBatchTxDuration(start time.Time) {
 // she_oracle_vote_penalty_count
 func SetOracleVotePenaltyCount(count uint64, valAddr string, penaltyType string) {
 	metrics.SetGaugeWithLabels(
-		[]string{"blk", "oracle", "vote", "penalty", "count"},
+		[]string{"blt", "oracle", "vote", "penalty", "count"},
 		float32(count),
 		[]metrics.Label{
 			telemetry.NewLabel("type", penaltyType),
@@ -151,7 +151,7 @@ func SetOracleVotePenaltyCount(count uint64, valAddr string, penaltyType string)
 // she_epoch_new
 func SetEpochNew(epochNum uint64) {
 	metrics.SetGauge(
-		[]string{"blk", "epoch", "new"},
+		[]string{"blt", "epoch", "new"},
 		float32(epochNum),
 	)
 }
@@ -163,7 +163,7 @@ func SetEpochNew(epochNum uint64) {
 func SetThroughputMetric(metricName string, value float32) {
 	telemetry.SetGauge(
 		value,
-		"blk", "throughput", metricName,
+		"blt", "throughput", metricName,
 	)
 }
 
@@ -173,7 +173,7 @@ func SetThroughputMetric(metricName string, value float32) {
 //	she_websocket_connect
 func IncWebsocketConnects() {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "websocket", "connect"},
+		[]string{"blt", "websocket", "connect"},
 		1,
 		nil,
 	)
@@ -185,7 +185,7 @@ func IncWebsocketConnects() {
 //	she_oracle_price_update_count
 func IncrPriceUpdateDenom(denom string) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "oracle", "price", "update"},
+		[]string{"blt", "oracle", "price", "update"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("denom", denom)},
 	)
@@ -197,7 +197,7 @@ func IncrPriceUpdateDenom(denom string) {
 //	she_throughput_<metric_name>
 func SetThroughputMetricByType(metricName string, value float32, msgType string) {
 	telemetry.SetGaugeWithLabels(
-		[]string{"blk", "loadtest", "tps", metricName},
+		[]string{"blt", "loadtest", "tps", metricName},
 		value,
 		[]metrics.Label{telemetry.NewLabel("msg_type", msgType)},
 	)
@@ -209,7 +209,7 @@ func SetThroughputMetricByType(metricName string, value float32, msgType string)
 //	she_failed_total_gas_wanted_check
 func IncrFailedTotalGasWantedCheck(proposer string) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "failed", "total", "gas", "wanted", "check"},
+		[]string{"blt", "failed", "total", "gas", "wanted", "check"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("proposer", proposer)},
 	)
@@ -221,7 +221,7 @@ func IncrFailedTotalGasWantedCheck(proposer string) {
 //	she_failed_total_gas_wanted_check
 func IncrValidatorSlashed(proposer string) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "failed", "total", "gas", "wanted", "check"},
+		[]string{"blt", "failed", "total", "gas", "wanted", "check"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("proposer", proposer)},
 	)
@@ -233,7 +233,7 @@ func IncrValidatorSlashed(proposer string) {
 //	she_oracle_price_update_count
 func SetCoinsMinted(amount uint64, denom string) {
 	telemetry.SetGaugeWithLabels(
-		[]string{"blk", "mint", "coins"},
+		[]string{"blt", "mint", "coins"},
 		float32(amount),
 		[]metrics.Label{telemetry.NewLabel("denom", denom)},
 	)
@@ -245,7 +245,7 @@ func SetCoinsMinted(amount uint64, denom string) {
 //	she_tx_gas_counter
 func IncrGasCounter(gasType string, value int64) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "tx", "gas", "counter"},
+		[]string{"blt", "tx", "gas", "counter"},
 		float32(value),
 		[]metrics.Label{telemetry.NewLabel("type", gasType)},
 	)
@@ -257,7 +257,7 @@ func IncrGasCounter(gasType string, value int64) {
 //	she_optimistic_processing_counter
 func IncrementOptimisticProcessingCounter(enabled bool) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "optimistic", "processing", "counter"},
+		[]string{"blt", "optimistic", "processing", "counter"},
 		float32(1),
 		[]metrics.Label{telemetry.NewLabel("enabled", strconv.FormatBool(enabled))},
 	)
@@ -269,7 +269,7 @@ func IncrementOptimisticProcessingCounter(enabled bool) {
 //	she_rpc_request_counter
 func IncrementRpcRequestCounter(endpoint string, connectionType string, success bool) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "rpc", "request", "counter"},
+		[]string{"blt", "rpc", "request", "counter"},
 		float32(1),
 		[]metrics.Label{
 			telemetry.NewLabel("endpoint", endpoint),
@@ -293,7 +293,7 @@ func IncrementErrorMetrics(scenario string, err error) {
 
 func IncrementAssociationError(scenario string, err types.AssociationMissingErr) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "association", "error"},
+		[]string{"blt", "association", "error"},
 		1,
 		[]metrics.Label{
 			telemetry.NewLabel("scenario", scenario),
@@ -308,7 +308,7 @@ func IncrementAssociationError(scenario string, err types.AssociationMissingErr)
 //	she_rpc_request_latency_ms
 func MeasureRpcRequestLatency(endpoint string, connectionType string, startTime time.Time) {
 	metrics.MeasureSinceWithLabels(
-		[]string{"blk", "rpc", "request", "latency_ms"},
+		[]string{"blt", "rpc", "request", "latency_ms"},
 		startTime.UTC(),
 		[]metrics.Label{
 			telemetry.NewLabel("endpoint", endpoint),
@@ -324,7 +324,7 @@ func MeasureRpcRequestLatency(endpoint string, connectionType string, startTime 
 //	she_loadtest_produce_count
 func IncrProducerEventCount(msgType string) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "loadtest", "produce", "count"},
+		[]string{"blt", "loadtest", "produce", "count"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("msg_type", msgType)},
 	)
@@ -337,7 +337,7 @@ func IncrProducerEventCount(msgType string) {
 //	she_loadtest_consume_count
 func IncrConsumerEventCount(msgType string) {
 	telemetry.IncrCounterWithLabels(
-		[]string{"blk", "loadtest", "consume", "count"},
+		[]string{"blt", "loadtest", "consume", "count"},
 		1,
 		[]metrics.Label{telemetry.NewLabel("msg_type", msgType)},
 	)
@@ -353,7 +353,7 @@ func AddHistogramMetric(key []string, value float32) {
 // she_evm_effective_gas_price
 func HistogramEvmEffectiveGasPrice(gasPrice *big.Int) {
 	AddHistogramMetric(
-		[]string{"blk", "evm", "effective", "gas", "price"},
+		[]string{"blt", "evm", "effective", "gas", "price"},
 		float32(gasPrice.Uint64()),
 	)
 }
@@ -364,7 +364,7 @@ func HistogramEvmEffectiveGasPrice(gasPrice *big.Int) {
 // she_evm_block_base_fee
 func GaugeEvmBlockBaseFee(baseFee *big.Int, blockHeight int64) {
 	metrics.SetGauge(
-		[]string{"blk", "evm", "block", "base", "fee"},
+		[]string{"blt", "evm", "block", "base", "fee"},
 		float32(baseFee.Uint64()),
 	)
 }

@@ -72,7 +72,7 @@ message QueryExchangeRateRequest {
 // QueryExchangeRateResponse is response type for the
 // Query/ExchangeRate RPC method.
 message QueryExchangeRateResponse {
-  // exchange_rate defines the exchange rate of BLK denominated in various BLK
+  // exchange_rate defines the exchange rate of BLT denominated in various BLT
   OracleExchangeRate oracle_exchange_rate = 1 [(gogoproto.nullable) = false];
 }
 

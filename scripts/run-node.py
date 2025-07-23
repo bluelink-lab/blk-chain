@@ -34,9 +34,9 @@ DEVNET_VERSION = "v5.9.0-hotfix"
 # Map env to chain ID and optional manual version override
 ENV_TO_CONFIG = {
     "local": {"chain_id": None, "version": "latest"},
-    "devnet": {"chain_id": "blk-devnet", "version": DEVNET_VERSION},
-    "testnet": {"chain_id": "blk-testnet", "version": TESTNET_VERSION},
-    "mainnet": {"chain_id": "blk-mainnet", "version": MAINNET_VERSION}
+    "devnet": {"chain_id": "blt-devnet", "version": DEVNET_VERSION},
+    "testnet": {"chain_id": "blt-testnet", "version": TESTNET_VERSION},
+    "mainnet": {"chain_id": "blt-mainnet", "version": MAINNET_VERSION}
 }
 
 def print_ascii_and_intro():
@@ -61,7 +61,7 @@ def print_ascii_and_intro():
                   .-+###############*+:.
                      ..-+********+-.
 
-Welcome to the BLK node installer!
+Welcome to the BLT node installer!
 For more information please visit docs.she.io
 This tool will download the blkd binary from she-binaries and wipe any existing state.
 Please backup any important existing data before proceeding.

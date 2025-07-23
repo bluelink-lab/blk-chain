@@ -21,10 +21,10 @@ func TestAssociationMissingErr(t *testing.T) {
 			wantAddressType: "evm",
 		},
 		{
-			name:            "BLK address",
+			name:            "BLT address",
 			address:         "she1234567890abcdef",
 			wantError:       "address she1234567890abcdef is not linked",
-			wantAddressType: "blk",
+			wantAddressType: "blt",
 		},
 	}
 

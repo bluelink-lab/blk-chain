@@ -2,7 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require('hardhat');
 const { deployWasm, ABI, WASM, executeWasm, deployErc20PointerForCw20, getAdmin, setupSigners } = require("./lib")
 
-describe("BLK Endpoints Tester", function () {
+describe("BLT Endpoints Tester", function () {
     let accounts;
     let admin;
     let cw20Address;

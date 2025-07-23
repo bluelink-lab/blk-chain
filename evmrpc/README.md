@@ -1,6 +1,6 @@
-# BLK's EVM RPC
+# BLT's EVM RPC
 
-BLK supports the standard [Ethereum JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/) endpoints. On top of that, BLK supports some additional custom endpoints.
+BLT supports the standard [Ethereum JSON-RPC API](https://ethereum.org/en/developers/docs/apis/json-rpc/) endpoints. On top of that, BLT supports some additional custom endpoints.
 
 ## She_ endpoints
 

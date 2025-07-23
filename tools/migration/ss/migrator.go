@@ -177,7 +177,7 @@ func ExportLeafNodesFromKey(db dbm.DB, ch chan<- types.RawSnapshotNode, startKey
 			if count%1000000 == 0 {
 				batchDuration := time.Since(startTimeBatch)
 				fmt.Printf("SheDB Archive Migration: Last 1,000,000 iterations took: %v. Total scanned: %d, leaf nodes exported: %d\n", batchDuration, count, leafNodeCount)
-				metrics.IncrCounterWithLabels([]string{"blk", "migration", "leaf_nodes_exported"}, float32(batchLeafNodeCount), []metrics.Label{
+				metrics.IncrCounterWithLabels([]string{"blt", "migration", "leaf_nodes_exported"}, float32(batchLeafNodeCount), []metrics.Label{
 					{Name: "module", Value: module},
 				})
 

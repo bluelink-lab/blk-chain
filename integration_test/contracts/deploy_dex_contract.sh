@@ -29,7 +29,7 @@ contract_addr=$(echo "$instantiate_result" |jq -r '.logs[].events[].attributes[]
 echo "Registering contract..."
 printf "12345678\n" | $shedbin tx dex register-contract "$contract_addr" "$contract_id" false true 100000000000 -y --from="$keyname" --chain-id="$chainid" --fees=100000000000ublk --gas=500000 --broadcast-mode=block
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$contract_addr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > integration_test/contracts/"$contract_name"-pair.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$contract_addr'","pairs":[{"price_denom":"BLT","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > integration_test/contracts/"$contract_name"-pair.json
 contract_pair=$(printf "12345678\n" | $shedbin tx dex register-pairs integration_test/contracts/"$contract_name"-pair.json -y --from=$keyname --chain-id=$chainid --fees=10000000ublk --gas=500000 --broadcast-mode=block --output=json)
 rm -rf integration_test/contracts/"$contract_name"-pair.json
 

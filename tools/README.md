@@ -1,4 +1,4 @@
-# BLK Tools
+# BLT Tools
 This page provides an overview of a couple of built-in tools provided by blkd command line. 
 
 ## TX-Scanner 

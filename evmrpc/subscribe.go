@@ -280,28 +280,28 @@ func encodeTmHeader(
 	}
 	gasLimit := uint64(header.ResultFinalizeBlock.ConsensusParamUpdates.Block.MaxGas)
 	result := map[string]interface{}{
-		"difficulty":            (*hexutil.Big)(utils.Big0), // inapplicable to BLK
-		"extraData":             hexutil.Bytes{},            // inapplicable to BLK
+		"difficulty":            (*hexutil.Big)(utils.Big0), // inapplicable to BLT
+		"extraData":             hexutil.Bytes{},            // inapplicable to BLT
 		"gasLimit":              hexutil.Uint64(gasLimit),
 		"gasUsed":               hexutil.Uint64(gasWanted),
-		"logsBloom":             ethtypes.Bloom{}, // inapplicable to BLK
+		"logsBloom":             ethtypes.Bloom{}, // inapplicable to BLT
 		"miner":                 miner,
-		"nonce":                 ethtypes.BlockNonce{}, // inapplicable to BLK
+		"nonce":                 ethtypes.BlockNonce{}, // inapplicable to BLT
 		"number":                (*hexutil.Big)(number),
 		"parentHash":            lastHash,
 		"receiptsRoot":          resultHash,
-		"sha3Uncles":            common.Hash{}, // inapplicable to BLK
+		"sha3Uncles":            common.Hash{}, // inapplicable to BLT
 		"stateRoot":             appHash,
 		"timestamp":             hexutil.Uint64(header.Header.Time.Unix()),
 		"transactionsRoot":      txHash,
-		"mixHash":               common.Hash{},     // inapplicable to BLK
-		"excessBlobGas":         hexutil.Uint64(0), // inapplicable to BLK
-		"parentBeaconBlockRoot": common.Hash{},     // inapplicable to BLK
+		"mixHash":               common.Hash{},     // inapplicable to BLT
+		"excessBlobGas":         hexutil.Uint64(0), // inapplicable to BLT
+		"parentBeaconBlockRoot": common.Hash{},     // inapplicable to BLT
 		"hash":                  blockHash,
-		"withdrawlsRoot":        common.Hash{}, // inapplicable to BLK
+		"withdrawlsRoot":        common.Hash{}, // inapplicable to BLT
 		"baseFeePerGas":         (*hexutil.Big)(baseFee),
-		"withdrawalsRoot":       common.Hash{},     // inapplicable to BLK
-		"blobGasUsed":           hexutil.Uint64(0), // inapplicable to BLK
+		"withdrawalsRoot":       common.Hash{},     // inapplicable to BLT
+		"blobGasUsed":           hexutil.Uint64(0), // inapplicable to BLT
 	}
 	return result, nil
 }

@@ -19,7 +19,7 @@ func GenerateIavlHashCmd() *cobra.Command {
 		Short: "A tool to scan full IAVL archive database and generate a hash for every N blocks per module",
 		Run:   generateIavlHash,
 	}
-	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLK home directory")
+	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLT home directory")
 	cmd.PersistentFlags().Int64("blocks-interval", 1_000_000, "Generate a hash every N blocks")
 	return cmd
 }
@@ -42,7 +42,7 @@ func GeneratePebbleHashCmd() *cobra.Command {
 		Short: "A tool to scan full Pebble archive database and generate a hash for every N blocks per module",
 		Run:   generatePebbleHash,
 	}
-	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLK home directory")
+	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLT home directory")
 	cmd.PersistentFlags().Int64("blocks-interval", 1_000_000, "Generate a hash every N blocks")
 	cmd.PersistentFlags().Bool("backfill", false, "Whether to write block range hashes back to the database")
 	return cmd

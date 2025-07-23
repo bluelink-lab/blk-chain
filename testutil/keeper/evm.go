@@ -77,7 +77,7 @@ func MockAddressPair() (sdk.AccAddress, common.Address) {
 }
 
 func MockPrivateKey() cryptotypes.PrivKey {
-	// Generate a new BLK private key
+	// Generate a new BLT private key
 	entropySeed, _ := bip39.NewEntropy(256)
 	mnemonic, _ := bip39.NewMnemonic(entropySeed)
 	algo := hd.Secp256k1

@@ -35,13 +35,13 @@ quote = "USD"
 
 [account]
 address = "address"
-chain_id = "blk"
+chain_id = "blt"
 validator = "validator"
-prefix = "blk"
+prefix = "blt"
 
 [keyring]
 backend = "os"
-dir = "/root/.blk"
+dir = "/root/.blt"
 
 [rpc]
 grpc_endpoint = "localhost:9090"
@@ -53,7 +53,7 @@ enable_hostname = true
 enable_hostname_label = true
 enable_service_label = true
 enabled = true
-global_labels = [["chain-id", "blk-chain"]]
+global_labels = [["chain-id", "blt-chain"]]
 service_name = "price-feeder"
 type = "prometheus"
 

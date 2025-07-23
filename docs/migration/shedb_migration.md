@@ -9,7 +9,7 @@ your nodes can still run with the same old storage as before without performing 
 
 ## Prerequisite
 - Please update your golang version to 1.19+
-- BLK-Chain v3.6.0 or higher versions is required
+- BLT-Chain v3.6.0 or higher versions is required
 - Migrating to SheDB requires a full state sync which would wipe out all your existing data
 
 ## Hardware Recommendation

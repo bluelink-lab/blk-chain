@@ -355,7 +355,7 @@ func TestSendForUnlinkedReceiver(t *testing.T) {
 func TestMetadata(t *testing.T) {
 	k := &testkeeper.EVMTestApp.EvmKeeper
 	ctx := testkeeper.EVMTestApp.GetContextForDeliverTx([]byte{}).WithBlockTime(time.Now())
-	k.BankKeeper().SetDenomMetaData(ctx, banktypes.Metadata{Name: "BLK", Symbol: "ublt", Base: "ublt"})
+	k.BankKeeper().SetDenomMetaData(ctx, banktypes.Metadata{Name: "BLT", Symbol: "ublt", Base: "ublt"})
 	p, err := bank.NewPrecompile(k.BankKeeper(), bankkeeper.NewMsgServerImpl(k.BankKeeper()), k, k.AccountKeeper())
 	require.Nil(t, err)
 	statedb := state.NewDBImpl(ctx, k, true)
@@ -370,7 +370,7 @@ func TestMetadata(t *testing.T) {
 	require.Nil(t, err)
 	outputs, err := name.Outputs.Unpack(res)
 	require.Nil(t, err)
-	require.Equal(t, "BLK", outputs[0])
+	require.Equal(t, "BLT", outputs[0])
 
 	symbol, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).SymbolID)
 	require.Nil(t, err)

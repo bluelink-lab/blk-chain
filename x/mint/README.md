@@ -26,7 +26,7 @@ Every day, at a configured time (typically the start of the day), the daily mint
 
 The minting schedule, including the start date, end date, and `total_mint_amount`, can be updated through a governance proposal. This feature allows network participants to adjust the minting parameters as necessary in response to the network's needs and conditions.
 
-This flexibility ensures that the minting process can be adjusted and managed effectively over time, supporting the growth and sustainability of the BLK-chain network.
+This flexibility ensures that the minting process can be adjusted and managed effectively over time, supporting the growth and sustainability of the BLT-chain network.
 
 Note: Changes to the `total_mint_amount` or `remaining_mint_amont` after the start date will not impact tokens already minted.
 

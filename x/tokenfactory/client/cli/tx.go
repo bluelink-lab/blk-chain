@@ -26,7 +26,7 @@ const (
 	FlagAllowList            = "allow-list"
 	FlagAllowListDescription = "Path to the allow list JSON file with an array of addresses " +
 		"that are allowed to send/receive the token. The file should have the following format: {\"addresses\": " +
-		"[\"addr1\", \"addr2\"]}, where addr1 and addr2 are bech32 BLK native addresses or EVM addresses."
+		"[\"addr1\", \"addr2\"]}, where addr1 and addr2 are bech32 BLT native addresses or EVM addresses."
 )
 
 // GetTxCmd returns the transaction commands for this module

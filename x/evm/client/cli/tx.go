@@ -75,7 +75,7 @@ func GetTxCmd() *cobra.Command {
 func CmdAssociateAddress() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "associate-address [optional priv key hex] --rpc=<url> --from=<sender>",
-		Short: "associate EVM and BLK address for the sender",
+		Short: "associate EVM and BLT address for the sender",
 		Long:  "",
 		Args:  cobra.MaximumNArgs(1),
 		RunE: func(cmd *cobra.Command, args []string) (err error) {
@@ -512,7 +512,7 @@ func CmdCallPrecompile() *cobra.Command {
 func CmdDeployWSHE() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "deploy-wshe --from=<sender> --gas-fee-cap=<cap> --gas-limt=<limit> --evm-rpc=<url>",
-		Short: "Deploy ERC20 contract for a native BLK token",
+		Short: "Deploy ERC20 contract for a native BLT token",
 		Long:  "",
 		Args:  cobra.NoArgs,
 		RunE: func(cmd *cobra.Command, args []string) (err error) {

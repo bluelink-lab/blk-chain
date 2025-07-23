@@ -20,7 +20,7 @@ const (
 	defaultSrvReadTimeout  = 15 * time.Second
 	defaultProviderTimeout = 100 * time.Millisecond
 
-	// API sources for BLK native oracle price feed - examples include price of BTC, ETH - that applications on BLK can
+	// API sources for BLT native oracle price feed - examples include price of BTC, ETH - that applications on BLT can
 	// use
 	ProviderKraken   = "kraken"
 	ProviderBinance  = "binance"
@@ -39,8 +39,8 @@ var (
 	// ErrEmptyConfigPath defines a sentinel error for an empty config path.
 	ErrEmptyConfigPath = errors.New("empty configuration file path")
 
-	// SupportedProviders is a mapping of all API sources for BLK native oracle price feed - examples include price of
-	// BTC, ETH - that applications on BLK can use
+	// SupportedProviders is a mapping of all API sources for BLT native oracle price feed - examples include price of
+	// BTC, ETH - that applications on BLT can use
 	SupportedProviders = map[string]struct{}{
 		ProviderKraken:   {},
 		ProviderBinance:  {},

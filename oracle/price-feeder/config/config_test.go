@@ -161,7 +161,7 @@ providers = [
 ]
 
 [[currency_pairs]]
-base = "BLK"
+base = "BLT"
 chain_denom = "ublt"
 quote = "USDT"
 providers = [
@@ -184,7 +184,7 @@ providers = [
 address = "she15nejfgcaanqpw25ru4arvfd0fwy6j8clccvwx4"
 validator = "shevalcons14rjlkfzp56733j5l5nfk6fphjxymgf8mj04d5p"
 chain_id = "she-local-testnet"
-prefix = "blk"
+prefix = "blt"
 
 [keyring]
 backend = "test"
@@ -253,7 +253,7 @@ providers = [
 ]
 
 [[currency_pairs]]
-base = "BLK"
+base = "BLT"
 chain_denom = "ublt"
 quote = "USDT"
 providers = [
@@ -276,7 +276,7 @@ providers = [
 address = "she15nejfgcaanqpw25ru4arvfd0fwy6j8clccvwx4"
 validator = "shevalcons14rjlkfzp56733j5l5nfk6fphjxymgf8mj04d5p"
 chain_id = "she-local-testnet"
-prefix = "blk"
+prefix = "blt"
 
 [keyring]
 backend = "test"
@@ -408,7 +408,7 @@ providers = [
 ]
 
 [[currency_pairs]]
-base = "blk"
+base = "blt"
 chain_denom = "ublt"
 quote = "USDT"
 providers = [
@@ -431,7 +431,7 @@ providers = [
 address = "she15nejfgcaanqpw25ru4arvfd0fwy6j8clccvwx4"
 validator = "shevalcons14rjlkfzp56733j5l5nfk6fphjxymgf8mj04d5p"
 chain_id = "she-local-testnet"
-prefix = "blk"
+prefix = "blt"
 
 [keyring]
 backend = "test"

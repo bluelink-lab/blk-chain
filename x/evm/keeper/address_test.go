@@ -96,7 +96,7 @@ func TestEvmAddressHandler_GetSheAddressFromString(t *testing.T) {
 		wantErrMsg string
 	}{
 		{
-			name: "returns associated BLK address if input address is a valid 0x and associated",
+			name: "returns associated BLT address if input address is a valid 0x and associated",
 			args: args{
 				ctx:     ctx,
 				address: evmAddr.String(),
@@ -104,7 +104,7 @@ func TestEvmAddressHandler_GetSheAddressFromString(t *testing.T) {
 			want: sheAddr,
 		},
 		{
-			name: "returns default BLK address if input address is a valid 0x not associated",
+			name: "returns default BLT address if input address is a valid 0x not associated",
 			args: args{
 				ctx:     ctx,
 				address: notAssociatedEvmAddr.String(),
@@ -112,7 +112,7 @@ func TestEvmAddressHandler_GetSheAddressFromString(t *testing.T) {
 			want: castAddr,
 		},
 		{
-			name: "returns BLK address if input address is a valid bech32 address",
+			name: "returns BLT address if input address is a valid bech32 address",
 			args: args{
 				ctx:     ctx,
 				address: sheAddr.String(),

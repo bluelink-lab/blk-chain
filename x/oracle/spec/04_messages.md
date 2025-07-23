@@ -10,7 +10,7 @@ order: 4
 
 `Denom` is the denomination of the currency for which the vote is being cast. For example, if the voter wishes to submit a prevote for the usd, then the correct `Denom` is `uusd`.
 
-The exchange rate used in the hash must be the open market exchange rate of BLK, with respect to the denomination matching `Denom`. For example, if `Denom` is `uusd` and the going exchange rate for BLK is 1 USD, then "1" must be used as the exchange rate, as `1 ublt = 1 uusd`.
+The exchange rate used in the hash must be the open market exchange rate of BLT, with respect to the denomination matching `Denom`. For example, if `Denom` is `uusd` and the going exchange rate for BLT is 1 USD, then "1" must be used as the exchange rate, as `1 ublt = 1 uusd`.
 
 `Feeder` (`terra-` address) is used if the validator wishes to delegate oracle vote signing to a separate key (who "feeds" the price in lieu of the operator) to de-risk exposing their validator signing key.
 
@@ -36,11 +36,11 @@ The `MsgExchangeRateVote` contains the actual exchange rate vote. The `Salt` par
 
 ```go
 // Deprecated: normal prevote and vote will be deprecated after columbus-4
-// MsgExchangeRateVote - struct for voting on the exchange rate of BLK denominated in various BLK assets.
-// For example, if the validator believes that the effective exchange rate of BLK in USD is 10.39, that's
+// MsgExchangeRateVote - struct for voting on the exchange rate of BLT denominated in various BLT assets.
+// For example, if the validator believes that the effective exchange rate of BLT in USD is 10.39, that's
 // what the exchange rate field would be, and if 1213.34 for KRW, same.
 type MsgExchangeRateVote struct {
-	ExchangeRate sdk.Dec        // the effective rate of BLK in {Denom}
+	ExchangeRate sdk.Dec        // the effective rate of BLT in {Denom}
 	Salt         string
 	Denom        string
 	Feeder       sdk.AccAddress
@@ -52,7 +52,7 @@ type MsgExchangeRateVote struct {
 
 Validators may also elect to delegate voting rights to another key to prevent the block signing key from being kept online. To do so, they must submit a `MsgDelegateFeedConsent`, delegating their oracle voting rights to a `Delegate` that sign `MsgExchangeRatePrevote` and `MsgExchangeRateVote` on behalf of the validator.
 
-> Delegate validators will likely require you to deposit some funds (in BLK or BLK) which they can use to pay fees, sent in a separate MsgSend. This agreement is made off-chain and not enforced by the BLK protocol.
+> Delegate validators will likely require you to deposit some funds (in BLT or BLT) which they can use to pay fees, sent in a separate MsgSend. This agreement is made off-chain and not enforced by the BLT protocol.
 
 The `Operator` field contains the operator address of the validator (prefixed `terravaloper-`). The `Delegate` field is the account address (prefixed `terra-`) of the delegate account that will be submitting exchange rate related votes and prevotes on behalf of the `Operator`.
 
@@ -84,7 +84,7 @@ type MsgAggregateExchangeRatePrevote struct {
 The `MsgAggregateExchangeRateVote` contains the actual exchange rates vote. The `Salt` parameter must match the salt used to create the prevote, otherwise the voter cannot be rewarded.
 
 ```go
-// MsgAggregateExchangeRateVote - struct for voting on the exchange rates of BLK denominated in various BLK assets.
+// MsgAggregateExchangeRateVote - struct for voting on the exchange rates of BLT denominated in various BLT assets.
 type MsgAggregateExchangeRateVote struct {
 	Salt          string
 	ExchangeRates string

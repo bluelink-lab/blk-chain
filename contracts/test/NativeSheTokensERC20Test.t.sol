@@ -48,7 +48,7 @@ contract NativeSheTokensERC20Test is Test {
     function setUp() public {
         alice = makeAddr("alice");
         bob = makeAddr("bob");
-        sheERC20 = new NativeSheTokensERC20("ublt", "BLK", "SHESYMBOL", 6);
+        sheERC20 = new NativeSheTokensERC20("ublt", "BLT", "SHESYMBOL", 6);
 
         MockBank mockBank = new MockBank();
         vm.etch(BANK_PRECOMPILE_ADDRESS, address(mockBank).code);
@@ -59,7 +59,7 @@ contract NativeSheTokensERC20Test is Test {
     }
 
     function testName() public {
-        assertEq(sheERC20.name(), "BLK");
+        assertEq(sheERC20.name(), "BLT");
     }
 
     function testSymbol() public {

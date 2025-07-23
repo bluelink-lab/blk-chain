@@ -15,7 +15,7 @@ A well funded `admin` account must be available on the local keyring.
 If running on the live chains, the tests rely on a `deployer` account, which has to have sufficient funds on the chain the test is running on.
 The deployer mnemonic must be stored as an environment variable: DAPP_TESTS_MNEMONIC.
 On the test pipelines, the account used is:
-- Deployer BLK address: `she1rtpakm7w9egh0n7xngzm6vrln0szv6yeva6hhn`
+- Deployer BLT address: `she1rtpakm7w9egh0n7xngzm6vrln0szv6yeva6hhn`
 - Deployer EVM address: `0x4D952b770C3a0B096e739399B40263D0b516d406`
 
 ## Tests

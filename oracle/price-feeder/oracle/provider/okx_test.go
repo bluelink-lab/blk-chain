@@ -57,9 +57,9 @@ func TestOkxProvider_GetTickerPrices(t *testing.T) {
 			Vol24h: volume,
 		}
 
-		syncMap["BLK-USDT"] = OkxTickerPair{
+		syncMap["BLT-USDT"] = OkxTickerPair{
 			OkxInstID: OkxInstID{
-				InstID: "BLK-USDT",
+				InstID: "BLT-USDT",
 			},
 			Last:   lastPriceShe,
 			Vol24h: volume,
@@ -68,7 +68,7 @@ func TestOkxProvider_GetTickerPrices(t *testing.T) {
 		p.tickers = syncMap
 		prices, err := p.GetTickerPrices(
 			types.CurrencyPair{Base: "ATOM", Quote: "USDT"},
-			types.CurrencyPair{Base: "BLK", Quote: "USDT"},
+			types.CurrencyPair{Base: "BLT", Quote: "USDT"},
 		)
 		require.NoError(t, err)
 		require.Len(t, prices, 2)

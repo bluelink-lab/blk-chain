@@ -35976,8 +35976,8 @@ paths:
                     type: string
                     format: int64
                 title: >-
-                  exchange_rate defines the exchange rate of BLK denominated in
-                  various BLK
+                  exchange_rate defines the exchange rate of BLT denominated in
+                  various BLT
             description: |-
               QueryExchangeRateResponse is response type for the
               Query/ExchangeRate RPC method.
@@ -61691,8 +61691,8 @@ definitions:
             type: string
             format: int64
         title: >-
-          exchange_rate defines the exchange rate of BLK denominated in various
-          BLK
+          exchange_rate defines the exchange rate of BLT denominated in various
+          BLT
     description: |-
       QueryExchangeRateResponse is response type for the
       Query/ExchangeRate RPC method.

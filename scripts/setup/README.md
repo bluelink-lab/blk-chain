@@ -1,10 +1,10 @@
-# BLK Network Setup Script
+# BLT Network Setup Script
 
-Setup script for decentralized launches of BLK networks.
+Setup script for decentralized launches of BLT networks.
 
 ## setup-validator
 
-run this if you're trying to join an existing network and just need to provision the validator node. Once provisioned, you'll need to request/get BLK tokens in order to stake as a validator
+run this if you're trying to join an existing network and just need to provision the validator node. Once provisioned, you'll need to request/get BLT tokens in order to stake as a validator
 
 ## prepare-genesis
 
@@ -22,7 +22,7 @@ blkd
 
 ```
 [Unit]
-Description=BLK Node
+Description=BLT Node
 After=network.target
 
 [Service]

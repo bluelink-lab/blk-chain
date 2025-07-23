@@ -2,16 +2,16 @@
 
 ## Introduction
 
-Security researchers are essential in identifying vulnerabilities that may impact the BLK ecosystem. If you have discovered a security vulnerability in the BLK chain or any repository managed by BLK, we encourage you to notify us using one of the methods outlined below.
+Security researchers are essential in identifying vulnerabilities that may impact the BLT ecosystem. If you have discovered a security vulnerability in the BLT chain or any repository managed by BLT, we encourage you to notify us using one of the methods outlined below.
 
 ### Guidelines for Responsible Vulnerability Testing and Reporting
 
 1. **Refrain from testing vulnerabilities on our publicly accessible environments**, including but not limited to:
 
-- BLK mainnet `blk-mainnet`
-- BLK frontend
-- BLK public testnets
-- BLK testnet frontend
+- BLT mainnet `blk-mainnet`
+- BLT frontend
+- BLT public testnets
+- BLT testnet frontend
 
 2. **Avoid reporting security vulnerabilities through public channels, including GitHub issues**
 
@@ -48,11 +48,11 @@ During the vulnerability disclosure process, we ask security researchers to keep
 During this time:
 
 - Avoid exploiting any vulnerabilities you discover.
-- Demonstrate good faith by not disrupting or degrading BLK's services.
+- Demonstrate good faith by not disrupting or degrading BLT's services.
 
 ## Feature request
 
-For a feature request, e.g. module inclusion, please make a GitHub issue. Clearly state your use case and what value it will bring to other users or developers on BLK.
+For a feature request, e.g. module inclusion, please make a GitHub issue. Clearly state your use case and what value it will bring to other users or developers on BLT.
 
 ## Severity Characterization
 

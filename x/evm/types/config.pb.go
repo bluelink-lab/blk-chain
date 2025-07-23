@@ -25,7 +25,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 // XXTime fields indicate upgrade timestamps. For example, a ShanghaiTime
 // of 42198537129 means the chain upgraded to the Shanghai version at timestamp 42198537129.
-// A value of 0 means the upgrade is included in the genesis of the EVM on BLK.
+// A value of 0 means the upgrade is included in the genesis of the EVM on BLT.
 // -1 means upgrade not reached yet.
 type ChainConfig struct {
 	CancunTime int64 `protobuf:"varint,1,opt,name=cancun_time,json=cancunTime,proto3" json:"cancun_time,omitempty" yaml:"cancun_time"`

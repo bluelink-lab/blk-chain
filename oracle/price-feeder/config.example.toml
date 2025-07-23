@@ -34,7 +34,7 @@ base = "ATOM"
 threshold = "2"
 
 [[deviation_thresholds]]
-base = "BLK"
+base = "BLT"
 threshold = "2"
 
 [[currency_pairs]]
@@ -101,7 +101,7 @@ providers = [
 quote = "USD"
 
 [[currency_pairs]]
-base = "BLK"
+base = "BLT"
 chain_denom = "ublt"
 providers = [
   "binance",
@@ -111,7 +111,7 @@ providers = [
 quote = "USDT"
 
 [[currency_pairs]]
-base = "BLK"
+base = "BLT"
 chain_denom = "ublt"
 providers = [
   "kraken",
@@ -135,7 +135,7 @@ quote = "USDT"
 address = "<FEEDER_ADDR>"
 chain_id = "<CHAIN_ID>"
 validator = "<VALIDATOR_ADDR>"
-prefix = "blk"
+prefix = "blt"
 
 [keyring]
 backend = "os"

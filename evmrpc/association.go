@@ -91,7 +91,7 @@ func (t *AssociationAPI) GetSheAddress(_ context.Context, ethAddress common.Addr
 	defer recordMetrics("she_getSheAddress", t.connectionType, startTime, returnErr == nil)
 	sheAddress, found := t.keeper.GetSheAddress(t.ctxProvider(LatestCtxHeight), ethAddress)
 	if !found {
-		return "", fmt.Errorf("failed to find BLK address for %s", ethAddress.Hex())
+		return "", fmt.Errorf("failed to find BLT address for %s", ethAddress.Hex())
 	}
 
 	return sheAddress.String(), nil

@@ -64,7 +64,7 @@ describe("EVM Precompile Tester", function () {
                 expect(error).to.have.property('message').that.includes('execution reverted');
             }
             
-            const message = `Please sign this message to link your EVM and BLK addresses. No BLK will be spent as a result of this signature.\n\n`;
+            const message = `Please sign this message to link your EVM and BLT addresses. No BLT will be spent as a result of this signature.\n\n`;
             const messageLength = Buffer.from(message, 'utf8').length;
             const signatureHex = await unassociatedWallet.signMessage(message);
 

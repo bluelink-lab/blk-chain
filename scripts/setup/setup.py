@@ -78,7 +78,7 @@ def validate_clean_state():
 
 
 def validate_version(version):
-    """Validate that the version of the BLK blockchain software is correct."""
+    """Validate that the version of the BLT blockchain software is correct."""
     version_json_output = json.loads(run_command('blkd version --long --output json'))
     if version_json_output['version'] != version:
         raise RuntimeError(f'Expected version {version} but got {version_json_output["version"]}')
@@ -120,19 +120,19 @@ def output_price_feeder_config(chain_id):
     logging.info('Price feeder config file created at %s', config_path)
 
 def cleanup_she():
-    """Cleanup the BLK state."""
+    """Cleanup the BLT state."""
     if os.path.exists(SHE_ROOT_DIR):
         backup_file = f'{SHE_ROOT_DIR}_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}'
         copytree(f'{SHE_ROOT_DIR}', backup_file)
-        logging.info('Backed up BLK state to %s', backup_file)
+        logging.info('Backed up BLT state to %s', backup_file)
     run_command(f'rm -rf {SHE_ROOT_DIR}')
     logging.info('Removed %s directory.', SHE_ROOT_DIR)
 
 def init_she(chain_id, moniker):
-    """Initialize the BLK blockchain."""
-    logging.info('Initializing BLK blockchain...')
+    """Initialize the BLT blockchain."""
+    logging.info('Initializing BLT blockchain...')
     run_command(f'blkd init {moniker} --chain-id {chain_id}')
-    logging.info('Initialized BLK blockchain.')
+    logging.info('Initialized BLT blockchain.')
 
 
 def save_content_to_file(content, file_path):
@@ -150,7 +150,7 @@ def try_shed_delete_key(account_name, key_password):
 
 
 def shed_add_key(account_name):
-    """Add a key to the BLK blockchain."""
+    """Add a key to the BLT blockchain."""
     key_password = getpass(f'Please enter a password for the account={account_name}: \n')
     try_shed_delete_key(account_name, key_password)
     logging.info("Deleted existing key if it exists.")
@@ -171,7 +171,7 @@ def shed_add_key(account_name):
     return address, mnemonic
 
 def add_genesis_account(account_name, starting_balance):
-    """Add a genesis account to the BLK blockchain."""
+    """Add a genesis account to the BLT blockchain."""
     address = account_cache[account_name].address
     run_command(f'blkd add-genesis-account {address} {starting_balance}')
     logging.info('Added genesis account %s with address %s', account_name, address)

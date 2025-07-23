@@ -41,7 +41,7 @@ func CustomQuerier(qp *QueryPlugin) func(ctx sdk.Context, request json.RawMessag
 		case StakingExtRoute:
 			return qp.HandleStakingExtQuery(ctx, contractQuery.QueryData)
 		default:
-			return nil, wasmvmtypes.UnsupportedRequest{Kind: "Unknown BLK Query Route"}
+			return nil, wasmvmtypes.UnsupportedRequest{Kind: "Unknown BLT Query Route"}
 		}
 	}
 }
