@@ -4,8 +4,8 @@
 NODE_ID=${ID:-0}
 ARCH=$(uname -m)
 
-# Build shed
-echo "Building shed from local branch"
+# Build blkd
+echo "Building blkd from local branch"
 git config --global --add safe.directory /she-protocol/she-chain
 export LEDGER_ENABLED=false
 make clean

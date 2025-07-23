@@ -16,9 +16,9 @@ run this if you're trying to setup a price feeder service on a validator node po
 
 ## Running Services
 
-For shed and price-feeder processes, it's reccomended to run as a systemd service.
+For blkd and price-feeder processes, it's reccomended to run as a systemd service.
 
-shed
+blkd
 
 ```
 [Unit]
@@ -28,7 +28,7 @@ After=network.target
 [Service]
 User=root
 Type=simple
-ExecStart=/root/go/bin/shed start --chain-id ${CHAIN_ID}
+ExecStart=/root/go/bin/blkd start --chain-id ${CHAIN_ID}
 Restart=always
 LimitNOFILE=6553500
 

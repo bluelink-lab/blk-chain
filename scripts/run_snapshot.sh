@@ -14,20 +14,20 @@ CHAIN_ID=$3
 SHE_DIR="$HOME/.she"
 CONFIG_FILE="$SHE_DIR/config/app.toml"
 SNAPSHOT_DIR="$HOME/snapshots"
-SHED_BIN="$HOME/go/bin/shed"
+SHED_BIN="$HOME/go/bin/blkd"
 
-# Ensure the shed binary exists
+# Ensure the blkd binary exists
 if [ ! -x "$SHED_BIN" ]; then
-    echo "Error: shed binary not found at $SHED_BIN"
+    echo "Error: blkd binary not found at $SHED_BIN"
     exit 1
 fi
 
-# Stop the shed service if it's managed by systemd
-if systemctl is-active --quiet shed; then
-    systemctl stop shed
-    echo "Stopped shed service."
+# Stop the blkd service if it's managed by systemd
+if systemctl is-active --quiet blkd; then
+    systemctl stop blkd
+    echo "Stopped blkd service."
 else
-    echo "shed service is not running."
+    echo "blkd service is not running."
 fi
 
 # Update pruning settings in the configuration file
@@ -56,8 +56,8 @@ do
     sed -i -e "s/halt-height = .*/halt-height = $HALT_HEIGHT/" "$CONFIG_FILE"
     echo "Set halt-height to $HALT_HEIGHT in $CONFIG_FILE."
 
-    # Start the shed node with tracing
-    echo "Starting shed node with chain ID $CHAIN_ID and halt height $HALT_HEIGHT."
+    # Start the blkd node with tracing
+    echo "Starting blkd node with chain ID $CHAIN_ID and halt height $HALT_HEIGHT."
     "$SHED_BIN" start --trace --chain-id "$CHAIN_ID" &
     SHED_PID=$!
 

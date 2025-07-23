@@ -33,7 +33,7 @@ This will start a 4 node she chain cluster as well as having the oracle price fe
 # If this is the first time or you want to rebuild the binary:
 make docker-cluster-start
 
-# If you have run docker-cluster-start and build/shed exist,
+# If you have run docker-cluster-start and build/blkd exist,
 # you can skip the build process to quick start by:
 make docker-cluster-start-skipbuild
 ```
@@ -41,7 +41,7 @@ All the logs and genesis files will be generated under the temporary build/gener
 
 ```sh
 # To monitor logs after cluster is started
-tail -f build/generated/logs/shed-0.log
+tail -f build/generated/logs/blkd-0.log
 ```
 
 **To ssh into a single node**
@@ -60,7 +60,7 @@ Requirement: Follow the above steps to start a 4 node docker cluster before star
 # Be sure to start up a 4-node cluster before you start a state sync node
 make docker-cluster-start
 # Wait for at least a few minutes till the latest block height exceed 500 (this can be changed via app.toml)
-shed status |jq
+blkd status |jq
 # Start up a state sync node
 make run-rpc-node
 ```

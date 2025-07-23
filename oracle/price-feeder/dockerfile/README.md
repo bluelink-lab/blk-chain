@@ -88,7 +88,7 @@ EOF
 
 ## Recover oracle `keyring-file` to local file
 ```bash
-shed keys add oracle --keyring-backend file --recover
+blkd keys add oracle --keyring-backend file --recover
 ```
 In the she home directory (~/.she/) you should see the `keyring-file` folder.  This will be mounted as a volume when running the docker container.
 

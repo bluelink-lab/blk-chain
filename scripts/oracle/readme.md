@@ -12,7 +12,7 @@ python3 setup.py install
 
 Check the current oracle token pairs whitelist, note that current oracle only accepts whitelisted token prices. Example:
 ```
-shed query oracle params
+blkd query oracle params
 ➜ params:
     lookback_duration: "3600"
     min_valid_per_window: "0.050000000000000000"
@@ -39,7 +39,7 @@ tail -f nohup.out
 
 After successfully submit the prices, you should see the current price feeds from
 ```
-shed query oracle exchange-rates
+blkd query oracle exchange-rates
 ```
 
 If you want to kill the background oracle script, do

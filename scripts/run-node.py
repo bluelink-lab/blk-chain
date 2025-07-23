@@ -63,7 +63,7 @@ def print_ascii_and_intro():
 
 Welcome to the BLK node installer!
 For more information please visit docs.she.io
-This tool will download the shed binary from she-binaries and wipe any existing state.
+This tool will download the blkd binary from she-binaries and wipe any existing state.
 Please backup any important existing data before proceeding.
 """)
 
@@ -216,11 +216,11 @@ def compile_and_install_release(version):
 def install_release(version):
     try:
         base_url = f"https://github.com/alexander-she/she-binaries/releases/download/{version}/"
-        tag = f"shed-{version}-linux-amd64"
+        tag = f"blkd-{version}-linux-amd64"
         binary_url = f"{base_url}{tag}"
         sha256_url = f"{base_url}{tag}.sha256"
         install_dir = "/usr/local/bin"
-        binary_path = os.path.join(install_dir, "shed")
+        binary_path = os.path.join(install_dir, "blkd")
 
         logging.info(f"Downloading binary from {binary_url}")
         binary_response = requests.get(binary_url)
@@ -235,7 +235,7 @@ def install_release(version):
         logging.info(f"Expected SHA256 hash: {sha256_hash}")
 
         # Save the binary to a temporary file
-        temp_binary_path = "/tmp/shed-binary"
+        temp_binary_path = "/tmp/blkd-binary"
         with open(temp_binary_path, "wb") as binary_file:
             binary_file.write(binary_response.content)
 
@@ -250,7 +250,7 @@ def install_release(version):
         else:
             logging.info("SHA256 hash verification passed.")
 
-        # Move the binary to the install directory and rename it to 'shed'
+        # Move the binary to the install directory and rename it to 'blkd'
         logging.info(f"Moving binary to {binary_path}")
         subprocess.run(["sudo", "mv", temp_binary_path, binary_path], check=True)
 
@@ -258,7 +258,7 @@ def install_release(version):
         logging.info(f"Setting executable permissions for {binary_path}")
         subprocess.run(["sudo", "chmod", "+x", binary_path], check=True)
 
-        logging.info(f"Successfully installed 'shed' version: {version} to {binary_path}")
+        logging.info(f"Successfully installed 'blkd' version: {version} to {binary_path}")
 
     except requests.HTTPError as http_err:
         logging.error(f"HTTP error occurred: {http_err}")
@@ -367,11 +367,11 @@ def main():
         home_dir = os.path.expanduser('~/.she')
 
         if env == "local":
-            # Clean up previous data, init shed with given chain ID and moniker
+            # Clean up previous data, init blkd with given chain ID and moniker
             compile_and_install_release(version)
             
             subprocess.run(["rm", "-rf", home_dir])
-            subprocess.run(["shed", "init", moniker, "--chain-id", chain_id], check=True)
+            subprocess.run(["blkd", "init", moniker, "--chain-id", chain_id], check=True)
 
             logging.info("Running local initialization script...")
             local_script_path = os.path.expanduser('~/she-chain/scripts/initialize_local_chain.sh')
@@ -382,9 +382,9 @@ def main():
             # Install selected release
             install_release(version)
 
-            # Clean up previous data, init shed with given chain ID and moniker
+            # Clean up previous data, init blkd with given chain ID and moniker
             subprocess.run(["rm", "-rf", home_dir])
-            subprocess.run(["shed", "init", moniker, "--chain-id", chain_id], check=True)
+            subprocess.run(["blkd", "init", moniker, "--chain-id", chain_id], check=True)
             subprocess.run(["sudo", "mount", "-t", "tmpfs", "-o", "size=12G,mode=1777", "overflow", "/tmp"], check=True)
 
             # Fetch state-sync params and persistent peers
@@ -435,9 +435,9 @@ def main():
                 with open(app_config_path, 'w') as file:
                     file.write(app_data)
 
-        # Start shed
-        logging.info("Starting shed...")
-        run_command("shed start")
+        # Start blkd
+        logging.info("Starting blkd...")
+        run_command("blkd start")
     except KeyboardInterrupt:
         logging.info("Main process interrupted by user. Exiting gracefully...")
 

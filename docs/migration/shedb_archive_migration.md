@@ -12,10 +12,10 @@ The overall process will work as follows:
 1. Update config to enable SheDB (state committment + state store)
 2. Stop the node and Run SC Migration
 3. Note down MIGRATION_HEIGHT
-4. Re start shed with `--migrate-iavl` enabled (migrating state store in background)
+4. Re start blkd with `--migrate-iavl` enabled (migrating state store in background)
 5. Verify migration at various sampled heights once state store is complete
-6. Restart shed normally and verify node runs properly
-7. Clear out iavl and restart shed normally, now only using SheDB fully
+6. Restart blkd normally and verify node runs properly
+7. Clear out iavl and restart blkd normally, now only using SheDB fully
 
 
 ## Requirements
@@ -95,13 +95,13 @@ ss-import-num-workers = 1
 ### Step 2: Stop the node and Run SC Migration
 
 ```bash
-systemctl stop shed
-shed tools migrate-iavl --home-dir /root/.she
+systemctl stop blkd
+blkd tools migrate-iavl --home-dir /root/.she
 ```
 
 You can also run this sc migration in the background:
 ```bash
-shed tools migrate-iavl --home-dir /root/.she > migrate-sc.log 2>&1 &
+blkd tools migrate-iavl --home-dir /root/.she > migrate-sc.log 2>&1 &
 ```
 
 This may take a couple hours to run. You will see logs of form
@@ -126,12 +126,12 @@ MIGRATION_HEIGHT=<>
 ```
 
 
-### Step 4: Restart shed with background SS migration
+### Step 4: Restart blkd with background SS migration
 
 If you are using systemd, make sure to update your service configuration to use this command.
 Always be sure to run with these flags until migration is complete.
 ```bash
-shed start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id blk-mainnet
+blkd start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id blk-mainnet
 ```
 
 Shed will run normally and the migration will run in the background. Data from iavl
@@ -156,33 +156,33 @@ all keys in iavl at a specific height and verify they exist in State Store.
 
 You should run the following command for a selection of different heights
 ```bash
-shed tools verify-migration --version $VERIFICATION_HEIGHT
+blkd tools verify-migration --version $VERIFICATION_HEIGHT
 ```
 
 This will output `Verification Succeeded` if the verification was successful.
 
 
-### Step 6: Restart shed normally and verify node runs properly
-Once the verification has completed, we can restart shed normally and verify
+### Step 6: Restart blkd normally and verify node runs properly
+Once the verification has completed, we can restart blkd normally and verify
 that the node operates.
 
 If you are using systemd, make sure to update your service configuration to use this command:
 ```bash
-shed start --chain-id blk-mainnet
+blkd start --chain-id blk-mainnet
 ```
 
 Note how we are not using the `--migrate-iavl` and `--migration-height` flags.
 We can let this run for a couple hours and verify node oeprates normally.
 
 
-### Step 7: Clear out Iavl and restart shed
+### Step 7: Clear out Iavl and restart blkd
 Once it has been confirmed that the node has been running normally,
-we can proceed to clear out the iavl and restart shed normally.
+we can proceed to clear out the iavl and restart blkd normally.
 
 ```bash
-systemctl stop shed
+systemctl stop blkd
 rm -rf ~/.she/data/application.db
-shed start --chain-id blk-mainnet
+blkd start --chain-id blk-mainnet
 ```
 
 
@@ -206,7 +206,7 @@ The state store migration can be stopped and restarted at any time. The migratio
 process saves the latest `module` and `key` written to State Store (pebbledb) and will
 automatically resume the migration from that latest key once restarted.
 
-All one needs to do is restart shed with the migration command as in step 4
+All one needs to do is restart blkd with the migration command as in step 4
 ```bash
-shed start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id blk-mainnet
+blkd start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id blk-mainnet
 ```

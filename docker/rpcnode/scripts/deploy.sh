@@ -13,12 +13,12 @@ echo "export PATH=$GOBIN:$PATH:/usr/local/go/bin:$BUILD_PATH" >> /root/.bashrc
 /bin/bash -c "source /root/.bashrc"
 mkdir -p $GOBIN
 
-# Step 1 build shed
+# Step 1 build blkd
 if [ -z "$SKIP_BUILD" ]
 then
   /usr/bin/build.sh
 fi
-cp build/shed "$GOBIN"/
+cp build/blkd "$GOBIN"/
 
 # Run init to set up state sync configurations
 /usr/bin/configure_init.sh

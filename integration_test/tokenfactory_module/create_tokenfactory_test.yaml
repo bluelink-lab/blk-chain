@@ -1,39 +1,39 @@
 - name: Test creating a denom
   inputs:
     # Get admin
-    - cmd: printf "12345678\n" | shed keys list --output json | jq ".[] | select (.name==\"admin\")" | jq -r .address
+    - cmd: printf "12345678\n" | blkd keys list --output json | jq ".[] | select (.name==\"admin\")" | jq -r .address
       env: ADMIN_ADDR
     # create new admin addr
-    - cmd: printf "12345678\ny\n" | shed keys add new_admin_addr --output json | jq -r ".address"
+    - cmd: printf "12345678\ny\n" | blkd keys add new_admin_addr --output json | jq -r ".address"
       env: NEW_ADMIN_ADDR
     # create uuid for tokenfactory denom
     - cmd: uuidgen
       env: TKF_UUID
     # Create denom
-    - cmd: printf "12345678\n" | shed tx tokenfactory create-denom $TKF_UUID --from admin --fees 2000ushe -y -b block
+    - cmd: printf "12345678\n" | blkd tx tokenfactory create-denom $TKF_UUID --from admin --fees 2000ushe -y -b block
     # Query various fields about denom
-    - cmd: shed q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .base
+    - cmd: blkd q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .base
       env: BASE
-    - cmd: shed q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .name
+    - cmd: blkd q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .name
       env: NAME
-    - cmd: shed q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .symbol
+    - cmd: blkd q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .symbol
       env: SYMBOL
-    - cmd: shed q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .display
+    - cmd: blkd q bank denom-metadata --output json | jq .metadatas | jq ".[] | select (.base==\"factory/${ADMIN_ADDR}/${TKF_UUID}\")" | jq -r .display
       env: DISPLAY
     # mint some token
-    - cmd: printf "12345678\n" | shed tx tokenfactory mint 100$NAME --from admin -b block -y --fees 2000ushe
+    - cmd: printf "12345678\n" | blkd tx tokenfactory mint 100$NAME --from admin -b block -y --fees 2000ushe
     # query balance
-    - cmd: shed q bank balances $ADMIN_ADDR --denom $NAME --output json | jq -r ".amount"
+    - cmd: blkd q bank balances $ADMIN_ADDR --denom $NAME --output json | jq -r ".amount"
       env: MINTED_BALANCE
     # burn some token
-    - cmd: printf "12345678\n" | shed tx tokenfactory burn 60$NAME --from admin -b block -y --fees 2000ushe
+    - cmd: printf "12345678\n" | blkd tx tokenfactory burn 60$NAME --from admin -b block -y --fees 2000ushe
     # query balance after burn
-    - cmd: shed q bank balances $ADMIN_ADDR --denom $NAME --output json | jq -r ".amount"
+    - cmd: blkd q bank balances $ADMIN_ADDR --denom $NAME --output json | jq -r ".amount"
       env: BALANCE_AFTER_BURN
     # change admin
-    - cmd: printf "12345678\n" | shed tx tokenfactory change-admin $NAME $NEW_ADMIN_ADDR --from admin -b block -y --fees 2000ushe
+    - cmd: printf "12345678\n" | blkd tx tokenfactory change-admin $NAME $NEW_ADMIN_ADDR --from admin -b block -y --fees 2000ushe
     # query balance after burn
-    - cmd: shed q tokenfactory denom-authority-metadata $NAME --output json | jq -r ".authority_metadata.admin"
+    - cmd: blkd q tokenfactory denom-authority-metadata $NAME --output json | jq -r ".authority_metadata.admin"
       env: NEW_ADMIN
   verifiers:
     # All fields should be populated and match the base name

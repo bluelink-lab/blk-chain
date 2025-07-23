@@ -79,7 +79,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 		WithViper("BLK")
 
 	rootCmd := &cobra.Command{
-		Use:   "shed",
+		Use:   "blkd",
 		Short: "Start she app",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			// set the default command outputs

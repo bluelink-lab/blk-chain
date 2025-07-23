@@ -30,15 +30,15 @@ keyname=admin
 # clean up old she directory
 rm -rf ~/.she
 echo "Building..."
-#install shed
+#install blkd
 make install
 # initialize chain with chain ID and add the first key
-~/go/bin/shed init demo --chain-id she-chain
-~/go/bin/shed keys add $keyname --keyring-backend test
+~/go/bin/blkd init demo --chain-id she-chain
+~/go/bin/blkd keys add $keyname --keyring-backend test
 # add the key as a genesis account with massive balances of several different tokens
-~/go/bin/shed add-genesis-account $(~/go/bin/shed keys show $keyname -a --keyring-backend test) 100000000000000000000ushe,100000000000000000000uusdc,100000000000000000000uatom --keyring-backend test
+~/go/bin/blkd add-genesis-account $(~/go/bin/blkd keys show $keyname -a --keyring-backend test) 100000000000000000000ushe,100000000000000000000uusdc,100000000000000000000uatom --keyring-backend test
 # gentx for account
-~/go/bin/shed gentx $keyname 7000000000000000ushe --chain-id she-chain --keyring-backend test
+~/go/bin/blkd gentx $keyname 7000000000000000ushe --chain-id she-chain --keyring-backend test
 # add validator information to genesis file
 KEY=$(jq '.pub_key' ~/.she/config/priv_validator_key.json -c)
 jq '.validators = [{}]' ~/.she/config/genesis.json > ~/.she/config/tmp_genesis.json
@@ -50,7 +50,7 @@ echo "Creating Accounts"
 # create 10 test accounts + fund them
 python3  loadtest/scripts/populate_genesis_accounts.py 20 loc
 
-~/go/bin/shed collect-gentxs
+~/go/bin/blkd collect-gentxs
 # update some params in genesis file for easier use of the chain localls (make gov props faster)
 cat ~/.she/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["max_deposit_period"]="60s"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.app_state["gov"]["voting_params"]["voting_period"]="30s"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
@@ -123,7 +123,7 @@ else
   exit 1
 fi
 
-~/go/bin/shed config keyring-backend test
+~/go/bin/blkd config keyring-backend test
 
 if [ $NO_RUN = 1 ]; then
   echo "No run flag set, exiting without starting the chain"
@@ -131,4 +131,4 @@ if [ $NO_RUN = 1 ]; then
 fi
 
 # start the chain with log tracing
-GORACE="log_path=/tmp/race/shed_race" ~/go/bin/shed start --trace --chain-id she-chain
+GORACE="log_path=/tmp/race/shed_race" ~/go/bin/blkd start --trace --chain-id she-chain

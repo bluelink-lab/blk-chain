@@ -8,8 +8,8 @@ attempt=0
 
 # Try for 1 minute to see if the service is NOT running
 while [ $attempt -lt $max_attempts ]; do
-    if pgrep -f "shed start --chain-id she" > /dev/null; then
-        BLOCK=$(shed status | jq '.SyncInfo.latest_block_height' -r)
+    if pgrep -f "blkd start --chain-id she" > /dev/null; then
+        BLOCK=$(blkd status | jq '.SyncInfo.latest_block_height' -r)
         # If it's stuck on block-1, then that's okay (last one to panic can get stuck without peers)
         if [[ "$BLOCK" -eq "$((TARGET_BLOCK_HEIGHT - 1))" ]]; then
             echo "PASS"

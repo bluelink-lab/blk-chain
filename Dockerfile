@@ -34,20 +34,20 @@ RUN set -eux; \
 COPY . /code/
 
 # force it to use static lib (from above) not standard libgo_cosmwasm.so file
-# then log output of file /code/build/shed
+# then log output of file /code/build/blkd
 # then ensure static linking
 RUN LEDGER_ENABLED=false BUILD_TAGS=muslc LINK_STATICALLY=true make build -B \
-  && file /code/build/shed \
+  && file /code/build/blkd \
   && echo "Ensuring binary is statically linked ..." \
-  && (file /code/build/shed | grep "statically linked")
+  && (file /code/build/blkd | grep "statically linked")
 
 # --------------------------------------------------------
 FROM alpine:3.18
 
-COPY --from=go-builder /code/build/shed /usr/bin/shed
+COPY --from=go-builder /code/build/blkd /usr/bin/blkd
 
 
 # rest server, tendermint p2p, tendermint rpc
 EXPOSE 1317 26656 26657
 
-CMD ["/usr/bin/shed", "version"]
+CMD ["/usr/bin/blkd", "version"]

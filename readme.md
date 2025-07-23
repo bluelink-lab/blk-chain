@@ -62,24 +62,24 @@ make install
 ```
 **Generate keys**
 
-* `shed keys add [key_name]`
+* `blkd keys add [key_name]`
 
-* `shed keys add [key_name] --recover` to regenerate keys with your mnemonic
+* `blkd keys add [key_name] --recover` to regenerate keys with your mnemonic
 
-* `shed keys add [key_name] --ledger` to generate keys with ledger device
+* `blkd keys add [key_name] --ledger` to generate keys with ledger device
 
 ## Validator setup instructions
 
-* Install shed binary
+* Install blkd binary
 
-* Initialize node: `shed init <moniker> --chain-id blk-testnet-1`
+* Initialize node: `blkd init <moniker> --chain-id blk-testnet-1`
 
 * Download the Genesis file: `wget https://github.com/she-protocol/testnet/raw/main/blk-testnet-1/genesis.json -P $HOME/.she/config/`
  
 * Edit the minimum-gas-prices in ${HOME}/.she/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01ushe"/g' $HOME/.she/config/app.toml`
 
-* Start shed by creating a systemd service to run the node in the background
-`nano /etc/systemd/system/shed.service`
+* Start blkd by creating a systemd service to run the node in the background
+`nano /etc/systemd/system/blkd.service`
 > Copy and paste the following text into your service file. Be sure to edit as you see fit.
 
 ```bash
@@ -91,7 +91,7 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/root/
-ExecStart=/root/go/bin/shed start
+ExecStart=/root/go/bin/blkd start
 Restart=on-failure
 StartLimitInterval=0
 RestartSec=3
@@ -103,11 +103,11 @@ WantedBy=multi-user.target
 ```
 ## Start the node
 
-**Start shed on Linux**
+**Start blkd on Linux**
 
 * Reload the service files: `sudo systemctl daemon-reload` 
-* Create the symlinlk: `sudo systemctl enable shed.service` 
-* Start the node sudo: `systemctl start shed && journalctl -u shed -f`
+* Create the symlinlk: `sudo systemctl enable blkd.service` 
+* Start the node sudo: `systemctl start blkd && journalctl -u blkd -f`
 
 **Start a chain on 4 node docker cluster**
 
@@ -117,7 +117,7 @@ WantedBy=multi-user.target
 
 ### Create Validator Transaction
 ```bash
-shed tx staking create-validator \
+blkd tx staking create-validator \
 --from {{KEY_NAME}} \
 --chain-id  \
 --moniker="<VALIDATOR_NAME>" \
@@ -127,7 +127,7 @@ shed tx staking create-validator \
 --details="<description>" \
 --security-contact="<contact_information>" \
 --website="<your_website>" \
---pubkey $(shed tendermint show-validator) \
+--pubkey $(blkd tendermint show-validator) \
 --min-self-delegation="1" \
 --amount <token delegation>ublk \
 --node localhost:26657

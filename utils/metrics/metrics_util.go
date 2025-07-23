@@ -37,7 +37,7 @@ func IncrementSudoFailCount(msgType string) {
 	)
 }
 
-// Gauge metric with shed version and git commit as labels
+// Gauge metric with blkd version and git commit as labels
 // Metric Name:
 //
 //	shed_version_and_commit

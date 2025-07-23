@@ -72,14 +72,14 @@ def validate_clean_state():
         raise RuntimeError(f'The file {SHE_CONFIG_TOML_PATH} already exists. Please reset your {SHE_ROOT_DIR} state.')
     logging.info('Validated clean state.')
 
-    logging.info('Updating shed binary...')
+    logging.info('Updating blkd binary...')
     run_command('make install')
     logging.info('make install successful.')
 
 
 def validate_version(version):
     """Validate that the version of the BLK blockchain software is correct."""
-    version_json_output = json.loads(run_command('shed version --long --output json'))
+    version_json_output = json.loads(run_command('blkd version --long --output json'))
     if version_json_output['version'] != version:
         raise RuntimeError(f'Expected version {version} but got {version_json_output["version"]}')
 
@@ -95,7 +95,7 @@ def set_price_feeder():
     logging.info('Setting price feeder...')
     addr, _ = shed_add_key(ORACLE_PRICE_FEEDER_ACC_NAME)
     run_with_password(
-        f'shed tx oracle set-feeder $(shed keys show {ORACLE_PRICE_FEEDER_ACC_NAME} -a) --from admin --yes --fees=2000ushe',
+        f'blkd tx oracle set-feeder $(blkd keys show {ORACLE_PRICE_FEEDER_ACC_NAME} -a) --from admin --yes --fees=2000ushe',
         account_cache[ORACLE_PRICE_FEEDER_ACC_NAME].password
     )
     logging.info("Please send she tokens to the feeder account '%s' to fund it", addr)
@@ -108,7 +108,7 @@ def output_price_feeder_config(chain_id):
         config = f.read()
 
     key_password = getpass('Please enter a password for the validator account key: \n')
-    val_addr = json.loads(run_with_password(f'shed keys show {DEFAULT_VALIDATOR_ACC_NAME} --bech=val --output json', key_password))['address']
+    val_addr = json.loads(run_with_password(f'blkd keys show {DEFAULT_VALIDATOR_ACC_NAME} --bech=val --output json', key_password))['address']
 
     config = config.replace('<FEEDER_ADDR>', account_cache[ORACLE_PRICE_FEEDER_ACC_NAME].address)
     config = config.replace('<CHAIN_ID>', chain_id)
@@ -131,7 +131,7 @@ def cleanup_she():
 def init_she(chain_id, moniker):
     """Initialize the BLK blockchain."""
     logging.info('Initializing BLK blockchain...')
-    run_command(f'shed init {moniker} --chain-id {chain_id}')
+    run_command(f'blkd init {moniker} --chain-id {chain_id}')
     logging.info('Initialized BLK blockchain.')
 
 
@@ -143,7 +143,7 @@ def save_content_to_file(content, file_path):
 
 def try_shed_delete_key(account_name, key_password):
     try:
-        run_with_password(f'shed keys delete {account_name} -y', key_password)
+        run_with_password(f'blkd keys delete {account_name} -y', key_password)
         logging.info("Deleted existing key if it exists.")
     except Exception:
         logging.info("No existing key found.")
@@ -155,7 +155,7 @@ def shed_add_key(account_name):
     try_shed_delete_key(account_name, key_password)
     logging.info("Deleted existing key if it exists.")
 
-    add_key_output = run_with_password(f'shed keys add {account_name} --output json', key_password)
+    add_key_output = run_with_password(f'blkd keys add {account_name} --output json', key_password)
 
     json_output = json.loads(add_key_output)
     address = json_output['address']
@@ -173,7 +173,7 @@ def shed_add_key(account_name):
 def add_genesis_account(account_name, starting_balance):
     """Add a genesis account to the BLK blockchain."""
     address = account_cache[account_name].address
-    run_command(f'shed add-genesis-account {address} {starting_balance}')
+    run_command(f'blkd add-genesis-account {address} {starting_balance}')
     logging.info('Added genesis account %s with address %s', account_name, address)
     return address
 
@@ -181,7 +181,7 @@ def add_genesis_account(account_name, starting_balance):
 def gentx(chain_id, account_name, starting_delegation, gentx_args):
     """Generate a gentx for the validator node."""
     account = account_cache[account_name]
-    output = run_with_password(f'shed gentx {account.account_name} {starting_delegation} --chain-id={chain_id} {gentx_args}', account.password)
+    output = run_with_password(f'blkd gentx {account.account_name} {starting_delegation} --chain-id={chain_id} {gentx_args}', account.password)
     logging.info(output)
 
 def setup_validator(args):

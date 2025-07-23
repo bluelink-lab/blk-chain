@@ -103,7 +103,7 @@ async function deployEthersContract(name, abi, bytecode, deployer, deployParams=
 }
 
 async function doesTokenFactoryDenomExist(denom) {
-  const output = await execute(`shed q tokenfactory denom-authority-metadata ${denom} --output json`);
+  const output = await execute(`blkd q tokenfactory denom-authority-metadata ${denom} --output json`);
   const parsed = JSON.parse(output);
 
   return parsed.authority_metadata.admin !== "";
@@ -169,7 +169,7 @@ const mintCw721 = async (contractAddress, address, id) => {
     },
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed tx wasm execute ${contractAddress} "${jsonString}" --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
+  const command = `blkd tx wasm execute ${contractAddress} "${jsonString}" --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   if (response.code !== 0) {
@@ -198,14 +198,14 @@ const encodeBase64 = (obj) => {
 };
 
 const getValidators = async () => {
-  const command = `shed q staking validators --output json`;
+  const command = `blkd q staking validators --output json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   return response.validators.map((v) => v.operator_address);
 };
 
 const getCodeIdFromContractAddress = async (contractAddress) => {
-  const command = `shed q wasm contract ${contractAddress} --output json`;
+  const command = `blkd q wasm contract ${contractAddress} --output json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   return response.contract_info.code_id;
@@ -220,7 +220,7 @@ const instantiateHubContract = async (
   label
 ) => {
   const jsonString = JSON.stringify(instantiateMsg).replace(/"/g, '\\"');
-  const command = `shed tx wasm instantiate ${codeId} "${jsonString}" --label ${label} --admin ${adminAddress} --from ${adminAddress} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
+  const command = `blkd tx wasm instantiate ${codeId} "${jsonString}" --label ${label} --admin ${adminAddress} --from ${adminAddress} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   // Get all attributes with _contractAddress
@@ -256,7 +256,7 @@ const bond = async (contractAddress, address, amount) => {
     bond: {},
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed tx wasm execute ${contractAddress} "${jsonString}" --amount=${amount}ublk --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
+  const command = `blkd tx wasm execute ${contractAddress} "${jsonString}" --amount=${amount}ublk --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   if (response.code !== 0) {
@@ -276,7 +276,7 @@ const unbond = async (hubAddress, tokenAddress, address, amount) => {
     },
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed tx wasm execute ${tokenAddress} "${jsonString}" --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
+  const command = `blkd tx wasm execute ${tokenAddress} "${jsonString}" --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   if (response.code !== 0) {
@@ -290,7 +290,7 @@ const harvest = async (contractAddress, address) => {
     harvest: {},
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed tx wasm execute ${contractAddress} "${jsonString}" --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
+  const command = `blkd tx wasm execute ${contractAddress} "${jsonString}" --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   if (response.code !== 0) {
@@ -306,14 +306,14 @@ const queryTokenBalance = async (contractAddress, address) => {
     },
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed q wasm contract-state smart ${contractAddress} "${jsonString}" --output=json`;
+  const command = `blkd q wasm contract-state smart ${contractAddress} "${jsonString}" --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   return response.data.balance;
 };
 
 const addAccount = async (accountName) => {
-  const command = `shed keys add ${accountName}-${Date.now()} --output=json --keyring-backend test`;
+  const command = `blkd keys add ${accountName}-${Date.now()} --output=json --keyring-backend test`;
   const output = await execute(command);
   return JSON.parse(output);
 };
@@ -326,7 +326,7 @@ const transferTokens = async (tokenAddress, sender, destination, amount) => {
     },
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed tx wasm execute ${tokenAddress} "${jsonString}" --from=${sender} --gas=200000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
+  const command = `blkd tx wasm execute ${tokenAddress} "${jsonString}" --from=${sender} --gas=200000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   if (response.code !== 0) {
@@ -345,7 +345,7 @@ async function setupAccountWithMnemonic(baseName, mnemonic, deployer) {
 async function addDeployerAccount(keyName, address, mnemonic) {
   // First try to retrieve by address
   try {
-    const output = await execute(`shed keys show ${address} --output json --keyring-backend test`);
+    const output = await execute(`blkd keys show ${address} --output json --keyring-backend test`);
     return JSON.parse(output);
   } catch (e) {}
 
@@ -354,15 +354,15 @@ async function addDeployerAccount(keyName, address, mnemonic) {
     let output;
     if (await isDocker()) {
       // NOTE: The path here is assumed to be "m/44'/118'/0'/0/0"
-      output = await execute(`shed keys add ${keyName} --recover --keyring-backend test`,`printf "${mnemonic}"`)
+      output = await execute(`blkd keys add ${keyName} --recover --keyring-backend test`,`printf "${mnemonic}"`)
     } else {
-      output = await execute(`printf "${mnemonic}" | shed keys add ${keyName} --recover --keyring-backend test`)
+      output = await execute(`printf "${mnemonic}" | blkd keys add ${keyName} --recover --keyring-backend test`)
     }
   }
   catch (e) {}
 
   // If both of the calls above fail, this one will fail.
-  const output = await execute(`shed keys show ${keyName} --output json --keyring-backend test`);
+  const output = await execute(`blkd keys show ${keyName} --output json --keyring-backend test`);
   return JSON.parse(output);
 }
 

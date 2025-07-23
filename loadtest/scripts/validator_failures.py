@@ -18,7 +18,7 @@ def failure_restarts(validators, ssh_key, num_concurrent):
         while j < num_concurrent:
             print(f"Restarting validator {validators[i + j]}")
             subprocess.check_output(
-                f"ssh -i {ssh_key} ubuntu@{validators[i + j]} 'sudo -S -p \"\" systemctl restart shed'")
+                f"ssh -i {ssh_key} ubuntu@{validators[i + j]} 'sudo -S -p \"\" systemctl restart blkd'")
             j += 1
         i += num_concurrent
 
@@ -33,7 +33,7 @@ def delegation_change(chain_id):
     """
     # First get total voting power
     admin_acc = _get_admin_acc()
-    shed_query_cmd = f"shed q staking delegations {admin_acc} --chain-id {chain_id} --output json"
+    shed_query_cmd = f"blkd q staking delegations {admin_acc} --chain-id {chain_id} --output json"
     staking_output = json.loads(
         subprocess.check_output([shed_query_cmd], stderr=subprocess.STDOUT,
                                 shell=True))
@@ -47,13 +47,13 @@ def delegation_change(chain_id):
     for i in range(len(validator_addrs // 4)):
         delegations[validator_addrs[i]] = 10 * total_delegation
         print(f"Delegating {10 * total_delegation} to {validator_addrs[i]}")
-        shed_staking_cmd = f"shed tx staking delegate {validator_addrs[i]} {10 * total_delegation}ublk --from admin --chain-id {chain_id} -b block -y"
+        shed_staking_cmd = f"blkd tx staking delegate {validator_addrs[i]} {10 * total_delegation}ublk --from admin --chain-id {chain_id} -b block -y"
         _run_shed_cmd(shed_staking_cmd)
     time.sleep(random.randint(600, 3600))
     # Unbond
     for validator in delegations:
         print(f"Unbonding {10 * total_delegation} from {validator}")
-        shed_unbond_cmd = f"shed tx staking unbond {validator} {delegations[validator]}ublk --from admin -b block -y --chain-id {chain_id}"
+        shed_unbond_cmd = f"blkd tx staking unbond {validator} {delegations[validator]}ublk --from admin -b block -y --chain-id {chain_id}"
         _run_shed_cmd(shed_unbond_cmd)
 
 
@@ -85,7 +85,7 @@ def slow_network(validators, ssh_key, num_concurrent):
 
 
 def _get_admin_acc():
-    shed_query_cmd = "shed keys list --output json"
+    shed_query_cmd = "blkd keys list --output json"
     accs_output = _run_shed_cmd(shed_query_cmd)
     return filter(lambda x: x['name'] == 'admin', accs_output)['address']
 

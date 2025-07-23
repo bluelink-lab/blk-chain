@@ -1,5 +1,5 @@
 #!/bin/bash
-shedbin=$(which ~/go/bin/shed | tr -d '"')
+shedbin=$(which ~/go/bin/blkd | tr -d '"')
 keyname=$(printf "12345678\n" | $shedbin keys list --output json | jq ".[0].name" | tr -d '"')
 chainid=$($shedbin status | jq ".NodeInfo.network" | tr -d '"')
 shehome=$(git rev-parse --show-toplevel | tr -d '"')

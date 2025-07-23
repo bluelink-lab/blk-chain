@@ -92,22 +92,22 @@ async function fundAddress(addr, amount="1000000000000000000000") {
 }
 
 async function evmSend(addr, fromKey, amount="10000000000000000000000000") {
-    const output = await execute(`shed tx evm send ${addr} ${amount} --from ${fromKey} -b block -y`);
+    const output = await execute(`blkd tx evm send ${addr} ${amount} --from ${fromKey} -b block -y`);
     return output.replace(/.*0x/, "0x").trim()
 }
 
 async function bankSend(toAddr, fromKey, amount="100000000000", denom="ublk") {
-    const result = await execute(`shed tx bank send ${fromKey} ${toAddr} ${amount}${denom} -b block --fees 20000ushe -y`);
+    const result = await execute(`blkd tx bank send ${fromKey} ${toAddr} ${amount}${denom} -b block --fees 20000ushe -y`);
     await delay()
     return result
 }
 
 async function fundSheAddress(sheAddr, amount="100000000000", denom="ublk", funder=adminKeyName) {
-    return await execute(`shed tx bank send ${funder} ${sheAddr} ${amount}${denom} -b block --fees 20000ushe -y`);
+    return await execute(`blkd tx bank send ${funder} ${sheAddr} ${amount}${denom} -b block --fees 20000ushe -y`);
 }
 
 async function getSheBalance(sheAddr, denom="ublk") {
-    const result = await execute(`shed query bank balances ${sheAddr} -o json`);
+    const result = await execute(`blkd query bank balances ${sheAddr} -o json`);
     const balances = JSON.parse(result)
     for(let b of balances.balances) {
         if(b.denom === denom) {
@@ -119,7 +119,7 @@ async function getSheBalance(sheAddr, denom="ublk") {
 
 async function importKey(name, keyfile) {
     try {
-        return await execute(`shed keys import ${name} ${keyfile}`, `printf "12345678\\n12345678\\n"`)
+        return await execute(`blkd keys import ${name} ${keyfile}`, `printf "12345678\\n12345678\\n"`)
     } catch(e) {
         console.log("not importing key (skipping)")
         console.log(e)
@@ -144,12 +144,12 @@ async function getAdmin() {
 }
 
 async function getKeySheAddress(name) {
-    return (await execute(`shed keys show ${name} -a`)).trim()
+    return (await execute(`blkd keys show ${name} -a`)).trim()
 }
 
 async function associateKey(keyName) {
     try {
-        await execute(`shed tx evm associate-address --from ${keyName} -b block`)
+        await execute(`blkd tx evm associate-address --from ${keyName} -b block`)
         await delay()
     }catch(e){
         console.log("skipping associate")
@@ -213,14 +213,14 @@ async function rawHttpDebugTraceWithCallTracer(txHash) {
 }
 
 async function createTokenFactoryTokenAndMint(name, amount, recipient, from=adminKeyName) {
-    const command = `shed tx tokenfactory create-denom ${name} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
+    const command = `blkd tx tokenfactory create-denom ${name} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     const token_denom = getEventAttribute(response, "create_denom", "new_token_denom")
-    const mint_command = `shed tx tokenfactory mint ${amount}${token_denom} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
+    const mint_command = `blkd tx tokenfactory mint ${amount}${token_denom} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
     await execute(mint_command);
 
-    const send_command = `shed tx bank send ${from} ${recipient} ${amount}${token_denom} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
+    const send_command = `blkd tx bank send ${from} ${recipient} ${amount}${token_denom} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
     await execute(send_command);
     return token_denom
 }
@@ -248,38 +248,38 @@ async function getGasPrice() {
 }
 
 async function getPointerForNative(name) {
-    const command = `shed query evm pointer NATIVE ${name} -o json`
+    const command = `blkd query evm pointer NATIVE ${name} -o json`
     const output = await execute(command);
     return JSON.parse(output);
 }
 
 async function storeWasm(path, from=adminKeyName) {
-    const command = `shed tx wasm store ${path} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
+    const command = `blkd tx wasm store ${path} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     return getEventAttribute(response, "store_code", "code_id")
 }
 
 async function getPointerForCw20(cw20Address) {
-    const command = `shed query evm pointer CW20 ${cw20Address} -o json`
+    const command = `blkd query evm pointer CW20 ${cw20Address} -o json`
     const output = await execute(command);
     return JSON.parse(output);
 }
 
 async function getPointerForCw721(cw721Address) {
-    const command = `shed query evm pointer CW721 ${cw721Address} -o json`
+    const command = `blkd query evm pointer CW721 ${cw721Address} -o json`
     const output = await execute(command);
     return JSON.parse(output);
 }
 
 async function getPointerForCw1155(cw1155Address) {
-    const command = `shed query evm pointer CW1155 ${cw1155Address} -o json`
+    const command = `blkd query evm pointer CW1155 ${cw1155Address} -o json`
     const output = await execute(command);
     return JSON.parse(output);
 }
 
 async function deployErc20PointerForCw20(provider, cw20Address, attempts=10, from=adminKeyName, evmRpc="") {
-    let command = `shed tx evm register-evm-pointer CW20 ${cw20Address} --from=${from} -b block`
+    let command = `blkd tx evm register-evm-pointer CW20 ${cw20Address} --from=${from} -b block`
     if (evmRpc) {
         command = command + ` --evm-rpc=${evmRpc}`
     }
@@ -300,7 +300,7 @@ async function deployErc20PointerForCw20(provider, cw20Address, attempts=10, fro
 }
 
 async function deployErc20PointerNative(provider, name, from=adminKeyName, evmRpc="") {
-    let command = `shed tx evm call-precompile pointer addNativePointer ${name} --from=${from} -b block`
+    let command = `blkd tx evm call-precompile pointer addNativePointer ${name} --from=${from} -b block`
     if (evmRpc) {
         command = command + ` --evm-rpc=${evmRpc}`
     }
@@ -319,7 +319,7 @@ async function deployErc20PointerNative(provider, name, from=adminKeyName, evmRp
 }
 
 async function deployErc721PointerForCw721(provider, cw721Address, from=adminKeyName, evmRpc="") {
-    let command = `shed tx evm register-evm-pointer CW721 ${cw721Address} --from=${from} -b block`
+    let command = `blkd tx evm register-evm-pointer CW721 ${cw721Address} --from=${from} -b block`
     if (evmRpc) {
         command = command + ` --evm-rpc=${evmRpc}`
     }
@@ -340,7 +340,7 @@ async function deployErc721PointerForCw721(provider, cw721Address, from=adminKey
 }
 
 async function deployErc1155PointerForCw1155(provider, cw1155Address, from=adminKeyName, evmRpc="") {
-    let command = `shed tx evm register-evm-pointer CW1155 ${cw1155Address} --from=${from} -b block`
+    let command = `blkd tx evm register-evm-pointer CW1155 ${cw1155Address} --from=${from} -b block`
     if (evmRpc) {
         command = command + ` --evm-rpc=${evmRpc}`
     }
@@ -367,14 +367,14 @@ async function deployWasm(path, adminAddr, label, args = {}, from=adminKeyName) 
 
 async function instantiateWasm(codeId, adminAddr, label, args = {}, from=adminKeyName) {
     const jsonString = JSON.stringify(args).replace(/"/g, '\\"');
-    const command = `shed tx wasm instantiate ${codeId} "${jsonString}" --label ${label} --admin ${adminAddr} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
+    const command = `blkd tx wasm instantiate ${codeId} "${jsonString}" --label ${label} --admin ${adminAddr} --from ${from} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
     const output = await execute(command);
     const response = JSON.parse(output);
     return getEventAttribute(response, "instantiate", "_contract_address");
 }
 
 async function proposeCW20toERC20Upgrade(erc20Address, cw20Address, title="erc20-pointer", version=99, description="erc20 pointer",fees="200000ushe", from=adminKeyName) {
-    const command = `shed tx evm add-cw-erc20-pointer "${title}" "${description}" ${erc20Address} ${version} 200000000ushe ${cw20Address} --from ${from} --fees ${fees} -y -o json --broadcast-mode=block`
+    const command = `blkd tx evm add-cw-erc20-pointer "${title}" "${description}" ${erc20Address} ${version} 200000000ushe ${cw20Address} --from ${from} --fees ${fees} -y -o json --broadcast-mode=block`
     const output = await execute(command);
     const proposalId = getEventAttribute(JSON.parse(output), "submit_proposal", "proposal_id")
     return await passProposal(proposalId)
@@ -382,12 +382,12 @@ async function proposeCW20toERC20Upgrade(erc20Address, cw20Address, title="erc20
 
 async function passProposal(proposalId,  desposit="200000000ushe", fees="200000ushe", from=adminKeyName) {
     if(await isDocker()) {
-        await executeOnAllNodes(`shed tx gov vote ${proposalId} yes --from node_admin -b block -y --fees ${fees}`)
+        await executeOnAllNodes(`blkd tx gov vote ${proposalId} yes --from node_admin -b block -y --fees ${fees}`)
     } else {
-        await execute(`shed tx gov vote ${proposalId} yes --from ${from} -b block -y --fees ${fees}`)
+        await execute(`blkd tx gov vote ${proposalId} yes --from ${from} -b block -y --fees ${fees}`)
     }
     for(let i=0; i<100; i++) {
-        const proposal = await execute(`shed q gov proposal ${proposalId} -o json`)
+        const proposal = await execute(`blkd q gov proposal ${proposalId} -o json`)
         const status = JSON.parse(proposal).status
         if(status === "PROPOSAL_STATUS_PASSED") {
             return proposalId
@@ -398,7 +398,7 @@ async function passProposal(proposalId,  desposit="200000000ushe", fees="200000u
 }
 
 async function registerPointerForERC20(erc20Address, fees="20000ushe", from=adminKeyName) {
-    const command = `shed tx evm register-cw-pointer ERC20 ${erc20Address} --from ${from} --fees ${fees} --broadcast-mode block -y -o json`
+    const command = `blkd tx evm register-cw-pointer ERC20 ${erc20Address} --from ${from} --fees ${fees} --broadcast-mode block -y -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     if(response.code !== 0) {
@@ -408,7 +408,7 @@ async function registerPointerForERC20(erc20Address, fees="20000ushe", from=admi
 }
 
 async function registerPointerForERC721(erc721Address, fees="20000ushe", from=adminKeyName) {
-    const command = `shed tx evm register-cw-pointer ERC721 ${erc721Address} --from ${from} --fees ${fees} --broadcast-mode block -y -o json`
+    const command = `blkd tx evm register-cw-pointer ERC721 ${erc721Address} --from ${from} --fees ${fees} --broadcast-mode block -y -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     if(response.code !== 0) {
@@ -418,7 +418,7 @@ async function registerPointerForERC721(erc721Address, fees="20000ushe", from=ad
 }
 
 async function registerPointerForERC1155(erc1155Address, fees="200000ushe", from=adminKeyName) {
-    const command = `shed tx evm register-cw-pointer ERC1155 ${erc1155Address} --from ${from} --fees ${fees} --broadcast-mode block -y -o json`
+    const command = `blkd tx evm register-cw-pointer ERC1155 ${erc1155Address} --from ${from} --fees ${fees} --broadcast-mode block -y -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     if(response.code !== 0) {
@@ -428,14 +428,14 @@ async function registerPointerForERC1155(erc1155Address, fees="200000ushe", from
 }
 
 async function getSheAddress(evmAddress) {
-    const command = `shed q evm she-addr ${evmAddress} -o json`
+    const command = `blkd q evm she-addr ${evmAddress} -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     return response.she_address
 }
 
 async function getEvmAddress(sheAddress) {
-    const command = `shed q evm evm-addr ${sheAddress} -o json`
+    const command = `blkd q evm evm-addr ${sheAddress} -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
     return response.evm_address
@@ -476,20 +476,20 @@ async function setupSigners(signers) {
 
 async function queryWasm(contractAddress, operation, args={}){
     const jsonString = JSON.stringify({ [operation]: args }).replace(/"/g, '\\"');
-    const command = `shed query wasm contract-state smart ${contractAddress} "${jsonString}" --output json`;
+    const command = `blkd query wasm contract-state smart ${contractAddress} "${jsonString}" --output json`;
     const output = await execute(command);
     return JSON.parse(output)
 }
 
 async function executeWasm(contractAddress, msg, coins = "0ushe") {
     const jsonString = JSON.stringify(msg).replace(/"/g, '\\"'); // Properly escape JSON string
-    const command = `shed tx wasm execute ${contractAddress} "${jsonString}" --amount ${coins} --from ${adminKeyName} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
+    const command = `blkd tx wasm execute ${contractAddress} "${jsonString}" --amount ${coins} --from ${adminKeyName} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
     const output = await execute(command);
     return JSON.parse(output);
 }
 
 async function associateWasm(contractAddress) {
-    const command = `shed tx evm associate-contract-address ${contractAddress} --from ${adminKeyName} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
+    const command = `blkd tx evm associate-contract-address ${contractAddress} --from ${adminKeyName} --gas=5000000 --fees=1000000ushe -y --broadcast-mode block -o json`;
     const output = await execute(command);
     return JSON.parse(output);
 }

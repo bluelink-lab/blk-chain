@@ -1,20 +1,20 @@
 - name: Test simulation sending funds
   inputs:
     # Create test account
-    - cmd: shed keys add simulation-test --keyring-backend test
-    - cmd: printf "12345678\n" | shed keys show -a admin
+    - cmd: blkd keys add simulation-test --keyring-backend test
+    - cmd: printf "12345678\n" | blkd keys show -a admin
       env: ADMIN_ACC
-    - cmd: shed keys show -a simulation-test --keyring-backend test
+    - cmd: blkd keys show -a simulation-test --keyring-backend test
       env: SIMULATION_TEST_ACC
 
     # Send funds
-    - cmd: printf "12345678\n" | shed tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1she -b block --fees 2000ushe --chain-id she -y
+    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1she -b block --fees 2000ushe --chain-id she -y
 
-    - cmd: shed tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1000she --from $ADMIN_ACC  --chain-id she -b block -y --dry-run --keyring-backend test
+    - cmd: blkd tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1000she --from $ADMIN_ACC  --chain-id she -b block -y --dry-run --keyring-backend test
       env: GAS_ESIMATE
 
     # Validate that only the 1she is sent
-    - cmd: shed q bank balances $SIMULATION_TEST_ACC --output json | jq -r .balances[0].amount
+    - cmd: blkd q bank balances $SIMULATION_TEST_ACC --output json | jq -r .balances[0].amount
       env: SIMULATION_TEST_ACC_BALANCE
 
   verifiers:

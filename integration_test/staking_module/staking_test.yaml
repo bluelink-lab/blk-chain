@@ -1,22 +1,22 @@
 - name: Staking validator should increase bonded tokens and staking pool
   inputs:
-    - cmd: printf "12345678\n" | shed keys show node_admin --bech val --output json | jq -r ".address"
+    - cmd: printf "12345678\n" | blkd keys show node_admin --bech val --output json | jq -r ".address"
       env: ADMIN_VAL_ADDR
 
     # State before staking
-    - cmd: shed q staking pool --output json | jq -r ".bonded_tokens"
+    - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
       env: BEFORE_STAKING_POOL
-    - cmd: shed q staking validator $ADMIN_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $ADMIN_VAL_ADDR --output json | jq -r ".tokens"
       env: BEFORE_STAKED_TOKENS
 
     # staking tx
-    - cmd: printf "12345678\n" | shed tx staking delegate $ADMIN_VAL_ADDR 10she --fees 2000ushe --from admin -b block -y --output json | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx staking delegate $ADMIN_VAL_ADDR 10she --fees 2000ushe --from admin -b block -y --output json | jq -r ".code"
       env: DELEGATE_RESPONSE_CODE
 
     # state after staking
-    - cmd: shed q staking pool --output json | jq -r ".bonded_tokens"
+    - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
       env: AFTER_STAKING_POOL
-    - cmd: shed q staking validator $ADMIN_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $ADMIN_VAL_ADDR --output json | jq -r ".tokens"
       env: AFTER_STAKED_TOKENS
 
   verifiers:
@@ -31,30 +31,30 @@
 
 - name: Redelegating validator should increase and decrease accordingly
   inputs:
-    - cmd: printf "12345678\n" | shed keys show node_admin --bech val --output json | jq -r ".address"
+    - cmd: printf "12345678\n" | blkd keys show node_admin --bech val --output json | jq -r ".address"
       env: SHE_NODE_0_VAL_ADDR
-    - cmd: printf "12345678\n" | shed keys show node_admin --bech val --output json | jq -r ".address"
+    - cmd: printf "12345678\n" | blkd keys show node_admin --bech val --output json | jq -r ".address"
       env: SHE_NODE_1_VAL_ADDR
       node: she-node-1
 
     # State before staking
-    - cmd: shed q staking pool --output json | jq -r ".bonded_tokens"
+    - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
       env: BEFORE_STAKING_POOL
-    - cmd: shed q staking validator $SHE_NODE_0_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $SHE_NODE_0_VAL_ADDR --output json | jq -r ".tokens"
       env: SHE_NODE_0_BEFORE_STAKED_TOKENS
-    - cmd: shed q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
       env: SHE_NODE_1_BEFORE_STAKED_TOKENS
 
     # staking tx
-    - cmd: printf "12345678\n" | shed tx staking redelegate $SHE_NODE_0_VAL_ADDR $SHE_NODE_1_VAL_ADDR 10she --fees 20000ushe --gas 2000000 --from admin -b block -y --output json | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx staking redelegate $SHE_NODE_0_VAL_ADDR $SHE_NODE_1_VAL_ADDR 10she --fees 20000ushe --gas 2000000 --from admin -b block -y --output json | jq -r ".code"
       env: REDELEGATE_RESPONSE_CODE
 
     # state after staking
-    - cmd: shed q staking pool --output json | jq -r ".bonded_tokens"
+    - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
       env: AFTER_STAKING_POOL
-    - cmd: shed q staking validator $SHE_NODE_0_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $SHE_NODE_0_VAL_ADDR --output json | jq -r ".tokens"
       env: SHE_NODE_0_AFTER_STAKED_TOKENS
-    - cmd: shed q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
       env: SHE_NODE_1_AFTER_STAKED_TOKENS
 
   verifiers:
@@ -73,23 +73,23 @@
 
 - name: Unstaking validator should decrease bonded tokens and staking pool
   inputs:
-    - cmd: printf "12345678\n" | shed keys show node_admin --bech val --output json | jq -r ".address"
+    - cmd: printf "12345678\n" | blkd keys show node_admin --bech val --output json | jq -r ".address"
       env: SHE_NODE_1_VAL_ADDR
       node: she-node-1
 
     # State before staking
-    - cmd: shed q staking pool --output json | jq -r ".bonded_tokens"
+    - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
       env: BEFORE_STAKING_POOL
-    - cmd: shed q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
       env: BEFORE_STAKED_TOKENS
 
-    - cmd: printf "12345678\n" | shed tx staking unbond $SHE_NODE_1_VAL_ADDR 1she --fees 2000ushe --from admin -b block -y --output json | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx staking unbond $SHE_NODE_1_VAL_ADDR 1she --fees 2000ushe --from admin -b block -y --output json | jq -r ".code"
       env: DELEGATE_RESPONSE_CODE
 
     # state after staking
-    - cmd: shed q staking pool --output json | jq -r ".bonded_tokens"
+    - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
       env: AFTER_STAKING_POOL
-    - cmd: shed q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
+    - cmd: blkd q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
       env: AFTER_STAKED_TOKENS
 
   verifiers:

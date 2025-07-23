@@ -5,7 +5,7 @@ attempt=0
 
 # Try for 1 minute to see if the service is running
 while [ $attempt -lt $max_attempts ]; do
-    if pgrep -f "shed start --chain-id she" > /dev/null; then
+    if pgrep -f "blkd start --chain-id she" > /dev/null; then
         echo "PASS"
         exit 0
     fi

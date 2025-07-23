@@ -248,7 +248,7 @@ var (
 	// EmptyWasmOpts defines a type alias for a list of wasm options.
 	EmptyWasmOpts []wasm.Option
 
-	// Boolean to only emit shed version and git commit metric once per chain initialization
+	// Boolean to only emit blkd version and git commit metric once per chain initialization
 	EmittedShedVersionMetric = false
 	// EmptyAclmOpts defines a type alias for a list of wasm options.
 	EmptyACLOpts []aclkeeper.Option

@@ -5,7 +5,7 @@ echo
 echo -n Chain ID:
 read chainid
 echo
-echo -n shed binary:
+echo -n blkd binary:
 read shedbin
 echo
 echo -n she-chain directory:

@@ -217,8 +217,8 @@ describe("CW20 to ERC20 Pointer", function () {
             1: 1000000000000
         });
 
-        // Pointer version is going to be coupled with shed version going forward (as in,
-        // given a shed version, it's impossible to have multiple versions of pointer).
+        // Pointer version is going to be coupled with blkd version going forward (as in,
+        // given a blkd version, it's impossible to have multiple versions of pointer).
         // We need to recreate the equivalent of the following test once we have a framework
         // for simulating chain-level upgrade.
         describe.skip("Pointer Upgrade", function () {

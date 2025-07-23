@@ -226,21 +226,21 @@ func CmdQueryERC20Payload() *cobra.Command {
 			switch args[0] {
 			case "transfer":
 				if len(args) != 3 {
-					return errors.New("expected usage: `shed tx evm erc20-payload transfer [to] [amount]`")
+					return errors.New("expected usage: `blkd tx evm erc20-payload transfer [to] [amount]`")
 				}
 				to := common.HexToAddress(args[1])
 				amt, _ := sdk.NewIntFromString(args[2])
 				bz, err = abi.Pack(args[0], to, amt.BigInt())
 			case "approve":
 				if len(args) != 3 {
-					return errors.New("expected usage: `shed tx evm erc20-payload approve [spender] [amount]`")
+					return errors.New("expected usage: `blkd tx evm erc20-payload approve [spender] [amount]`")
 				}
 				spender := common.HexToAddress(args[1])
 				amt, _ := sdk.NewIntFromString(args[2])
 				bz, err = abi.Pack(args[0], spender, amt.BigInt())
 			case "transferFrom":
 				if len(args) != 4 {
-					return errors.New("expected usage: `shed tx evm erc20-payload transferFrom [from] [to] [amount]`")
+					return errors.New("expected usage: `blkd tx evm erc20-payload transferFrom [from] [to] [amount]`")
 				}
 				from := common.HexToAddress(args[1])
 				to := common.HexToAddress(args[2])
@@ -278,14 +278,14 @@ func CmdQueryERC721Payload() *cobra.Command {
 			switch args[0] {
 			case "approve":
 				if len(args) != 3 {
-					return errors.New("expected usage: `shed tx evm erc721-payload approve [spender] [tokenId]`")
+					return errors.New("expected usage: `blkd tx evm erc721-payload approve [spender] [tokenId]`")
 				}
 				spender := common.HexToAddress(args[1])
 				id, _ := sdk.NewIntFromString(args[2])
 				bz, err = abi.Pack(args[0], spender, id.BigInt())
 			case "transferFrom":
 				if len(args) != 4 {
-					return errors.New("expected usage: `shed tx evm erc721-payload transferFrom [from] [to] [tokenId]`")
+					return errors.New("expected usage: `blkd tx evm erc721-payload transferFrom [from] [to] [tokenId]`")
 				}
 				from := common.HexToAddress(args[1])
 				to := common.HexToAddress(args[2])
@@ -293,7 +293,7 @@ func CmdQueryERC721Payload() *cobra.Command {
 				bz, err = abi.Pack(args[0], from, to, id.BigInt())
 			case "setApprovalForAll":
 				if len(args) != 3 {
-					return errors.New("expected usage: `shed tx evm erc721-payload setApprovalForAll [spender] [ture|false]`")
+					return errors.New("expected usage: `blkd tx evm erc721-payload setApprovalForAll [spender] [ture|false]`")
 				}
 				op := common.HexToAddress(args[1])
 				approved := args[2] == "true"
@@ -330,7 +330,7 @@ func CmdQueryERC1155Payload() *cobra.Command {
 			switch args[0] {
 			case "safeTransferFrom":
 				if len(args) != 6 {
-					return errors.New("expected usage: `shed tx evm erc1155-payload safeTransferFrom [from] [to] [tokenId] [amount] [data]`")
+					return errors.New("expected usage: `blkd tx evm erc1155-payload safeTransferFrom [from] [to] [tokenId] [amount] [data]`")
 				}
 				from := common.HexToAddress(args[1])
 				to := common.HexToAddress(args[2])
@@ -339,7 +339,7 @@ func CmdQueryERC1155Payload() *cobra.Command {
 				bz, err = abi.Pack(args[0], from, to, id.BigInt(), amt.BigInt(), []byte(args[5]))
 			case "safeBatchTransferFrom":
 				if len(args) != 6 {
-					return errors.New("expected usage: `shed tx evm erc1155-payload safeBatchTransferFrom [from] [to] [tokenIds] [amounts] [data]`")
+					return errors.New("expected usage: `blkd tx evm erc1155-payload safeBatchTransferFrom [from] [to] [tokenIds] [amounts] [data]`")
 				}
 				from := common.HexToAddress(args[1])
 				to := common.HexToAddress(args[2])
@@ -364,7 +364,7 @@ func CmdQueryERC1155Payload() *cobra.Command {
 				bz, err = abi.Pack(args[0], from, to, ids, amts, []byte(args[5]))
 			case "setApprovalForAll":
 				if len(args) != 3 {
-					return errors.New("expected usage: `shed tx evm erc1155-payload setApprovalForAll [spender] [ture|false]`")
+					return errors.New("expected usage: `blkd tx evm erc1155-payload setApprovalForAll [spender] [ture|false]`")
 				}
 				op := common.HexToAddress(args[1])
 				approved := args[2] == "true"

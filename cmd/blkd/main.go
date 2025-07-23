@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/she-protocol/she-chain/app/params"
-	"github.com/she-protocol/she-chain/cmd/shed/cmd"
+	"github.com/she-protocol/she-chain/cmd/blkd/cmd"
 
 	svrcmd "github.com/cosmos/cosmos-sdk/server/cmd"
 	"github.com/she-protocol/she-chain/app"

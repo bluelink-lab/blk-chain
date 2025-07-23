@@ -31,19 +31,19 @@ describe("Uniswap Test", function () {
         const deployerWallet = hre.ethers.Wallet.fromMnemonic(accounts.mnemonic, accounts.path);
         deployer = deployerWallet.connect(hre.ethers.provider);
 
-        const shedConfig = await execute('shed config');
+        const shedConfig = await execute('blkd config');
         originalShedConfig = JSON.parse(shedConfig);
 
         if (testChain === 'shelocal') {
             await fundAddress(deployer.address, amount="2000000000000000000000");
         } else {
-            // Set default shed config to the specified rpc url.
-            await execute(`shed config chain-id ${chainIds[testChain]}`)
-            await execute(`shed config node ${rpcUrls[testChain]}`)
+            // Set default blkd config to the specified rpc url.
+            await execute(`blkd config chain-id ${chainIds[testChain]}`)
+            await execute(`blkd config node ${rpcUrls[testChain]}`)
         }
 
         // Set the config keyring to 'test' since we're using the key added to test from here.
-        await execute(`shed config keyring-backend test`)
+        await execute(`blkd config keyring-backend test`)
 
         await sendFunds('0.01', deployer.address, deployer)
         await setupAccountWithMnemonic("dapptest", accounts.mnemonic, deployer);
@@ -298,8 +298,8 @@ describe("Uniswap Test", function () {
     after(async function () {
         // Set the chain back to regular state
         console.log("Resetting")
-        await execute(`shed config chain-id ${originalShedConfig["chain-id"]}`)
-        await execute(`shed config node ${originalShedConfig["node"]}`)
-        await execute(`shed config keyring-backend ${originalShedConfig["keyring-backend"]}`)
+        await execute(`blkd config chain-id ${originalShedConfig["chain-id"]}`)
+        await execute(`blkd config node ${originalShedConfig["node"]}`)
+        await execute(`blkd config keyring-backend ${originalShedConfig["keyring-backend"]}`)
     })
 })

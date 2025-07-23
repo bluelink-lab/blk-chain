@@ -118,28 +118,28 @@ To create a new token, use the create-denom command from the tokenfactory module
 To create a new token we can use the create-denom command.
 
 ```sh
-shed tx tokenfactory create-denom ufoo --from mylocalwallet
+blkd tx tokenfactory create-denom ufoo --from mylocalwallet
 ```
 
 ## Mint a new token
 Once a new token is created, it can be minted using the mint command in the tokenfactory module. Note that the complete tokenfactory address, in the format of factory/{creator address}/{subdenom}, must be used to mint the token.
 
 ```sh
-shed tx tokenfactory mint 100000000000factory/she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4l/ufoo --from mylocalwallet
+blkd tx tokenfactory mint 100000000000factory/she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4l/ufoo --from mylocalwallet
 ```
 
 ## Checking Token metadata
 To view a token's metadata, use the denom-metadata command in the bank module. The following example queries the metadata for the token factory/she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4l/ufoo:
 
 ```sh
-shed query bank denom-metadata --denom factory/she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4l/ufoo
+blkd query bank denom-metadata --denom factory/she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4l/ufoo
 ```
 
 ## Check the tokens created by an account
 To see a list of tokens created by a specific account, use the denoms-from-creator command in the tokenfactory module. The following example shows tokens created by the account she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4l:
 
 ```sh
-shed query tokenfactory denoms-from-creator she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4ls
+blkd query tokenfactory denoms-from-creator she166vhptur29s3gw5qr6dm30s06gej6pr4n6qc4ls
 ```
 
 ## Appendix: Expectations from the Chain

@@ -158,7 +158,7 @@ and a `rocksdbBackend` tag:
 -tags "rocksdbBackend"
 ```
 
-to the shed go installation command.
+to the blkd go installation command.
 
 Note: Managing these `rocksdb` CGO dependencies and installation issues is one of the reasons why `pebbledb` (written in pure go) is the default.
 
@@ -175,9 +175,9 @@ export CHAIN_ID="<chain_id>"
 export PRIMARY_ENDPOINT="<rpc_endpoint>"
 export SHED_HOME="/root/.she"
 
-# Step 1: stop shed
-echo "Stopping shed process..."
-systemctl stop shed
+# Step 1: stop blkd
+echo "Stopping blkd process..."
+systemctl stop blkd
 
 # Step 2: remove and clean up data
 echo "Removing data files..."
@@ -190,9 +190,9 @@ rm -rf $SHED_HOME/config/priv_validator_key.json
 rm -rf $SHED_HOME/config/genesis.json
 rm -rf $SHED_HOME/config/config.toml
 
-# Step 3: shed init will create reset config and genesis
+# Step 3: blkd init will create reset config and genesis
 echo "Shed Init and set config..."
-shed init --chain-id "$CHAIN_ID" "$MONIKER"
+blkd init --chain-id "$CHAIN_ID" "$MONIKER"
 
 # Step 4: Get trusted height and hash
 LATEST_HEIGHT=$(curl -s "$PRIMARY_ENDPOINT"/status | jq -r ".sync_info.latest_block_height")
@@ -220,9 +220,9 @@ cp /root/priv_validator_state.json $SHED_HOME/data/priv_validator_state.json
 cp /root/priv_validator_key.json $SHED_HOME/config/priv_validator_key.json
 cp /root/genesis.json $SHED_HOME/config/genesis.json
 
-# Step 8: Restart shed
-echo "Restarting shed process..."
-systemctl restart shed
+# Step 8: Restart blkd
+echo "Restarting blkd process..."
+systemctl restart blkd
 ```
 
 ## Verification

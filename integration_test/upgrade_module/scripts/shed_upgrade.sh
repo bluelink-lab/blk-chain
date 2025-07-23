@@ -16,10 +16,10 @@ if [ -z "UPGRADE_VERSION_LIST" ]; then
 fi
 
 # kill the existing service
-pkill -f "shed start"
+pkill -f "blkd start"
 
 # start the service with a different UPGRADE_VERSION_LIST
-UPGRADE_VERSION_LIST=$NEW_LIST shed start --chain-id she --inv-check-period ${INVARIANT_CHECK_INTERVAL} > "$LOG_DIR/shed-$NODE_ID.log" 2>&1 &
+UPGRADE_VERSION_LIST=$NEW_LIST blkd start --chain-id she --inv-check-period ${INVARIANT_CHECK_INTERVAL} > "$LOG_DIR/blkd-$NODE_ID.log" 2>&1 &
 
 echo "PASS"
 exit 0

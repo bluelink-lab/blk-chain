@@ -48,11 +48,11 @@ func GetCmdQueryExchangeRates() *cobra.Command {
 Query the current exchange rate of BLK with an asset.
 You can find the current list of active denoms by running
 
-$ shed query oracle exchange-rates
+$ blkd query oracle exchange-rates
 
 Or, can filter with denom
 
-$ shed query oracle exchange-rates ukrw
+$ blkd query oracle exchange-rates ukrw
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -96,7 +96,7 @@ func GetCmdQueryPriceSnapshotHistory() *cobra.Command {
 Query the history for oracle price snapshots.
 Example:
 
-$ shed query oracle price-snapshot-history
+$ blkd query oracle price-snapshot-history
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -127,7 +127,7 @@ func GetCmdQueryTwaps() *cobra.Command {
 Query the time weighted average prices for denoms with price snapshot data
 Example:
 
-$ shed query oracle twaps
+$ blkd query oracle twaps
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -166,7 +166,7 @@ func GetCmdQueryActives() *cobra.Command {
 		Long: strings.TrimSpace(`
 Query the active list of BLK assets recognized by the types.
 
-$ shed query oracle actives
+$ blkd query oracle actives
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -223,7 +223,7 @@ func GetCmdQueryFeederDelegation() *cobra.Command {
 		Long: strings.TrimSpace(`
 Query the account the validator's oracle voting right is delegated to.
 
-$ shed query oracle feeder terravaloper...
+$ blkd query oracle feeder terravaloper...
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)
@@ -263,7 +263,7 @@ func GetCmdQueryVotePenaltyCounter() *cobra.Command {
 		Long: strings.TrimSpace(`
 Query the # of vote periods missed and abstained in this oracle slash window.
 
-$ shed query oracle miss shevaloper...
+$ blkd query oracle miss shevaloper...
 `),
 		RunE: func(cmd *cobra.Command, args []string) error {
 			clientCtx, err := client.GetClientQueryContext(cmd)

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-shedbin=$(which ~/go/bin/shed | tr -d '"')
+shedbin=$(which ~/go/bin/blkd | tr -d '"')
 keyname=$(printf "12345678\n" | $shedbin keys list --output json | jq ".[0].name" | tr -d '"')
 keyaddress=$(printf "12345678\n" | $shedbin keys list --output json | jq ".[0].address" | tr -d '"')
 chainid=$($shedbin status | jq ".NodeInfo.network" | tr -d '"')
@@ -56,7 +56,7 @@ done
 third_set_block_height=$($shedbin status | jq -r '.SyncInfo.latest_block_height')
 echo "$third_set_block_height" > $shehome/integration_test/contracts/wasm_third_set_block_height.txt
 
-num_stored=$(shed q wasm list-code --count-total --limit 100 --output json | jq -r ".code_infos | length")
+num_stored=$(blkd q wasm list-code --count-total --limit 100 --output json | jq -r ".code_infos | length")
 echo $num_stored
 
 exit 0

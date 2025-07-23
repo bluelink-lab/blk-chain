@@ -118,16 +118,16 @@ describe("Steak", async function () {
 
   before(async function () {
 
-    const shedConfig = await execute('shed config');
+    const shedConfig = await execute('blkd config');
     originalShedConfig = JSON.parse(shedConfig);
 
     // Set up the owner account
     if (testChain === 'shelocal') {
       owner = await setupAccount("steak-owner");
     } else {
-      // Set default shed config to the specified rpc url.
-      await execute(`shed config chain-id ${chainIds[testChain]}`)
-      await execute(`shed config node ${rpcUrls[testChain]}`)
+      // Set default blkd config to the specified rpc url.
+      await execute(`blkd config chain-id ${chainIds[testChain]}`)
+      await execute(`blkd config node ${rpcUrls[testChain]}`)
 
       const accounts = hre.config.networks[testChain].accounts
       const deployerWallet = hre.ethers.Wallet.fromMnemonic(accounts.mnemonic, accounts.path);
@@ -138,7 +138,7 @@ describe("Steak", async function () {
       owner = await setupAccountWithMnemonic("steak-owner", accounts.mnemonic, deployer)
     }
 
-    await execute(`shed config keyring-backend test`);
+    await execute(`blkd config keyring-backend test`);
 
     // Store and deploy contracts
     ({ hubAddress, tokenAddress, tokenPointer } = await deployContracts(
@@ -199,8 +199,8 @@ describe("Steak", async function () {
   after(async function () {
     // Set the chain back to regular state
     console.log(`Resetting to ${originalShedConfig}`)
-    await execute(`shed config chain-id ${originalShedConfig["chain-id"]}`)
-    await execute(`shed config node ${originalShedConfig["node"]}`)
-    await execute(`shed config keyring-backend ${originalShedConfig["keyring-backend"]}`)
+    await execute(`blkd config chain-id ${originalShedConfig["chain-id"]}`)
+    await execute(`blkd config node ${originalShedConfig["node"]}`)
+    await execute(`blkd config keyring-backend ${originalShedConfig["keyring-backend"]}`)
   })
 });

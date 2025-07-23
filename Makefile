@@ -47,7 +47,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 # process linker flags
 
 ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=she \
-			-X github.com/cosmos/cosmos-sdk/version.ServerName=shed \
+			-X github.com/cosmos/cosmos-sdk/version.ServerName=blkd \
 			-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 			-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
 			-X "github.com/cosmos/cosmos-sdk/version.BuildTags=$(build_tags_comma_sep)"
@@ -72,10 +72,10 @@ BUILD_FLAGS := -tags "$(build_tags)" -ldflags '$(ldflags)'
 all: lint install
 
 install: go.sum
-		go install $(BUILD_FLAGS) ./cmd/shed
+		go install $(BUILD_FLAGS) ./cmd/blkd
 
 install-with-race-detector: go.sum
-		go install -race $(BUILD_FLAGS) ./cmd/shed
+		go install -race $(BUILD_FLAGS) ./cmd/blkd
 
 install-price-feeder: go.sum
 		go install $(BUILD_FLAGS) ./oracle/price-feeder
@@ -96,7 +96,7 @@ lint:
 	go mod verify
 
 build:
-	go build $(BUILD_FLAGS) -o ./build/shed ./cmd/shed
+	go build $(BUILD_FLAGS) -o ./build/blkd ./cmd/blkd
 
 build-price-feeder:
 	go build $(BUILD_FLAGS) -o ./build/price-feeder ./oracle/price-feeder
@@ -198,7 +198,7 @@ docker-cluster-start: docker-cluster-stop build-docker-node
 
 .PHONY: localnet-start
 
-# Use this to skip the shed build process
+# Use this to skip the blkd build process
 docker-cluster-start-skipbuild: docker-cluster-stop build-docker-node
 	@rm -rf $(PROJECT_HOME)/build/generated
 	@cd docker && USERID=$(shell id -u) GROUPID=$(shell id -g) GOCACHE=$(shell go env GOCACHE) NUM_ACCOUNTS=10 SKIP_BUILD=true docker compose up

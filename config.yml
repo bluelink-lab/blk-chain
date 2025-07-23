@@ -1,5 +1,5 @@
 build:
-  main: './cmd/shed'
+  main: './cmd/blkd'
 accounts:
   - name: alice
     coins: ['20000token', '200000000stake']

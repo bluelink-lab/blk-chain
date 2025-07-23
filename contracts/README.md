@@ -11,4 +11,4 @@
 ## Updating Pointer contracts across codebase
  * Follow instructions above to compile and build the contracts
  * copy the binary under the corresponding `bytecode:object` into `x/evm/contracts` `.bin` file
- * restart shed
+ * restart blkd

@@ -3,8 +3,8 @@
 # Input parameters
 ARCH=$(uname -m)
 
-# Build shed
-echo "Building shed from local branch"
+# Build blkd
+echo "Building blkd from local branch"
 git config --global --add safe.directory /she-protocol/she-chain
 LEDGER_ENABLED=false
 make install

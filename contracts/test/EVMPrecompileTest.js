@@ -122,7 +122,7 @@ describe("EVM Precompile Tester", function () {
         let govProposal;
 
         before(async function () {
-            const govProposalResponse = JSON.parse(await execute(`shed tx gov submit-proposal param-change ../contracts/test/param_change_proposal.json --from admin --fees 20000ushe -b block -y -o json`))
+            const govProposalResponse = JSON.parse(await execute(`blkd tx gov submit-proposal param-change ../contracts/test/param_change_proposal.json --from admin --fees 20000ushe -b block -y -o json`))
             govProposal = govProposalResponse.logs[0].events[3].attributes[1].value;
 
             const signer = accounts[0].signer
@@ -173,7 +173,7 @@ describe("EVM Precompile Tester", function () {
         let staking;
 
         before(async function () {
-            validatorAddr = JSON.parse(await execute("shed q staking validators -o json")).validators[0].operator_address
+            validatorAddr = JSON.parse(await execute("blkd q staking validators -o json")).validators[0].operator_address
             signer = accounts[0].signer;
 
             const contractABIPath = '../../precompiles/staking/abi.json';
@@ -219,8 +219,8 @@ describe("EVM Precompile Tester", function () {
                 this.skip()
                 return;
             }
-            const exchangeRatesContent = await execute("shed q oracle exchange-rates -o json")
-            const twapsContent = await execute("shed q oracle twaps 3600 -o json")
+            const exchangeRatesContent = await execute("blkd q oracle exchange-rates -o json")
+            const twapsContent = await execute("blkd q oracle twaps 3600 -o json")
 
             exchangeRatesJSON = JSON.parse(exchangeRatesContent).denom_oracle_exchange_rate_pairs;
             twapsJSON = JSON.parse(twapsContent).oracle_twaps;

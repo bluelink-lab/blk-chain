@@ -3,13 +3,13 @@
 # Set up GO PATH
 echo "Configure and initialize environment"
 
-# Testing whether shed works or not
-shed version # Uncomment the below line if there are any dependency issues
-# ldd build/shed
+# Testing whether blkd works or not
+blkd version # Uncomment the below line if there are any dependency issues
+# ldd build/blkd
 
 # Initialize validator node
 MONIKER="she-rpc-node"
-shed init --chain-id she "$MONIKER"
+blkd init --chain-id she "$MONIKER"
 
 # Copy configs
 cp docker/rpcnode/config/app.toml ~/.she/config/app.toml

@@ -102,5 +102,5 @@ for test_path in $block_tests; do
     echo -e "\n*********************************************************\n"
     rm -r ~/.she || true
     NO_RUN=1 ./scripts/initialize_local_chain.sh
-    shed blocktest --block-test $test_path --test-name "${test_name}_Cancun"
+    blkd blocktest --block-test $test_path --test-name "${test_name}_Cancun"
 done
