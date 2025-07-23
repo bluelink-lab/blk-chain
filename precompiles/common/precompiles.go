@@ -202,11 +202,11 @@ func ValidateNonPayable(value *big.Int) error {
 }
 
 func HandlePaymentUshe(ctx sdk.Context, precompileAddr sdk.AccAddress, payer sdk.AccAddress, value *big.Int, bankKeeper BankKeeper) (sdk.Coin, error) {
-	ublk, wei := state.SplitUsheWeiAmount(value)
+	ublt, wei := state.SplitUsheWeiAmount(value)
 	if !wei.IsZero() {
 		return sdk.Coin{}, fmt.Errorf("selected precompile function does not allow payment with non-zero wei remainder: received %s", value)
 	}
-	coin := sdk.NewCoin(sdk.MustGetBaseDenom(), ublk)
+	coin := sdk.NewCoin(sdk.MustGetBaseDenom(), ublt)
 	// refund payer because the following precompile logic will debit the payments from payer's account
 	// this creates a new event manager to avoid surfacing these as cosmos events
 	if err := bankKeeper.SendCoins(ctx.WithEventManager(sdk.NewEventManager()), precompileAddr, payer, sdk.NewCoins(coin)); err != nil {
@@ -216,13 +216,13 @@ func HandlePaymentUshe(ctx sdk.Context, precompileAddr sdk.AccAddress, payer sdk
 }
 
 func HandlePaymentUsheWei(ctx sdk.Context, precompileAddr sdk.AccAddress, payer sdk.AccAddress, value *big.Int, bankKeeper BankKeeper) (sdk.Int, sdk.Int, error) {
-	ublk, wei := state.SplitUsheWeiAmount(value)
+	ublt, wei := state.SplitUsheWeiAmount(value)
 	// refund payer because the following precompile logic will debit the payments from payer's account
 	// this creates a new event manager to avoid surfacing these as cosmos events
-	if err := bankKeeper.SendCoinsAndWei(ctx.WithEventManager(sdk.NewEventManager()), precompileAddr, payer, ublk, wei); err != nil {
+	if err := bankKeeper.SendCoinsAndWei(ctx.WithEventManager(sdk.NewEventManager()), precompileAddr, payer, ublt, wei); err != nil {
 		return sdk.Int{}, sdk.Int{}, err
 	}
-	return ublk, wei, nil
+	return ublt, wei, nil
 }
 
 /*

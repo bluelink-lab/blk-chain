@@ -528,11 +528,11 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
-	err = testApp.BankKeeper.MintCoins(Ctx, "evm", sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10))))
+	err = testApp.BankKeeper.MintCoins(Ctx, "evm", sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10))))
 	if err != nil {
 		panic(err)
 	}
-	err = testApp.BankKeeper.SendCoinsFromModuleToAccount(Ctx, "evm", sheAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10))))
+	err = testApp.BankKeeper.SendCoinsFromModuleToAccount(Ctx, "evm", sheAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10))))
 	if err != nil {
 		panic(err)
 	}
@@ -772,7 +772,7 @@ func buildTx(txData ethtypes.DynamicFeeTx) (client.TxBuilder, *ethtypes.Transact
 	privKey := hd.Secp256k1.Generate()(derivedPriv)
 	testPrivHex := hex.EncodeToString(privKey.Bytes())
 	_, evmAddr := testkeeper.PrivateKeyToAddresses(privKey)
-	EVMKeeper.BankKeeper().AddCoins(Ctx, sdk.AccAddress(evmAddr[:]), sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10000000))), false)
+	EVMKeeper.BankKeeper().AddCoins(Ctx, sdk.AccAddress(evmAddr[:]), sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10000000))), false)
 	key, _ := crypto.HexToECDSA(testPrivHex)
 	ethCfg := types.DefaultChainConfig().EthereumConfig(chainId)
 	signer := ethtypes.MakeSigner(ethCfg, big.NewInt(Ctx.BlockHeight()), uint64(Ctx.BlockTime().Unix()))

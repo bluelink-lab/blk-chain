@@ -18,7 +18,7 @@ func TestLightInvarianceChecks(t *testing.T) {
 		sdk.AccAddress(secp256k1.GenPrivKey().PubKey().Address()),
 		sdk.AccAddress(secp256k1.GenPrivKey().PubKey().Address()),
 	}
-	ublkCoin := func(i int64) sdk.Coin { return sdk.NewCoin("ublk", sdk.NewInt(i)) }
+	ublkCoin := func(i int64) sdk.Coin { return sdk.NewCoin("ublt", sdk.NewInt(i)) }
 	ublkCoins := func(i int64) sdk.Coins { return sdk.NewCoins(ublkCoin(i)) }
 	for i, tt := range []struct {
 		preUshe    []int64

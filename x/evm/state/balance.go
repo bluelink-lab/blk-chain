@@ -26,9 +26,9 @@ func (s *DBImpl) SubBalance(evmAddr common.Address, amt *big.Int, reason tracing
 		ctx = ctx.WithEventManager(sdk.NewEventManager())
 	}
 
-	ublk, wei := SplitUsheWeiAmount(amt)
+	ublt, wei := SplitUsheWeiAmount(amt)
 	addr := s.getSheAddress(evmAddr)
-	err := s.k.BankKeeper().SubUnlockedCoins(ctx, addr, sdk.NewCoins(sdk.NewCoin(s.k.GetBaseDenom(s.ctx), ublk)), true)
+	err := s.k.BankKeeper().SubUnlockedCoins(ctx, addr, sdk.NewCoins(sdk.NewCoin(s.k.GetBaseDenom(s.ctx), ublt)), true)
 	if err != nil {
 		s.err = err
 		return
@@ -66,9 +66,9 @@ func (s *DBImpl) AddBalance(evmAddr common.Address, amt *big.Int, reason tracing
 		ctx = ctx.WithEventManager(sdk.NewEventManager())
 	}
 
-	ublk, wei := SplitUsheWeiAmount(amt)
+	ublt, wei := SplitUsheWeiAmount(amt)
 	addr := s.getSheAddress(evmAddr)
-	err := s.k.BankKeeper().AddCoins(ctx, addr, sdk.NewCoins(sdk.NewCoin(s.k.GetBaseDenom(s.ctx), ublk)), true)
+	err := s.k.BankKeeper().AddCoins(ctx, addr, sdk.NewCoins(sdk.NewCoin(s.k.GetBaseDenom(s.ctx), ublt)), true)
 	if err != nil {
 		s.err = err
 		return
@@ -107,8 +107,8 @@ func (s *DBImpl) SetBalance(evmAddr common.Address, amt *big.Int, reason tracing
 	if s.err != nil {
 		panic(s.err)
 	}
-	ublk, _ := SplitUsheWeiAmount(amt)
-	coinsAmt := sdk.NewCoins(sdk.NewCoin(s.k.GetBaseDenom(s.ctx), ublk.Add(sdk.OneInt())))
+	ublt, _ := SplitUsheWeiAmount(amt)
+	coinsAmt := sdk.NewCoins(sdk.NewCoin(s.k.GetBaseDenom(s.ctx), ublt.Add(sdk.OneInt())))
 	if err := s.k.BankKeeper().MintCoins(s.ctx, types.ModuleName, coinsAmt); err != nil {
 		panic(err)
 	}
@@ -126,8 +126,8 @@ func (s *DBImpl) getSheAddress(evmAddr common.Address) sdk.AccAddress {
 }
 
 func (s *DBImpl) send(from sdk.AccAddress, to sdk.AccAddress, amt *big.Int) {
-	ublk, wei := SplitUsheWeiAmount(amt)
-	err := s.k.BankKeeper().SendCoinsAndWei(s.ctx, from, to, ublk, wei)
+	ublt, wei := SplitUsheWeiAmount(amt)
+	err := s.k.BankKeeper().SendCoinsAndWei(s.ctx, from, to, ublt, wei)
 	if err != nil {
 		s.err = err
 	}

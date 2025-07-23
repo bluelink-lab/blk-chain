@@ -66,7 +66,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 					Value: "blk",
 				},
 			})
-			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ublk: %X", p.Key))
+			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ublt: %X", p.Key))
 			continue
 		}
 		addrLen := int(p.Key[1])
@@ -78,7 +78,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 					Value: "blk",
 				},
 			})
-			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ublk: %X", p.Key))
+			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ublt: %X", p.Key))
 			continue
 		}
 		addr := p.Key[2 : addrLen+2]
@@ -92,7 +92,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 				metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 					{
 						Name:  "type",
-						Value: "ublk",
+						Value: "ublt",
 					}, {
 						Name:  "step",
 						Value: "post_block",
@@ -120,7 +120,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 				{
 					Name:  "type",
-					Value: "ublk",
+					Value: "ublt",
 				}, {
 					Name:  "step",
 					Value: "pre_block",
@@ -241,7 +241,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	}
 	ublkDiff := ublkPreTotal.Sub(ublkPostTotal).Sub(weiDiffInUshe).Add(supplyChanged)
 	if !ublkDiff.IsZero() {
-		panic(fmt.Sprintf("unexpected ublk balance total found! Pre-block ublk total %s wei total %s total supply %s, post-block ublk total %s wei total %s total supply %s", ublkPreTotal, weiPreTotal, preTotalSupply, ublkPostTotal, weiPostTotal, preTotalSupply.Add(supplyChanged)))
+		panic(fmt.Sprintf("unexpected ublt balance total found! Pre-block ublt total %s wei total %s total supply %s, post-block ublt total %s wei total %s total supply %s", ublkPreTotal, weiPreTotal, preTotalSupply, ublkPostTotal, weiPostTotal, preTotalSupply.Add(supplyChanged)))
 	}
 	app.Logger().Info("successfully verified supply light invariance")
 }

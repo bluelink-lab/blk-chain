@@ -397,8 +397,8 @@ func (k *Keeper) PrepareReplayedAddr(ctx sdk.Context, addr common.Address) {
 	}
 	store.Set(addr[:], a.Root[:])
 	if a.Balance != nil && a.Balance.Cmp(utils.Big0) != 0 {
-		ublk, wei := state.SplitUsheWeiAmount(a.Balance)
-		err = k.BankKeeper().AddCoins(ctx, k.GetSheAddressOrDefault(ctx, addr), sdk.NewCoins(sdk.NewCoin("ublk", ublk)), true)
+		ublt, wei := state.SplitUsheWeiAmount(a.Balance)
+		err = k.BankKeeper().AddCoins(ctx, k.GetSheAddressOrDefault(ctx, addr), sdk.NewCoins(sdk.NewCoin("ublt", ublt)), true)
 		if err != nil {
 			panic(err)
 		}

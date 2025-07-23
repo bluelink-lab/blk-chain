@@ -212,12 +212,12 @@ func (p PrecompileExecutor) sendNative(ctx sdk.Context, method *abi.Method, args
 		return nil, 0, err
 	}
 
-	ublk, wei, err := pcommon.HandlePaymentUsheWei(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), senderSheAddr, value, p.bankKeeper)
+	ublt, wei, err := pcommon.HandlePaymentUsheWei(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), senderSheAddr, value, p.bankKeeper)
 	if err != nil {
 		return nil, 0, err
 	}
 
-	if err := p.bankKeeper.SendCoinsAndWei(ctx, senderSheAddr, receiverSheAddr, ublk, wei); err != nil {
+	if err := p.bankKeeper.SendCoinsAndWei(ctx, senderSheAddr, receiverSheAddr, ublt, wei); err != nil {
 		return nil, 0, err
 	}
 	accExists := p.accountKeeper.HasAccount(ctx, receiverSheAddr)
@@ -323,7 +323,7 @@ func (p PrecompileExecutor) decimals(ctx sdk.Context, method *abi.Method, _ []in
 		return nil, 0, err
 	}
 
-	// all native tokens are integer-based, returns decimals for microdenom (ublk)
+	// all native tokens are integer-based, returns decimals for microdenom (ublt)
 	bz, err := method.Outputs.Pack(uint8(0))
 	return bz, pcommon.GetRemainingGas(ctx, p.evmKeeper), err
 }

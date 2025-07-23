@@ -46,7 +46,7 @@ func (suite *KeeperTestSuite) SetupTest() {
 
 // Explicitly only run once during setup
 func (suite *KeeperTestSuite) PrepareTest() {
-	suite.defaultDenom = "ublk"
+	suite.defaultDenom = "ublt"
 	suite.testDenom = "foocoins"
 
 	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin(suite.defaultDenom, 100000000000)}
@@ -224,7 +224,7 @@ func TestMsgBeginBurnDepedencyGenerator(t *testing.T) {
 
 	sendMsg := tokenfactorytypes.MsgBurn{
 		Sender: addr1.String(),
-		Amount: sdk.NewInt64Coin("ublk", 10),
+		Amount: sdk.NewInt64Coin("ublt", 10),
 	}
 
 	accessOps, err := tkfactory.TokenFactoryBurnDependencyGenerator(app.AccessControlKeeper, ctx, &sendMsg)

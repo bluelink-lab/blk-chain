@@ -28,10 +28,10 @@ func TestMigrateCastAddressBalances(t *testing.T) {
 
 	require.Nil(t, migrations.MigrateCastAddressBalances(ctx, &k))
 
-	require.Equal(t, sdk.NewInt(10), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr1[:]), "ublk").Amount)
-	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sheAddr1, "ublk").Amount)
-	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr2[:]), "ublk").Amount)
-	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sheAddr2, "ublk").Amount)
-	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr3[:]), "ublk").Amount)
-	require.Equal(t, sdk.NewInt(10), k.BankKeeper().GetBalance(ctx, sheAddr3, "ublk").Amount)
+	require.Equal(t, sdk.NewInt(10), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr1[:]), "ublt").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sheAddr1, "ublt").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr2[:]), "ublt").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sheAddr2, "ublt").Amount)
+	require.Equal(t, sdk.ZeroInt(), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr3[:]), "ublt").Amount)
+	require.Equal(t, sdk.NewInt(10), k.BankKeeper().GetBalance(ctx, sheAddr3, "ublt").Amount)
 }

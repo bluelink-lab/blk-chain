@@ -39,7 +39,7 @@ func TestRandomizedGenState(t *testing.T) {
 	var mintGenesis types.GenesisState
 	simState.Cdc.MustUnmarshalJSON(simState.GenState[types.ModuleName], &mintGenesis)
 
-	require.Equal(t, "ublk", mintGenesis.Params.MintDenom)
+	require.Equal(t, "ublt", mintGenesis.Params.MintDenom)
 	require.Equal(t, "0ublk", mintGenesis.Minter.GetLastMintAmountCoin().String())
 }
 

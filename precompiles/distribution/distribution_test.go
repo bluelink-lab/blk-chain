@@ -858,17 +858,17 @@ func (tk *TestDistributionKeeper) DelegationTotalRewards(ctx context.Context, re
 			ValidatorAddress: "shevaloper1wuj3xg3yrw4ryxn9vygwuz0necs4klj7j9nay6",
 			Reward: sdk.NewDecCoins(
 				sdk.NewDecCoin("uatom", sdk.NewInt(int64(uatomCoins))),
-				sdk.NewDecCoin("ublk", sdk.NewInt(int64(val1ublkCoins))),
+				sdk.NewDecCoin("ublt", sdk.NewInt(int64(val1ublkCoins))),
 			),
 		},
 		{
 			ValidatorAddress: "shevaloper16znh8ktn33dwnxxc9q0jmxmjf6hsz4tl0s6vxh",
-			Reward:           sdk.NewDecCoins(sdk.NewDecCoin("ublk", sdk.NewInt(int64(val2ublkCoins)))),
+			Reward:           sdk.NewDecCoins(sdk.NewDecCoin("ublt", sdk.NewInt(int64(val2ublkCoins)))),
 		},
 	}
 
 	allDecCoins := sdk.NewDecCoins(sdk.NewDecCoin("uatom", sdk.NewInt(int64(uatomCoins))),
-		sdk.NewDecCoin("ublk", sdk.NewInt(int64(val1ublkCoins+val2ublkCoins))))
+		sdk.NewDecCoin("ublt", sdk.NewInt(int64(val1ublkCoins+val2ublkCoins))))
 
 	return &distrtypes.QueryDelegationTotalRewardsResponse{Rewards: rewards, Total: allDecCoins}, nil
 }
@@ -903,13 +903,13 @@ func TestPrecompile_RunAndCalculateGas_Rewards(t *testing.T) {
 	}
 	coin2 := distribution.Coin{
 		Amount:   big.NewInt(5_000_000_000_000_000_000),
-		Denom:    "ublk",
+		Denom:    "ublt",
 		Decimals: big.NewInt(18),
 	}
 
 	coin3 := distribution.Coin{
 		Amount:   big.NewInt(7_000_000_000_000_000_000),
-		Denom:    "ublk",
+		Denom:    "ublt",
 		Decimals: big.NewInt(18),
 	}
 	coinsVal1 := []distribution.Coin{coin1, coin2}
@@ -932,7 +932,7 @@ func TestPrecompile_RunAndCalculateGas_Rewards(t *testing.T) {
 		},
 		{
 			Amount:   coin2Amount,
-			Denom:    "ublk",
+			Denom:    "ublt",
 			Decimals: big.NewInt(18),
 		},
 	}

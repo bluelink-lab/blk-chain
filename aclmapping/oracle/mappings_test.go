@@ -47,7 +47,7 @@ func (suite *KeeperTestSuite) SetupTest() {
 
 // Explicitly only run once during setup
 func (suite *KeeperTestSuite) PrepareTest() {
-	suite.defaultDenom = "ublk"
+	suite.defaultDenom = "ublt"
 	suite.defaultExchangeRate = fmt.Sprintf("%dublk", sdk.NewDec(1700))
 
 	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin(suite.defaultDenom, 100000000000)}

@@ -129,7 +129,7 @@ blkd tx staking create-validator \
 --website="<your_website>" \
 --pubkey $(blkd tendermint show-validator) \
 --min-self-delegation="1" \
---amount <token delegation>ublk \
+--amount <token delegation>ublt \
 --node localhost:26657
 ```
 # Build with Us!

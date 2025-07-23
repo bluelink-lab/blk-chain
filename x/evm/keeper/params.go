@@ -9,7 +9,7 @@ import (
 	"github.com/bluelink-lab/blk-chain/x/evm/types"
 )
 
-const BaseDenom = "ublk"
+const BaseDenom = "ublt"
 
 func (k Keeper) SetParams(ctx sdk.Context, params types.Params) {
 	k.Paramstore.SetParamSet(ctx, &params)

@@ -389,7 +389,7 @@ describe("EVM Precompile Tester", function () {
                     amount: "10",
                 },
                 {
-                    denom: "ublk",
+                    denom: "ublt",
                     amount: "1000000",
                 },
             ];
@@ -405,7 +405,7 @@ describe("EVM Precompile Tester", function () {
             const receipt = await response.wait();
             expect(receipt.status).to.equal(1);
 
-            // ublk assertions
+            // ublt assertions
             const ublkBalance = await getSheBalance(wasmContractAddress);
             expect(ublkBalance).to.equal(oldBalance + 1000000);
 
@@ -430,7 +430,7 @@ describe("EVM Precompile Tester", function () {
                     amount: "10",
                 },
                 {
-                    denom: "ublk",
+                    denom: "ublt",
                     amount: "1000000",
                 },
             ];
@@ -469,7 +469,7 @@ describe("EVM Precompile Tester", function () {
             const receipt = await response.wait();
             expect(receipt.status).to.equal(1);
 
-            // ublk assertions
+            // ublt assertions
             const ublkBalance = await getSheBalance(wasmContractAddress);
             expect(ublkBalance).to.equal(oldBalance + 4000000);
 

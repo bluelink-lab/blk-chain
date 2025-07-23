@@ -22,7 +22,7 @@
     - cmd: printf "12345678\n" | blkd tx authz exec send_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ublk --output json  | jq -r ".code"
       env: AUTHZ_2_ERROR_CODE
     # query bank balances for the other addr to validate the amount the account has
-    - cmd: blkd q bank balances $OTHER_ACC_ADDR --denom ublk --output json | jq -r ".amount"
+    - cmd: blkd q bank balances $OTHER_ACC_ADDR --denom ublt --output json | jq -r ".amount"
       env: OTHER_ACC_BALANCE
   verifiers:
     # verify that error code == 0 for first authz exec

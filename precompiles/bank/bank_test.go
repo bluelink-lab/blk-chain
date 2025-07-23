@@ -60,9 +60,9 @@ func TestRun(t *testing.T) {
 	require.Nil(t, err)
 	err = k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, senderAddr, sdk.NewCoins(sdk.NewCoin("ufoo", sdk.NewInt(10000000))))
 	require.Nil(t, err)
-	err = k.BankKeeper().MintCoins(ctx, types.ModuleName, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10000000))))
+	err = k.BankKeeper().MintCoins(ctx, types.ModuleName, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10000000))))
 	require.Nil(t, err)
-	err = k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, senderAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10000000))))
+	err = k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, senderAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10000000))))
 	require.Nil(t, err)
 
 	// Setup receiving addresses
@@ -79,7 +79,7 @@ func TestRun(t *testing.T) {
 	// Precompile send test
 	send, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).SendID)
 	require.Nil(t, err)
-	args, err := send.Inputs.Pack(senderEVMAddr, evmAddr, "ublk", big.NewInt(25))
+	args, err := send.Inputs.Pack(senderEVMAddr, evmAddr, "ublt", big.NewInt(25))
 	require.Nil(t, err)
 	_, _, err = p.RunAndCalculateGas(&evm, senderEVMAddr, senderEVMAddr, append(p.GetExecutor().(*bank.PrecompileExecutor).SendID, args...), 100000, nil, nil, true, false) // should error because of read only call
 	require.NotNil(t, err)
@@ -118,7 +118,7 @@ func TestRun(t *testing.T) {
 	_, _, err = p.RunAndCalculateGas(&evm, evmAddr, evmAddr, append(p.GetExecutor().(*bank.PrecompileExecutor).SendNativeID, argsNativeError...), 100000, big.NewInt(100), nil, false, true)
 	require.NotNil(t, err)
 
-	// Send native 10_000_000_000_100, split into 10 ublk 100wei
+	// Send native 10_000_000_000_100, split into 10 ublt 100wei
 	// Test payable with eth LegacyTx
 	abi := pcommon.MustGetABI(f, "abi.json")
 	argsNative, err := abi.Pack(bank.SendNativeMethod, sheAddr.String())
@@ -170,7 +170,7 @@ func TestRun(t *testing.T) {
 
 	var expectedEvts sdk.Events = []sdk.Event{
 		// gas is sent from sender
-		banktypes.NewCoinSpentEvent(senderAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(200000)))),
+		banktypes.NewCoinSpentEvent(senderAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(200000)))),
 		// wei events
 		banktypes.NewWeiSpentEvent(senderAddr, sdk.NewInt(100)),
 		banktypes.NewWeiReceivedEvent(sheAddr, sdk.NewInt(100)),
@@ -181,29 +181,29 @@ func TestRun(t *testing.T) {
 			sdk.NewAttribute(sdk.AttributeKeyAmount, sdk.NewInt(100).String()),
 		),
 		// sender sends coin to the receiver
-		banktypes.NewCoinSpentEvent(senderAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10)))),
-		banktypes.NewCoinReceivedEvent(sheAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10)))),
+		banktypes.NewCoinSpentEvent(senderAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10)))),
+		banktypes.NewCoinReceivedEvent(sheAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10)))),
 		sdk.NewEvent(
 			banktypes.EventTypeTransfer,
 			sdk.NewAttribute(banktypes.AttributeKeyRecipient, sheAddr.String()),
 			sdk.NewAttribute(banktypes.AttributeKeySender, senderAddr.String()),
-			sdk.NewAttribute(sdk.AttributeKeyAmount, sdk.NewCoin("ublk", sdk.NewInt(10)).String()),
+			sdk.NewAttribute(sdk.AttributeKeyAmount, sdk.NewCoin("ublt", sdk.NewInt(10)).String()),
 		),
 		sdk.NewEvent(
 			sdk.EventTypeMessage,
 			sdk.NewAttribute(banktypes.AttributeKeySender, senderAddr.String()),
 		),
 		// gas refund to the sender
-		banktypes.NewCoinReceivedEvent(senderAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(132401)))),
+		banktypes.NewCoinReceivedEvent(senderAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(132401)))),
 		// tip is paid to the validator
-		banktypes.NewCoinReceivedEvent(sdk.MustAccAddressFromBech32("she1v4mx6hmrda5kucnpwdjsqqqqqqqqqqqqlve8dv"), sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(67599)))),
+		banktypes.NewCoinReceivedEvent(sdk.MustAccAddressFromBech32("she1v4mx6hmrda5kucnpwdjsqqqqqqqqqqqqlve8dv"), sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(67599)))),
 	}
 	require.EqualValues(t, expectedEvts.ToABCIEvents(), evts)
 
-	// Use precompile balance to verify sendNative ublk amount succeeded
+	// Use precompile balance to verify sendNative ublt amount succeeded
 	balance, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).BalanceID)
 	require.Nil(t, err)
-	args, err = balance.Inputs.Pack(evmAddr, "ublk")
+	args, err = balance.Inputs.Pack(evmAddr, "ublt")
 	require.Nil(t, err)
 	precompileRes, _, err := p.RunAndCalculateGas(&evm, common.Address{}, common.Address{}, append(p.GetExecutor().(*bank.PrecompileExecutor).BalanceID, args...), 100000, nil, nil, false, false)
 	require.Nil(t, err)
@@ -218,7 +218,7 @@ func TestRun(t *testing.T) {
 	require.Nil(t, k.AccountKeeper().GetAccount(ctx, newAddr))
 	argsNewAccount, err := sendNative.Inputs.Pack(newAddr.String())
 	require.Nil(t, err)
-	require.Nil(t, k.BankKeeper().SendCoins(ctx, sheAddr, k.GetSheAddressOrDefault(ctx, p.Address()), sdk.NewCoins(sdk.NewCoin("ublk", sdk.OneInt()))))
+	require.Nil(t, k.BankKeeper().SendCoins(ctx, sheAddr, k.GetSheAddressOrDefault(ctx, p.Address()), sdk.NewCoins(sdk.NewCoin("ublt", sdk.OneInt()))))
 	_, _, err = p.RunAndCalculateGas(&evm, evmAddr, evmAddr, append(p.GetExecutor().(*bank.PrecompileExecutor).SendNativeID, argsNewAccount...), 100000, big.NewInt(1), nil, false, false)
 	require.Nil(t, err)
 	// should create account if not exists
@@ -246,7 +246,7 @@ func TestRun(t *testing.T) {
 	}, bank.CoinBalance(parsedBalances[0]))
 	require.Equal(t, bank.CoinBalance{
 		Amount: big.NewInt(9932390),
-		Denom:  "ublk",
+		Denom:  "ublt",
 	}, bank.CoinBalance(parsedBalances[1]))
 
 	// Verify errors properly raised on bank balance calls with incorrect inputs
@@ -276,9 +276,9 @@ func TestSendForUnlinkedReceiver(t *testing.T) {
 	require.Nil(t, err)
 	err = k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, senderAddr, sdk.NewCoins(sdk.NewCoin("ufoo", sdk.NewInt(10000000))))
 	require.Nil(t, err)
-	err = k.BankKeeper().MintCoins(ctx, types.ModuleName, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10000000))))
+	err = k.BankKeeper().MintCoins(ctx, types.ModuleName, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10000000))))
 	require.Nil(t, err)
-	err = k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, senderAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10000000))))
+	err = k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, senderAddr, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10000000))))
 	require.Nil(t, err)
 
 	_, pointerAddr := testkeeper.MockAddressPair()
@@ -302,7 +302,7 @@ func TestSendForUnlinkedReceiver(t *testing.T) {
 	_, _, err = p.RunAndCalculateGas(&evm, pointerAddr, pointerAddr, append(p.GetExecutor().(*bank.PrecompileExecutor).SendID, args...), 100000, nil, nil, false, false) // should not error
 	require.Nil(t, err)
 
-	// Use precompile balance to verify sendNative ublk amount succeeded
+	// Use precompile balance to verify sendNative ublt amount succeeded
 	balance, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).BalanceID)
 	require.Nil(t, err)
 	args, err = balance.Inputs.Pack(evmAddr, "ufoo")
@@ -336,7 +336,7 @@ func TestSendForUnlinkedReceiver(t *testing.T) {
 	}, bank.CoinBalance(parsedBalances[0]))
 	require.Equal(t, bank.CoinBalance{
 		Amount: big.NewInt(10000000),
-		Denom:  "ublk",
+		Denom:  "ublt",
 	}, bank.CoinBalance(parsedBalances[1]))
 
 	// Verify errors properly raised on bank balance calls with incorrect inputs
@@ -355,7 +355,7 @@ func TestSendForUnlinkedReceiver(t *testing.T) {
 func TestMetadata(t *testing.T) {
 	k := &testkeeper.EVMTestApp.EvmKeeper
 	ctx := testkeeper.EVMTestApp.GetContextForDeliverTx([]byte{}).WithBlockTime(time.Now())
-	k.BankKeeper().SetDenomMetaData(ctx, banktypes.Metadata{Name: "BLK", Symbol: "ublk", Base: "ublk"})
+	k.BankKeeper().SetDenomMetaData(ctx, banktypes.Metadata{Name: "BLK", Symbol: "ublt", Base: "ublt"})
 	p, err := bank.NewPrecompile(k.BankKeeper(), bankkeeper.NewMsgServerImpl(k.BankKeeper()), k, k.AccountKeeper())
 	require.Nil(t, err)
 	statedb := state.NewDBImpl(ctx, k, true)
@@ -364,7 +364,7 @@ func TestMetadata(t *testing.T) {
 	}
 	name, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).NameID)
 	require.Nil(t, err)
-	args, err := name.Inputs.Pack("ublk")
+	args, err := name.Inputs.Pack("ublt")
 	require.Nil(t, err)
 	res, _, err := p.RunAndCalculateGas(&evm, common.Address{}, common.Address{}, append(p.GetExecutor().(*bank.PrecompileExecutor).NameID, args...), 100000, nil, nil, false, false)
 	require.Nil(t, err)
@@ -374,17 +374,17 @@ func TestMetadata(t *testing.T) {
 
 	symbol, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).SymbolID)
 	require.Nil(t, err)
-	args, err = symbol.Inputs.Pack("ublk")
+	args, err = symbol.Inputs.Pack("ublt")
 	require.Nil(t, err)
 	res, _, err = p.RunAndCalculateGas(&evm, common.Address{}, common.Address{}, append(p.GetExecutor().(*bank.PrecompileExecutor).SymbolID, args...), 100000, nil, nil, false, false)
 	require.Nil(t, err)
 	outputs, err = symbol.Outputs.Unpack(res)
 	require.Nil(t, err)
-	require.Equal(t, "ublk", outputs[0])
+	require.Equal(t, "ublt", outputs[0])
 
 	decimal, err := p.ABI.MethodById(p.GetExecutor().(*bank.PrecompileExecutor).DecimalsID)
 	require.Nil(t, err)
-	args, err = decimal.Inputs.Pack("ublk")
+	args, err = decimal.Inputs.Pack("ublt")
 	require.Nil(t, err)
 	res, _, err = p.RunAndCalculateGas(&evm, common.Address{}, common.Address{}, append(p.GetExecutor().(*bank.PrecompileExecutor).DecimalsID, args...), 100000, nil, nil, false, false)
 	require.Nil(t, err)

@@ -14,14 +14,14 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-// assuming only `ublk` will get distributed
+// assuming only `ublt` will get distributed
 func Allocation(t *testing.T, app *processblock.App, f BlockRunnable, _ []signing.Tx) BlockRunnable {
 	return func() []uint32 {
 		// fees collected in T-1 are allocated in T's BeginBlock, so we can simply
 		// query fee collector's balance since this function is called between T-1
 		// and T.
 		feeCollector := app.AccountKeeper.GetModuleAccount(app.Ctx(), authtypes.FeeCollectorName)
-		feesCollectedInt := app.BankKeeper.GetBalance(app.Ctx(), feeCollector.GetAddress(), "ublk")
+		feesCollectedInt := app.BankKeeper.GetBalance(app.Ctx(), feeCollector.GetAddress(), "ublt")
 		feesCollected := sdk.NewDecCoinFromCoin(feesCollectedInt)
 
 		prevProposer := sdk.ValAddress(app.DistrKeeper.GetPreviousProposerConsAddr(app.Ctx())).String()
@@ -34,7 +34,7 @@ func Allocation(t *testing.T, app *processblock.App, f BlockRunnable, _ []signin
 		bonusProposerReward := app.DistrKeeper.GetBonusProposerReward(app.Ctx())
 		proposerMultiplier := baseProposerReward.Add(bonusProposerReward.MulTruncate(sdk.OneDec())) // in test, every val always signs
 		proposerReward := sdk.DecCoin{
-			Denom:  "ublk",
+			Denom:  "ublt",
 			Amount: feesCollected.Amount.MulTruncate(proposerMultiplier),
 		}
 		expectedOutstandingRewards[prevProposer] = expectedOutstandingRewards[prevProposer].Add(proposerReward)
@@ -42,7 +42,7 @@ func Allocation(t *testing.T, app *processblock.App, f BlockRunnable, _ []signin
 		communityTax := app.DistrKeeper.GetCommunityTax(app.Ctx())
 		voteMultiplier := sdk.OneDec().Sub(proposerMultiplier).Sub(communityTax).QuoInt(sdk.NewInt(int64(len(votedValidators))))
 		voterReward := sdk.DecCoin{
-			Denom:  "ublk",
+			Denom:  "ublt",
 			Amount: feesCollected.Amount.MulTruncate(voteMultiplier),
 		}
 
@@ -67,7 +67,7 @@ func Allocation(t *testing.T, app *processblock.App, f BlockRunnable, _ []signin
 func getOutstandingRewards(app *processblock.App) map[string]sdk.DecCoin {
 	outstandingRewards := map[string]sdk.DecCoin{}
 	for _, val := range app.GetAllValidators() {
-		outstandingRewards[val.GetOperator().String()] = sdk.NewDecCoin("ublk", sdk.NewInt(0))
+		outstandingRewards[val.GetOperator().String()] = sdk.NewDecCoin("ublt", sdk.NewInt(0))
 	}
 	app.DistrKeeper.IterateValidatorOutstandingRewards(
 		app.Ctx(),
@@ -76,10 +76,10 @@ func getOutstandingRewards(app *processblock.App) map[string]sdk.DecCoin {
 				return false
 			}
 			if len(rewards.Rewards) > 1 {
-				panic("expecting only ublk as validator reward denom but found multiple")
+				panic("expecting only ublt as validator reward denom but found multiple")
 			}
-			if rewards.Rewards[0].Denom != "ublk" {
-				panic(fmt.Sprintf("expecting only ublk as validator reward denom but found %s", rewards.Rewards[0].Denom))
+			if rewards.Rewards[0].Denom != "ublt" {
+				panic(fmt.Sprintf("expecting only ublt as validator reward denom but found %s", rewards.Rewards[0].Denom))
 			}
 			outstandingRewards[val.String()] = rewards.Rewards[0]
 			return false

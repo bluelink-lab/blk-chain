@@ -67,7 +67,7 @@ func TestABCI(t *testing.T) {
 	k, ctx := testkeeper.MockEVMKeeper()
 	_, evmAddr1 := testkeeper.MockAddressPair()
 	_, evmAddr2 := testkeeper.MockAddressPair()
-	amt := sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10)))
+	amt := sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10)))
 	k.BankKeeper().MintCoins(ctx, types.ModuleName, amt)
 	k.BankKeeper().SendCoinsFromModuleToAccount(ctx, types.ModuleName, sdk.AccAddress(evmAddr1[:]), amt)
 	m := evm.NewAppModule(nil, k)
@@ -95,8 +95,8 @@ func TestABCI(t *testing.T) {
 	k.SetTxResults([]*abci.ExecTxResult{{Code: 0}, {Code: 0}, {Code: 0}, {Code: 0}})
 	k.SetMsgs([]*types.MsgEVMTransaction{nil, {}, nil, {}})
 	m.EndBlock(ctx, abci.RequestEndBlock{})
-	require.Equal(t, uint64(0), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName), "ublk").Amount.Uint64())
-	require.Equal(t, uint64(2), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(authtypes.FeeCollectorName), "ublk").Amount.Uint64())
+	require.Equal(t, uint64(0), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName), "ublt").Amount.Uint64())
+	require.Equal(t, uint64(2), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(authtypes.FeeCollectorName), "ublt").Amount.Uint64())
 
 	// second block
 	m.BeginBlock(ctx, abci.RequestBeginBlock{})
@@ -111,8 +111,8 @@ func TestABCI(t *testing.T) {
 	k.SetTxResults([]*abci.ExecTxResult{{Code: 0}, {Code: 0}, {Code: 0}})
 	k.SetMsgs([]*types.MsgEVMTransaction{nil, nil, {}})
 	m.EndBlock(ctx, abci.RequestEndBlock{})
-	require.Equal(t, uint64(1), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName), "ublk").Amount.Uint64())
-	require.Equal(t, uint64(2), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(authtypes.FeeCollectorName), "ublk").Amount.Uint64())
+	require.Equal(t, uint64(1), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName), "ublt").Amount.Uint64())
+	require.Equal(t, uint64(2), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(authtypes.FeeCollectorName), "ublt").Amount.Uint64())
 
 	// third block
 	m.BeginBlock(ctx, abci.RequestBeginBlock{})
@@ -135,7 +135,7 @@ func TestABCI(t *testing.T) {
 	_, err = vms.CreateVestingAccount(sdk.WrapSDKContext(ctx), &vestingtypes.MsgCreateVestingAccount{
 		FromAddress: sdk.AccAddress(evmAddr1[:]).String(),
 		ToAddress:   coinbase.String(),
-		Amount:      sdk.NewCoins(sdk.NewCoin("ublk", sdk.OneInt())),
+		Amount:      sdk.NewCoins(sdk.NewCoin("ublt", sdk.OneInt())),
 		EndTime:     math.MaxInt64,
 	})
 	require.NotNil(t, err)
@@ -150,7 +150,7 @@ func TestAnteSurplus(t *testing.T) {
 	m.BeginBlock(ctx, abci.RequestBeginBlock{})
 	k.AddAnteSurplus(ctx, common.BytesToHash([]byte("1234")), sdk.NewInt(1_000_000_000_001))
 	m.EndBlock(ctx, abci.RequestEndBlock{})
-	require.Equal(t, uint64(1), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName), "ublk").Amount.Uint64())
+	require.Equal(t, uint64(1), k.BankKeeper().GetBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName), "ublt").Amount.Uint64())
 	require.Equal(t, uint64(1), k.BankKeeper().GetWeiBalance(ctx, k.AccountKeeper().GetModuleAddress(types.ModuleName)).Uint64())
 	// ante surplus should be cleared
 	a.SetDeliverStateToCommit()

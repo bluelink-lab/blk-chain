@@ -162,7 +162,7 @@ providers = [
 
 [[currency_pairs]]
 base = "BLK"
-chain_denom = "ublk"
+chain_denom = "ublt"
 quote = "USDT"
 providers = [
 	"kraken",
@@ -254,7 +254,7 @@ providers = [
 
 [[currency_pairs]]
 base = "BLK"
-chain_denom = "ublk"
+chain_denom = "ublt"
 quote = "USDT"
 providers = [
 	"kraken",
@@ -409,7 +409,7 @@ providers = [
 
 [[currency_pairs]]
 base = "blk"
-chain_denom = "ublk"
+chain_denom = "ublt"
 quote = "USDT"
 providers = [
 	"kraken",

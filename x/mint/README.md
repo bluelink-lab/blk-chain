@@ -42,7 +42,7 @@ type Minter struct {
     StartDate           string `protobuf:"bytes,1,opt,name=start_date,json=startDate,proto3" json:"start_date,omitempty"`
     // The day where the mint ends
     EndDate             string `protobuf:"bytes,2,opt,name=end_date,json=endDate,proto3" json:"end_date,omitempty"`
-    // Denom for the coins minted, defaults to ublk
+    // Denom for the coins minted, defaults to ublt
     Denom               string `protobuf:"bytes,3,opt,name=denom,proto3" json:"denom,omitempty"`
     // Total amount to be minted
     TotalMintAmount     uint64 `protobuf:"varint,4,opt,name=total_mint_amount,json=totalMintAmount,proto3" json:"total_mint_amount,omitempty"`
@@ -94,7 +94,7 @@ First, prepare a proposal in JSON format, like the minter_prop.json file below:
   "minter": {
     "start_date": "2023-10-05",
     "end_date": "2023-11-22",
-    "denom": "ublk",
+    "denom": "ublt",
     "total_mint_amount": 100000
   }
 }
@@ -112,7 +112,7 @@ Before the proposal, the Minter parameters might look like this:
 
 ```**bash**
 > blkd q mint minter
-denom: ublk
+denom: ublt
 end_date: "2023-04-30"
 last_mint_amount: "333333333333"
 last_mint_date: "2023-04-27"
@@ -126,7 +126,7 @@ After the proposal is passed, the Minter parameters would be updated as per the 
 
 ```bash
 > blkd q mint minter
-denom: ublk
+denom: ublt
 end_date: "2023-11-22"
 last_mint_amount: "0"
 last_mint_date: ""
@@ -150,7 +150,7 @@ Here is an example for updating the params for the mint module
     {
       "subspace": "mint",
       "key": "MintDenom",
-      "value": "ublk"
+      "value": "ublt"
     },
     {
       "subspace": "mint",

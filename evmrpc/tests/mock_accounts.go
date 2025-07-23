@@ -41,7 +41,7 @@ func signCosmosTxWithMnemonic(msg sdk.Msg, mnemonic string, accountNumber uint64
 	privKey := hd.Secp256k1.Generate()(derivedPriv)
 	txBuilder := testkeeper.EVMTestApp.GetTxConfig().NewTxBuilder()
 	_ = txBuilder.SetMsgs(msg)
-	txBuilder.SetFeeAmount(sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(1000000))))
+	txBuilder.SetFeeAmount(sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(1000000))))
 	txBuilder.SetGasLimit(300000)
 	var sigsV2 []signing.SignatureV2
 	sigV2 := signing.SignatureV2{
@@ -92,7 +92,7 @@ func mnemonicInitializer(mnemonic string) func(ctx sdk.Context, a *app.App) {
 		sheAddr := getSheAddrWithMnemonic(mnemonic)
 		evmAddr := getAddrWithMnemonic(mnemonic)
 		a.EvmKeeper.SetAddressMapping(ctx, sheAddr, evmAddr)
-		amt := sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10000000000)))
+		amt := sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(10000000000)))
 		_ = a.BankKeeper.MintCoins(ctx, types.ModuleName, amt)
 		_ = a.BankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, sheAddr, amt)
 	}

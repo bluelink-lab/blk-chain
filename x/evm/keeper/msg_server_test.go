@@ -94,7 +94,7 @@ func TestEVMTransaction(t *testing.T) {
 	require.Empty(t, res.VmError)
 	require.NotEmpty(t, res.ReturnData)
 	require.NotEmpty(t, res.Hash)
-	require.Equal(t, uint64(1000000)-res.GasUsed, k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublk").Amount.Uint64())
+	require.Equal(t, uint64(1000000)-res.GasUsed, k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublt").Amount.Uint64())
 	require.Equal(t, res.GasUsed, k.BankKeeper().GetBalance(ctx, state.GetCoinbaseAddress(ctx.TxIndex()), k.GetBaseDenom(ctx)).Amount.Uint64())
 	require.NoError(t, k.FlushTransientReceipts(ctx))
 	receipt, err := k.GetReceipt(ctx, common.HexToHash(res.Hash))
@@ -183,7 +183,7 @@ func TestEVMTransactionError(t *testing.T) {
 	require.Nil(t, err) // there should only be VM error, no msg-level error
 	require.NotEmpty(t, res.VmError)
 	// gas should be charged and receipt should be created
-	require.Equal(t, uint64(800000), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublk").Amount.Uint64())
+	require.Equal(t, uint64(800000), k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublt").Amount.Uint64())
 	require.NoError(t, k.FlushTransientReceipts(ctx))
 	receipt, err := k.GetReceipt(ctx, common.HexToHash(res.Hash))
 	require.Nil(t, err)
@@ -289,7 +289,7 @@ func TestEVMDynamicFeeTransaction(t *testing.T) {
 	require.Empty(t, res.VmError)
 	require.NotEmpty(t, res.ReturnData)
 	require.NotEmpty(t, res.Hash)
-	require.LessOrEqual(t, k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublk").Amount.Uint64(), uint64(1000000)-res.GasUsed)
+	require.LessOrEqual(t, k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublt").Amount.Uint64(), uint64(1000000)-res.GasUsed)
 	require.NoError(t, k.FlushTransientReceipts(ctx))
 	receipt, err := k.GetReceipt(ctx, common.HexToHash(res.Hash))
 	require.Nil(t, err)
@@ -341,7 +341,7 @@ func TestEVMPrecompiles(t *testing.T) {
 		return ctx, nil
 	})
 	require.Nil(t, err)
-	coinbaseBalanceBefore := k.BankKeeper().GetBalance(ctx, state.GetCoinbaseAddress(ctx.TxIndex()), "ublk").Amount.Uint64()
+	coinbaseBalanceBefore := k.BankKeeper().GetBalance(ctx, state.GetCoinbaseAddress(ctx.TxIndex()), "ublt").Amount.Uint64()
 	res, err := msgServer.EVMTransaction(sdk.WrapSDKContext(ctx), req)
 	require.Nil(t, err)
 	require.LessOrEqual(t, res.GasUsed, uint64(500000))
@@ -467,11 +467,11 @@ func TestEVMBlockEnv(t *testing.T) {
 	require.Empty(t, res.VmError)
 	require.NotEmpty(t, res.ReturnData)
 	require.NotEmpty(t, res.Hash)
-	require.Equal(t, uint64(1000000)-res.GasUsed, k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublk").Amount.Uint64())
+	require.Equal(t, uint64(1000000)-res.GasUsed, k.BankKeeper().GetBalance(ctx, sdk.AccAddress(evmAddr[:]), "ublt").Amount.Uint64())
 	fmt.Println("all balances sender = ", k.BankKeeper().GetAllBalances(ctx, sdk.AccAddress(evmAddr[:])))
 	fmt.Println("all balances coinbase = ", k.BankKeeper().GetAllBalances(ctx, state.GetCoinbaseAddress(ctx.TxIndex())))
 	fmt.Println("wei = ", k.BankKeeper().GetBalance(ctx, state.GetCoinbaseAddress(ctx.TxIndex()), "wei").Amount.Uint64())
-	require.Equal(t, res.GasUsed, k.BankKeeper().GetBalance(ctx, state.GetCoinbaseAddress(ctx.TxIndex()), "ublk").Amount.Uint64())
+	require.Equal(t, res.GasUsed, k.BankKeeper().GetBalance(ctx, state.GetCoinbaseAddress(ctx.TxIndex()), "ublt").Amount.Uint64())
 
 	require.NoError(t, k.FlushTransientReceipts(ctx))
 	receipt, err := k.GetReceipt(ctx, common.HexToHash(res.Hash))
@@ -521,15 +521,15 @@ func TestSend(t *testing.T) {
 	sheTo, evmTo := testkeeper.MockAddressPair()
 	k.SetAddressMapping(ctx, sheFrom, evmFrom)
 	k.SetAddressMapping(ctx, sheTo, evmTo)
-	k.BankKeeper().AddCoins(ctx, sheFrom, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(1000000))), true)
+	k.BankKeeper().AddCoins(ctx, sheFrom, sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(1000000))), true)
 	_, err := keeper.NewMsgServerImpl(k).Send(sdk.WrapSDKContext(ctx), &types.MsgSend{
 		FromAddress: sheFrom.String(),
 		ToAddress:   evmTo.Hex(),
-		Amount:      sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(500000))),
+		Amount:      sdk.NewCoins(sdk.NewCoin("ublt", sdk.NewInt(500000))),
 	})
 	require.Nil(t, err)
-	require.Equal(t, sdk.NewInt(500000), k.BankKeeper().GetBalance(ctx, sheFrom, "ublk").Amount)
-	require.Equal(t, sdk.NewInt(500000), k.BankKeeper().GetBalance(ctx, sheTo, "ublk").Amount)
+	require.Equal(t, sdk.NewInt(500000), k.BankKeeper().GetBalance(ctx, sheFrom, "ublt").Amount)
+	require.Equal(t, sdk.NewInt(500000), k.BankKeeper().GetBalance(ctx, sheTo, "ublt").Amount)
 }
 
 func TestRegisterPointer(t *testing.T) {

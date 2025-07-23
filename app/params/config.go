@@ -12,7 +12,7 @@ import (
 
 const (
 	HumanCoinUnit = "blk"
-	BaseCoinUnit  = "ublk"
+	BaseCoinUnit  = "ublt"
 	UsheExponent  = 6
 
 	DefaultBondDenom = BaseCoinUnit

@@ -102,7 +102,7 @@ quote = "USD"
 
 [[currency_pairs]]
 base = "BLK"
-chain_denom = "ublk"
+chain_denom = "ublt"
 providers = [
   "binance",
   "huobi",
@@ -112,7 +112,7 @@ quote = "USDT"
 
 [[currency_pairs]]
 base = "BLK"
-chain_denom = "ublk"
+chain_denom = "ublt"
 providers = [
   "kraken",
   "coinbase",
