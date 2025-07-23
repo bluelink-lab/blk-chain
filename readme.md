@@ -25,7 +25,7 @@ All these features combine to unlock a brand new, scalable design space for the 
 **How to validate on the BLK Testnet**
 *This is the BLK Atlantic-2 Testnet ()*
 
-> Genesis [Published](https://github.com/she-protocol/testnet/blob/main/she-testnet/genesis.json)
+> Genesis [Published](https://github.com/she-protocol/testnet/blob/main/blk-testnet/genesis.json)
 
 ## Hardware Requirements
 **Minimum**
@@ -72,9 +72,9 @@ make install
 
 * Install shed binary
 
-* Initialize node: `shed init <moniker> --chain-id she-testnet-1`
+* Initialize node: `shed init <moniker> --chain-id blk-testnet-1`
 
-* Download the Genesis file: `wget https://github.com/she-protocol/testnet/raw/main/she-testnet-1/genesis.json -P $HOME/.she/config/`
+* Download the Genesis file: `wget https://github.com/she-protocol/testnet/raw/main/blk-testnet-1/genesis.json -P $HOME/.she/config/`
  
 * Edit the minimum-gas-prices in ${HOME}/.she/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01ushe"/g' $HOME/.she/config/app.toml`
 

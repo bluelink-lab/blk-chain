@@ -8,7 +8,7 @@ Security researchers are essential in identifying vulnerabilities that may impac
 
 1. **Refrain from testing vulnerabilities on our publicly accessible environments**, including but not limited to:
 
-- BLK mainnet `she-mainnet`
+- BLK mainnet `blk-mainnet`
 - BLK frontend
 - BLK public testnets
 - BLK testnet frontend

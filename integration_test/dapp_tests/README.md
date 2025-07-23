@@ -7,7 +7,7 @@ In each test scenario, we deploy the dapp contracts, fund wallets, then go throu
 ## Setup
 To run the dapp tests, simply run the script at `/integration_test/dapp_tests/dapp_tests.sh <chain>`
 
-3 chain types are supported, `shelocal`, `devnet` (she-devnet) and `testnet` (she-testnet). The configs for each chain are stored in `./hardhat.config.js`.
+3 chain types are supported, `shelocal`, `devnet` (blk-devnet) and `testnet` (blk-testnet). The configs for each chain are stored in `./hardhat.config.js`.
 
 If running on `shelocal`, the script assumes that a local instance of the chain is running by running `/scripts/initialize_local_chain.sh`.
 A well funded `admin` account must be available on the local keyring.

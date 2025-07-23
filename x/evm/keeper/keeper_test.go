@@ -41,13 +41,13 @@ func TestGetChainID(t *testing.T) {
 	k, ctx := keeper.MockEVMKeeper()
 	require.Equal(t, config.DefaultChainID, k.ChainID(ctx).Int64())
 
-	ctx = ctx.WithChainID("she-mainnet")
+	ctx = ctx.WithChainID("blk-mainnet")
 	require.Equal(t, int64(7270), k.ChainID(ctx).Int64())
 
-	ctx = ctx.WithChainID("she-testnet")
+	ctx = ctx.WithChainID("blk-testnet")
 	require.Equal(t, int64(7269), k.ChainID(ctx).Int64())
 
-	ctx = ctx.WithChainID("she-devnet")
+	ctx = ctx.WithChainID("blk-devnet")
 	require.Equal(t, int64(8372), k.ChainID(ctx).Int64())
 }
 

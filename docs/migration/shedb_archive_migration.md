@@ -131,7 +131,7 @@ MIGRATION_HEIGHT=<>
 If you are using systemd, make sure to update your service configuration to use this command.
 Always be sure to run with these flags until migration is complete.
 ```bash
-shed start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id she-mainnet
+shed start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id blk-mainnet
 ```
 
 Shed will run normally and the migration will run in the background. Data from iavl
@@ -168,7 +168,7 @@ that the node operates.
 
 If you are using systemd, make sure to update your service configuration to use this command:
 ```bash
-shed start --chain-id she-mainnet
+shed start --chain-id blk-mainnet
 ```
 
 Note how we are not using the `--migrate-iavl` and `--migration-height` flags.
@@ -182,7 +182,7 @@ we can proceed to clear out the iavl and restart shed normally.
 ```bash
 systemctl stop shed
 rm -rf ~/.she/data/application.db
-shed start --chain-id she-mainnet
+shed start --chain-id blk-mainnet
 ```
 
 
@@ -208,5 +208,5 @@ automatically resume the migration from that latest key once restarted.
 
 All one needs to do is restart shed with the migration command as in step 4
 ```bash
-shed start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id she-mainnet
+shed start --migrate-iavl --migrate-height $MIGRATION_HEIGHT --chain-id blk-mainnet
 ```
