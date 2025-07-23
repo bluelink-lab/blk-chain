@@ -1,29 +1,29 @@
-# SHE
+# BLK
 
 ![Banner!](assets/SheLogo.png)
 
-SHE is the fastest general purpose L1 blockchain and the first parallelized EVM. This allows SHE to get the best of Solana and Ethereum - a hyper optimized execution layer that benefits from the tooling and mindshare around the EVM.
+BLK is the fastest general purpose L1 blockchain and the first parallelized EVM. This allows BLK to get the best of Solana and Ethereum - a hyper optimized execution layer that benefits from the tooling and mindshare around the EVM.
 
 # Overview
-**SHE** is a high-performance, low-fee, delegated proof-of-stake blockchain designed for developers. It supports optimistic parallel execution of both EVM and CosmWasm, opening up new design possibilities. With unique optimizations like twin turbo consensus and SheDB, SHE ensures consistent 400ms block times and a transaction throughput that’s orders of magnitude higher than Ethereum. This means faster, more cost-effective operations. Plus, SHE’s seamless interoperability between EVM and CosmWasm gives developers native access to the entire Cosmos ecosystem, including IBC tokens, multi-sig accounts, fee grants, and more.
+**BLK** is a high-performance, low-fee, delegated proof-of-stake blockchain designed for developers. It supports optimistic parallel execution of both EVM and CosmWasm, opening up new design possibilities. With unique optimizations like twin turbo consensus and SheDB, BLK ensures consistent 400ms block times and a transaction throughput that’s orders of magnitude higher than Ethereum. This means faster, more cost-effective operations. Plus, BLK’s seamless interoperability between EVM and CosmWasm gives developers native access to the entire Cosmos ecosystem, including IBC tokens, multi-sig accounts, fee grants, and more.
 
 # Documentation
 For the most up to date documentation please visit https://www.docs.she.io/
 
-# SHE Optimizations
-SHE introduces four major innovations:
+# BLK Optimizations
+BLK introduces four major innovations:
 
-- Twin Turbo Consensus: This feature allows SHE to reach the fastest time to finality of any blockchain at 400ms, unlocking web2 like experiences for applications.
+- Twin Turbo Consensus: This feature allows BLK to reach the fastest time to finality of any blockchain at 400ms, unlocking web2 like experiences for applications.
 - Optimistic Parallelization: This feature allows developers to unlock parallel processing for their Ethereum applications, with no additional work.
-- SheDB: This major upgrade allows SHE to handle the much higher rate of data storage, reads and writes which become extremely important for a high performance blockchain.
-- Interoperable EVM: This allows existing developers in the Ethereum ecosystem to deploy their applications, tooling and infrastructure to SHE with no changes, while benefiting from the 100x performance improvements offered by SHE.
+- SheDB: This major upgrade allows BLK to handle the much higher rate of data storage, reads and writes which become extremely important for a high performance blockchain.
+- Interoperable EVM: This allows existing developers in the Ethereum ecosystem to deploy their applications, tooling and infrastructure to BLK with no changes, while benefiting from the 100x performance improvements offered by BLK.
 
 All these features combine to unlock a brand new, scalable design space for the Ethereum Ecosystem.
 
 # Testnet
 ## Get started
-**How to validate on the SHE Testnet**
-*This is the SHE Atlantic-2 Testnet ()*
+**How to validate on the BLK Testnet**
+*This is the BLK Atlantic-2 Testnet ()*
 
 > Genesis [Published](https://github.com/she-protocol/testnet/blob/main/she-testnet/genesis.json)
 
@@ -84,7 +84,7 @@ make install
 
 ```bash
 [Unit]
-Description=SHE-Network Node
+Description=BLK-Network Node
 After=network.target
 
 [Service]
@@ -129,10 +129,10 @@ shed tx staking create-validator \
 --website="<your_website>" \
 --pubkey $(shed tendermint show-validator) \
 --min-self-delegation="1" \
---amount <token delegation>ushe \
+--amount <token delegation>ublk \
 --node localhost:26657
 ```
 # Build with Us!
-If you are interested in building with SHE Network: 
+If you are interested in building with BLK Network: 
 Email us at team@shenetwork.io 
 DM us on Twitter https://twitter.com/SheNetwork

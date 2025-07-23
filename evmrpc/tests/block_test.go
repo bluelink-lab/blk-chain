@@ -24,7 +24,7 @@ func TestGetSheBlockByHash(t *testing.T) {
 	tx2 := signAndEncodeCosmosTx(transferCW20Msg(mnemonic1, cw20), mnemonic1, 7, 0)
 	SetupTestServer([][][]byte{{tx1}, {tx2}}, mnemonicInitializer(mnemonic1), cw20Initializer(mnemonic1)).Run(
 		func(port int) {
-			res := sendRequestWithNamespace("she", port, "getBlockByHash", common.HexToHash("0x3").Hex(), true)
+			res := sendRequestWithNamespace("blk", port, "getBlockByHash", common.HexToHash("0x3").Hex(), true)
 			txs := res["result"].(map[string]interface{})["transactions"]
 			require.Len(t, txs.([]interface{}), 1)
 		},

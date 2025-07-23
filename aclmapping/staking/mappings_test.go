@@ -51,11 +51,11 @@ func (suite *KeeperTestSuite) SetupTest() {
 
 // Explicitly only run once during setup
 func (suite *KeeperTestSuite) PrepareTest() {
-	suite.defaultDenom = "ushe"
+	suite.defaultDenom = "ublk"
 	suite.defaultExchangeRate = fmt.Sprintf("%dushe", sdk.NewDec(1700))
 
 	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin(suite.defaultDenom, 100000000000)}
-	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin("ushe", 100000000000)}
+	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin("ublk", 100000000000)}
 	suite.FundAcc(suite.TestAccs[0], suite.initalBalance)
 
 	suite.queryClient = stakingtypes.NewQueryClient(suite.QueryHelper)
@@ -99,17 +99,17 @@ func (suite *KeeperTestSuite) PrepareTest() {
 	suite.App.AccountKeeper.SetModuleAccount(suite.Ctx, bondedPool)
 
 	suite.delegateMsg = &stakingtypes.MsgDelegate{
-		Amount:           sdk.NewInt64Coin("ushe", 10),
+		Amount:           sdk.NewInt64Coin("ublk", 10),
 		ValidatorAddress: suite.validator.String(),
 		DelegatorAddress: suite.TestAccs[0].String(),
 	}
 	suite.undelegateMsg = &stakingtypes.MsgUndelegate{
-		Amount:           sdk.NewInt64Coin("ushe", 10),
+		Amount:           sdk.NewInt64Coin("ublk", 10),
 		ValidatorAddress: suite.validator.String(),
 		DelegatorAddress: suite.TestAccs[0].String(),
 	}
 	suite.redelegateMsg = &stakingtypes.MsgBeginRedelegate{
-		Amount:              sdk.NewInt64Coin("ushe", 10),
+		Amount:              sdk.NewInt64Coin("ublk", 10),
 		ValidatorSrcAddress: suite.validator.String(),
 		ValidatorDstAddress: suite.newValidator.String(),
 		DelegatorAddress:    suite.TestAccs[0].String(),
@@ -284,7 +284,7 @@ func TestGeneratorInvalidMessageTypes(t *testing.T) {
 	stakingDelegate := stakingtypes.MsgDelegate{
 		DelegatorAddress: "delegator",
 		ValidatorAddress: "validator",
-		Amount:           sdk.Coin{Denom: "ushe", Amount: sdk.NewInt(5)},
+		Amount:           sdk.Coin{Denom: "ublk", Amount: sdk.NewInt(5)},
 	}
 	oracleVote := oracletypes.MsgAggregateExchangeRateVote{
 		ExchangeRates: "1ushe",

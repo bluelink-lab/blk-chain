@@ -24,7 +24,7 @@ type SheWasmMessage struct {
 func CustomEncoder(sender sdk.AccAddress, msg json.RawMessage, info wasmvmtypes.MessageInfo, codeInfo wasmtypes.CodeInfo) ([]sdk.Msg, error) {
 	var parsedMessage SheWasmMessage
 	if err := json.Unmarshal(msg, &parsedMessage); err != nil {
-		return []sdk.Msg{}, sdkerrors.Wrap(err, "Error parsing SHE Wasm Message")
+		return []sdk.Msg{}, sdkerrors.Wrap(err, "Error parsing BLK Wasm Message")
 	}
 	switch {
 	case parsedMessage.CreateDenom != nil:
@@ -42,6 +42,6 @@ func CustomEncoder(sender sdk.AccAddress, msg json.RawMessage, info wasmvmtypes.
 	case parsedMessage.DelegateCallEVM != nil:
 		return evmwasm.EncodeDelegateCallEVM(parsedMessage.DelegateCallEVM, sender, info, codeInfo)
 	default:
-		return []sdk.Msg{}, wasmvmtypes.UnsupportedRequest{Kind: "Unknown SHE Wasm Message"}
+		return []sdk.Msg{}, wasmvmtypes.UnsupportedRequest{Kind: "Unknown BLK Wasm Message"}
 	}
 }

@@ -99,20 +99,20 @@ func TestSurplus(t *testing.T) {
 	ctx := testkeeper.EVMTestApp.GetContextForDeliverTx([]byte{}).WithBlockTime(time.Now())
 	_, evmAddr := testkeeper.MockAddressPair()
 
-	// test negative ushe surplus negative wei surplus
+	// test negative ublk surplus negative wei surplus
 	db := state.NewDBImpl(ctx, k, false)
 	db.AddBalance(evmAddr, big.NewInt(1_000_000_000_001), tracing.BalanceChangeUnspecified)
 	_, err := db.Finalize()
 	require.Nil(t, err)
 
-	// test negative ushe surplus positive wei surplus (negative total)
+	// test negative ublk surplus positive wei surplus (negative total)
 	db = state.NewDBImpl(ctx, k, false)
 	db.AddBalance(evmAddr, big.NewInt(1_000_000_000_000), tracing.BalanceChangeUnspecified)
 	db.SubBalance(evmAddr, big.NewInt(1), tracing.BalanceChangeUnspecified)
 	_, err = db.Finalize()
 	require.Nil(t, err)
 
-	// test negative ushe surplus positive wei surplus (positive total)
+	// test negative ublk surplus positive wei surplus (positive total)
 	db = state.NewDBImpl(ctx, k, false)
 	db.AddBalance(evmAddr, big.NewInt(1_000_000_000_000), tracing.BalanceChangeUnspecified)
 	db.SubBalance(evmAddr, big.NewInt(2), tracing.BalanceChangeUnspecified)
@@ -121,7 +121,7 @@ func TestSurplus(t *testing.T) {
 	require.Nil(t, err)
 	require.Equal(t, sdk.OneInt(), surplus)
 
-	// test positive ushe surplus negative wei surplus (negative total)
+	// test positive ublk surplus negative wei surplus (negative total)
 	db = state.NewDBImpl(ctx, k, false)
 	db.SubBalance(evmAddr, big.NewInt(1_000_000_000_000), tracing.BalanceChangeUnspecified)
 	db.AddBalance(evmAddr, big.NewInt(2), tracing.BalanceChangeUnspecified)
@@ -129,7 +129,7 @@ func TestSurplus(t *testing.T) {
 	_, err = db.Finalize()
 	require.Nil(t, err)
 
-	// test positive ushe surplus negative wei surplus (positive total)
+	// test positive ublk surplus negative wei surplus (positive total)
 	db = state.NewDBImpl(ctx, k, false)
 	db.SubBalance(evmAddr, big.NewInt(1_000_000_000_000), tracing.BalanceChangeUnspecified)
 	db.AddBalance(evmAddr, big.NewInt(999_999_999_999), tracing.BalanceChangeUnspecified)

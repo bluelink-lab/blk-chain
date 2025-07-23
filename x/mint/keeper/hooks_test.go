@@ -61,7 +61,7 @@ func TestEndOfEpochMintedCoinDistribution(t *testing.T) {
 			},
 		}
 		mintParams := minttypes.NewParams(
-			"ushe",
+			"ublk",
 			tokenReleaseSchedle,
 		)
 		sheApp.MintKeeper.SetParams(ctx, mintParams)
@@ -107,7 +107,7 @@ func TestEndOfEpochMintedCoinDistribution(t *testing.T) {
 			},
 		}
 		mintParams := minttypes.NewParams(
-			"ushe",
+			"ublk",
 			tokenReleaseSchedle,
 		)
 		sheApp.MintKeeper.SetParams(ctx, mintParams)
@@ -168,7 +168,7 @@ func TestEndOfEpochMintedCoinDistribution(t *testing.T) {
 			},
 		}
 		mintParams := minttypes.NewParams(
-			"ushe",
+			"ublk",
 			tokenReleaseSchedle,
 		)
 		sheApp.MintKeeper.SetParams(ctx, mintParams)
@@ -211,7 +211,7 @@ func TestEndOfEpochMintedCoinDistribution(t *testing.T) {
 			},
 		}
 		mintParams := minttypes.NewParams(
-			"ushe",
+			"ublk",
 			tokenReleaseSchedle,
 		)
 		sheApp.MintKeeper.SetParams(ctx, mintParams)

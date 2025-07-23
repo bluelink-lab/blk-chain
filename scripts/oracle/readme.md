@@ -1,6 +1,6 @@
 # Price Oracle Script
-This is a simple oracle script that fetchs market prices of different token pairs from the CoinGecko. SHE team will add multiple 
-price sources in this script so that SHE can decentralize the oracle prices.
+This is a simple oracle script that fetchs market prices of different token pairs from the CoinGecko. BLK team will add multiple 
+price sources in this script so that BLK can decentralize the oracle prices.
 
 # Setup (Local)
 Install the coingecko api on your instance
@@ -24,7 +24,7 @@ shed query oracle params
     whitelist:
     - name: uatom
     - name: uusdc
-    - name: ushe
+    - name: ublk
 ```
 
 Start the price feeder in the background, note that you may want to submit all whitelisted coins' price, otherwise you may not be eligible for the oracle reward. ${coin_list} example: 'cosmos','usd-coin'

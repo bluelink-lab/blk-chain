@@ -91,6 +91,6 @@ go mod edit -replace github.com/tendermint/tendermint=../she-tendermint
 
 
 # Build with Us!
-If you are interested in building with SHE Network:
+If you are interested in building with BLK Network:
 Email us at team@shenetwork.io
 DM us on Twitter https://twitter.com/SheNetwork

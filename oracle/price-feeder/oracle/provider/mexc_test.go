@@ -63,7 +63,7 @@ func TestMexcProvider_GetTickerPrices(t *testing.T) {
 		p.tickers = tickerMap
 		prices, err := p.GetTickerPrices(
 			types.CurrencyPair{Base: "ATOM", Quote: "USDT"},
-			types.CurrencyPair{Base: "SHE", Quote: "USDT"},
+			types.CurrencyPair{Base: "BLK", Quote: "USDT"},
 		)
 		require.NoError(t, err)
 		require.Len(t, prices, 2)

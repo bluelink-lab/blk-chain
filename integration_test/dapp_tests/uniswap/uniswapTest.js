@@ -96,7 +96,7 @@ describe("Uniswap Test", function () {
 
         const amountETH = hre.ethers.utils.parseEther("3")
 
-        // Gets the amount of WETH9 required to instantiate pools by depositing SHE to the contract
+        // Gets the amount of WETH9 required to instantiate pools by depositing BLK to the contract
         let gasEstimate = await weth9.estimateGas.deposit({ value: amountETH })
         let gasPrice = await deployer.getGasPrice();
         const txWrap = await weth9.deposit({ value: amountETH, gasPrice, gasLimit: gasEstimate });

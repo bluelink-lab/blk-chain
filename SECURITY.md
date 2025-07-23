@@ -2,16 +2,16 @@
 
 ## Introduction
 
-Security researchers are essential in identifying vulnerabilities that may impact the SHE ecosystem. If you have discovered a security vulnerability in the SHE chain or any repository managed by SHE, we encourage you to notify us using one of the methods outlined below.
+Security researchers are essential in identifying vulnerabilities that may impact the BLK ecosystem. If you have discovered a security vulnerability in the BLK chain or any repository managed by BLK, we encourage you to notify us using one of the methods outlined below.
 
 ### Guidelines for Responsible Vulnerability Testing and Reporting
 
 1. **Refrain from testing vulnerabilities on our publicly accessible environments**, including but not limited to:
 
-- SHE mainnet `she-mainnet`
-- SHE frontend
-- SHE public testnets
-- SHE testnet frontend
+- BLK mainnet `she-mainnet`
+- BLK frontend
+- BLK public testnets
+- BLK testnet frontend
 
 2. **Avoid reporting security vulnerabilities through public channels, including GitHub issues**
 
@@ -48,11 +48,11 @@ During the vulnerability disclosure process, we ask security researchers to keep
 During this time:
 
 - Avoid exploiting any vulnerabilities you discover.
-- Demonstrate good faith by not disrupting or degrading SHE's services.
+- Demonstrate good faith by not disrupting or degrading BLK's services.
 
 ## Feature request
 
-For a feature request, e.g. module inclusion, please make a GitHub issue. Clearly state your use case and what value it will bring to other users or developers on SHE.
+For a feature request, e.g. module inclusion, please make a GitHub issue. Clearly state your use case and what value it will bring to other users or developers on BLK.
 
 ## Severity Characterization
 

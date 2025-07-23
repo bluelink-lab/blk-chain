@@ -78,7 +78,7 @@ def validate_clean_state():
 
 
 def validate_version(version):
-    """Validate that the version of the SHE blockchain software is correct."""
+    """Validate that the version of the BLK blockchain software is correct."""
     version_json_output = json.loads(run_command('shed version --long --output json'))
     if version_json_output['version'] != version:
         raise RuntimeError(f'Expected version {version} but got {version_json_output["version"]}')
@@ -120,19 +120,19 @@ def output_price_feeder_config(chain_id):
     logging.info('Price feeder config file created at %s', config_path)
 
 def cleanup_she():
-    """Cleanup the SHE state."""
+    """Cleanup the BLK state."""
     if os.path.exists(SHE_ROOT_DIR):
         backup_file = f'{SHE_ROOT_DIR}_backup_{datetime.now().strftime("%Y%m%d_%H%M%S")}'
         copytree(f'{SHE_ROOT_DIR}', backup_file)
-        logging.info('Backed up SHE state to %s', backup_file)
+        logging.info('Backed up BLK state to %s', backup_file)
     run_command(f'rm -rf {SHE_ROOT_DIR}')
     logging.info('Removed %s directory.', SHE_ROOT_DIR)
 
 def init_she(chain_id, moniker):
-    """Initialize the SHE blockchain."""
-    logging.info('Initializing SHE blockchain...')
+    """Initialize the BLK blockchain."""
+    logging.info('Initializing BLK blockchain...')
     run_command(f'shed init {moniker} --chain-id {chain_id}')
-    logging.info('Initialized SHE blockchain.')
+    logging.info('Initialized BLK blockchain.')
 
 
 def save_content_to_file(content, file_path):
@@ -150,7 +150,7 @@ def try_shed_delete_key(account_name, key_password):
 
 
 def shed_add_key(account_name):
-    """Add a key to the SHE blockchain."""
+    """Add a key to the BLK blockchain."""
     key_password = getpass(f'Please enter a password for the account={account_name}: \n')
     try_shed_delete_key(account_name, key_password)
     logging.info("Deleted existing key if it exists.")
@@ -171,7 +171,7 @@ def shed_add_key(account_name):
     return address, mnemonic
 
 def add_genesis_account(account_name, starting_balance):
-    """Add a genesis account to the SHE blockchain."""
+    """Add a genesis account to the BLK blockchain."""
     address = account_cache[account_name].address
     run_command(f'shed add-genesis-account {address} {starting_balance}')
     logging.info('Added genesis account %s with address %s', account_name, address)

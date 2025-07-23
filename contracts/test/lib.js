@@ -96,17 +96,17 @@ async function evmSend(addr, fromKey, amount="10000000000000000000000000") {
     return output.replace(/.*0x/, "0x").trim()
 }
 
-async function bankSend(toAddr, fromKey, amount="100000000000", denom="ushe") {
+async function bankSend(toAddr, fromKey, amount="100000000000", denom="ublk") {
     const result = await execute(`shed tx bank send ${fromKey} ${toAddr} ${amount}${denom} -b block --fees 20000ushe -y`);
     await delay()
     return result
 }
 
-async function fundSheAddress(sheAddr, amount="100000000000", denom="ushe", funder=adminKeyName) {
+async function fundSheAddress(sheAddr, amount="100000000000", denom="ublk", funder=adminKeyName) {
     return await execute(`shed tx bank send ${funder} ${sheAddr} ${amount}${denom} -b block --fees 20000ushe -y`);
 }
 
-async function getSheBalance(sheAddr, denom="ushe") {
+async function getSheBalance(sheAddr, denom="ublk") {
     const result = await execute(`shed query bank balances ${sheAddr} -o json`);
     const balances = JSON.parse(result)
     for(let b of balances.balances) {

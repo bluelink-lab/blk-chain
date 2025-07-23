@@ -1,7 +1,7 @@
-# SHE V2 Config Migration Guide
+# BLK V2 Config Migration Guide
 
 ## Intro
-SheV2 introduces a parallelized EVM along with a host of other features to the SHE blockchain
+SheV2 introduces a parallelized EVM along with a host of other features to the BLK blockchain
 This doc is meant to help node operators with migrating their configs when running on SheV2.
 
 

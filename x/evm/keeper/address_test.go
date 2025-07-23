@@ -62,9 +62,9 @@ func TestSendingToCastAddress(t *testing.T) {
 	sheAddr, evmAddr := keeper.MockAddressPair()
 	castAddr := sdk.AccAddress(evmAddr[:])
 	sourceAddr, _ := keeper.MockAddressPair()
-	require.Nil(t, a.BankKeeper.MintCoins(ctx, "evm", sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(10)))))
-	require.Nil(t, a.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", sourceAddr, sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(5)))))
-	amt := sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(1)))
+	require.Nil(t, a.BankKeeper.MintCoins(ctx, "evm", sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10)))))
+	require.Nil(t, a.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", sourceAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(5)))))
+	amt := sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(1)))
 	require.Nil(t, a.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", castAddr, amt))
 	require.Nil(t, a.BankKeeper.SendCoins(ctx, sourceAddr, castAddr, amt))
 	require.Nil(t, a.BankKeeper.SendCoinsAndWei(ctx, sourceAddr, castAddr, sdk.OneInt(), sdk.OneInt()))
@@ -96,7 +96,7 @@ func TestEvmAddressHandler_GetSheAddressFromString(t *testing.T) {
 		wantErrMsg string
 	}{
 		{
-			name: "returns associated SHE address if input address is a valid 0x and associated",
+			name: "returns associated BLK address if input address is a valid 0x and associated",
 			args: args{
 				ctx:     ctx,
 				address: evmAddr.String(),
@@ -104,7 +104,7 @@ func TestEvmAddressHandler_GetSheAddressFromString(t *testing.T) {
 			want: sheAddr,
 		},
 		{
-			name: "returns default SHE address if input address is a valid 0x not associated",
+			name: "returns default BLK address if input address is a valid 0x not associated",
 			args: args{
 				ctx:     ctx,
 				address: notAssociatedEvmAddr.String(),
@@ -112,7 +112,7 @@ func TestEvmAddressHandler_GetSheAddressFromString(t *testing.T) {
 			want: castAddr,
 		},
 		{
-			name: "returns SHE address if input address is a valid bech32 address",
+			name: "returns BLK address if input address is a valid bech32 address",
 			args: args{
 				ctx:     ctx,
 				address: sheAddr.String(),

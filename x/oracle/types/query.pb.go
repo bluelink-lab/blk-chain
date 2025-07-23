@@ -71,7 +71,7 @@ var xxx_messageInfo_QueryExchangeRateRequest proto.InternalMessageInfo
 // QueryExchangeRateResponse is response type for the
 // Query/ExchangeRate RPC method.
 type QueryExchangeRateResponse struct {
-	// exchange_rate defines the exchange rate of SHE denominated in various SHE
+	// exchange_rate defines the exchange rate of BLK denominated in various BLK
 	OracleExchangeRate OracleExchangeRate `protobuf:"bytes,1,opt,name=oracle_exchange_rate,json=oracleExchangeRate,proto3" json:"oracle_exchange_rate"`
 }
 

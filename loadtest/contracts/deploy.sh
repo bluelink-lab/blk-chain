@@ -72,16 +72,16 @@ printf "12345678\n" | $shedbin tx dex register-contract $saturnaddr $saturnid fa
 printf "12345678\n" | $shedbin tx dex register-contract $venusaddr $venusid false true -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block
 printf "12345678\n" | $shedbin tx dex register-contract $jupiteraddr $jupiterid false true $marsaddr -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$jupiteraddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > jupiter.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$jupiteraddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > jupiter.json
 jupiterpair=$(printf "12345678\n" | $shedbin tx dex register-pairs jupiter.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > mars.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > mars.json
 marspair=$(printf "12345678\n" | $shedbin tx dex register-pairs mars.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > saturn.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > saturn.json
 saturnpair=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > venus.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","tick_size":"0.0000001"}]}]}' > venus.json
 venuspair=$(printf "12345678\n" | $shedbin tx dex register-pairs venus.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
 sleep 90

@@ -102,7 +102,7 @@ describe("ERC20 to Native Pointer", function () {
 
             // confirm association actually happened
             const sheAddress = await getSheAddress(recipient)
-            expect(sheAddress.indexOf("she")).to.equal(0)
+            expect(sheAddress.indexOf("blk")).to.equal(0)
         });
 
         it("should fail transfer() if sender has insufficient balance", async function () {

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.0;
 
 contract WSHE {
-    string public name     = "Wrapped SHE";
+    string public name     = "Wrapped BLK";
     string public symbol   = "WSHE";
     uint8  public decimals = 18;
 

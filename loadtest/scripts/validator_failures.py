@@ -47,13 +47,13 @@ def delegation_change(chain_id):
     for i in range(len(validator_addrs // 4)):
         delegations[validator_addrs[i]] = 10 * total_delegation
         print(f"Delegating {10 * total_delegation} to {validator_addrs[i]}")
-        shed_staking_cmd = f"shed tx staking delegate {validator_addrs[i]} {10 * total_delegation}ushe --from admin --chain-id {chain_id} -b block -y"
+        shed_staking_cmd = f"shed tx staking delegate {validator_addrs[i]} {10 * total_delegation}ublk --from admin --chain-id {chain_id} -b block -y"
         _run_shed_cmd(shed_staking_cmd)
     time.sleep(random.randint(600, 3600))
     # Unbond
     for validator in delegations:
         print(f"Unbonding {10 * total_delegation} from {validator}")
-        shed_unbond_cmd = f"shed tx staking unbond {validator} {delegations[validator]}ushe --from admin -b block -y --chain-id {chain_id}"
+        shed_unbond_cmd = f"shed tx staking unbond {validator} {delegations[validator]}ublk --from admin -b block -y --chain-id {chain_id}"
         _run_shed_cmd(shed_unbond_cmd)
 
 

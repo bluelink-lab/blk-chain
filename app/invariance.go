@@ -46,7 +46,7 @@ func (app *App) LightInvarianceChecks(cms sdk.CommitMultiStore, config LightInva
 
 func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	defer metrics.MeasureSince(
-		[]string{"she", "lightinvariance_supply", "milliseconds"},
+		[]string{"blk", "lightinvariance_supply", "milliseconds"},
 		time.Now().UTC(),
 	)
 	ckv, ok := cms.GetStore(app.BankKeeper.GetStoreKey()).(*commitment.Store)
@@ -60,25 +60,25 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	for _, p := range balanceChangePairs {
 		if len(p.Key) < 2 {
 			// invalid key; ignore
-			metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "invalid_changed_key"}, 1, []metrics.Label{
+			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "invalid_changed_key"}, 1, []metrics.Label{
 				{
 					Name:  "type",
-					Value: "she",
+					Value: "blk",
 				},
 			})
-			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ushe: %X", p.Key))
+			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ublk: %X", p.Key))
 			continue
 		}
 		addrLen := int(p.Key[1])
 		if len(p.Key) < addrLen+2 {
 			// invalid key length; ignore
-			metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "invalid_changed_key"}, 1, []metrics.Label{
+			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "invalid_changed_key"}, 1, []metrics.Label{
 				{
 					Name:  "type",
-					Value: "she",
+					Value: "blk",
 				},
 			})
-			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ushe: %X", p.Key))
+			app.Logger().Error(fmt.Sprintf("invalid changed pair key for ublk: %X", p.Key))
 			continue
 		}
 		addr := p.Key[2 : addrLen+2]
@@ -89,10 +89,10 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 		if !p.Delete {
 			var balance sdk.Coin
 			if err := balance.Unmarshal(p.Value); err != nil {
-				metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
+				metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 					{
 						Name:  "type",
-						Value: "ushe",
+						Value: "ublk",
 					}, {
 						Name:  "step",
 						Value: "post_block",
@@ -117,10 +117,10 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 		}
 		var balance sdk.Coin
 		if err := balance.Unmarshal(val); err != nil {
-			metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
+			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 				{
 					Name:  "type",
-					Value: "ushe",
+					Value: "ublk",
 				}, {
 					Name:  "step",
 					Value: "pre_block",
@@ -137,7 +137,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	for _, p := range weiChangePairs {
 		var amt sdk.Int
 		if len(p.Key) < 1 {
-			metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "invalid_changed_key"}, 1, []metrics.Label{
+			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "invalid_changed_key"}, 1, []metrics.Label{
 				{
 					Name:  "type",
 					Value: "wei",
@@ -148,7 +148,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 		}
 		if !p.Delete {
 			if err := amt.Unmarshal(p.Value); err != nil {
-				metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
+				metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 					{
 						Name:  "type",
 						Value: "wei",
@@ -176,7 +176,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 		}
 		var amt sdk.Int
 		if err := amt.Unmarshal(val); err != nil {
-			metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
+			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 				{
 					Name:  "type",
 					Value: "wei",
@@ -196,7 +196,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	if bz := ckv.Get(append(banktypes.SupplyKey, []byte(sdk.MustGetBaseDenom())...)); bz != nil {
 		var amt sdk.Int
 		if err := amt.Unmarshal(bz); err != nil {
-			metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
+			metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 				{
 					Name:  "type",
 					Value: "total_supply",
@@ -217,7 +217,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 			} else {
 				var amt sdk.Int
 				if err := amt.Unmarshal(p.Value); err != nil {
-					metrics.IncrCounterWithLabels([]string{"she", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
+					metrics.IncrCounterWithLabels([]string{"blk", "lightinvariance_supply", "unmarshal_failure"}, 1, []metrics.Label{
 						{
 							Name:  "type",
 							Value: "total_supply",
@@ -241,7 +241,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	}
 	usheDiff := ushePreTotal.Sub(ushePostTotal).Sub(weiDiffInUshe).Add(supplyChanged)
 	if !usheDiff.IsZero() {
-		panic(fmt.Sprintf("unexpected ushe balance total found! Pre-block ushe total %s wei total %s total supply %s, post-block ushe total %s wei total %s total supply %s", ushePreTotal, weiPreTotal, preTotalSupply, ushePostTotal, weiPostTotal, preTotalSupply.Add(supplyChanged)))
+		panic(fmt.Sprintf("unexpected ublk balance total found! Pre-block ublk total %s wei total %s total supply %s, post-block ublk total %s wei total %s total supply %s", ushePreTotal, weiPreTotal, preTotalSupply, ushePostTotal, weiPostTotal, preTotalSupply.Add(supplyChanged)))
 	}
 	app.Logger().Info("successfully verified supply light invariance")
 }

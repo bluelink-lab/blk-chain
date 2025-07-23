@@ -18,7 +18,7 @@ func TestParamsUshe(t *testing.T) {
 	err := params.Validate()
 	require.Nil(t, err)
 
-	params.MintDenom = "she"
+	params.MintDenom = "blk"
 	err = params.Validate()
 	require.NotNil(t, err)
 }

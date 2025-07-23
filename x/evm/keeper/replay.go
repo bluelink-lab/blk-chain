@@ -13,7 +13,7 @@ import (
 )
 
 func (k *Keeper) VerifyBalance(ctx sdk.Context, addr common.Address) {
-	usheBalance := k.BankKeeper().GetBalance(ctx, k.GetSheAddressOrDefault(ctx, addr), "ushe").Amount
+	usheBalance := k.BankKeeper().GetBalance(ctx, k.GetSheAddressOrDefault(ctx, addr), "ublk").Amount
 	weiBalance := k.bankKeeper.GetWeiBalance(ctx, k.GetSheAddressOrDefault(ctx, addr))
 	totalSheBalance := usheBalance.Mul(sdk.NewInt(1_000_000_000_000)).Add(weiBalance).BigInt()
 	ethBalance, err := k.EthClient.BalanceAt(ctx.Context(), addr, big.NewInt(k.GetReplayInitialHeight(ctx)+ctx.BlockHeight()))

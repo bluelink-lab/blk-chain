@@ -34,7 +34,7 @@ base = "ATOM"
 threshold = "2"
 
 [[deviation_thresholds]]
-base = "SHE"
+base = "BLK"
 threshold = "2"
 
 [[currency_pairs]]
@@ -101,8 +101,8 @@ providers = [
 quote = "USD"
 
 [[currency_pairs]]
-base = "SHE"
-chain_denom = "ushe"
+base = "BLK"
+chain_denom = "ublk"
 providers = [
   "binance",
   "huobi",
@@ -111,8 +111,8 @@ providers = [
 quote = "USDT"
 
 [[currency_pairs]]
-base = "SHE"
-chain_denom = "ushe"
+base = "BLK"
+chain_denom = "ublk"
 providers = [
   "kraken",
   "coinbase",
@@ -135,7 +135,7 @@ quote = "USDT"
 address = "<FEEDER_ADDR>"
 chain_id = "<CHAIN_ID>"
 validator = "<VALIDATOR_ADDR>"
-prefix = "she"
+prefix = "blk"
 
 [keyring]
 backend = "os"

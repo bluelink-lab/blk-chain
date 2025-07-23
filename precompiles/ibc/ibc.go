@@ -351,7 +351,7 @@ type ValidatedArgs struct {
 func (p PrecompileExecutor) validateCommonArgs(ctx sdk.Context, args []interface{}, caller common.Address) (*ValidatedArgs, error) {
 	senderSheAddr, ok := p.evmKeeper.GetSheAddress(ctx, caller)
 	if !ok {
-		return nil, errors.New("caller is not a valid SHE address")
+		return nil, errors.New("caller is not a valid BLK address")
 	}
 
 	receiverAddressString, ok := args[0].(string)

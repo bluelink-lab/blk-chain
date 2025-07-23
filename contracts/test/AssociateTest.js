@@ -35,9 +35,9 @@ describe("Associate Balances", function () {
         const afterShe = BigInt(await getSheBalance(sheAddr))
         const afterEvm = await ethers.provider.getBalance(evmAddr)
 
-        console.log(`SHE Balance (before): ${beforeShe}`)
+        console.log(`BLK Balance (before): ${beforeShe}`)
         console.log(`EVM Balance (before): ${beforeEvm}`)
-        console.log(`SHE Balance (after): ${afterShe}`)
+        console.log(`BLK Balance (after): ${afterShe}`)
         console.log(`EVM Balance (after): ${afterEvm}`)
 
         const multiplier = BigInt(1000000000000)

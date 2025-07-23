@@ -19,7 +19,7 @@ contract MockBank {
 
     // subset of IBank functions
     function balance(address account, string memory denom) public view returns (uint256) {
-        require(keccak256(abi.encodePacked(denom)) == keccak256(abi.encodePacked("ushe")), "MockBank: denom not supported");
+        require(keccak256(abi.encodePacked(denom)) == keccak256(abi.encodePacked("ublk")), "MockBank: denom not supported");
         return balances[account];
     }
 
@@ -29,7 +29,7 @@ contract MockBank {
         string memory denom,
         uint256 amount
     ) external returns (bool success) {
-        require(keccak256(abi.encodePacked(denom)) == keccak256(abi.encodePacked("ushe")), "MockBank: denom not supported");
+        require(keccak256(abi.encodePacked(denom)) == keccak256(abi.encodePacked("ublk")), "MockBank: denom not supported");
         balances[fromAddress] -= amount;
         balances[toAddress] += amount;
         return true;
@@ -48,7 +48,7 @@ contract NativeSheTokensERC20Test is Test {
     function setUp() public {
         alice = makeAddr("alice");
         bob = makeAddr("bob");
-        sheERC20 = new NativeSheTokensERC20("ushe", "SHE", "SHESYMBOL", 6);
+        sheERC20 = new NativeSheTokensERC20("ublk", "BLK", "SHESYMBOL", 6);
 
         MockBank mockBank = new MockBank();
         vm.etch(BANK_PRECOMPILE_ADDRESS, address(mockBank).code);
@@ -59,7 +59,7 @@ contract NativeSheTokensERC20Test is Test {
     }
 
     function testName() public {
-        assertEq(sheERC20.name(), "SHE");
+        assertEq(sheERC20.name(), "BLK");
     }
 
     function testSymbol() public {
@@ -67,7 +67,7 @@ contract NativeSheTokensERC20Test is Test {
     }
 
     function testBalanceOf() public {
-        vm.mockCall(BANK_PRECOMPILE_ADDRESS, abi.encodeWithSelector(IBank.balance.selector, address(this), "ushe"), abi.encode(123));
+        vm.mockCall(BANK_PRECOMPILE_ADDRESS, abi.encodeWithSelector(IBank.balance.selector, address(this), "ublk"), abi.encode(123));
         assertEq(sheERC20.balanceOf(address(this)), 123);
     }
 
@@ -76,7 +76,7 @@ contract NativeSheTokensERC20Test is Test {
     }
 
     function testTotalSupply() public {
-        vm.mockCall(BANK_PRECOMPILE_ADDRESS, abi.encodeWithSelector(IBank.supply.selector, "ushe"), abi.encode(123));
+        vm.mockCall(BANK_PRECOMPILE_ADDRESS, abi.encodeWithSelector(IBank.supply.selector, "ublk"), abi.encode(123));
         assertEq(sheERC20.totalSupply(), 123);
     }
 

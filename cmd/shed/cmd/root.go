@@ -76,7 +76,7 @@ func NewRootCmd() (*cobra.Command, params.EncodingConfig) {
 		WithAccountRetriever(types.AccountRetriever{}).
 		WithBroadcastMode(flags.BroadcastBlock).
 		WithHomeDir(app.DefaultNodeHome).
-		WithViper("SHE")
+		WithViper("BLK")
 
 	rootCmd := &cobra.Command{
 		Use:   "shed",

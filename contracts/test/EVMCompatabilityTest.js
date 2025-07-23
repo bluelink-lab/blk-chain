@@ -1087,8 +1087,8 @@ describe("EVM Test", function () {
     });
 
     describe("Ushe/Wei testing", function() {
-      it("Send 1 ushe to contract", async function() {
-        const ushe = ethers.parseUnits("1", 12);
+      it("Send 1 ublk to contract", async function() {
+        const ublk = ethers.parseUnits("1", 12);
         const wei = ethers.parseUnits("1", 0);
         const twoWei = ethers.parseUnits("2", 0);
 
@@ -1096,13 +1096,13 @@ describe("EVM Test", function () {
         const initialBalance = await ethers.provider.getBalance(evmAddr);
 
         const txResponse = await evmTester.depositEther({
-          value: ushe,
+          value: ublk,
         });
         await txResponse.wait();  // Wait for the transaction to be mined
 
         // Check that the contract received the ETH
         const contractBalance = await ethers.provider.getBalance(evmAddr);
-        expect(contractBalance - initialBalance).to.equal(ushe);
+        expect(contractBalance - initialBalance).to.equal(ublk);
 
         // send 1 wei out of contract
         const txResponse2 = await evmTester.sendEther(owner.address, wei);

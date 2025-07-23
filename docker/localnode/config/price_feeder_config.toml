@@ -35,9 +35,9 @@ quote = "USD"
 
 [account]
 address = "address"
-chain_id = "she"
+chain_id = "blk"
 validator = "validator"
-prefix = "she"
+prefix = "blk"
 
 [keyring]
 backend = "os"

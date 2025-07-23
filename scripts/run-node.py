@@ -61,7 +61,7 @@ def print_ascii_and_intro():
                   .-+###############*+:.
                      ..-+********+-.
 
-Welcome to the SHE node installer!
+Welcome to the BLK node installer!
 For more information please visit docs.she.io
 This tool will download the shed binary from she-binaries and wipe any existing state.
 Please backup any important existing data before proceeding.

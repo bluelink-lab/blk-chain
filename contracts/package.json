@@ -1,7 +1,7 @@
 {
   "name": "she-chain",
   "version": "1.0.0",
-  "description": "\"Contracts for SHE Chain\"",
+  "description": "\"Contracts for BLK Chain\"",
   "main": "index.js",
   "directories": {
     "lib": "lib",

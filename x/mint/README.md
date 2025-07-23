@@ -26,7 +26,7 @@ Every day, at a configured time (typically the start of the day), the daily mint
 
 The minting schedule, including the start date, end date, and `total_mint_amount`, can be updated through a governance proposal. This feature allows network participants to adjust the minting parameters as necessary in response to the network's needs and conditions.
 
-This flexibility ensures that the minting process can be adjusted and managed effectively over time, supporting the growth and sustainability of the SHE-chain network.
+This flexibility ensures that the minting process can be adjusted and managed effectively over time, supporting the growth and sustainability of the BLK-chain network.
 
 Note: Changes to the `total_mint_amount` or `remaining_mint_amont` after the start date will not impact tokens already minted.
 
@@ -42,7 +42,7 @@ type Minter struct {
     StartDate           string `protobuf:"bytes,1,opt,name=start_date,json=startDate,proto3" json:"start_date,omitempty"`
     // The day where the mint ends
     EndDate             string `protobuf:"bytes,2,opt,name=end_date,json=endDate,proto3" json:"end_date,omitempty"`
-    // Denom for the coins minted, defaults to ushe
+    // Denom for the coins minted, defaults to ublk
     Denom               string `protobuf:"bytes,3,opt,name=denom,proto3" json:"denom,omitempty"`
     // Total amount to be minted
     TotalMintAmount     uint64 `protobuf:"varint,4,opt,name=total_mint_amount,json=totalMintAmount,proto3" json:"total_mint_amount,omitempty"`
@@ -94,7 +94,7 @@ First, prepare a proposal in JSON format, like the minter_prop.json file below:
   "minter": {
     "start_date": "2023-10-05",
     "end_date": "2023-11-22",
-    "denom": "ushe",
+    "denom": "ublk",
     "total_mint_amount": 100000
   }
 }
@@ -112,7 +112,7 @@ Before the proposal, the Minter parameters might look like this:
 
 ```**bash**
 > shed q mint minter
-denom: ushe
+denom: ublk
 end_date: "2023-04-30"
 last_mint_amount: "333333333333"
 last_mint_date: "2023-04-27"
@@ -126,7 +126,7 @@ After the proposal is passed, the Minter parameters would be updated as per the 
 
 ```bash
 > shed q mint minter
-denom: ushe
+denom: ublk
 end_date: "2023-11-22"
 last_mint_amount: "0"
 last_mint_date: ""
@@ -150,7 +150,7 @@ Here is an example for updating the params for the mint module
     {
       "subspace": "mint",
       "key": "MintDenom",
-      "value": "ushe"
+      "value": "ublk"
     },
     {
       "subspace": "mint",

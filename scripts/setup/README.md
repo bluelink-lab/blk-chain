@@ -1,10 +1,10 @@
-# SHE Network Setup Script
+# BLK Network Setup Script
 
-Setup script for decentralized launches of SHE networks.
+Setup script for decentralized launches of BLK networks.
 
 ## setup-validator
 
-run this if you're trying to join an existing network and just need to provision the validator node. Once provisioned, you'll need to request/get SHE tokens in order to stake as a validator
+run this if you're trying to join an existing network and just need to provision the validator node. Once provisioned, you'll need to request/get BLK tokens in order to stake as a validator
 
 ## prepare-genesis
 
@@ -22,7 +22,7 @@ shed
 
 ```
 [Unit]
-Description=SHE Node
+Description=BLK Node
 After=network.target
 
 [Service]

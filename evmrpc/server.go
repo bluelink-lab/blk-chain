@@ -72,7 +72,7 @@ func NewEVMHTTPServer(
 			Service:   NewBlockAPI(tmClient, k, ctxProvider, txConfig, ConnectionTypeHTTP),
 		},
 		{
-			Namespace: "she",
+			Namespace: "blk",
 			Service:   NewSheBlockAPI(tmClient, k, ctxProvider, txConfig, ConnectionTypeHTTP, isPanicOrSyntheticTxFunc),
 		},
 		{
@@ -84,7 +84,7 @@ func NewEVMHTTPServer(
 			Service:   txAPI,
 		},
 		{
-			Namespace: "she",
+			Namespace: "blk",
 			Service:   sheTxAPI,
 		},
 		{
@@ -112,11 +112,11 @@ func NewEVMHTTPServer(
 			Service:   NewFilterAPI(tmClient, k, ctxProvider, txConfig, &FilterConfig{timeout: config.FilterTimeout, maxLog: config.MaxLogNoBlock, maxBlock: config.MaxBlocksForLog}, ConnectionTypeHTTP, "eth"),
 		},
 		{
-			Namespace: "she",
-			Service:   NewFilterAPI(tmClient, k, ctxProvider, txConfig, &FilterConfig{timeout: config.FilterTimeout, maxLog: config.MaxLogNoBlock, maxBlock: config.MaxBlocksForLog}, ConnectionTypeHTTP, "she"),
+			Namespace: "blk",
+			Service:   NewFilterAPI(tmClient, k, ctxProvider, txConfig, &FilterConfig{timeout: config.FilterTimeout, maxLog: config.MaxLogNoBlock, maxBlock: config.MaxBlocksForLog}, ConnectionTypeHTTP, "blk"),
 		},
 		{
-			Namespace: "she",
+			Namespace: "blk",
 			Service:   NewAssociationAPI(tmClient, k, ctxProvider, txConfig.TxDecoder(), sendAPI, ConnectionTypeHTTP),
 		},
 		{
@@ -132,7 +132,7 @@ func NewEVMHTTPServer(
 			Service:   debugAPI,
 		},
 		{
-			Namespace: "she",
+			Namespace: "blk",
 			Service:   sheDebugAPI,
 		},
 	}

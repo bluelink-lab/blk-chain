@@ -256,7 +256,7 @@ const bond = async (contractAddress, address, amount) => {
     bond: {},
   };
   const jsonString = JSON.stringify(msg).replace(/"/g, '\\"');
-  const command = `shed tx wasm execute ${contractAddress} "${jsonString}" --amount=${amount}ushe --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
+  const command = `shed tx wasm execute ${contractAddress} "${jsonString}" --amount=${amount}ublk --from=${address} --gas=500000 --gas-prices=0.1ushe --broadcast-mode=block -y --output=json`;
   const output = await execute(command);
   const response = JSON.parse(output);
   if (response.code !== 0) {

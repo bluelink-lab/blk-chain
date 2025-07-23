@@ -12,7 +12,7 @@ order: 2
 
 ```go
 type ExchangeRateVote struct {
-	ExchangeRate sdk.Dec        // ExchangeRate of SHE in target fiat currency
+	ExchangeRate sdk.Dec        // ExchangeRate of BLK in target fiat currency
 	Denom        string         // Ticker name of target fiat currency
 	Voter        sdk.ValAddress // voter val address of validator
 }
@@ -20,9 +20,9 @@ type ExchangeRateVote struct {
 
 ## ExchangeRate
 
-An `sdk.Dec` that stores the current SHE exchange rate against a given denom, which is used by the [Market](../../market/spec/README.md) module for pricing swaps.
+An `sdk.Dec` that stores the current BLK exchange rate against a given denom, which is used by the [Market](../../market/spec/README.md) module for pricing swaps.
 
-You can get the active list of denoms trading against `SHE` (denominations with votes past `VoteThreshold`) with `k.GetActiveDenoms()`.
+You can get the active list of denoms trading against `BLK` (denominations with votes past `VoteThreshold`) with `k.GetActiveDenoms()`.
 
 - ExchangeRate: `0x03<denom_Bytes> -> amino(sdk.Dec)`
 
@@ -53,7 +53,7 @@ type ExchangeRateTuple struct {
 type ExchangeRateTuples []ExchangeRateTuple
 
 type AggregateExchangeRateVote struct {
-	ExchangeRateTuples ExchangeRateTuples // ExchangeRates of SHE in target fiat currencies
+	ExchangeRateTuples ExchangeRateTuples // ExchangeRates of BLK in target fiat currencies
 	Voter              sdk.ValAddress     // voter val address of validator
 }
 ```

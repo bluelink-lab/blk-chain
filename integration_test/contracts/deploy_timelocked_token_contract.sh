@@ -75,8 +75,8 @@ echo "Got $contract_name contract id: $contract_id"
 # instantiate
 echo "Instantiating contract..."
 VESTING_TIMESTAMPS='["1893456000000000000", "1924992000000000000"]' # nanoseconds since unix epoch
-VESTING_AMOUNTS='["1000000", "500000"]' # in ushe
-params='{"admins":["'$key_admin1'", "'$key_admin2'", "'$key_admin3'", "'$key_admin4'"], "ops": ["'$key_op'"], "tranche": {"denom":"ushe", "vesting_timestamps":'$VESTING_TIMESTAMPS', "vesting_amounts":'$VESTING_AMOUNTS', "unlocked_token_distribution_address": "'$key_unlock'", "staking_reward_distribution_address": "'$key_staking'"}, "max_voting_period": {"time":1800}, "admin_voting_threshold_percentage": 75}'
+VESTING_AMOUNTS='["1000000", "500000"]' # in ublk
+params='{"admins":["'$key_admin1'", "'$key_admin2'", "'$key_admin3'", "'$key_admin4'"], "ops": ["'$key_op'"], "tranche": {"denom":"ublk", "vesting_timestamps":'$VESTING_TIMESTAMPS', "vesting_amounts":'$VESTING_AMOUNTS', "unlocked_token_distribution_address": "'$key_unlock'", "staking_reward_distribution_address": "'$key_staking'"}, "max_voting_period": {"time":1800}, "admin_voting_threshold_percentage": 75}'
 instantiate_result=$(printf "12345678\n" | $shedbin tx wasm instantiate "$contract_id" "$params" -y --admin="$goblin_addr" --amount=1500000ushe --from="$keyname" --chain-id="$chainid" --gas=5000000 --fees=1000000ushe --broadcast-mode=block --label=$contract_name --output=json)
 contract_addr=$(echo "$instantiate_result" |jq -r '.logs[].events[].attributes[] | select(.key == "_contract_address").value')
 echo "Instantiated $contract_name contract address: $contract_addr"

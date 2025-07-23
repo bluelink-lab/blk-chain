@@ -91,7 +91,7 @@ func TestTraceBlockByNumberExcludeTraceFail(t *testing.T) {
 	args := map[string]interface{}{}
 	args["tracer"] = "callTracer"
 	blockNumber := fmt.Sprintf("%#x", MockHeight103)
-	sheResObj := sendRequestGoodWithNamespace(t, "she", "traceBlockByNumberExcludeTraceFail", blockNumber, args)
+	sheResObj := sendRequestGoodWithNamespace(t, "blk", "traceBlockByNumberExcludeTraceFail", blockNumber, args)
 	result := sheResObj["result"].([]interface{})
 	// she_traceBlockByNumberExcludeTraceFail returns 1 trace, and removes the panic tx and synthetic tx
 	require.Equal(t, 1, len(result))
@@ -103,7 +103,7 @@ func TestTraceBlockByNumberExcludeTraceFail(t *testing.T) {
 func TestTraceBlockByHashExcludeTraceFail(t *testing.T) {
 	args := map[string]interface{}{}
 	args["tracer"] = "callTracer"
-	sheResObj := sendRequestGoodWithNamespace(t, "she", "traceBlockByHashExcludeTraceFail", DebugTracePanicBlockHash, args)
+	sheResObj := sendRequestGoodWithNamespace(t, "blk", "traceBlockByHashExcludeTraceFail", DebugTracePanicBlockHash, args)
 	result := sheResObj["result"].([]interface{})
 	// she_traceBlockByHashExcludeTraceFail returns 1 trace, and removes the panic tx
 	require.Equal(t, 1, len(result))

@@ -356,7 +356,7 @@ func (p PrecompileExecutor) execute(ctx sdk.Context, method *abi.Method, caller 
 			return nil, 0, fmt.Errorf("%s is not a pointer of %s", callingContract.Hex(), contractAddrStr)
 		}
 	}
-	// addresses will be sent in SHE format
+	// addresses will be sent in BLK format
 	contractAddr, err := sdk.AccAddressFromBech32(contractAddrStr)
 	if err != nil {
 		rerr = err
@@ -437,7 +437,7 @@ func (p PrecompileExecutor) query(ctx sdk.Context, method *abi.Method, args []in
 	}
 
 	contractAddrStr := args[0].(string)
-	// addresses will be sent in SHE format
+	// addresses will be sent in BLK format
 	contractAddr, err := sdk.AccAddressFromBech32(contractAddrStr)
 	if err != nil {
 		rerr = err

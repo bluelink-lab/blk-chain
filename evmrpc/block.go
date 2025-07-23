@@ -76,7 +76,7 @@ func NewSheBlockAPI(
 		connectionType:       connectionType,
 		includeShellReceipts: true,
 		includeBankTransfers: false,
-		namespace:            "she",
+		namespace:            "blk",
 	}
 	return &SheBlockAPI{
 		BlockAPI:  blockAPI,
@@ -161,21 +161,21 @@ func (a *BlockAPI) GetBlockByNumber(ctx context.Context, number rpc.BlockNumber,
 			"number":           (*hexutil.Big)(big.NewInt(0)),
 			"hash":             "0xF9D3845DF25B43B1C6926F3CEDA6845C17F5624E12212FD8847D0BA01DA1AB9E",
 			"parentHash":       common.Hash{},
-			"nonce":            ethtypes.BlockNonce{},   // inapplicable to SHE
-			"mixHash":          common.Hash{},           // inapplicable to SHE
-			"sha3Uncles":       ethtypes.EmptyUncleHash, // inapplicable to SHE
+			"nonce":            ethtypes.BlockNonce{},   // inapplicable to BLK
+			"mixHash":          common.Hash{},           // inapplicable to BLK
+			"sha3Uncles":       ethtypes.EmptyUncleHash, // inapplicable to BLK
 			"logsBloom":        ethtypes.Bloom{},
 			"stateRoot":        common.Hash{},
 			"miner":            common.Address{},
-			"difficulty":       (*hexutil.Big)(big.NewInt(0)), // inapplicable to SHE
-			"extraData":        hexutil.Bytes{},               // inapplicable to SHE
+			"difficulty":       (*hexutil.Big)(big.NewInt(0)), // inapplicable to BLK
+			"extraData":        hexutil.Bytes{},               // inapplicable to BLK
 			"gasLimit":         hexutil.Uint64(0),
 			"gasUsed":          hexutil.Uint64(0),
 			"timestamp":        hexutil.Uint64(0),
 			"transactionsRoot": common.Hash{},
 			"receiptsRoot":     common.Hash{},
 			"size":             hexutil.Uint64(0),
-			"uncles":           []common.Hash{}, // inapplicable to SHE
+			"uncles":           []common.Hash{}, // inapplicable to BLK
 			"transactions":     []interface{}{},
 			"baseFeePerGas":    (*hexutil.Big)(big.NewInt(0)),
 		}, nil
@@ -386,7 +386,7 @@ func EncodeTmBlock(
 					}
 					recipientEvmAddr := k.GetEVMAddressOrDefault(ctx, recipientSheAddr)
 					rpcTx.To = &recipientEvmAddr
-					amt := m.Amount.AmountOf("ushe").Mul(state.SdkUsheToSweiMultiplier)
+					amt := m.Amount.AmountOf("ublk").Mul(state.SdkUsheToSweiMultiplier)
 					rpcTx.Value = (*hexutil.Big)(amt.BigInt())
 					transactions = append(transactions, rpcTx)
 				}
@@ -402,26 +402,26 @@ func EncodeTmBlock(
 		"number":           (*hexutil.Big)(number),
 		"hash":             blockhash,
 		"parentHash":       lastHash,
-		"nonce":            ethtypes.BlockNonce{},   // inapplicable to SHE
-		"mixHash":          common.Hash{},           // inapplicable to SHE
-		"sha3Uncles":       ethtypes.EmptyUncleHash, // inapplicable to SHE
+		"nonce":            ethtypes.BlockNonce{},   // inapplicable to BLK
+		"mixHash":          common.Hash{},           // inapplicable to BLK
+		"sha3Uncles":       ethtypes.EmptyUncleHash, // inapplicable to BLK
 		"logsBloom":        blockBloom,
 		"stateRoot":        appHash,
 		"miner":            miner,
-		"difficulty":       (*hexutil.Big)(big.NewInt(0)), // inapplicable to SHE
-		"extraData":        hexutil.Bytes{},               // inapplicable to SHE
+		"difficulty":       (*hexutil.Big)(big.NewInt(0)), // inapplicable to BLK
+		"extraData":        hexutil.Bytes{},               // inapplicable to BLK
 		"gasLimit":         hexutil.Uint64(gasLimit),
 		"gasUsed":          hexutil.Uint64(blockGasUsed),
 		"timestamp":        hexutil.Uint64(block.Block.Time.Unix()),
 		"transactionsRoot": txHash,
 		"receiptsRoot":     resultHash,
 		"size":             hexutil.Uint64(block.Block.Size()),
-		"uncles":           []common.Hash{}, // inapplicable to SHE
+		"uncles":           []common.Hash{}, // inapplicable to BLK
 		"transactions":     transactions,
 		"baseFeePerGas":    (*hexutil.Big)(baseFeePerGas),
 	}
 	if fullTx {
-		result["totalDifficulty"] = (*hexutil.Big)(big.NewInt(0)) // inapplicable to SHE
+		result["totalDifficulty"] = (*hexutil.Big)(big.NewInt(0)) // inapplicable to BLK
 	}
 	return result, nil
 }

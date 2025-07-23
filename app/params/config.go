@@ -11,14 +11,14 @@ import (
 )
 
 const (
-	HumanCoinUnit = "she"
-	BaseCoinUnit  = "ushe"
+	HumanCoinUnit = "blk"
+	BaseCoinUnit  = "ublk"
 	UsheExponent  = 6
 
 	DefaultBondDenom = BaseCoinUnit
 
 	// Bech32PrefixAccAddr defines the Bech32 prefix of an account's address.
-	Bech32PrefixAccAddr = "she"
+	Bech32PrefixAccAddr = "blk"
 )
 
 // UnsafeBypassCommitTimeoutOverride commits block as soon as we reach consensus instead of waiting

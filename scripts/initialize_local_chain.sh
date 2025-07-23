@@ -56,12 +56,12 @@ cat ~/.she/config/genesis.json | jq '.app_state["gov"]["deposit_params"]["max_de
 cat ~/.she/config/genesis.json | jq '.app_state["gov"]["voting_params"]["voting_period"]="30s"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.app_state["gov"]["voting_params"]["expedited_voting_period"]="10s"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.app_state["oracle"]["params"]["vote_period"]="2"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
-cat ~/.she/config/genesis.json | jq '.app_state["oracle"]["params"]["whitelist"]=[{"name": "ueth"},{"name": "ubtc"},{"name": "uusdc"},{"name": "uusdt"},{"name": "uosmo"},{"name": "uatom"},{"name": "ushe"}]' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
+cat ~/.she/config/genesis.json | jq '.app_state["oracle"]["params"]["whitelist"]=[{"name": "ueth"},{"name": "ubtc"},{"name": "uusdc"},{"name": "uusdt"},{"name": "uosmo"},{"name": "uatom"},{"name": "ublk"}]' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.app_state["distribution"]["params"]["community_tax"]="0.000000000000000000"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.consensus_params["block"]["max_gas"]="35000000"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.consensus_params["block"]["min_txs_in_block"]="2"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 cat ~/.she/config/genesis.json | jq '.app_state["staking"]["params"]["max_voting_power_ratio"]="1.000000000000000000"' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
-cat ~/.she/config/genesis.json | jq '.app_state["bank"]["denom_metadata"]=[{"denom_units":[{"denom":"ushe","exponent":0,"aliases":["USHE"]}],"base":"ushe","display":"ushe","name":"USHE","symbol":"USHE"}]' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
+cat ~/.she/config/genesis.json | jq '.app_state["bank"]["denom_metadata"]=[{"denom_units":[{"denom":"ublk","exponent":0,"aliases":["USHE"]}],"base":"ublk","display":"ublk","name":"USHE","symbol":"USHE"}]' > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json
 
 # Use the Python command to get the dates
 START_DATE=$($PYTHON_CMD -c "from datetime import datetime; print(datetime.now().strftime('%Y-%m-%d'))")

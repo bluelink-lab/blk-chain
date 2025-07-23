@@ -45,8 +45,8 @@ func TestSplitUsheWeiAmount(t *testing.T) {
 			expectedWei: big.NewInt(789_123_456_789),
 		},
 	} {
-		ushe, wei := state.SplitUsheWeiAmount(test.amt)
-		require.Equal(t, test.expectedShe, ushe.BigInt())
+		ublk, wei := state.SplitUsheWeiAmount(test.amt)
+		require.Equal(t, test.expectedShe, ublk.BigInt())
 		require.Equal(t, test.expectedWei, wei.BigInt())
 	}
 }

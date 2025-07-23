@@ -230,7 +230,7 @@ func (k *Keeper) GetVMBlockContext(ctx sdk.Context, gp core.GasPool) (*vm.BlockC
 func (k *Keeper) GetHashFn(ctx sdk.Context) vm.GetHashFunc {
 	return func(height uint64) common.Hash {
 		if height > math.MaxInt64 {
-			ctx.Logger().Error("SHE block height is bounded by int64 range")
+			ctx.Logger().Error("BLK block height is bounded by int64 range")
 			return common.Hash{}
 		}
 		h := int64(height)
@@ -397,8 +397,8 @@ func (k *Keeper) PrepareReplayedAddr(ctx sdk.Context, addr common.Address) {
 	}
 	store.Set(addr[:], a.Root[:])
 	if a.Balance != nil && a.Balance.Cmp(utils.Big0) != 0 {
-		ushe, wei := state.SplitUsheWeiAmount(a.Balance)
-		err = k.BankKeeper().AddCoins(ctx, k.GetSheAddressOrDefault(ctx, addr), sdk.NewCoins(sdk.NewCoin("ushe", ushe)), true)
+		ublk, wei := state.SplitUsheWeiAmount(a.Balance)
+		err = k.BankKeeper().AddCoins(ctx, k.GetSheAddressOrDefault(ctx, addr), sdk.NewCoins(sdk.NewCoin("ublk", ublk)), true)
 		if err != nil {
 			panic(err)
 		}

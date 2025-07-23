@@ -217,7 +217,7 @@ func (oc OracleClient) CreateClientContext() (client.Context, error) {
 		keyringInput = os.Stdin
 	}
 
-	kr, err := keyring.New("she", oc.KeyringBackend, oc.KeyringDir, keyringInput)
+	kr, err := keyring.New("blk", oc.KeyringBackend, oc.KeyringDir, keyringInput)
 	if err != nil {
 		return client.Context{}, err
 	}

@@ -30,28 +30,28 @@ func TestAssocation(t *testing.T) {
 		"custom_message": "\x19Ethereum Signed Message:\n0",
 	}
 
-	body := sendRequestGoodWithNamespace(t, "she", "associate", txArgs)
+	body := sendRequestGoodWithNamespace(t, "blk", "associate", txArgs)
 	require.Equal(t, nil, body["result"])
 }
 
 func TestGetSheAddress(t *testing.T) {
-	body := sendRequestGoodWithNamespace(t, "she", "getSheAddress", "0x1df809C639027b465B931BD63Ce71c8E5834D9d6")
+	body := sendRequestGoodWithNamespace(t, "blk", "getSheAddress", "0x1df809C639027b465B931BD63Ce71c8E5834D9d6")
 	require.Equal(t, "she1mf0llhmqane5w2y8uynmghmk2w4mh0xll9seym", body["result"])
 }
 
 func TestGetEvmAddress(t *testing.T) {
-	body := sendRequestGoodWithNamespace(t, "she", "getEVMAddress", "she1mf0llhmqane5w2y8uynmghmk2w4mh0xll9seym")
+	body := sendRequestGoodWithNamespace(t, "blk", "getEVMAddress", "she1mf0llhmqane5w2y8uynmghmk2w4mh0xll9seym")
 	require.Equal(t, "0x1df809C639027b465B931BD63Ce71c8E5834D9d6", body["result"])
 }
 
 func TestGetCosmosTx(t *testing.T) {
-	body := sendRequestGoodWithNamespace(t, "she", "getCosmosTx", "0xf02362077ac075a397344172496b28e913ce5294879d811bb0269b3be20a872e")
+	body := sendRequestGoodWithNamespace(t, "blk", "getCosmosTx", "0xf02362077ac075a397344172496b28e913ce5294879d811bb0269b3be20a872e")
 	fmt.Println(body)
 	require.Equal(t, "690D39ADF56D4C811B766DFCD729A415C36C4BFFE80D63E305373B9518EBFB14", body["result"])
 }
 
 func TestGetEvmTx(t *testing.T) {
-	body := sendRequestGoodWithNamespace(t, "she", "getEvmTx", "690D39ADF56D4C811B766DFCD729A415C36C4BFFE80D63E305373B9518EBFB14")
+	body := sendRequestGoodWithNamespace(t, "blk", "getEvmTx", "690D39ADF56D4C811B766DFCD729A415C36C4BFFE80D63E305373B9518EBFB14")
 	fmt.Println(body)
 	require.Equal(t, "0xf02362077ac075a397344172496b28e913ce5294879d811bb0269b3be20a872e", body["result"])
 }

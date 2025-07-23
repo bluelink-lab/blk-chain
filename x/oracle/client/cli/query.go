@@ -43,9 +43,9 @@ func GetCmdQueryExchangeRates() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "exchange-rates [denom]",
 		Args:  cobra.RangeArgs(0, 1),
-		Short: "Query the current SHE exchange rate w.r.t an asset",
+		Short: "Query the current BLK exchange rate w.r.t an asset",
 		Long: strings.TrimSpace(`
-Query the current exchange rate of SHE with an asset.
+Query the current exchange rate of BLK with an asset.
 You can find the current list of active denoms by running
 
 $ shed query oracle exchange-rates
@@ -162,9 +162,9 @@ func GetCmdQueryActives() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "actives",
 		Args:  cobra.NoArgs,
-		Short: "Query the active list of SHE assets recognized by the oracle",
+		Short: "Query the active list of BLK assets recognized by the oracle",
 		Long: strings.TrimSpace(`
-Query the active list of SHE assets recognized by the types.
+Query the active list of BLK assets recognized by the types.
 
 $ shed query oracle actives
 `),

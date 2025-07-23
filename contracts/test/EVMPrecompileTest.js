@@ -64,7 +64,7 @@ describe("EVM Precompile Tester", function () {
                 expect(error).to.have.property('message').that.includes('execution reverted');
             }
             
-            const message = `Please sign this message to link your EVM and SHE addresses. No SHE will be spent as a result of this signature.\n\n`;
+            const message = `Please sign this message to link your EVM and BLK addresses. No BLK will be spent as a result of this signature.\n\n`;
             const messageLength = Buffer.from(message, 'utf8').length;
             const signatureHex = await unassociatedWallet.signMessage(message);
 
@@ -389,7 +389,7 @@ describe("EVM Precompile Tester", function () {
                     amount: "10",
                 },
                 {
-                    denom: "ushe",
+                    denom: "ublk",
                     amount: "1000000",
                 },
             ];
@@ -405,7 +405,7 @@ describe("EVM Precompile Tester", function () {
             const receipt = await response.wait();
             expect(receipt.status).to.equal(1);
 
-            // ushe assertions
+            // ublk assertions
             const usheBalance = await getSheBalance(wasmContractAddress);
             expect(usheBalance).to.equal(oldBalance + 1000000);
 
@@ -430,7 +430,7 @@ describe("EVM Precompile Tester", function () {
                     amount: "10",
                 },
                 {
-                    denom: "ushe",
+                    denom: "ublk",
                     amount: "1000000",
                 },
             ];
@@ -469,7 +469,7 @@ describe("EVM Precompile Tester", function () {
             const receipt = await response.wait();
             expect(receipt.status).to.equal(1);
 
-            // ushe assertions
+            // ublk assertions
             const usheBalance = await getSheBalance(wasmContractAddress);
             expect(usheBalance).to.equal(oldBalance + 4000000);
 

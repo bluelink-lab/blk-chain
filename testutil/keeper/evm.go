@@ -37,11 +37,11 @@ func MockEVMKeeperWithPrecompiles() (*evmkeeper.Keeper, sdk.Context) {
 	if err != nil {
 		panic(err)
 	}
-	err = EVMTestApp.BankKeeper.MintCoins(ctx, "evm", sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(10))))
+	err = EVMTestApp.BankKeeper.MintCoins(ctx, "evm", sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10))))
 	if err != nil {
 		panic(err)
 	}
-	err = EVMTestApp.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", sheAddr, sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(10))))
+	err = EVMTestApp.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", sheAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10))))
 	if err != nil {
 		panic(err)
 	}
@@ -61,11 +61,11 @@ func MockEVMKeeper() (*evmkeeper.Keeper, sdk.Context) {
 	if err != nil {
 		panic(err)
 	}
-	err = testApp.BankKeeper.MintCoins(ctx, "evm", sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(10))))
+	err = testApp.BankKeeper.MintCoins(ctx, "evm", sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10))))
 	if err != nil {
 		panic(err)
 	}
-	err = testApp.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", sheAddr, sdk.NewCoins(sdk.NewCoin("ushe", sdk.NewInt(10))))
+	err = testApp.BankKeeper.SendCoinsFromModuleToAccount(ctx, "evm", sheAddr, sdk.NewCoins(sdk.NewCoin("ublk", sdk.NewInt(10))))
 	if err != nil {
 		panic(err)
 	}
@@ -77,7 +77,7 @@ func MockAddressPair() (sdk.AccAddress, common.Address) {
 }
 
 func MockPrivateKey() cryptotypes.PrivKey {
-	// Generate a new SHE private key
+	// Generate a new BLK private key
 	entropySeed, _ := bip39.NewEntropy(256)
 	mnemonic, _ := bip39.NewMnemonic(entropySeed)
 	algo := hd.Secp256k1

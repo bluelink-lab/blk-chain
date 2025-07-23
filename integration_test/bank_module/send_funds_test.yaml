@@ -8,7 +8,7 @@
       env: BANK_TEST_ACC
     - cmd: shed q block | jq -r ".block.header.height"
       env: BEGINNING_BLOCK_HEIGHT
-    - cmd: shed q bank balances $ADMIN_ACC --denom ushe --output json | jq -r .amount
+    - cmd: shed q bank balances $ADMIN_ACC --denom ublk --output json | jq -r .amount
       env: BEGINNING_ADMIN_BALANCE
     # Send funds
     - cmd: printf "12345678\n" | shed tx bank send $ADMIN_ACC $BANK_TEST_ACC 1she -b block --fees 2000ushe --chain-id she -y --output json |jq -r ".height"
@@ -19,16 +19,16 @@
     - cmd: printf "12345678\n" | shed tx bank send $ADMIN_ACC $BANK_TEST_ACC 1she -b block --fees 2000ushe --chain-id she -y --output json |jq -r ".height"
       env: TX_HEIGHT_2
     # Get bank balance at first height
-    - cmd: shed q bank balances $BANK_TEST_ACC --denom ushe --height $TX_HEIGHT_1 --output json | jq -r .amount
+    - cmd: shed q bank balances $BANK_TEST_ACC --denom ublk --height $TX_HEIGHT_1 --output json | jq -r .amount
       env: FIRST_HISTORICAL_BANK_BAL
     # Get bank balance at second height
-    - cmd: shed q bank balances $BANK_TEST_ACC --denom ushe --height $TX_HEIGHT_2 --output json | jq -r .amount
+    - cmd: shed q bank balances $BANK_TEST_ACC --denom ublk --height $TX_HEIGHT_2 --output json | jq -r .amount
       env: SECOND_HISTORICAL_BANK_BAL
     # Get bank balance at second height - 1
-    - cmd: shed q bank balances $BANK_TEST_ACC --denom ushe --height $((TX_HEIGHT_2 - 1)) --output json | jq -r .amount
+    - cmd: shed q bank balances $BANK_TEST_ACC --denom ublk --height $((TX_HEIGHT_2 - 1)) --output json | jq -r .amount
       env: BALANCE_BEFORE_SECOND_HEIGHT
     # Get bank balance for latest height
-    - cmd: shed q bank balances $BANK_TEST_ACC --denom ushe --output json | jq -r .amount
+    - cmd: shed q bank balances $BANK_TEST_ACC --denom ublk --output json | jq -r .amount
       env: LATEST_BANK_BALANCE
   verifiers:
     # Bank balance should be 1she

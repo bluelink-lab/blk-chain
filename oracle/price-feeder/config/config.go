@@ -20,7 +20,7 @@ const (
 	defaultSrvReadTimeout  = 15 * time.Second
 	defaultProviderTimeout = 100 * time.Millisecond
 
-	// API sources for SHE native oracle price feed - examples include price of BTC, ETH - that applications on SHE can
+	// API sources for BLK native oracle price feed - examples include price of BTC, ETH - that applications on BLK can
 	// use
 	ProviderKraken   = "kraken"
 	ProviderBinance  = "binance"
@@ -39,8 +39,8 @@ var (
 	// ErrEmptyConfigPath defines a sentinel error for an empty config path.
 	ErrEmptyConfigPath = errors.New("empty configuration file path")
 
-	// SupportedProviders is a mapping of all API sources for SHE native oracle price feed - examples include price of
-	// BTC, ETH - that applications on SHE can use
+	// SupportedProviders is a mapping of all API sources for BLK native oracle price feed - examples include price of
+	// BTC, ETH - that applications on BLK can use
 	SupportedProviders = map[string]struct{}{
 		ProviderKraken:   {},
 		ProviderBinance:  {},

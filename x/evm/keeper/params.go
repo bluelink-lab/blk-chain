@@ -9,7 +9,7 @@ import (
 	"github.com/she-protocol/she-chain/x/evm/types"
 )
 
-const BaseDenom = "ushe"
+const BaseDenom = "ublk"
 
 func (k Keeper) SetParams(ctx sdk.Context, params types.Params) {
 	k.Paramstore.SetParamSet(ctx, &params)

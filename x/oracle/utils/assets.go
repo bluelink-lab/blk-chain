@@ -2,7 +2,7 @@ package utils
 
 const (
 	MicroUsdcDenom = "uusdc"
-	MicroSheDenom  = "ushe"
+	MicroSheDenom  = "ublk"
 	MicroAtomDenom = "uatom"
 	MicroEthDenom  = "ueth"
 

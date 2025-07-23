@@ -211,154 +211,154 @@ printf "12345678\n" | $shedbin tx dex register-contract $marsaddr17 $marsid fals
 printf "12345678\n" | $shedbin tx dex register-contract $saturnaddr17 $saturnid false true 100000000000 -y --from=$keyname --chain-id=$chainid --fees=100000000000ushe --gas=500000 --broadcast-mode=block
 
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars.json
 marspair=$(printf "12345678\n" | $shedbin tx dex register-pairs mars.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn.json
 saturnpair=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus.json
 venuspair=$(printf "12345678\n" | $shedbin tx dex register-pairs venus.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr2'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars2.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr2'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars2.json
 marspair2=$(printf "12345678\n" | $shedbin tx dex register-pairs mars2.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr2'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn2.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr2'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn2.json
 saturnpair2=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn2.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr2'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus2.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr2'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus2.json
 venuspair2=$(printf "12345678\n" | $shedbin tx dex register-pairs venus2.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr3'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars3.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr3'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars3.json
 marspair3=$(printf "12345678\n" | $shedbin tx dex register-pairs mars3.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr3'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn3.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr3'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn3.json
 saturnpair3=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn3.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr3'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus3.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr3'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus3.json
 venuspair3=$(printf "12345678\n" | $shedbin tx dex register-pairs venus3.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr4'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars4.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr4'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars4.json
 marspair4=$(printf "12345678\n" | $shedbin tx dex register-pairs mars4.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr4'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn4.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr4'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn4.json
 saturnpair4=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn4.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr4'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus4.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr4'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus4.json
 venuspair4=$(printf "12345678\n" | $shedbin tx dex register-pairs venus4.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr5'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars5.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr5'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars5.json
 marspair5=$(printf "12345678\n" | $shedbin tx dex register-pairs mars5.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr5'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn5.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr5'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn5.json
 saturnpair5=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn5.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr5'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus5.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr5'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus5.json
 venuspair5=$(printf "12345678\n" | $shedbin tx dex register-pairs venus5.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr6'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars6.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr6'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars6.json
 marspair6=$(printf "12345678\n" | $shedbin tx dex register-pairs mars6.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr6'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn6.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr6'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn6.json
 saturnpair6=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn6.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr6'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus6.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr6'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus6.json
 venuspair6=$(printf "12345678\n" | $shedbin tx dex register-pairs venus6.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr7'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars7.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr7'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars7.json
 marspair7=$(printf "12345678\n" | $shedbin tx dex register-pairs mars7.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr7'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn7.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr7'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn7.json
 saturnpair7=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn7.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr7'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus7.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr7'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus7.json
 venuspair7=$(printf "12345678\n" | $shedbin tx dex register-pairs venus7.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr8'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars8.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr8'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars8.json
 marspair8=$(printf "12345678\n" | $shedbin tx dex register-pairs mars8.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr8'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn8.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr8'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn8.json
 saturnpair8=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn8.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr8'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus8.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr8'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus8.json
 venuspair8=$(printf "12345678\n" | $shedbin tx dex register-pairs venus8.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr9'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars9.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr9'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars9.json
 marspair9=$(printf "12345678\n" | $shedbin tx dex register-pairs mars9.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr9'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn9.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr9'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn9.json
 saturnpair9=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn9.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr9'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus9.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr9'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus9.json
 venuspair9=$(printf "12345678\n" | $shedbin tx dex register-pairs venus9.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr10'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars10.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr10'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars10.json
 marspair10=$(printf "12345678\n" | $shedbin tx dex register-pairs mars10.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr10'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn10.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr10'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn10.json
 saturnpair10=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn10.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr10'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus10.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr10'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus10.json
 venuspair10=$(printf "12345678\n" | $shedbin tx dex register-pairs venus10.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr11'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars11.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr11'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars11.json
 marspair11=$(printf "12345678\n" | $shedbin tx dex register-pairs mars11.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr11'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn11.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr11'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn11.json
 saturnpair11=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn11.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr11'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus11.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr11'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus11.json
 venuspair11=$(printf "12345678\n" | $shedbin tx dex register-pairs venus11.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr12'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars12.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr12'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars12.json
 marspair12=$(printf "12345678\n" | $shedbin tx dex register-pairs mars12.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr12'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn12.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr12'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn12.json
 saturnpair12=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn12.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr12'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus12.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr12'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus12.json
 venuspair12=$(printf "12345678\n" | $shedbin tx dex register-pairs venus12.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr13'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars13.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr13'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > mars13.json
 marspair13=$(printf "12345678\n" | $shedbin tx dex register-pairs mars13.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr13'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn13.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr13'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturn13.json
 saturnpair13=$(printf "12345678\n" | $shedbin tx dex register-pairs saturn13.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr13'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus13.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr13'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venus13.json
 venuspair13=$(printf "12345678\n" | $shedbin tx dex register-pairs venus13.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr14'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss14.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr14'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss14.json
 marspairs14=$(printf "12345678\n" | $shedbin tx dex register-pairs marss14.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr14'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns14.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr14'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns14.json
 saturnpairs14=$(printf "12345678\n" | $shedbin tx dex register-pairs saturns14.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr14'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venuss14.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr14'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venuss14.json
 venuspairs14=$(printf "12345678\n" | $shedbin tx dex register-pairs venuss14.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr15'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss15.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr15'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss15.json
 marspairs15=$(printf "12345678\n" | $shedbin tx dex register-pairs marss15.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr15'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns15.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr15'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns15.json
 saturnpairs15=$(printf "12345678\n" | $shedbin tx dex register-pairs saturns15.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr15'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venuss15.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr15'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venuss15.json
 venuspairs15=$(printf "12345678\n" | $shedbin tx dex register-pairs venuss15.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr16'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss16.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr16'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss16.json
 marspairs16=$(printf "12345678\n" | $shedbin tx dex register-pairs marss16.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr16'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns16.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr16'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns16.json
 saturnpairs16=$(printf "12345678\n" | $shedbin tx dex register-pairs saturns16.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr16'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venuss16.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$venusaddr16'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > venuss16.json
 venuspairs16=$(printf "12345678\n" | $shedbin tx dex register-pairs venuss16.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr17'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss17.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$marsaddr17'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > marss17.json
 marspairs17=$(printf "12345678\n" | $shedbin tx dex register-pairs marss17.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
-echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr17'","pairs":[{"price_denom":"SHE","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns17.json
+echo '{"batch_contract_pair":[{"contract_addr":"'$saturnaddr17'","pairs":[{"price_denom":"BLK","asset_denom":"ATOM","price_tick_size":"0.0000001", "quantity_tick_size":"0.0000001"}]}]}' > saturns17.json
 saturnpairs17=$(printf "12345678\n" | $shedbin tx dex register-pairs saturns17.json -y --from=$keyname --chain-id=$chainid --fees=10000000ushe --gas=500000 --broadcast-mode=block --output=json)
 
 sleep 90

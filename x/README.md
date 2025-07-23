@@ -1,6 +1,6 @@
-# SHE modules
+# BLK modules
 
-SHE implements the following custom modules:
+BLK implements the following custom modules:
 * `dex` -
 * `epoch` -
 * `oracle` -
