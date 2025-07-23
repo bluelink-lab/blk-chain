@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
-// UsheToSweiMultiplier Fields that were denominated in ublk will be converted to swei (1ushe = 10^12swei)
+// UsheToSweiMultiplier Fields that were denominated in ublk will be converted to swei (1ublk = 10^12swei)
 // for existing Ethereum application (which assumes 18 decimal points) to display properly.
 var UsheToSweiMultiplier = big.NewInt(1_000_000_000_000)
 var SdkUsheToSweiMultiplier = sdk.NewIntFromBigInt(UsheToSweiMultiplier)

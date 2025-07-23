@@ -17,7 +17,7 @@ class PriceFetcher:
         self.coin_prices = defaultdict(int)
 
     def create_price_feed(self, coin_list):
-        price_feed = "1ushe," # default 1 BLK to 1 USDC, will need to change once BLK price is available
+        price_feed = "1ublk," # default 1 BLK to 1 USDC, will need to change once BLK price is available
         coin_price = self.cg.get_price(ids=coin_list, vs_currencies='usd')
 
         for coin in coin_list:

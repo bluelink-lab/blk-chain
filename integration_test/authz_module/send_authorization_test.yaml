@@ -10,16 +10,16 @@
     - cmd: printf "12345678\ny\n" | blkd keys add other-acc --output json | jq -r ".address"
       env: OTHER_ACC_ADDR
     # send some funds to grantee for gas
-    - cmd: printf "12345678\n" | blkd tx bank send admin $GRANTEE_ADDR 1she --fees 2000ushe -b block -y
+    - cmd: printf "12345678\n" | blkd tx bank send admin $GRANTEE_ADDR 1she --fees 2000ublk -b block -y
     # create an authz grant
-    - cmd: printf "12345678\n" | blkd tx authz grant $GRANTEE_ADDR send --from admin --spend-limit 10she --fees 2000ushe -b block -y
+    - cmd: printf "12345678\n" | blkd tx authz grant $GRANTEE_ADDR send --from admin --spend-limit 10she --fees 2000ublk -b block -y
     # create generate send tx and write to json
     - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ADDR $OTHER_ACC_ADDR 6she --generate-only > send_tx.json
     # execute the authz tx - we want to validate that this succeeds with code 0
-    - cmd: printf "12345678\n" | blkd tx authz exec send_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ushe --output json  | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx authz exec send_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ublk --output json  | jq -r ".code"
       env: AUTHZ_1_ERROR_CODE
     # execute the authz tx again - this time we want it to fail because send authorization is insufficient
-    - cmd: printf "12345678\n" | blkd tx authz exec send_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ushe --output json  | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx authz exec send_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ublk --output json  | jq -r ".code"
       env: AUTHZ_2_ERROR_CODE
     # query bank balances for the other addr to validate the amount the account has
     - cmd: blkd q bank balances $OTHER_ACC_ADDR --denom ublk --output json | jq -r ".amount"

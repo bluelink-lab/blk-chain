@@ -851,24 +851,24 @@ func (tk *TestDistributionKeeper) WithdrawDelegationRewards(ctx sdk.Context, del
 
 func (tk *TestDistributionKeeper) DelegationTotalRewards(ctx context.Context, req *distrtypes.QueryDelegationTotalRewardsRequest) (*distrtypes.QueryDelegationTotalRewardsResponse, error) {
 	uatomCoins := 1
-	val1usheCoins := 5
-	val2usheCoins := 7
+	val1ublkCoins := 5
+	val2ublkCoins := 7
 	rewards := []distrtypes.DelegationDelegatorReward{
 		{
 			ValidatorAddress: "shevaloper1wuj3xg3yrw4ryxn9vygwuz0necs4klj7j9nay6",
 			Reward: sdk.NewDecCoins(
 				sdk.NewDecCoin("uatom", sdk.NewInt(int64(uatomCoins))),
-				sdk.NewDecCoin("ublk", sdk.NewInt(int64(val1usheCoins))),
+				sdk.NewDecCoin("ublk", sdk.NewInt(int64(val1ublkCoins))),
 			),
 		},
 		{
 			ValidatorAddress: "shevaloper16znh8ktn33dwnxxc9q0jmxmjf6hsz4tl0s6vxh",
-			Reward:           sdk.NewDecCoins(sdk.NewDecCoin("ublk", sdk.NewInt(int64(val2usheCoins)))),
+			Reward:           sdk.NewDecCoins(sdk.NewDecCoin("ublk", sdk.NewInt(int64(val2ublkCoins)))),
 		},
 	}
 
 	allDecCoins := sdk.NewDecCoins(sdk.NewDecCoin("uatom", sdk.NewInt(int64(uatomCoins))),
-		sdk.NewDecCoin("ublk", sdk.NewInt(int64(val1usheCoins+val2usheCoins))))
+		sdk.NewDecCoin("ublk", sdk.NewInt(int64(val1ublkCoins+val2ublkCoins))))
 
 	return &distrtypes.QueryDelegationTotalRewardsResponse{Rewards: rewards, Total: allDecCoins}, nil
 }

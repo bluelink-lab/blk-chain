@@ -33,7 +33,7 @@ func TestGeneratorInvalidMessageTypes(t *testing.T) {
 	ctx := app.BaseApp.NewContext(false, tmproto.Header{})
 
 	oracleVote := oracletypes.MsgAggregateExchangeRateVote{
-		ExchangeRates: "1ushe",
+		ExchangeRates: "1ublk",
 		Feeder:        "test",
 		Validator:     "validator",
 	}

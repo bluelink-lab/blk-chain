@@ -10,7 +10,7 @@
       env: BEFORE_STAKED_TOKENS
 
     # staking tx
-    - cmd: printf "12345678\n" | blkd tx staking delegate $ADMIN_VAL_ADDR 10she --fees 2000ushe --from admin -b block -y --output json | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx staking delegate $ADMIN_VAL_ADDR 10she --fees 2000ublk --from admin -b block -y --output json | jq -r ".code"
       env: DELEGATE_RESPONSE_CODE
 
     # state after staking
@@ -46,7 +46,7 @@
       env: SHE_NODE_1_BEFORE_STAKED_TOKENS
 
     # staking tx
-    - cmd: printf "12345678\n" | blkd tx staking redelegate $SHE_NODE_0_VAL_ADDR $SHE_NODE_1_VAL_ADDR 10she --fees 20000ushe --gas 2000000 --from admin -b block -y --output json | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx staking redelegate $SHE_NODE_0_VAL_ADDR $SHE_NODE_1_VAL_ADDR 10she --fees 20000ublk --gas 2000000 --from admin -b block -y --output json | jq -r ".code"
       env: REDELEGATE_RESPONSE_CODE
 
     # state after staking
@@ -83,7 +83,7 @@
     - cmd: blkd q staking validator $SHE_NODE_1_VAL_ADDR --output json | jq -r ".tokens"
       env: BEFORE_STAKED_TOKENS
 
-    - cmd: printf "12345678\n" | blkd tx staking unbond $SHE_NODE_1_VAL_ADDR 1she --fees 2000ushe --from admin -b block -y --output json | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx staking unbond $SHE_NODE_1_VAL_ADDR 1she --fees 2000ublk --from admin -b block -y --output json | jq -r ".code"
       env: DELEGATE_RESPONSE_CODE
 
     # state after staking

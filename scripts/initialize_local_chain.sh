@@ -36,9 +36,9 @@ make install
 ~/go/bin/blkd init demo --chain-id she-chain
 ~/go/bin/blkd keys add $keyname --keyring-backend test
 # add the key as a genesis account with massive balances of several different tokens
-~/go/bin/blkd add-genesis-account $(~/go/bin/blkd keys show $keyname -a --keyring-backend test) 100000000000000000000ushe,100000000000000000000uusdc,100000000000000000000uatom --keyring-backend test
+~/go/bin/blkd add-genesis-account $(~/go/bin/blkd keys show $keyname -a --keyring-backend test) 100000000000000000000ublk,100000000000000000000uusdc,100000000000000000000uatom --keyring-backend test
 # gentx for account
-~/go/bin/blkd gentx $keyname 7000000000000000ushe --chain-id she-chain --keyring-backend test
+~/go/bin/blkd gentx $keyname 7000000000000000ublk --chain-id she-chain --keyring-backend test
 # add validator information to genesis file
 KEY=$(jq '.pub_key' ~/.she/config/priv_validator_key.json -c)
 jq '.validators = [{}]' ~/.she/config/genesis.json > ~/.she/config/tmp_genesis.json

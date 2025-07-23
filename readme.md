@@ -76,7 +76,7 @@ make install
 
 * Download the Genesis file: `wget https://github.com/she-protocol/testnet/raw/main/blk-testnet-1/genesis.json -P $HOME/.she/config/`
  
-* Edit the minimum-gas-prices in ${HOME}/.she/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01ushe"/g' $HOME/.she/config/app.toml`
+* Edit the minimum-gas-prices in ${HOME}/.she/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01ublk"/g' $HOME/.she/config/app.toml`
 
 * Start blkd by creating a systemd service to run the node in the background
 `nano /etc/systemd/system/blkd.service`

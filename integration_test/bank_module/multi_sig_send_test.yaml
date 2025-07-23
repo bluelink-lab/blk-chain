@@ -13,7 +13,7 @@
     # Send funds to the multisig
     - cmd: printf "12345678\n" | blkd keys show -a admin
       env: ADMIN_ACC
-    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $MULTI_SIG_ACC 11she -b block --fees 2000ushe --chain-id she -y
+    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $MULTI_SIG_ACC 11she -b block --fees 2000ublk --chain-id she -y
 
     # Creat and send multi-sig transaction
     - cmd: blkd tx bank send $MULTI_SIG_ACC $MULTI_SIG_ACC 1she -b block -y --fees 1she -y --from $MULTI_SIG_ACC --generate-only --keyring-backend test > unsigned-tx.json

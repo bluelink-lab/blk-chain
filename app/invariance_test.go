@@ -18,8 +18,8 @@ func TestLightInvarianceChecks(t *testing.T) {
 		sdk.AccAddress(secp256k1.GenPrivKey().PubKey().Address()),
 		sdk.AccAddress(secp256k1.GenPrivKey().PubKey().Address()),
 	}
-	usheCoin := func(i int64) sdk.Coin { return sdk.NewCoin("ublk", sdk.NewInt(i)) }
-	usheCoins := func(i int64) sdk.Coins { return sdk.NewCoins(usheCoin(i)) }
+	ublkCoin := func(i int64) sdk.Coin { return sdk.NewCoin("ublk", sdk.NewInt(i)) }
+	ublkCoins := func(i int64) sdk.Coins { return sdk.NewCoins(ublkCoin(i)) }
 	for i, tt := range []struct {
 		preUshe    []int64
 		preWei     []int64
@@ -143,24 +143,24 @@ func TestLightInvarianceChecks(t *testing.T) {
 		a, ctx := testWrapper.App, testWrapper.Ctx
 		for i := range tt.preUshe {
 			if tt.preUshe[i] > 0 {
-				a.BankKeeper.AddCoins(ctx, accounts[i], usheCoins(tt.preUshe[i]), false)
+				a.BankKeeper.AddCoins(ctx, accounts[i], ublkCoins(tt.preUshe[i]), false)
 			}
 			if tt.preWei[i] > 0 {
 				a.BankKeeper.AddWei(ctx, accounts[i], sdk.NewInt(tt.preWei[i]))
 			}
 		}
 		if tt.preSupply > 0 {
-			a.BankKeeper.SetSupply(ctx, usheCoin(tt.preSupply))
+			a.BankKeeper.SetSupply(ctx, ublkCoin(tt.preSupply))
 		}
 		a.SetDeliverStateToCommit()
 		a.WriteState()
 		a.GetWorkingHash() // flush to sc
 		for i := range tt.postUshe {
-			usheDiff := tt.postUshe[i] - tt.preUshe[i]
-			if usheDiff > 0 {
-				a.BankKeeper.AddCoins(ctx, accounts[i], usheCoins(usheDiff), false)
-			} else if usheDiff < 0 {
-				a.BankKeeper.SubUnlockedCoins(ctx, accounts[i], usheCoins(-usheDiff), false)
+			ublkDiff := tt.postUshe[i] - tt.preUshe[i]
+			if ublkDiff > 0 {
+				a.BankKeeper.AddCoins(ctx, accounts[i], ublkCoins(ublkDiff), false)
+			} else if ublkDiff < 0 {
+				a.BankKeeper.SubUnlockedCoins(ctx, accounts[i], ublkCoins(-ublkDiff), false)
 			}
 
 			weiDiff := tt.postWei[i] - tt.preWei[i]
@@ -170,7 +170,7 @@ func TestLightInvarianceChecks(t *testing.T) {
 				a.BankKeeper.SubWei(ctx, accounts[i], sdk.NewInt(-weiDiff))
 			}
 		}
-		a.BankKeeper.SetSupply(ctx, usheCoin(tt.postSupply))
+		a.BankKeeper.SetSupply(ctx, ublkCoin(tt.postSupply))
 		a.SetDeliverStateToCommit()
 		f := func() { a.LightInvarianceChecks(a.WriteState(), app.LightInvarianceConfig{SupplyEnabled: true}) }
 		if tt.success {

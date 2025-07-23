@@ -8,15 +8,15 @@
     - cmd: printf "12345678\ny\n" | blkd keys add grantee --output json | jq -r ".address"
       env: GRANTEE_ADDR
     # send some funds to grantee for gas
-    - cmd: printf "12345678\n" | blkd tx bank send admin $GRANTEE_ADDR 1she --fees 2000ushe -b block -y
+    - cmd: printf "12345678\n" | blkd tx bank send admin $GRANTEE_ADDR 1she --fees 2000ublk -b block -y
     # create an authz grant for tokenfactory create denom
-    - cmd: printf "12345678\n" | blkd tx authz grant $GRANTEE_ADDR generic --msg-type "/sheprotocol.shechain.tokenfactory.MsgCreateDenom" --from admin --fees 2000ushe -b block -y
+    - cmd: printf "12345678\n" | blkd tx authz grant $GRANTEE_ADDR generic --msg-type "/sheprotocol.shechain.tokenfactory.MsgCreateDenom" --from admin --fees 2000ublk -b block -y
     - cmd: uuidgen
       env: TF_UUID
     # create TF create-denom tx and write to json
     - cmd: printf "12345678\n" | blkd tx tokenfactory create-denom $TF_UUID --from $ADMIN_ADDR --generate-only > create_denom_tx.json
     # execute the authz tx - we want to validate that this succeeds with code 0
-    - cmd: printf "12345678\n" | blkd tx authz exec create_denom_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ushe --output json  | jq -r ".code"
+    - cmd: printf "12345678\n" | blkd tx authz exec create_denom_tx.json --from $GRANTEE_ADDR -b block -y --fees 2000ublk --output json  | jq -r ".code"
       env: AUTHZ_1_ERROR_CODE
     # verify that the denom exists
     - cmd: blkd q tokenfactory denom-authority-metadata factory/$ADMIN_ADDR/$TF_UUID --output json | jq -r ".authority_metadata.admin"
