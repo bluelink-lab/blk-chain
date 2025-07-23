@@ -52,7 +52,7 @@ func (suite *KeeperTestSuite) SetupTest() {
 // Explicitly only run once during setup
 func (suite *KeeperTestSuite) PrepareTest() {
 	suite.defaultDenom = "ublt"
-	suite.defaultExchangeRate = fmt.Sprintf("%dublk", sdk.NewDec(1700))
+	suite.defaultExchangeRate = fmt.Sprintf("%dublt", sdk.NewDec(1700))
 
 	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin(suite.defaultDenom, 100000000000)}
 	suite.initalBalance = sdk.Coins{sdk.NewInt64Coin("ublt", 100000000000)}
@@ -287,7 +287,7 @@ func TestGeneratorInvalidMessageTypes(t *testing.T) {
 		Amount:           sdk.Coin{Denom: "ublt", Amount: sdk.NewInt(5)},
 	}
 	oracleVote := oracletypes.MsgAggregateExchangeRateVote{
-		ExchangeRates: "1ublk",
+		ExchangeRates: "1ublt",
 		Feeder:        "test",
 		Validator:     "validator",
 	}

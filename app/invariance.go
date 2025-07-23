@@ -55,8 +55,8 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 		return
 	}
 	balanceChangePairs := ckv.GetChangedPairs(banktypes.BalancesPrefix)
-	ublkPostTotal := sdk.ZeroInt()
-	ublkChangedAddr := []sdk.AccAddress{}
+	ubltPostTotal := sdk.ZeroInt()
+	ubltChangedAddr := []sdk.AccAddress{}
 	for _, p := range balanceChangePairs {
 		if len(p.Key) < 2 {
 			// invalid key; ignore
@@ -104,12 +104,12 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 			if balance.Amount.IsNegative() {
 				panic(fmt.Sprintf("negative balance found for addr %s: %s", sdk.AccAddress(addr).String(), balance.String()))
 			}
-			ublkPostTotal = ublkPostTotal.Add(balance.Amount)
+			ubltPostTotal = ubltPostTotal.Add(balance.Amount)
 		}
-		ublkChangedAddr = append(ublkChangedAddr, addr)
+		ubltChangedAddr = append(ubltChangedAddr, addr)
 	}
-	ublkPreTotal := sdk.ZeroInt()
-	for _, a := range ublkChangedAddr {
+	ubltPreTotal := sdk.ZeroInt()
+	for _, a := range ubltChangedAddr {
 		key := append(banktypes.CreateAccountBalancesPrefix(a), []byte(sdk.MustGetBaseDenom())...)
 		val := ckv.Get(key)
 		if val == nil {
@@ -129,7 +129,7 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 			app.Logger().Error(fmt.Sprintf("failed to unmarshal preblock balance: %s", err))
 			continue
 		}
-		ublkPreTotal = ublkPreTotal.Add(balance.Amount)
+		ubltPreTotal = ubltPreTotal.Add(balance.Amount)
 	}
 	weiChangePairs := ckv.GetChangedPairs(banktypes.WeiBalancesPrefix)
 	weiPostTotal := sdk.ZeroInt()
@@ -239,9 +239,9 @@ func (app *App) LightInvarianceTotalSupply(cms sdk.CommitMultiStore) {
 	if !weiDiffRemainder.IsZero() {
 		panic(fmt.Sprintf("non-zero wei diff found! Pre-block wei total %s, post-block wei total %s", weiPreTotal, weiPostTotal))
 	}
-	ublkDiff := ublkPreTotal.Sub(ublkPostTotal).Sub(weiDiffInUshe).Add(supplyChanged)
-	if !ublkDiff.IsZero() {
-		panic(fmt.Sprintf("unexpected ublt balance total found! Pre-block ublt total %s wei total %s total supply %s, post-block ublt total %s wei total %s total supply %s", ublkPreTotal, weiPreTotal, preTotalSupply, ublkPostTotal, weiPostTotal, preTotalSupply.Add(supplyChanged)))
+	ubltDiff := ubltPreTotal.Sub(ubltPostTotal).Sub(weiDiffInUshe).Add(supplyChanged)
+	if !ubltDiff.IsZero() {
+		panic(fmt.Sprintf("unexpected ublt balance total found! Pre-block ublt total %s wei total %s total supply %s, post-block ublt total %s wei total %s total supply %s", ubltPreTotal, weiPreTotal, preTotalSupply, ubltPostTotal, weiPostTotal, preTotalSupply.Add(supplyChanged)))
 	}
 	app.Logger().Info("successfully verified supply light invariance")
 }

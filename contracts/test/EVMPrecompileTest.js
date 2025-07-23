@@ -122,7 +122,7 @@ describe("EVM Precompile Tester", function () {
         let govProposal;
 
         before(async function () {
-            const govProposalResponse = JSON.parse(await execute(`blkd tx gov submit-proposal param-change ../contracts/test/param_change_proposal.json --from admin --fees 20000ublk -b block -y -o json`))
+            const govProposalResponse = JSON.parse(await execute(`blkd tx gov submit-proposal param-change ../contracts/test/param_change_proposal.json --from admin --fees 20000ublt -b block -y -o json`))
             govProposal = govProposalResponse.logs[0].events[3].attributes[1].value;
 
             const signer = accounts[0].signer
@@ -406,8 +406,8 @@ describe("EVM Precompile Tester", function () {
             expect(receipt.status).to.equal(1);
 
             // ublt assertions
-            const ublkBalance = await getSheBalance(wasmContractAddress);
-            expect(ublkBalance).to.equal(oldBalance + 1000000);
+            const ubltBalance = await getSheBalance(wasmContractAddress);
+            expect(ubltBalance).to.equal(oldBalance + 1000000);
 
             // token assertions
             const contractTokenBalance = await getSheBalance(wasmContractAddress, denom);
@@ -470,8 +470,8 @@ describe("EVM Precompile Tester", function () {
             expect(receipt.status).to.equal(1);
 
             // ublt assertions
-            const ublkBalance = await getSheBalance(wasmContractAddress);
-            expect(ublkBalance).to.equal(oldBalance + 4000000);
+            const ubltBalance = await getSheBalance(wasmContractAddress);
+            expect(ubltBalance).to.equal(oldBalance + 4000000);
 
             // token assertions
             const contractTokenBalance = await getSheBalance(wasmContractAddress, denom);

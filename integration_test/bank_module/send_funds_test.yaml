@@ -11,12 +11,12 @@
     - cmd: blkd q bank balances $ADMIN_ACC --denom ublt --output json | jq -r .amount
       env: BEGINNING_ADMIN_BALANCE
     # Send funds
-    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $BANK_TEST_ACC 1she -b block --fees 2000ublk --chain-id she -y --output json |jq -r ".height"
+    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $BANK_TEST_ACC 1she -b block --fees 2000ublt --chain-id she -y --output json |jq -r ".height"
       env: TX_HEIGHT_1
     # Sleep 10s to let chain progress
     - cmd: sleep 10
     # Send more funds
-    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $BANK_TEST_ACC 1she -b block --fees 2000ublk --chain-id she -y --output json |jq -r ".height"
+    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $BANK_TEST_ACC 1she -b block --fees 2000ublt --chain-id she -y --output json |jq -r ".height"
       env: TX_HEIGHT_2
     # Get bank balance at first height
     - cmd: blkd q bank balances $BANK_TEST_ACC --denom ublt --height $TX_HEIGHT_1 --output json | jq -r .amount

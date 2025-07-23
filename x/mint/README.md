@@ -103,7 +103,7 @@ First, prepare a proposal in JSON format, like the minter_prop.json file below:
 Then, submit the proposal with the following command:
 
 ```bash
-blkd tx gov submit-proposal update-minter ./minter_prop.json --deposit 20she --from admin -b block -y --gas 200000 --fees 2000ublk
+blkd tx gov submit-proposal update-minter ./minter_prop.json --deposit 20she --from admin -b block -y --gas 200000 --fees 2000ublt
 ```
 
 This command submits a proposal to update the minter. The --deposit flag is used to provide the initial deposit. The proposal is submitted by the address provided with the --from flag.
@@ -175,7 +175,7 @@ Here is an example for updating the params for the mint module
 Submit the proposal
 
 ```bash
-blkd tx gov submit-proposal param-change ./param_change_prop.json --from admin -b block -y --gas 200000 --fees 200000ublk
+blkd tx gov submit-proposal param-change ./param_change_prop.json --from admin -b block -y --gas 200000 --fees 200000ublt
 ```
 
 ## Begin-Block

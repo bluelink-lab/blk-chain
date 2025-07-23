@@ -172,16 +172,16 @@ func (p PrecompileExecutor) instantiate(ctx sdk.Context, method *abi.Method, cal
 		rerr = err
 		return
 	}
-	ublkAmt := coins.AmountOf(sdk.MustGetBaseDenom())
-	if value != nil && !ublkAmt.IsZero() {
-		ublkAmtAsWei := ublkAmt.Mul(state.SdkUsheToSweiMultiplier).BigInt()
-		coin, err := pcommon.HandlePaymentUshe(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), creatorAddr, ublkAmtAsWei, p.bankKeeper)
+	ubltAmt := coins.AmountOf(sdk.MustGetBaseDenom())
+	if value != nil && !ubltAmt.IsZero() {
+		ubltAmtAsWei := ubltAmt.Mul(state.SdkUsheToSweiMultiplier).BigInt()
+		coin, err := pcommon.HandlePaymentUshe(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), creatorAddr, ubltAmtAsWei, p.bankKeeper)
 		if err != nil {
 			rerr = err
 			return
 		}
 		// sanity check coin amounts match
-		if !coin.Amount.Equal(ublkAmt) {
+		if !coin.Amount.Equal(ubltAmt) {
 			rerr = errors.New("mismatch between coins and payment value")
 			return
 		}
@@ -280,22 +280,22 @@ func (p PrecompileExecutor) executeBatch(ctx sdk.Context, method *abi.Method, ca
 			rerr = err
 			return
 		}
-		ublkAmt := coins.AmountOf(sdk.MustGetBaseDenom())
-		if valueCopy != nil && !ublkAmt.IsZero() {
+		ubltAmt := coins.AmountOf(sdk.MustGetBaseDenom())
+		if valueCopy != nil && !ubltAmt.IsZero() {
 			// process coin amount from the value provided
-			ublkAmtAsWei := ublkAmt.Mul(state.SdkUsheToSweiMultiplier).BigInt()
-			coin, err := pcommon.HandlePaymentUshe(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), senderAddr, ublkAmtAsWei, p.bankKeeper)
+			ubltAmtAsWei := ubltAmt.Mul(state.SdkUsheToSweiMultiplier).BigInt()
+			coin, err := pcommon.HandlePaymentUshe(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), senderAddr, ubltAmtAsWei, p.bankKeeper)
 			if err != nil {
 				rerr = err
 				return
 			}
-			valueCopy.Sub(valueCopy, ublkAmtAsWei)
+			valueCopy.Sub(valueCopy, ubltAmtAsWei)
 			if valueCopy.Sign() == -1 {
 				rerr = errors.New("insufficient value provided for payment")
 				return
 			}
 			// sanity check coin amounts match
-			if !coin.Amount.Equal(ublkAmt) {
+			if !coin.Amount.Equal(ubltAmt) {
 				rerr = errors.New("mismatch between coins and payment value")
 				return
 			}
@@ -393,16 +393,16 @@ func (p PrecompileExecutor) execute(ctx sdk.Context, method *abi.Method, caller 
 		return
 	}
 
-	ublkAmt := coins.AmountOf(sdk.MustGetBaseDenom())
-	if value != nil && !ublkAmt.IsZero() {
-		ublkAmtAsWei := ublkAmt.Mul(state.SdkUsheToSweiMultiplier).BigInt()
-		coin, err := pcommon.HandlePaymentUshe(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), senderAddr, ublkAmtAsWei, p.bankKeeper)
+	ubltAmt := coins.AmountOf(sdk.MustGetBaseDenom())
+	if value != nil && !ubltAmt.IsZero() {
+		ubltAmtAsWei := ubltAmt.Mul(state.SdkUsheToSweiMultiplier).BigInt()
+		coin, err := pcommon.HandlePaymentUshe(ctx, p.evmKeeper.GetSheAddressOrDefault(ctx, p.address), senderAddr, ubltAmtAsWei, p.bankKeeper)
 		if err != nil {
 			rerr = err
 			return
 		}
 		// sanity check coin amounts match
-		if !coin.Amount.Equal(ublkAmt) {
+		if !coin.Amount.Equal(ubltAmt) {
 			rerr = errors.New("mismatch between coins and payment value")
 			return
 		}

@@ -8,7 +8,7 @@
       env: SIMULATION_TEST_ACC
 
     # Send funds
-    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1she -b block --fees 2000ublk --chain-id she -y
+    - cmd: printf "12345678\n" | blkd tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1she -b block --fees 2000ublt --chain-id she -y
 
     - cmd: blkd tx bank send $ADMIN_ACC $SIMULATION_TEST_ACC 1000she --from $ADMIN_ACC  --chain-id she -b block -y --dry-run --keyring-backend test
       env: GAS_ESIMATE

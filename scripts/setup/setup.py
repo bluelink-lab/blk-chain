@@ -95,7 +95,7 @@ def set_price_feeder():
     logging.info('Setting price feeder...')
     addr, _ = shed_add_key(ORACLE_PRICE_FEEDER_ACC_NAME)
     run_with_password(
-        f'blkd tx oracle set-feeder $(blkd keys show {ORACLE_PRICE_FEEDER_ACC_NAME} -a) --from admin --yes --fees=2000ublk',
+        f'blkd tx oracle set-feeder $(blkd keys show {ORACLE_PRICE_FEEDER_ACC_NAME} -a) --from admin --yes --fees=2000ublt',
         account_cache[ORACLE_PRICE_FEEDER_ACC_NAME].password
     )
     logging.info("Please send she tokens to the feeder account '%s' to fund it", addr)

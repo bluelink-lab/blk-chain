@@ -46,10 +46,10 @@ GENESIS_ACCOUNT_ADDRESS=$(printf "12345678\n" | blkd keys show "$ACCOUNT_NAME" -
 echo "$GENESIS_ACCOUNT_ADDRESS" >> build/generated/genesis_accounts.txt
 
 # Add funds to genesis account
-blkd add-genesis-account "$GENESIS_ACCOUNT_ADDRESS" 10000000ublk,10000000uusdc,10000000uatom
+blkd add-genesis-account "$GENESIS_ACCOUNT_ADDRESS" 10000000ublt,10000000uusdc,10000000uatom
 
 # Create gentx
-printf "12345678\n" | blkd gentx "$ACCOUNT_NAME" 10000000ublk --chain-id she
+printf "12345678\n" | blkd gentx "$ACCOUNT_NAME" 10000000ublt --chain-id she
 cp ~/.she/config/gentx/* build/generated/gentx/
 
 # Creating some testing accounts

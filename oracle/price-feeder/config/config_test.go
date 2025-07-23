@@ -46,7 +46,7 @@ func TestValidate(t *testing.T) {
 				PrometheusRetentionTime: 120,
 			},
 			GasAdjustment: 1.5,
-			GasPrices:     "0.00125ublk",
+			GasPrices:     "0.00125ublt",
 			Healthchecks: []config.Healthchecks{
 				{URL: "https://hc-ping.com/HEALTHCHECK-UUID", Timeout: "200ms"},
 			},
@@ -142,7 +142,7 @@ func TestParseConfig_Valid(t *testing.T) {
 
 	content := []byte(`
 gas_adjustment = 1.5
-gas_prices = "0.00125ublk"
+gas_prices = "0.00125ublt"
 
 [server]
 listen_addr = "0.0.0.0:99999"
@@ -234,7 +234,7 @@ func TestParseConfig_Valid_NoTelemetry(t *testing.T) {
 
 	content := []byte(`
 gas_adjustment = 1.5
-gas_prices = "0.00125ublk"
+gas_prices = "0.00125ublt"
 
 [server]
 listen_addr = "0.0.0.0:99999"
@@ -381,7 +381,7 @@ func TestParseConfig_Valid_Deviations(t *testing.T) {
 
 	content := []byte(`
 gas_adjustment = 1.5
-gas_prices = "0.00125ublk"
+gas_prices = "0.00125ublt"
 
 [server]
 listen_addr = "0.0.0.0:99999"
