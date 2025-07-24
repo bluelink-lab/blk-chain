@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.mint;
+package sheprotocol.blk-chain.mint;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
@@ -11,13 +11,13 @@ option go_package = "github.com/bluelink-lab/blk-chain/x/mint/types";
 service Query {
   // Params returns the total set of minting parameters.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/shechain/mint/v1beta1/params";
+    option (google.api.http).get = "/blk-chain/mint/v1beta1/params";
   }
 
   // EpochProvisions current minting epoch provisions value.
   rpc Minter(QueryMinterRequest)
       returns (QueryMinterResponse) {
-    option (google.api.http).get = "/shechain/mint/v1beta1/minter";
+    option (google.api.http).get = "/blk-chain/mint/v1beta1/minter";
   }
 }
 

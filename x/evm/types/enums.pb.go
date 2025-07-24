@@ -61,7 +61,7 @@ func (PointerType) EnumDescriptor() ([]byte, []int) {
 }
 
 func init() {
-	proto.RegisterEnum("sheprotocol.shechain.evm.PointerType", PointerType_name, PointerType_value)
+	proto.RegisterEnum("sheprotocol.blk-chain.evm.PointerType", PointerType_name, PointerType_value)
 }
 
 func init() { proto.RegisterFile("evm/enums.proto", fileDescriptor_9ba0923a26222f98) }

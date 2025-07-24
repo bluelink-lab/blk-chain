@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.evm;
+package sheprotocol.blk-chain.evm;
 
 option go_package = "github.com/bluelink-lab/blk-chain/x/evm/types";
 

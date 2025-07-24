@@ -133,8 +133,8 @@ func (m *GenesisDenom) GetAuthorityMetadata() DenomAuthorityMetadata {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "sheprotocol.shechain.tokenfactory.GenesisState")
-	proto.RegisterType((*GenesisDenom)(nil), "sheprotocol.shechain.tokenfactory.GenesisDenom")
+	proto.RegisterType((*GenesisState)(nil), "sheprotocol.blk-chain.tokenfactory.GenesisState")
+	proto.RegisterType((*GenesisDenom)(nil), "sheprotocol.blk-chain.tokenfactory.GenesisDenom")
 }
 
 func init() { proto.RegisterFile("tokenfactory/genesis.proto", fileDescriptor_415d5acd9b7bd461) }

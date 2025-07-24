@@ -386,12 +386,12 @@ func (m *GenesisState) GetSerialized() []*Serialized {
 }
 
 func init() {
-	proto.RegisterType((*AddressAssociation)(nil), "sheprotocol.shechain.evm.AddressAssociation")
-	proto.RegisterType((*Code)(nil), "sheprotocol.shechain.evm.Code")
-	proto.RegisterType((*ContractState)(nil), "sheprotocol.shechain.evm.ContractState")
-	proto.RegisterType((*Nonce)(nil), "sheprotocol.shechain.evm.Nonce")
-	proto.RegisterType((*Serialized)(nil), "sheprotocol.shechain.evm.Serialized")
-	proto.RegisterType((*GenesisState)(nil), "sheprotocol.shechain.evm.GenesisState")
+	proto.RegisterType((*AddressAssociation)(nil), "sheprotocol.blk-chain.evm.AddressAssociation")
+	proto.RegisterType((*Code)(nil), "sheprotocol.blk-chain.evm.Code")
+	proto.RegisterType((*ContractState)(nil), "sheprotocol.blk-chain.evm.ContractState")
+	proto.RegisterType((*Nonce)(nil), "sheprotocol.blk-chain.evm.Nonce")
+	proto.RegisterType((*Serialized)(nil), "sheprotocol.blk-chain.evm.Serialized")
+	proto.RegisterType((*GenesisState)(nil), "sheprotocol.blk-chain.evm.GenesisState")
 }
 
 func init() { proto.RegisterFile("evm/genesis.proto", fileDescriptor_9f044f30507c97ed) }

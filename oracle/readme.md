@@ -2,7 +2,7 @@
 Implementation of a Price Oracle that fetches price data from Coingecko and Binance. This is heavily influenced from Kava Labs' implementation https://github.com/Kava-Labs/kava-tools/blob/master/oracle/
 
 # Setup (Local)
-All steps should be run in this directory (`she-chain/oracle/`)
+All steps should be run in this directory (`blk-chain/oracle/`)
 
 Install the oracle software
 ```

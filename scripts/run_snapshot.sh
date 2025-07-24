@@ -11,7 +11,7 @@ SNAPSHOT_INTERVAL=$2
 CHAIN_ID=$3
 
 # Define variables for paths based on the home directory
-SHE_DIR="$HOME/.she"
+SHE_DIR="$HOME/.blt"
 CONFIG_FILE="$SHE_DIR/config/app.toml"
 SNAPSHOT_DIR="$HOME/snapshots"
 SHED_BIN="$HOME/go/bin/blkd"

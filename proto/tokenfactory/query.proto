@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.tokenfactory;
+package sheprotocol.blk-chain.tokenfactory;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
@@ -15,7 +15,7 @@ service Query {
   // Params defines a gRPC query method that returns the tokenfactory module's
   // parameters.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/she-protocol/shechain/tokenfactory/params";
+    option (google.api.http).get = "/bluelink-lab/blk-chain/tokenfactory/params";
   }
 
   // DenomAuthorityMetadata defines a gRPC query method for fetching
@@ -23,13 +23,13 @@ service Query {
   rpc DenomAuthorityMetadata(QueryDenomAuthorityMetadataRequest)
       returns (QueryDenomAuthorityMetadataResponse) {
     option (google.api.http).get =
-        "/she-protocol/shechain/tokenfactory/denoms/{denom}/authority_metadata";
+        "/bluelink-lab/blk-chain/tokenfactory/denoms/{denom}/authority_metadata";
   }
 
   // DenomsMetadata defines a gRPC query method for fetching
   //  DenomMetadata for a particular denom.
   rpc DenomMetadata(QueryDenomMetadataRequest) returns (QueryDenomMetadataResponse) {
-    option (google.api.http).get = "/she-protocol/shechain/tokenfactory/denoms/metadata";
+    option (google.api.http).get = "/bluelink-lab/blk-chain/tokenfactory/denoms/metadata";
   }
 
   // DenomsFromCreator defines a gRPC query method for fetching all
@@ -37,12 +37,12 @@ service Query {
   rpc DenomsFromCreator(QueryDenomsFromCreatorRequest)
       returns (QueryDenomsFromCreatorResponse) {
     option (google.api.http).get =
-        "/she-protocol/shechain/tokenfactory/denoms_from_creator/{creator}";
+        "/bluelink-lab/blk-chain/tokenfactory/denoms_from_creator/{creator}";
   }
 
   // DenomAllowList defines a gRPC query method for fetching the denom allow list
   rpc DenomAllowList(QueryDenomAllowListRequest) returns (QueryDenomAllowListResponse) {
-    option (google.api.http).get = "/she-protocol/shechain/tokenfactory/denoms/allow_list";
+    option (google.api.http).get = "/bluelink-lab/blk-chain/tokenfactory/denoms/allow_list";
   }
 
 }

@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.mint;
+package sheprotocol.blk-chain.mint;
 
 option go_package = "github.com/bluelink-lab/blk-chain/x/mint/types";
 

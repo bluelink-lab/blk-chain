@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.tokenfactory;
+package sheprotocol.blk-chain.tokenfactory;
 
 option go_package = "github.com/bluelink-lab/blk-chain/x/tokenfactory/types";
 

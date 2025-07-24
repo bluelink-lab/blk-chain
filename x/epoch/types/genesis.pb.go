@@ -77,7 +77,7 @@ func (m *GenesisState) GetEpoch() *Epoch {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "sheprotocol.shechain.epoch.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "sheprotocol.blk-chain.epoch.GenesisState")
 }
 
 func init() { proto.RegisterFile("epoch/genesis.proto", fileDescriptor_ff244678b065710d) }

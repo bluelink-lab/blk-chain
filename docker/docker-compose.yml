@@ -1,8 +1,8 @@
 services:
   node0:
     platform: linux/amd64
-    container_name: she-node-0
-    image: "she-chain/localnode"
+    container_name: blk-node-0
+    image: "blk-chain/localnode"
     user: "${USERID}:${GROUPID}"
     ports:
       - "26656-26658:26656-26658"
@@ -25,8 +25,8 @@ services:
 
   node1:
     platform: linux/amd64
-    container_name: she-node-1
-    image: "she-chain/localnode"
+    container_name: blk-node-1
+    image: "blk-chain/localnode"
     user: "${USERID}:${GROUPID}"
     ports:
       - "26659-26661:26656-26658"
@@ -52,8 +52,8 @@ services:
 
   node2:
     platform: linux/amd64
-    container_name: she-node-2
-    image: "she-chain/localnode"
+    container_name: blk-node-2
+    image: "blk-chain/localnode"
     user: "${USERID}:${GROUPID}"
     environment:
       - ID=2
@@ -79,8 +79,8 @@ services:
 
   node3:
     platform: linux/amd64
-    container_name: she-node-3
-    image: "she-chain/localnode"
+    container_name: blk-node-3
+    image: "blk-chain/localnode"
     user: "${USERID}:${GROUPID}"
     environment:
       - ID=3

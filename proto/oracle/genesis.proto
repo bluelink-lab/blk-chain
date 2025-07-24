@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.oracle;
+package sheprotocol.blk-chain.oracle;
 
 import "gogoproto/gogo.proto";
 import "oracle/oracle.proto";

@@ -73,8 +73,8 @@ One of the fanciest thing of using docker is fast iteration. Here we support:
 
 In order to make local debugging work, you can follow these steps:
 ```sh
-# Clone your dependency repo and put them under the same path as she-chain
-cd she-chain
+# Clone your dependency repo and put them under the same path as blk-chain
+cd blk-chain
 cd ../
 git clone https://github.com/she-protocol/she-tendermint.git
 git clone https://github.com/she-protocol/she-cosmos.git

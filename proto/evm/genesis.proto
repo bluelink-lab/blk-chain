@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.evm;
+package sheprotocol.blk-chain.evm;
 
 import "gogoproto/gogo.proto";
 import "evm/params.proto";

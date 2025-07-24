@@ -24,7 +24,7 @@ func MigrateCmd() *cobra.Command {
 		Short: "A tool to migrate full IAVL data store to SheDB. Use this tool to migrate IAVL to SheDB SC and SS database.",
 		Run:   execute,
 	}
-	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLT home directory")
+	cmd.PersistentFlags().String("home-dir", "/root/.blt", "BLT home directory")
 	return cmd
 }
 
@@ -56,7 +56,7 @@ func VerifyMigrationCmd() *cobra.Command {
 	}
 
 	cmd.PersistentFlags().Int64("version", -1, "Version to run migration verification on")
-	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLT home directory")
+	cmd.PersistentFlags().String("home-dir", "/root/.blt", "BLT home directory")
 
 	return cmd
 }
@@ -105,7 +105,7 @@ func GenerateStats() *cobra.Command {
 		Short: "A tool to generate archive node iavl stats like number of keys and size per module.",
 		Run:   generateIavlStats,
 	}
-	cmd.PersistentFlags().String("home-dir", "/root/.she", "BLT home directory")
+	cmd.PersistentFlags().String("home-dir", "/root/.blt", "BLT home directory")
 	return cmd
 }
 

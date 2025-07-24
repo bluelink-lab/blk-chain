@@ -1,5 +1,5 @@
 {
-  "name": "she-chain",
+  "name": "blk-chain",
   "version": "1.0.0",
   "description": "\"Contracts for BLT Chain\"",
   "main": "index.js",

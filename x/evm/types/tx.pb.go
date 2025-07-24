@@ -460,7 +460,7 @@ var xxx_messageInfo_MsgSendResponse proto.InternalMessageInfo
 
 type MsgRegisterPointer struct {
 	Sender      string      `protobuf:"bytes,1,opt,name=sender,proto3" json:"sender,omitempty"`
-	PointerType PointerType `protobuf:"varint,2,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.shechain.evm.PointerType" json:"pointer_type,omitempty"`
+	PointerType PointerType `protobuf:"varint,2,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.blk-chain.evm.PointerType" json:"pointer_type,omitempty"`
 	ErcAddress  string      `protobuf:"bytes,3,opt,name=erc_address,json=ercAddress,proto3" json:"erc_address,omitempty"`
 }
 
@@ -739,20 +739,20 @@ func (m *MsgAssociateResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_MsgAssociateResponse proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*MsgEVMTransaction)(nil), "sheprotocol.shechain.evm.MsgEVMTransaction")
-	proto.RegisterType((*MsgEVMTransactionResponse)(nil), "sheprotocol.shechain.evm.MsgEVMTransactionResponse")
-	proto.RegisterType((*MsgInternalEVMCall)(nil), "sheprotocol.shechain.evm.MsgInternalEVMCall")
-	proto.RegisterType((*MsgInternalEVMCallResponse)(nil), "sheprotocol.shechain.evm.MsgInternalEVMCallResponse")
-	proto.RegisterType((*MsgInternalEVMDelegateCall)(nil), "sheprotocol.shechain.evm.MsgInternalEVMDelegateCall")
-	proto.RegisterType((*MsgInternalEVMDelegateCallResponse)(nil), "sheprotocol.shechain.evm.MsgInternalEVMDelegateCallResponse")
-	proto.RegisterType((*MsgSend)(nil), "sheprotocol.shechain.evm.MsgSend")
-	proto.RegisterType((*MsgSendResponse)(nil), "sheprotocol.shechain.evm.MsgSendResponse")
-	proto.RegisterType((*MsgRegisterPointer)(nil), "sheprotocol.shechain.evm.MsgRegisterPointer")
-	proto.RegisterType((*MsgRegisterPointerResponse)(nil), "sheprotocol.shechain.evm.MsgRegisterPointerResponse")
-	proto.RegisterType((*MsgAssociateContractAddress)(nil), "sheprotocol.shechain.evm.MsgAssociateContractAddress")
-	proto.RegisterType((*MsgAssociateContractAddressResponse)(nil), "sheprotocol.shechain.evm.MsgAssociateContractAddressResponse")
-	proto.RegisterType((*MsgAssociate)(nil), "sheprotocol.shechain.evm.MsgAssociate")
-	proto.RegisterType((*MsgAssociateResponse)(nil), "sheprotocol.shechain.evm.MsgAssociateResponse")
+	proto.RegisterType((*MsgEVMTransaction)(nil), "sheprotocol.blk-chain.evm.MsgEVMTransaction")
+	proto.RegisterType((*MsgEVMTransactionResponse)(nil), "sheprotocol.blk-chain.evm.MsgEVMTransactionResponse")
+	proto.RegisterType((*MsgInternalEVMCall)(nil), "sheprotocol.blk-chain.evm.MsgInternalEVMCall")
+	proto.RegisterType((*MsgInternalEVMCallResponse)(nil), "sheprotocol.blk-chain.evm.MsgInternalEVMCallResponse")
+	proto.RegisterType((*MsgInternalEVMDelegateCall)(nil), "sheprotocol.blk-chain.evm.MsgInternalEVMDelegateCall")
+	proto.RegisterType((*MsgInternalEVMDelegateCallResponse)(nil), "sheprotocol.blk-chain.evm.MsgInternalEVMDelegateCallResponse")
+	proto.RegisterType((*MsgSend)(nil), "sheprotocol.blk-chain.evm.MsgSend")
+	proto.RegisterType((*MsgSendResponse)(nil), "sheprotocol.blk-chain.evm.MsgSendResponse")
+	proto.RegisterType((*MsgRegisterPointer)(nil), "sheprotocol.blk-chain.evm.MsgRegisterPointer")
+	proto.RegisterType((*MsgRegisterPointerResponse)(nil), "sheprotocol.blk-chain.evm.MsgRegisterPointerResponse")
+	proto.RegisterType((*MsgAssociateContractAddress)(nil), "sheprotocol.blk-chain.evm.MsgAssociateContractAddress")
+	proto.RegisterType((*MsgAssociateContractAddressResponse)(nil), "sheprotocol.blk-chain.evm.MsgAssociateContractAddressResponse")
+	proto.RegisterType((*MsgAssociate)(nil), "sheprotocol.blk-chain.evm.MsgAssociate")
+	proto.RegisterType((*MsgAssociateResponse)(nil), "sheprotocol.blk-chain.evm.MsgAssociateResponse")
 }
 
 func init() { proto.RegisterFile("evm/tx.proto", fileDescriptor_d72e73a3d1d93781) }
@@ -845,7 +845,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) EVMTransaction(ctx context.Context, in *MsgEVMTransaction, opts ...grpc.CallOption) (*MsgEVMTransactionResponse, error) {
 	out := new(MsgEVMTransactionResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Msg/EVMTransaction", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Msg/EVMTransaction", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -854,7 +854,7 @@ func (c *msgClient) EVMTransaction(ctx context.Context, in *MsgEVMTransaction, o
 
 func (c *msgClient) Send(ctx context.Context, in *MsgSend, opts ...grpc.CallOption) (*MsgSendResponse, error) {
 	out := new(MsgSendResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Msg/Send", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Msg/Send", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -863,7 +863,7 @@ func (c *msgClient) Send(ctx context.Context, in *MsgSend, opts ...grpc.CallOpti
 
 func (c *msgClient) RegisterPointer(ctx context.Context, in *MsgRegisterPointer, opts ...grpc.CallOption) (*MsgRegisterPointerResponse, error) {
 	out := new(MsgRegisterPointerResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Msg/RegisterPointer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Msg/RegisterPointer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -872,7 +872,7 @@ func (c *msgClient) RegisterPointer(ctx context.Context, in *MsgRegisterPointer,
 
 func (c *msgClient) AssociateContractAddress(ctx context.Context, in *MsgAssociateContractAddress, opts ...grpc.CallOption) (*MsgAssociateContractAddressResponse, error) {
 	out := new(MsgAssociateContractAddressResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Msg/AssociateContractAddress", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Msg/AssociateContractAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -881,7 +881,7 @@ func (c *msgClient) AssociateContractAddress(ctx context.Context, in *MsgAssocia
 
 func (c *msgClient) Associate(ctx context.Context, in *MsgAssociate, opts ...grpc.CallOption) (*MsgAssociateResponse, error) {
 	out := new(MsgAssociateResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Msg/Associate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Msg/Associate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -931,7 +931,7 @@ func _Msg_EVMTransaction_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Msg/EVMTransaction",
+		FullMethod: "/sheprotocol.blk-chain.evm.Msg/EVMTransaction",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).EVMTransaction(ctx, req.(*MsgEVMTransaction))
@@ -949,7 +949,7 @@ func _Msg_Send_Handler(srv interface{}, ctx context.Context, dec func(interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Msg/Send",
+		FullMethod: "/sheprotocol.blk-chain.evm.Msg/Send",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).Send(ctx, req.(*MsgSend))
@@ -967,7 +967,7 @@ func _Msg_RegisterPointer_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Msg/RegisterPointer",
+		FullMethod: "/sheprotocol.blk-chain.evm.Msg/RegisterPointer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).RegisterPointer(ctx, req.(*MsgRegisterPointer))
@@ -985,7 +985,7 @@ func _Msg_AssociateContractAddress_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Msg/AssociateContractAddress",
+		FullMethod: "/sheprotocol.blk-chain.evm.Msg/AssociateContractAddress",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).AssociateContractAddress(ctx, req.(*MsgAssociateContractAddress))
@@ -1003,7 +1003,7 @@ func _Msg_Associate_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Msg/Associate",
+		FullMethod: "/sheprotocol.blk-chain.evm.Msg/Associate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).Associate(ctx, req.(*MsgAssociate))
@@ -1012,7 +1012,7 @@ func _Msg_Associate_Handler(srv interface{}, ctx context.Context, dec func(inter
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.evm.Msg",
+	ServiceName: "sheprotocol.blk-chain.evm.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

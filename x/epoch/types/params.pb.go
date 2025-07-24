@@ -60,7 +60,7 @@ func (m *Params) XXX_DiscardUnknown() {
 var xxx_messageInfo_Params proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*Params)(nil), "sheprotocol.shechain.epoch.Params")
+	proto.RegisterType((*Params)(nil), "sheprotocol.blk-chain.epoch.Params")
 }
 
 func init() { proto.RegisterFile("epoch/params.proto", fileDescriptor_ce5e34995e51ec07) }

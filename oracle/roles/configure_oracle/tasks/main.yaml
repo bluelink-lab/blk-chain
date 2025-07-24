@@ -19,10 +19,10 @@
 - name: Clone repo and checkout latest branch #confirmed
   ansible.builtin.git:
     repo: "https://{{ lookup('env', 'GIT_USER') }}:{{ lookup('env', 'GIT_ACCESS_TOKEN') }}@github.com/bluelink-lab/blk-chain.git"
-    dest: /home/ubuntu/she-chain/
+    dest: /home/ubuntu/blk-chain/
     single_branch: yes
     version: latest
     force: yes
 
 - name: Start Oracle process
-  shell: cd /home/ubuntu/she-chain/oracle; nohup node main.js > /var/log/oracle.log 2>&1 &
+  shell: cd /home/ubuntu/blk-chain/oracle; nohup node main.js > /var/log/oracle.log 2>&1 &

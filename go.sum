@@ -1351,8 +1351,8 @@ github.com/she-protocol/go-ethereum v1.13.5-she-27 h1:vJ1fO/VtY499SDwALRf+ThGZtr
 github.com/she-protocol/go-ethereum v1.13.5-she-27/go.mod h1:kcRZmuzRn1lVejiFNTz4l4W7imnpq1bDAnuKS/RyhbQ=
 github.com/she-protocol/goutils v0.0.2 h1:HtGDzQrO89d+/2HMUgjs9+9ZtB/ZynFvsd2zSUTaWzk=
 github.com/she-protocol/goutils v0.0.2/go.mod h1:EUoBuKtKVEK7Ly6s3mOQsCGnqCMvd2W9IuVzZDkqIY0=
-github.com/she-protocol/she-cosmos v0.3.55 h1:tGWZ+LZQv5gkN4Y8oMmYVoeluY3fXHTGbgPbtcIRwjY=
-github.com/she-protocol/she-cosmos v0.3.55/go.mod h1:VaAgee12ZPJun6B+iLcXb+sBerL3Vb83bdatqNYzlN0=
+github.com/she-protocol/she-cosmos v0.3.56-0.20250724010951-4882d1e7ac6d h1:bvptmCJLunpcYDfi5GdbjV6MdtWTN9XlfqiwEvxGhSw=
+github.com/she-protocol/she-cosmos v0.3.56-0.20250724010951-4882d1e7ac6d/go.mod h1:VaAgee12ZPJun6B+iLcXb+sBerL3Vb83bdatqNYzlN0=
 github.com/she-protocol/she-db v0.0.47 h1:6D59AsvBhl5xr0PaZpSeHe9OOFSDzxjJcHWx9sX2tJE=
 github.com/she-protocol/she-db v0.0.47/go.mod h1:NWcLa9jY/j0vTyC5bpYG0wWl75Qk4o3piQH6dxpJPuU=
 github.com/she-protocol/she-iavl v0.2.0 h1:r2VU+OyhXGuOUxPLK4ccbdypgXvJJxkFle6iG8I8fN8=

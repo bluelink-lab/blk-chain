@@ -69,7 +69,7 @@ func (s *IntegrationTestSuite) TestQueryGRPC() {
 	}{
 		{
 			"gRPC request params",
-			fmt.Sprintf("%s/shechain/mint/v1beta1/params", baseURL),
+			fmt.Sprintf("%s/blk-chain/mint/v1beta1/params", baseURL),
 			map[string]string{},
 			&minttypes.QueryParamsResponse{},
 			&minttypes.QueryParamsResponse{
@@ -79,7 +79,7 @@ func (s *IntegrationTestSuite) TestQueryGRPC() {
 		},
 		{
 			"gRPC request inflation",
-			fmt.Sprintf("%s/shechain/mint/v1beta1/inflation", baseURL),
+			fmt.Sprintf("%s/blk-chain/mint/v1beta1/inflation", baseURL),
 			map[string]string{},
 			&minttypes.QueryInflationResponse{},
 			&minttypes.QueryInflationResponse{
@@ -88,7 +88,7 @@ func (s *IntegrationTestSuite) TestQueryGRPC() {
 		},
 		{
 			"gRPC request annual provisions",
-			fmt.Sprintf("%s/shechain/mint/v1beta1/annual_provisions", baseURL),
+			fmt.Sprintf("%s/blk-chain/mint/v1beta1/annual_provisions", baseURL),
 			map[string]string{
 				grpctypes.GRPCBlockHeightHeader: "1",
 			},

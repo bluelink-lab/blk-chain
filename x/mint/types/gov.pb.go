@@ -62,7 +62,7 @@ func (m *UpdateMinterProposal) XXX_DiscardUnknown() {
 var xxx_messageInfo_UpdateMinterProposal proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*UpdateMinterProposal)(nil), "sheprotocol.shechain.mint.UpdateMinterProposal")
+	proto.RegisterType((*UpdateMinterProposal)(nil), "sheprotocol.blk-chain.mint.UpdateMinterProposal")
 }
 
 func init() { proto.RegisterFile("mint/v1beta1/gov.proto", fileDescriptor_32c289d376c9cc98) }

@@ -43,7 +43,7 @@ $ %s debug dump-iavl 12345
 	}
 
 	cmd.Flags().String(FlagOutputDir, "", "The output directory for the iavl dump, if none specified, the home directory will be used")
-	cmd.Flags().StringP(FlagDBPath, "d", "", "The path to the db, default is $HOME/.she/data/application.db")
+	cmd.Flags().StringP(FlagDBPath, "d", "", "The path to the db, default is $HOME/.blt/data/application.db")
 	cmd.Flags().StringP(FlagModuleName, "m", "", "The specific module to dump IAVL for, if none specified, all modules will be dumped")
 
 	return cmd
@@ -62,7 +62,7 @@ func dumpIavlCmdHandler(cmd *cobra.Command, args []string) error {
 		return err
 	}
 	if dbPath == "" {
-		dbPath = fmt.Sprintf("%s/.she/data/application.db", home)
+		dbPath = fmt.Sprintf("%s/.blt/data/application.db", home)
 	}
 
 	fmt.Printf("db path: %s\n", dbPath)

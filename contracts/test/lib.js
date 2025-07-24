@@ -188,7 +188,7 @@ async function incrementPointerVersion(provider, pointerType, offset) {
     if(await isDocker()) {
         // must update on all nodes
         for(let i=0; i<4; i++) {
-            const resultStr = await execCommand(`docker exec she-node-${i} curl -s -X POST http://localhost:8545 -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"test_incrementPointerVersion","params":["${pointerType}", ${offset}],"id":1}'`)
+            const resultStr = await execCommand(`docker exec blk-node-${i} curl -s -X POST http://localhost:8545 -H "Content-Type: application/json" -d '{"jsonrpc":"2.0","method":"test_incrementPointerVersion","params":["${pointerType}", ${offset}],"id":1}'`)
             const result = JSON.parse(resultStr)
             if(result.error){
                 throw new Error(`failed to increment pointer version: ${result.error}`)
@@ -496,8 +496,8 @@ async function associateWasm(contractAddress) {
 
 async function isDocker() {
     return new Promise((resolve, reject) => {
-        exec("docker ps --filter 'name=she-node-0' --format '{{.Names}}'", (error, stdout, stderr) => {
-            if (stdout.includes('she-node-0')) {
+        exec("docker ps --filter 'name=blk-node-0' --format '{{.Names}}'", (error, stdout, stderr) => {
+            if (stdout.includes('blk-node-0')) {
                 resolve(true)
             } else {
                 resolve(false)
@@ -512,7 +512,7 @@ async function executeOnAllNodes(command, interaction=`printf "12345678\\n"`){
         command = command.replace("/bluelink-lab/blk-chain//bluelink-lab/blk-chain/", "/bluelink-lab/blk-chain/")
         let response;
         for(let i=0; i<4; i++) {
-            const nodeCommand = `docker exec she-node-${i} /bin/bash -c 'export PATH=$PATH:/root/go/bin:/root/.foundry/bin && ${interaction} | ${command}'`;
+            const nodeCommand = `docker exec blk-node-${i} /bin/bash -c 'export PATH=$PATH:/root/go/bin:/root/.foundry/bin && ${interaction} | ${command}'`;
             response = await execCommand(nodeCommand);
         }
         return response
@@ -524,7 +524,7 @@ async function execute(command, interaction=`printf "12345678\\n"`){
     if (await isDocker()) {
         command = command.replace(/\.\.\//g, "/bluelink-lab/blk-chain/");
         command = command.replace("/bluelink-lab/blk-chain//bluelink-lab/blk-chain/", "/bluelink-lab/blk-chain/")
-        command = `docker exec she-node-0 /bin/bash -c 'export PATH=$PATH:/root/go/bin:/root/.foundry/bin && ${interaction} | ${command}'`;
+        command = `docker exec blk-node-0 /bin/bash -c 'export PATH=$PATH:/root/go/bin:/root/.foundry/bin && ${interaction} | ${command}'`;
     }
     return await execCommand(command);
 }

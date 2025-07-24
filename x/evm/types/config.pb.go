@@ -88,7 +88,7 @@ func (m *ChainConfig) GetVerkleTime() int64 {
 }
 
 func init() {
-	proto.RegisterType((*ChainConfig)(nil), "sheprotocol.shechain.evm.ChainConfig")
+	proto.RegisterType((*ChainConfig)(nil), "sheprotocol.blk-chain.evm.ChainConfig")
 }
 
 func init() { proto.RegisterFile("evm/config.proto", fileDescriptor_95b591dca6bd862e) }

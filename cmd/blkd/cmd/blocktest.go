@@ -94,7 +94,7 @@ func BlocktestCmd(defaultNodeHome string) *cobra.Command {
 	}
 
 	cmd.Flags().String(flags.FlagHome, defaultNodeHome, "The database home directory")
-	cmd.Flags().String(flags.FlagChainID, "she-chain", "chain ID")
+	cmd.Flags().String(flags.FlagChainID, "blk-chain", "chain ID")
 	cmd.Flags().String("block-test", "", "path to a block test json file")
 	cmd.Flags().String("test-name", "", "individual test name")
 

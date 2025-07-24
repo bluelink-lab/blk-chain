@@ -2,8 +2,8 @@ const COINGECKO_V3_SIMPLE_PRICE_REQUEST = (ids, currencies) =>
   `https://api.coingecko.com/api/v3/simple/price/?ids=${ids}&vs_currencies=${currencies}`;
 const BINANCE_V3_TICKER_REQUEST = (symbol) =>
   `https://api.binance.com/api/v3/ticker/24hr?symbol=${symbol}`;
-const BINANCE_SUPPORTED_MARKET_IDS = ['ust', 'btc', 'atom', 'she', 'sol', 'eth'];
-const BINACE_MARKET_IDS_WITH_DIRECT_UST_CONVERSION = ['she', 'eth'];
+const BINANCE_SUPPORTED_MARKET_IDS = ['ust', 'btc', 'atom', 'blt', 'sol', 'eth'];
+const BINACE_MARKET_IDS_WITH_DIRECT_UST_CONVERSION = ['blt', 'eth'];
 
 // Check https://api.coingecko.com/api/v3/simple/supported_vs_currencies
 // for supported currencies
@@ -15,8 +15,8 @@ const loadCoinGeckoMarket = (marketID) => {
       return 'bitcoin';
     case 'atom':
       return 'cosmos';
-    case 'she':
-      return 'she';
+    case 'blt':
+      return 'blt';
     case 'osmo':
       return 'osmosis';
     case 'sol':

@@ -185,10 +185,10 @@ func (m *MsgDelegateFeedConsentResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_MsgDelegateFeedConsentResponse proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*MsgAggregateExchangeRateVote)(nil), "sheprotocol.shechain.oracle.MsgAggregateExchangeRateVote")
-	proto.RegisterType((*MsgAggregateExchangeRateVoteResponse)(nil), "sheprotocol.shechain.oracle.MsgAggregateExchangeRateVoteResponse")
-	proto.RegisterType((*MsgDelegateFeedConsent)(nil), "sheprotocol.shechain.oracle.MsgDelegateFeedConsent")
-	proto.RegisterType((*MsgDelegateFeedConsentResponse)(nil), "sheprotocol.shechain.oracle.MsgDelegateFeedConsentResponse")
+	proto.RegisterType((*MsgAggregateExchangeRateVote)(nil), "sheprotocol.blk-chain.oracle.MsgAggregateExchangeRateVote")
+	proto.RegisterType((*MsgAggregateExchangeRateVoteResponse)(nil), "sheprotocol.blk-chain.oracle.MsgAggregateExchangeRateVoteResponse")
+	proto.RegisterType((*MsgDelegateFeedConsent)(nil), "sheprotocol.blk-chain.oracle.MsgDelegateFeedConsent")
+	proto.RegisterType((*MsgDelegateFeedConsentResponse)(nil), "sheprotocol.blk-chain.oracle.MsgDelegateFeedConsentResponse")
 }
 
 func init() { proto.RegisterFile("oracle/tx.proto", fileDescriptor_cb5390096518ffda) }
@@ -253,7 +253,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) AggregateExchangeRateVote(ctx context.Context, in *MsgAggregateExchangeRateVote, opts ...grpc.CallOption) (*MsgAggregateExchangeRateVoteResponse, error) {
 	out := new(MsgAggregateExchangeRateVoteResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Msg/AggregateExchangeRateVote", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Msg/AggregateExchangeRateVote", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -262,7 +262,7 @@ func (c *msgClient) AggregateExchangeRateVote(ctx context.Context, in *MsgAggreg
 
 func (c *msgClient) DelegateFeedConsent(ctx context.Context, in *MsgDelegateFeedConsent, opts ...grpc.CallOption) (*MsgDelegateFeedConsentResponse, error) {
 	out := new(MsgDelegateFeedConsentResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Msg/DelegateFeedConsent", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Msg/DelegateFeedConsent", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -303,7 +303,7 @@ func _Msg_AggregateExchangeRateVote_Handler(srv interface{}, ctx context.Context
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Msg/AggregateExchangeRateVote",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Msg/AggregateExchangeRateVote",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).AggregateExchangeRateVote(ctx, req.(*MsgAggregateExchangeRateVote))
@@ -321,7 +321,7 @@ func _Msg_DelegateFeedConsent_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Msg/DelegateFeedConsent",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Msg/DelegateFeedConsent",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).DelegateFeedConsent(ctx, req.(*MsgDelegateFeedConsent))
@@ -330,7 +330,7 @@ func _Msg_DelegateFeedConsent_Handler(srv interface{}, ctx context.Context, dec 
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.oracle.Msg",
+	ServiceName: "sheprotocol.blk-chain.oracle.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

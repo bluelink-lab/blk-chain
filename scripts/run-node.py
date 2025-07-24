@@ -62,7 +62,7 @@ def print_ascii_and_intro():
                      ..-+********+-.
 
 Welcome to the BLT node installer!
-For more information please visit docs.she.io
+For more information please visit docs.blt.io
 This tool will download the blkd binary from she-binaries and wipe any existing state.
 Please backup any important existing data before proceeding.
 """)
@@ -164,14 +164,14 @@ def compile_and_install_release(version):
         logging.info(f"Extracted directory: {extracted_dir}")
 
         # Define the new directory name
-        new_dir_name = "she-chain"
+        new_dir_name = "blk-chain"
 
         # Check if the new directory name already exists
         if os.path.exists(new_dir_name):
             logging.error(f"The directory '{new_dir_name}' already exists. It will be removed.")
             sys.exit(1)
 
-        # Rename the extracted directory to 'she-chain'
+        # Rename the extracted directory to 'blk-chain'
         logging.info(f"Renaming '{extracted_dir}' to '{new_dir_name}'")
         os.rename(extracted_dir, new_dir_name)
         logging.info(f"Renaming completed.")
@@ -305,7 +305,7 @@ def get_state_sync_params(rpc_url, trust_height_delta, chain_id):
 
 # Fetch peers list
 def get_persistent_peers(rpc_url):
-    node_key_path = os.path.expanduser('~/.she/config/node_key.json')
+    node_key_path = os.path.expanduser('~/.blt/config/node_key.json')
     with open(node_key_path, 'r') as f:
         self_id = json.load(f)['id']
         response = requests.get(f"{rpc_url}/net_info")
@@ -318,7 +318,7 @@ def write_genesis_file(chain_id):
     genesis_url = f"https://raw.githubusercontent.com/she-protocol/testnet/main/{chain_id}/genesis.json"
     response = requests.get(genesis_url)
     if response.status_code == 200:
-        genesis_path = os.path.expanduser('~/.she/config/genesis.json')
+        genesis_path = os.path.expanduser('~/.blt/config/genesis.json')
         with open(genesis_path, 'wb') as file:
             file.write(response.content)
         logging.info("Genesis file written successfully.")
@@ -364,7 +364,7 @@ def main():
             dynamic_version = fetch_node_version(rpc_url) if not version_override else None
             version = dynamic_version or version  # Use the fetched version if not overridden
 
-        home_dir = os.path.expanduser('~/.she')
+        home_dir = os.path.expanduser('~/.blt')
 
         if env == "local":
             # Clean up previous data, init blkd with given chain ID and moniker
@@ -374,7 +374,7 @@ def main():
             subprocess.run(["blkd", "init", moniker, "--chain-id", chain_id], check=True)
 
             logging.info("Running local initialization script...")
-            local_script_path = os.path.expanduser('~/she-chain/scripts/initialize_local_chain.sh')
+            local_script_path = os.path.expanduser('~/blk-chain/scripts/initialize_local_chain.sh')
             run_command(f"chmod +x {local_script_path}")
             run_command(local_script_path)
 
@@ -395,8 +395,8 @@ def main():
             write_genesis_file(chain_id)
 
             # Config changes
-            config_path = os.path.expanduser('~/.she/config/config.toml')
-            app_config_path = os.path.expanduser('~/.she/config/app.toml')
+            config_path = os.path.expanduser('~/.blt/config/config.toml')
+            app_config_path = os.path.expanduser('~/.blt/config/app.toml')
 
             # Confirm exists before modifying config files
             ensure_file_path(config_path)

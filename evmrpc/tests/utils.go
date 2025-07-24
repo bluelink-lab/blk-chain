@@ -50,7 +50,7 @@ func SetupTestServer(
 	port := int(portProvider.Add(1))
 	mockClient := MockClient{blocks: append([][][]byte{{}}, blocks...)}
 	a := app.Setup(false, true)
-	a.ChainID = "she-test"
+	a.ChainID = "blk-test"
 	res, err := a.FinalizeBlock(context.Background(), &abci.RequestFinalizeBlock{
 		Txs:    [][]byte{},
 		Hash:   mockHash(1, 0),

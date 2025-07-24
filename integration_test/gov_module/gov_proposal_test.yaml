@@ -12,13 +12,13 @@
       env: PROPOSAL_STATUS
     # Make a deposit
     - cmd: printf "12345678\n" | blkd tx gov deposit $PROPOSAL_ID 10000000ublt --from admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-    # she-node-0 vote yes
+    # blk-node-0 vote yes
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-0
-    # she-node-1 vote yes
+      node: blk-node-0
+    # blk-node-1 vote yes
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-1
+      node: blk-node-1
     # since quorum is 0.5, we only need 2/4 votes and expect proposal to pass after 35 seconds
     - cmd: sleep 35
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status
@@ -45,21 +45,21 @@
       env: PROPOSAL_STATUS
     # Make a deposit
     - cmd: printf "12345678\n" | blkd tx gov deposit $PROPOSAL_ID 10000000ublt --from admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-    # she-node-0 vote yes
+    # blk-node-0 vote yes
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-0
-    # she-node-1 vote yes
+      node: blk-node-0
+    # blk-node-1 vote yes
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-1
-    # she-node-2 vote yes
+      node: blk-node-1
+    # blk-node-2 vote yes
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-2
-    # she-node-3 vote yes
+      node: blk-node-2
+    # blk-node-3 vote yes
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-3
+      node: blk-node-3
     # since expedited quorum is 0.9, we only need 4/4 votes and expect expedited proposal to pass after 20 seconds
     - cmd: sleep 20
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status
@@ -86,9 +86,9 @@
       env: PROPOSAL_STATUS
     # Make a deposit
     - cmd: printf "12345678\n" | blkd tx gov deposit $PROPOSAL_ID 10000000ublt --from admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-    # only she-node-0 vote yes
+    # only blk-node-0 vote yes
     - cmd: printf "12345678\n" | blkd tx gov vote $PROPOSAL_ID yes --from node_admin --chain-id she --fees 2000ublt -b block -y --output json | jq -r .code
-      node: she-node-0
+      node: blk-node-0
     # since expedited quorum is 0.75, we expect it to be rejected and burn tokens, the since expected proposal will auto convert to normal proposal, we need to wait 35 seconds
     - cmd: sleep 35
     - cmd: blkd q gov proposal $PROPOSAL_ID --output json | jq -r .status

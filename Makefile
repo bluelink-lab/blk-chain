@@ -46,7 +46,7 @@ build_tags_comma_sep := $(subst $(whitespace),$(comma),$(build_tags))
 
 # process linker flags
 
-ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=she \
+ldflags = -X github.com/cosmos/cosmos-sdk/version.Name=blt \
 			-X github.com/cosmos/cosmos-sdk/version.ServerName=blkd \
 			-X github.com/cosmos/cosmos-sdk/version.Version=$(VERSION) \
 			-X github.com/cosmos/cosmos-sdk/version.Commit=$(COMMIT) \
@@ -131,18 +131,18 @@ build-price-feeder-linux:
 
 # Build docker image
 build-docker-node:
-	@cd docker && docker build --tag she-chain/localnode localnode --platform linux/x86_64
+	@cd docker && docker build --tag blk-chain/localnode localnode --platform linux/x86_64
 .PHONY: build-docker-node
 
 build-rpc-node:
-	@cd docker && docker build --tag she-chain/rpcnode rpcnode --platform linux/x86_64
+	@cd docker && docker build --tag blk-chain/rpcnode rpcnode --platform linux/x86_64
 .PHONY: build-rpc-node
 
 # Run a single node docker container
-run-local-node: kill-she-node build-docker-node
+run-local-node: kill-blk-node build-docker-node
 	@rm -rf $(PROJECT_HOME)/build/generated
 	docker run --rm \
-	--name she-node \
+	--name blk-node \
 	--user="$(shell id -u):$(shell id -g)" \
 	-v $(PROJECT_HOME):/bluelink-lab/blk-chain:Z \
 	-v $(GO_PKG_PATH)/mod:/root/go/pkg/mod:Z \
@@ -152,7 +152,7 @@ run-local-node: kill-she-node build-docker-node
 	-p 9090-9091:9090-9091 \
 	-p 8545-8546:8545-8546 \
 	-p 7171:7171 \
-	she-chain/localnode
+	blk-chain/localnode
 .PHONY: run-local-node
 
 # Run a single rpc state sync node docker container
@@ -166,7 +166,7 @@ run-rpc-node: build-rpc-node
 	-v $(shell go env GOCACHE):/root/.cache/go-build:Z \
 	-p 26656-26658:26656-26658 \
 	--platform linux/x86_64 \
-	she-chain/rpcnode
+	blk-chain/rpcnode
 .PHONY: run-rpc-node
 
 run-rpc-node-skipbuild: build-rpc-node
@@ -180,11 +180,11 @@ run-rpc-node-skipbuild: build-rpc-node
 	-p 26656-26658:26656-26658 \
 	--platform linux/x86_64 \
 	--env SKIP_BUILD=true \
-	she-chain/rpcnode
+	blk-chain/rpcnode
 .PHONY: run-rpc-node
 
-kill-she-node:
-	docker ps --filter name=she-node --filter status=running -aq | xargs docker kill 2> /dev/null || true
+kill-blk-node:
+	docker ps --filter name=blk-node --filter status=running -aq | xargs docker kill 2> /dev/null || true
 
 kill-rpc-node:
 	docker ps --filter name=she-rpc-node --filter status=running -aq | xargs docker kill 2> /dev/null || true

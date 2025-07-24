@@ -35,7 +35,7 @@
       env: SHE_NODE_0_VAL_ADDR
     - cmd: printf "12345678\n" | blkd keys show node_admin --bech val --output json | jq -r ".address"
       env: SHE_NODE_1_VAL_ADDR
-      node: she-node-1
+      node: blk-node-1
 
     # State before staking
     - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"
@@ -75,7 +75,7 @@
   inputs:
     - cmd: printf "12345678\n" | blkd keys show node_admin --bech val --output json | jq -r ".address"
       env: SHE_NODE_1_VAL_ADDR
-      node: she-node-1
+      node: blk-node-1
 
     # State before staking
     - cmd: blkd q staking pool --output json | jq -r ".bonded_tokens"

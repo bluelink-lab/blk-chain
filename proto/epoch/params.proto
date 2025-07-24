@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.epoch;
+package sheprotocol.blk-chain.epoch;
 
 import "gogoproto/gogo.proto";
 

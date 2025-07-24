@@ -1,11 +1,11 @@
 const rpcUrls = {
-    "testnet": "https://rpc-testnet.she-apis.com",
-    "devnet": "https://rpc-arctic-1.she-apis.com"
+    "testnet": "https://rpc-testnet.blt-apis.com",
+    "devnet": "https://rpc-arctic-1.blt-apis.com"
 }
 
 const evmRpcUrls = {
-    "testnet": "https://evm-rpc-testnet.she-apis.com",
-    "devnet": "https://evm-rpc-arctic-1.she-apis.com"
+    "testnet": "https://evm-rpc-testnet.blt-apis.com",
+    "devnet": "https://evm-rpc-arctic-1.blt-apis.com"
 }
 
 const chainIds = {

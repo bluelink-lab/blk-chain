@@ -34469,7 +34469,7 @@ paths:
           format: uint64
       tags:
         - Query
-  /she-protocol/shechain/epoch/epoch:
+  /she-protocol/blk-chain/epoch/epoch:
     get:
       summary: Query the epoch in the chain
       operationId: SheprotocolShechainEpochEpoch
@@ -34516,7 +34516,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /she-protocol/shechain/epoch/params:
+  /she-protocol/blk-chain/epoch/params:
     get:
       summary: Parameters queries the parameters of the module.
       operationId: SheprotocolShechainEpochParams
@@ -34552,7 +34552,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /she-protocol/shechain/evm/evm_address:
+  /she-protocol/blk-chain/evm/evm_address:
     get:
       operationId: SheprotocolShechainEvmEVMAddressBySheAddress
       responses:
@@ -34757,7 +34757,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/shechain/evm/pointer:
+  /she-protocol/blk-chain/evm/pointer:
     get:
       operationId: SheprotocolShechainEvmPointer
       responses:
@@ -34978,7 +34978,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/shechain/evm/pointer_version:
+  /she-protocol/blk-chain/evm/pointer_version:
     get:
       operationId: SheprotocolShechainEvmPointerVersion
       responses:
@@ -35194,7 +35194,7 @@ paths:
           default: ERC20
       tags:
         - Query
-  /she-protocol/shechain/evm/she_address:
+  /she-protocol/blk-chain/evm/she_address:
     get:
       operationId: SheprotocolShechainEvmSheAddressByEVMAddress
       responses:
@@ -35399,7 +35399,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/shechain/evm/static_call:
+  /she-protocol/blk-chain/evm/static_call:
     get:
       operationId: SheprotocolShechainEvmStaticCall
       responses:
@@ -35608,7 +35608,7 @@ paths:
           type: string
       tags:
         - Query
-  /shechain/mint/v1beta1/minter:
+  /blk-chain/mint/v1beta1/minter:
     get:
       summary: EpochProvisions current minting epoch provisions value.
       operationId: SheprotocolShechainMintMinter
@@ -35661,7 +35661,7 @@ paths:
                   additionalProperties: {}
       tags:
         - Query
-  /shechain/mint/v1beta1/params:
+  /blk-chain/mint/v1beta1/params:
     get:
       summary: Params returns the total set of minting parameters.
       operationId: SheprotocolShechainMintParams
@@ -36214,7 +36214,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/shechain/tokenfactory/denoms/allow_list:
+  /she-protocol/blk-chain/tokenfactory/denoms/allow_list:
     get:
       operationId: SheprotocolShechainTokenfactoryDenomAllowList
       responses:
@@ -36265,7 +36265,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/shechain/tokenfactory/denoms/metadata:
+  /she-protocol/blk-chain/tokenfactory/denoms/metadata:
     get:
       summary: |-
         DenomsMetadata defines a gRPC query method for fetching
@@ -36379,7 +36379,7 @@ paths:
           type: string
       tags:
         - Query
-  '/she-protocol/shechain/tokenfactory/denoms/{denom}/authority_metadata':
+  '/she-protocol/blk-chain/tokenfactory/denoms/{denom}/authority_metadata':
     get:
       summary: |-
         DenomAuthorityMetadata defines a gRPC query method for fetching
@@ -36435,7 +36435,7 @@ paths:
           type: string
       tags:
         - Query
-  '/she-protocol/shechain/tokenfactory/denoms_from_creator/{creator}':
+  '/she-protocol/blk-chain/tokenfactory/denoms_from_creator/{creator}':
     get:
       summary: |-
         DenomsFromCreator defines a gRPC query method for fetching all
@@ -36481,7 +36481,7 @@ paths:
           type: string
       tags:
         - Query
-  /she-protocol/shechain/tokenfactory/params:
+  /she-protocol/blk-chain/tokenfactory/params:
     get:
       summary: >-
         Params defines a gRPC query method that returns the tokenfactory
@@ -61293,7 +61293,7 @@ definitions:
     description: |-
       Version defines the versioning scheme used to negotiate the IBC verison in
       the connection handshake.
-  sheprotocol.shechain.epoch.Epoch:
+  sheprotocol.blk-chain.epoch.Epoch:
     type: object
     properties:
       genesis_time:
@@ -61310,10 +61310,10 @@ definitions:
       current_epoch_height:
         type: string
         format: int64
-  sheprotocol.shechain.epoch.Params:
+  sheprotocol.blk-chain.epoch.Params:
     type: object
     description: Params defines the parameters for the module.
-  sheprotocol.shechain.epoch.QueryEpochResponse:
+  sheprotocol.blk-chain.epoch.QueryEpochResponse:
     type: object
     properties:
       epoch:
@@ -61333,14 +61333,14 @@ definitions:
           current_epoch_height:
             type: string
             format: int64
-  sheprotocol.shechain.epoch.QueryParamsResponse:
+  sheprotocol.blk-chain.epoch.QueryParamsResponse:
     type: object
     properties:
       params:
         description: params holds all the parameters of this module.
         type: object
     description: QueryParamsResponse is response type for the Query/Params RPC method.
-  sheprotocol.shechain.evm.Log:
+  sheprotocol.blk-chain.evm.Log:
     type: object
     properties:
       address:
@@ -61357,11 +61357,11 @@ definitions:
         format: int64
       synthetic:
         type: boolean
-  sheprotocol.shechain.evm.MsgAssociateContractAddressResponse:
+  sheprotocol.blk-chain.evm.MsgAssociateContractAddressResponse:
     type: object
-  sheprotocol.shechain.evm.MsgAssociateResponse:
+  sheprotocol.blk-chain.evm.MsgAssociateResponse:
     type: object
-  sheprotocol.shechain.evm.MsgEVMTransactionResponse:
+  sheprotocol.blk-chain.evm.MsgEVMTransactionResponse:
     type: object
     properties:
       gas_used:
@@ -61393,14 +61393,14 @@ definitions:
               format: int64
             synthetic:
               type: boolean
-  sheprotocol.shechain.evm.MsgRegisterPointerResponse:
+  sheprotocol.blk-chain.evm.MsgRegisterPointerResponse:
     type: object
     properties:
       pointer_address:
         type: string
-  sheprotocol.shechain.evm.MsgSendResponse:
+  sheprotocol.blk-chain.evm.MsgSendResponse:
     type: object
-  sheprotocol.shechain.evm.PointerType:
+  sheprotocol.blk-chain.evm.PointerType:
     type: string
     enum:
       - ERC20
@@ -61411,14 +61411,14 @@ definitions:
       - CW721
       - CW1155
     default: ERC20
-  sheprotocol.shechain.evm.QueryEVMAddressBySheAddressResponse:
+  sheprotocol.blk-chain.evm.QueryEVMAddressBySheAddressResponse:
     type: object
     properties:
       evm_address:
         type: string
       associated:
         type: boolean
-  sheprotocol.shechain.evm.QueryPointerResponse:
+  sheprotocol.blk-chain.evm.QueryPointerResponse:
     type: object
     properties:
       pointer:
@@ -61428,7 +61428,7 @@ definitions:
         format: int64
       exists:
         type: boolean
-  sheprotocol.shechain.evm.QueryPointerVersionResponse:
+  sheprotocol.blk-chain.evm.QueryPointerVersionResponse:
     type: object
     properties:
       version:
@@ -61437,20 +61437,20 @@ definitions:
       cw_code_id:
         type: string
         format: uint64
-  sheprotocol.shechain.evm.QuerySheAddressByEVMAddressResponse:
+  sheprotocol.blk-chain.evm.QuerySheAddressByEVMAddressResponse:
     type: object
     properties:
       she_address:
         type: string
       associated:
         type: boolean
-  sheprotocol.shechain.evm.QueryStaticCallResponse:
+  sheprotocol.blk-chain.evm.QueryStaticCallResponse:
     type: object
     properties:
       data:
         type: string
         format: byte
-  sheprotocol.shechain.mint.Params:
+  sheprotocol.blk-chain.mint.Params:
     type: object
     properties:
       mint_denom:
@@ -61472,7 +61472,7 @@ definitions:
               format: uint64
         title: List of token release schedules
     description: Params holds parameters for the mint module.
-  sheprotocol.shechain.mint.QueryMinterResponse:
+  sheprotocol.blk-chain.mint.QueryMinterResponse:
     type: object
     properties:
       start_date:
@@ -61498,7 +61498,7 @@ definitions:
     description: |-
       QueryMinterResponse is the response type for the
       Query/Minter RPC method.
-  sheprotocol.shechain.mint.QueryParamsResponse:
+  sheprotocol.blk-chain.mint.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -61524,7 +61524,7 @@ definitions:
                   format: uint64
             title: List of token release schedules
     description: QueryParamsResponse is the response type for the Query/Params RPC method.
-  sheprotocol.shechain.mint.ScheduledTokenRelease:
+  sheprotocol.blk-chain.mint.ScheduledTokenRelease:
     type: object
     properties:
       start_date:
@@ -61536,12 +61536,12 @@ definitions:
       token_release_amount:
         type: string
         format: uint64
-  sheprotocol.shechain.oracle.Denom:
+  sheprotocol.blk-chain.oracle.Denom:
     type: object
     properties:
       name:
         type: string
-  sheprotocol.shechain.oracle.DenomOracleExchangeRatePair:
+  sheprotocol.blk-chain.oracle.DenomOracleExchangeRatePair:
     type: object
     properties:
       denom:
@@ -61556,17 +61556,17 @@ definitions:
           last_update_timestamp:
             type: string
             format: int64
-  sheprotocol.shechain.oracle.MsgAggregateExchangeRateVoteResponse:
+  sheprotocol.blk-chain.oracle.MsgAggregateExchangeRateVoteResponse:
     type: object
     description: >-
       MsgAggregateExchangeRateVoteResponse defines the
       Msg/AggregateExchangeRateVote response type.
-  sheprotocol.shechain.oracle.MsgDelegateFeedConsentResponse:
+  sheprotocol.blk-chain.oracle.MsgDelegateFeedConsentResponse:
     type: object
     description: >-
       MsgDelegateFeedConsentResponse defines the Msg/DelegateFeedConsent
       response type.
-  sheprotocol.shechain.oracle.OracleExchangeRate:
+  sheprotocol.blk-chain.oracle.OracleExchangeRate:
     type: object
     properties:
       exchange_rate:
@@ -61576,7 +61576,7 @@ definitions:
       last_update_timestamp:
         type: string
         format: int64
-  sheprotocol.shechain.oracle.OracleTwap:
+  sheprotocol.blk-chain.oracle.OracleTwap:
     type: object
     properties:
       denom:
@@ -61586,7 +61586,7 @@ definitions:
       lookback_seconds:
         type: string
         format: int64
-  sheprotocol.shechain.oracle.Params:
+  sheprotocol.blk-chain.oracle.Params:
     type: object
     properties:
       vote_period:
@@ -61626,7 +61626,7 @@ definitions:
       lookback_duration:
         type: string
         format: uint64
-  sheprotocol.shechain.oracle.PriceSnapshot:
+  sheprotocol.blk-chain.oracle.PriceSnapshot:
     type: object
     properties:
       snapshot_timestamp:
@@ -61649,7 +61649,7 @@ definitions:
                 last_update_timestamp:
                   type: string
                   format: int64
-  sheprotocol.shechain.oracle.PriceSnapshotItem:
+  sheprotocol.blk-chain.oracle.PriceSnapshotItem:
     type: object
     properties:
       denom:
@@ -61664,7 +61664,7 @@ definitions:
           last_update_timestamp:
             type: string
             format: int64
-  sheprotocol.shechain.oracle.QueryActivesResponse:
+  sheprotocol.blk-chain.oracle.QueryActivesResponse:
     type: object
     properties:
       actives:
@@ -61677,7 +61677,7 @@ definitions:
     description: |-
       QueryActivesResponse is response type for the
       Query/Actives RPC method.
-  sheprotocol.shechain.oracle.QueryExchangeRateResponse:
+  sheprotocol.blk-chain.oracle.QueryExchangeRateResponse:
     type: object
     properties:
       oracle_exchange_rate:
@@ -61696,7 +61696,7 @@ definitions:
     description: |-
       QueryExchangeRateResponse is response type for the
       Query/ExchangeRate RPC method.
-  sheprotocol.shechain.oracle.QueryExchangeRatesResponse:
+  sheprotocol.blk-chain.oracle.QueryExchangeRatesResponse:
     type: object
     properties:
       denom_oracle_exchange_rate_pairs:
@@ -61722,7 +61722,7 @@ definitions:
     description: |-
       QueryExchangeRatesResponse is response type for the
       Query/ExchangeRates RPC method.
-  sheprotocol.shechain.oracle.QueryFeederDelegationResponse:
+  sheprotocol.blk-chain.oracle.QueryFeederDelegationResponse:
     type: object
     properties:
       feeder_addr:
@@ -61731,7 +61731,7 @@ definitions:
     description: |-
       QueryFeederDelegationResponse is response type for the
       Query/FeederDelegation RPC method.
-  sheprotocol.shechain.oracle.QueryParamsResponse:
+  sheprotocol.blk-chain.oracle.QueryParamsResponse:
     type: object
     properties:
       params:
@@ -61776,7 +61776,7 @@ definitions:
             type: string
             format: uint64
     description: QueryParamsResponse is the response type for the Query/Params RPC method.
-  sheprotocol.shechain.oracle.QueryPriceSnapshotHistoryResponse:
+  sheprotocol.blk-chain.oracle.QueryPriceSnapshotHistoryResponse:
     type: object
     properties:
       price_snapshots:
@@ -61804,7 +61804,7 @@ definitions:
                       last_update_timestamp:
                         type: string
                         format: int64
-  sheprotocol.shechain.oracle.QuerySlashWindowResponse:
+  sheprotocol.blk-chain.oracle.QuerySlashWindowResponse:
     type: object
     properties:
       window_progress:
@@ -61816,7 +61816,7 @@ definitions:
     description: |-
       QuerySlashWindowResponse is response type for the
       Query/SlashWindow RPC method.
-  sheprotocol.shechain.oracle.QueryTwapsResponse:
+  sheprotocol.blk-chain.oracle.QueryTwapsResponse:
     type: object
     properties:
       oracle_twaps:
@@ -61831,7 +61831,7 @@ definitions:
             lookback_seconds:
               type: string
               format: int64
-  sheprotocol.shechain.oracle.QueryVotePenaltyCounterResponse:
+  sheprotocol.blk-chain.oracle.QueryVotePenaltyCounterResponse:
     type: object
     properties:
       vote_penalty_counter:
@@ -61849,7 +61849,7 @@ definitions:
     description: |-
       QueryVotePenaltyCounterResponse is response type for the
       Query/VotePenaltyCounter RPC method.
-  sheprotocol.shechain.oracle.QueryVoteTargetsResponse:
+  sheprotocol.blk-chain.oracle.QueryVoteTargetsResponse:
     type: object
     properties:
       vote_targets:
@@ -61862,7 +61862,7 @@ definitions:
     description: |-
       QueryVoteTargetsResponse is response type for the
       Query/VoteTargets RPC method.
-  sheprotocol.shechain.oracle.VotePenaltyCounter:
+  sheprotocol.blk-chain.oracle.VotePenaltyCounter:
     type: object
     properties:
       miss_count:
@@ -61874,7 +61874,7 @@ definitions:
       success_count:
         type: string
         format: uint64
-  sheprotocol.shechain.tokenfactory.AllowList:
+  sheprotocol.blk-chain.tokenfactory.AllowList:
     type: object
     properties:
       addresses:
@@ -61885,7 +61885,7 @@ definitions:
     description: >-
       AllowList specifies metadata for addresses that can be used to transfer
       tokens of a specific denom.
-  sheprotocol.shechain.tokenfactory.DenomAuthorityMetadata:
+  sheprotocol.blk-chain.tokenfactory.DenomAuthorityMetadata:
     type: object
     properties:
       admin:
@@ -61895,14 +61895,14 @@ definitions:
       DenomAuthorityMetadata specifies metadata for addresses that have specific
       capabilities over a token factory denom. Right now there is only one Admin
       permission, but is planned to be extended to the future.
-  sheprotocol.shechain.tokenfactory.MsgBurnResponse:
+  sheprotocol.blk-chain.tokenfactory.MsgBurnResponse:
     type: object
-  sheprotocol.shechain.tokenfactory.MsgChangeAdminResponse:
+  sheprotocol.blk-chain.tokenfactory.MsgChangeAdminResponse:
     type: object
     description: |-
       MsgChangeAdminResponse defines the response structure for an executed
       MsgChangeAdmin message.
-  sheprotocol.shechain.tokenfactory.MsgCreateDenomResponse:
+  sheprotocol.blk-chain.tokenfactory.MsgCreateDenomResponse:
     type: object
     properties:
       new_token_denom:
@@ -61910,17 +61910,17 @@ definitions:
     title: |-
       MsgCreateDenomResponse is the return value of MsgCreateDenom
       It returns the full string of the newly created denom
-  sheprotocol.shechain.tokenfactory.MsgMintResponse:
+  sheprotocol.blk-chain.tokenfactory.MsgMintResponse:
     type: object
-  sheprotocol.shechain.tokenfactory.MsgSetDenomMetadataResponse:
+  sheprotocol.blk-chain.tokenfactory.MsgSetDenomMetadataResponse:
     type: object
     description: |-
       MsgSetDenomMetadataResponse defines the response structure for an executed
       MsgSetDenomMetadata message.
-  sheprotocol.shechain.tokenfactory.Params:
+  sheprotocol.blk-chain.tokenfactory.Params:
     type: object
     description: Params defines the parameters for the tokenfactory module.
-  sheprotocol.shechain.tokenfactory.QueryDenomAllowListResponse:
+  sheprotocol.blk-chain.tokenfactory.QueryDenomAllowListResponse:
     type: object
     properties:
       allow_list:
@@ -61939,7 +61939,7 @@ definitions:
       Query/DenomMetadata gRPC
 
       method.
-  sheprotocol.shechain.tokenfactory.QueryDenomAuthorityMetadataResponse:
+  sheprotocol.blk-chain.tokenfactory.QueryDenomAuthorityMetadataResponse:
     type: object
     properties:
       authority_metadata:
@@ -61959,7 +61959,7 @@ definitions:
     description: |-
       QueryDenomAuthorityMetadataResponse defines the response structure for the
       DenomAuthorityMetadata gRPC query.
-  sheprotocol.shechain.tokenfactory.QueryDenomMetadataResponse:
+  sheprotocol.blk-chain.tokenfactory.QueryDenomMetadataResponse:
     type: object
     properties:
       metadata:
@@ -62033,7 +62033,7 @@ definitions:
       Query/DenomMetadata gRPC
 
       method.
-  sheprotocol.shechain.tokenfactory.QueryDenomsFromCreatorResponse:
+  sheprotocol.blk-chain.tokenfactory.QueryDenomsFromCreatorResponse:
     type: object
     properties:
       denoms:
@@ -62043,7 +62043,7 @@ definitions:
     description: |-
       QueryDenomsFromCreatorRequest defines the response structure for the
       DenomsFromCreator gRPC query.
-  sheprotocol.shechain.tokenfactory.QueryParamsResponse:
+  sheprotocol.blk-chain.tokenfactory.QueryParamsResponse:
     type: object
     properties:
       params:

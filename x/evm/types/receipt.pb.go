@@ -248,8 +248,8 @@ func (m *Receipt) GetLogsBloom() []byte {
 }
 
 func init() {
-	proto.RegisterType((*Log)(nil), "sheprotocol.shechain.evm.Log")
-	proto.RegisterType((*Receipt)(nil), "sheprotocol.shechain.evm.Receipt")
+	proto.RegisterType((*Log)(nil), "sheprotocol.blk-chain.evm.Log")
+	proto.RegisterType((*Receipt)(nil), "sheprotocol.blk-chain.evm.Receipt")
 }
 
 func init() { proto.RegisterFile("evm/receipt.proto", fileDescriptor_d864f6bdca684f52) }

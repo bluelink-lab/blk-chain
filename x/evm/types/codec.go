@@ -58,7 +58,7 @@ func RegisterInterfaces(registry codectypes.InterfaceRegistry) {
 		&MsgAssociateContractAddress{},
 	)
 	registry.RegisterInterface(
-		"sheprotocol.shechain.evm.TxData",
+		"sheprotocol.blk-chain.evm.TxData",
 		(*ethtx.TxData)(nil),
 		&ethtx.DynamicFeeTx{},
 		&ethtx.AccessListTx{},

@@ -8,7 +8,7 @@ echo
 echo -n blkd binary:
 read shedbin
 echo
-echo -n she-chain directory:
+echo -n blk-chain directory:
 read shehome
 echo
 

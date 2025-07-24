@@ -68,7 +68,7 @@ func (m *Params) GetDenomAllowlistMaxSize() uint32 {
 }
 
 func init() {
-	proto.RegisterType((*Params)(nil), "sheprotocol.shechain.tokenfactory.Params")
+	proto.RegisterType((*Params)(nil), "sheprotocol.blk-chain.tokenfactory.Params")
 }
 
 func init() { proto.RegisterFile("tokenfactory/params.proto", fileDescriptor_0f39a375875b281a) }

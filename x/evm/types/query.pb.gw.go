@@ -558,17 +558,17 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Query_SheAddressByEVMAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "evm", "she_address"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_SheAddressByEVMAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "she_address"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_EVMAddressBySheAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "evm", "evm_address"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_EVMAddressBySheAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "evm_address"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_StaticCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "evm", "static_call"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_StaticCall_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "static_call"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_Pointer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "evm", "pointer"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_Pointer_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "pointer"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_PointerVersion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "evm", "pointer_version"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_PointerVersion_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "pointer_version"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_Pointee_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "evm", "pointee"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_Pointee_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "pointee"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

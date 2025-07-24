@@ -53,7 +53,7 @@ which aims to improve the overall state access performance and tackle any potent
 
 ### Step 1: Add Configurations
 To enable SheDB, you need to add the following configs to app.toml file.
-Usually you can find this file under ~/.she/config/app.toml.
+Usually you can find this file under ~/.blt/config/app.toml.
 ```bash
 #############################################################################
 ###                             SheDB Configuration                       ###
@@ -173,7 +173,7 @@ export TRUST_HEIGHT_DELTA=10000
 export MONIKER="<moniker>"
 export CHAIN_ID="<chain_id>"
 export PRIMARY_ENDPOINT="<rpc_endpoint>"
-export SHED_HOME="/root/.she"
+export SHED_HOME="/root/.blt"
 
 # Step 1: stop blkd
 echo "Stopping blkd process..."

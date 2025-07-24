@@ -497,15 +497,15 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "shechain", "tokenfactory", "params"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "tokenfactory", "params"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_DenomAuthorityMetadata_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"she-protocol", "shechain", "tokenfactory", "denoms", "denom", "authority_metadata"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_DenomAuthorityMetadata_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"bluelink-lab", "blk-chain", "tokenfactory", "denoms", "denom", "authority_metadata"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_DenomMetadata_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"she-protocol", "shechain", "tokenfactory", "denoms", "metadata"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_DenomMetadata_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"bluelink-lab", "blk-chain", "tokenfactory", "denoms", "metadata"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_DenomsFromCreator_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"she-protocol", "shechain", "tokenfactory", "denoms_from_creator", "creator"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_DenomsFromCreator_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4}, []string{"bluelink-lab", "blk-chain", "tokenfactory", "denoms_from_creator", "creator"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_DenomAllowList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"she-protocol", "shechain", "tokenfactory", "denoms", "allow_list"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_DenomAllowList_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"bluelink-lab", "blk-chain", "tokenfactory", "denoms", "allow_list"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

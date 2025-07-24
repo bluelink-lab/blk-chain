@@ -10,7 +10,7 @@ echo "Adding account $ACCOUNT_NAME"
 printf "12345678\n12345678\ny\n" | blkd keys add $ACCOUNT_NAME >/dev/null 2>&1
 
 override_genesis() {
-  cat ~/.she/config/genesis.json | jq "$1" > ~/.she/config/tmp_genesis.json && mv ~/.she/config/tmp_genesis.json ~/.she/config/genesis.json;
+  cat ~/.blt/config/genesis.json | jq "$1" > ~/.blt/config/tmp_genesis.json && mv ~/.blt/config/tmp_genesis.json ~/.blt/config/genesis.json;
 }
 
 override_genesis '.app_state["crisis"]["constant_fee"]["denom"]="ublt"'
@@ -56,7 +56,7 @@ done <build/generated/genesis_accounts.txt
 printf "12345678\n" | blkd add-genesis-account admin 1000000000000000000000ublt,1000000000000000000000uusdc,1000000000000000000000uatom
 
 mkdir -p ~/exported_keys
-cp -r build/generated/gentx/* ~/.she/config/gentx
+cp -r build/generated/gentx/* ~/.blt/config/gentx
 cp -r build/generated/exported_keys ~/exported_keys
 
 # add validators to genesis
@@ -66,5 +66,5 @@ cp -r build/generated/exported_keys ~/exported_keys
 echo "Collecting all gentx"
 blkd collect-gentxs >/dev/null 2>&1
 
-cp ~/.she/config/genesis.json build/generated/genesis.json
+cp ~/.blt/config/genesis.json build/generated/genesis.json
 echo "Genesis file has been created successfully"

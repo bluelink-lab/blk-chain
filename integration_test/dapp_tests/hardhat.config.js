@@ -26,7 +26,7 @@ module.exports = {
       },
     },
     testnet: {
-      url: "https://evm-rpc-testnet.she-apis.com",
+      url: "https://evm-rpc-testnet.blt-apis.com",
       accounts: {
         mnemonic: process.env.DAPP_TESTS_MNEMONIC,
         path: "m/44'/118'/0'/0/0",
@@ -35,7 +35,7 @@ module.exports = {
       },
     },
     devnet: {
-      url: "https://evm-rpc-arctic-1.she-apis.com",
+      url: "https://evm-rpc-arctic-1.blt-apis.com",
       accounts: {
         mnemonic: process.env.DAPP_TESTS_MNEMONIC,
         path: "m/44'/118'/0'/0/0",

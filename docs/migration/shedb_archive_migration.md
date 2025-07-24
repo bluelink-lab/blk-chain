@@ -30,7 +30,7 @@ that this is ONLY during the migration process, and will not be necessary after 
 
 ### Step 1: Add SheDB Configurations
 We can enable SheDB by adding the following configs to app.toml file.
-Usually you can find this file under ~/.she/config/app.toml.
+Usually you can find this file under ~/.blt/config/app.toml.
 ```bash
 #############################################################################
 ###                             SheDB Configuration                       ###
@@ -96,12 +96,12 @@ ss-import-num-workers = 1
 
 ```bash
 systemctl stop blkd
-blkd tools migrate-iavl --home-dir /root/.she
+blkd tools migrate-iavl --home-dir /root/.blt
 ```
 
 You can also run this sc migration in the background:
 ```bash
-blkd tools migrate-iavl --home-dir /root/.she > migrate-sc.log 2>&1 &
+blkd tools migrate-iavl --home-dir /root/.blt > migrate-sc.log 2>&1 &
 ```
 
 This may take a couple hours to run. You will see logs of form
@@ -181,7 +181,7 @@ we can proceed to clear out the iavl and restart blkd normally.
 
 ```bash
 systemctl stop blkd
-rm -rf ~/.she/data/application.db
+rm -rf ~/.blt/data/application.db
 blkd start --chain-id blk-mainnet
 ```
 

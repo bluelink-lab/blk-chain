@@ -253,10 +253,10 @@ func (m *QueryMinterResponse) GetLastMintHeight() uint64 {
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.shechain.mint.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.shechain.mint.QueryParamsResponse")
-	proto.RegisterType((*QueryMinterRequest)(nil), "sheprotocol.shechain.mint.QueryMinterRequest")
-	proto.RegisterType((*QueryMinterResponse)(nil), "sheprotocol.shechain.mint.QueryMinterResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.blk-chain.mint.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.blk-chain.mint.QueryParamsResponse")
+	proto.RegisterType((*QueryMinterRequest)(nil), "sheprotocol.blk-chain.mint.QueryMinterRequest")
+	proto.RegisterType((*QueryMinterResponse)(nil), "sheprotocol.blk-chain.mint.QueryMinterResponse")
 }
 
 func init() { proto.RegisterFile("mint/v1beta1/query.proto", fileDescriptor_b0718dda172d2cb4) }
@@ -328,7 +328,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.mint.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.mint.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -337,7 +337,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) Minter(ctx context.Context, in *QueryMinterRequest, opts ...grpc.CallOption) (*QueryMinterResponse, error) {
 	out := new(QueryMinterResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.mint.Query/Minter", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.mint.Query/Minter", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -377,7 +377,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.mint.Query/Params",
+		FullMethod: "/sheprotocol.blk-chain.mint.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -395,7 +395,7 @@ func _Query_Minter_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.mint.Query/Minter",
+		FullMethod: "/sheprotocol.blk-chain.mint.Query/Minter",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Minter(ctx, req.(*QueryMinterRequest))
@@ -404,7 +404,7 @@ func _Query_Minter_Handler(srv interface{}, ctx context.Context, dec func(interf
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.mint.Query",
+	ServiceName: "sheprotocol.blk-chain.mint.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -12,9 +12,9 @@ MONIKER="she-rpc-node"
 blkd init --chain-id she "$MONIKER"
 
 # Copy configs
-cp docker/rpcnode/config/app.toml ~/.she/config/app.toml
-cp docker/rpcnode/config/config.toml ~/.she/config/config.toml
-cp build/generated/genesis.json ~/.she/config/genesis.json
+cp docker/rpcnode/config/app.toml ~/.blt/config/app.toml
+cp docker/rpcnode/config/config.toml ~/.blt/config/config.toml
+cp build/generated/genesis.json ~/.blt/config/genesis.json
 
 # Override state sync configs
 STATE_SYNC_RPC="192.168.10.10:26657"
@@ -24,8 +24,8 @@ STATE_SYNC_PEER=$(paste -s -d ',' build/generated/PEERS)
 LATEST_HEIGHT=$(curl -s $STATE_SYNC_RPC/block | jq -r .block.header.height)
 SYNC_BLOCK_HEIGHT=$LATEST_HEIGHT
 SYNC_BLOCK_HASH=$(curl -s "$STATE_SYNC_RPC/block?height=$SYNC_BLOCK_HEIGHT" | jq -r .block_id.hash)
-sed -i.bak -e "s|^enable *=.*|enable = true|" ~/.she/config/config.toml
-sed -i.bak -e "s|^rpc-servers *=.*|rpc-servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" ~/.she/config/config.toml
-sed -i.bak -e "s|^trust-height *=.*|trust-height = $SYNC_BLOCK_HEIGHT|" ~/.she/config/config.toml
-sed -i.bak -e "s|^trust-hash *=.*|trust-hash = \"$SYNC_BLOCK_HASH\"|" ~/.she/config/config.toml
-sed -i.bak -e "s|^persistent-peers *=.*|persistent-peers = \"$STATE_SYNC_PEER\"|" ~/.she/config/config.toml
+sed -i.bak -e "s|^enable *=.*|enable = true|" ~/.blt/config/config.toml
+sed -i.bak -e "s|^rpc-servers *=.*|rpc-servers = \"$STATE_SYNC_RPC,$STATE_SYNC_RPC\"|" ~/.blt/config/config.toml
+sed -i.bak -e "s|^trust-height *=.*|trust-height = $SYNC_BLOCK_HEIGHT|" ~/.blt/config/config.toml
+sed -i.bak -e "s|^trust-hash *=.*|trust-hash = \"$SYNC_BLOCK_HASH\"|" ~/.blt/config/config.toml
+sed -i.bak -e "s|^persistent-peers *=.*|persistent-peers = \"$STATE_SYNC_PEER\"|" ~/.blt/config/config.toml

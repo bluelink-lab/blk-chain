@@ -88,7 +88,7 @@ func ReplayCmd(defaultNodeHome string) *cobra.Command {
 	}
 
 	cmd.Flags().String(flags.FlagHome, defaultNodeHome, "The database home directory")
-	cmd.Flags().String(flags.FlagChainID, "she-chain", "chain ID")
+	cmd.Flags().String(flags.FlagChainID, "blk-chain", "chain ID")
 
 	return cmd
 }

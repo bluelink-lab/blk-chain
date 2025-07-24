@@ -79,7 +79,7 @@ func (m *GenesisState) GetParams() Params {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "sheprotocol.shechain.mint.GenesisState")
+	proto.RegisterType((*GenesisState)(nil), "sheprotocol.blk-chain.mint.GenesisState")
 }
 
 func init() { proto.RegisterFile("mint/v1beta1/genesis.proto", fileDescriptor_1dfa75836a5d5f23) }

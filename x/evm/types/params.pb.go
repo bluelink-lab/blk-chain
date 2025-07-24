@@ -106,7 +106,7 @@ func (m *Params) GetTargetGasUsedPerBlock() uint64 {
 }
 
 func init() {
-	proto.RegisterType((*Params)(nil), "sheprotocol.shechain.evm.Params")
+	proto.RegisterType((*Params)(nil), "sheprotocol.blk-chain.evm.Params")
 }
 
 func init() { proto.RegisterFile("evm/params.proto", fileDescriptor_9272f3679901ea94) }

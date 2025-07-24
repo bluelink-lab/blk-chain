@@ -194,10 +194,10 @@ func (m *QueryEpochResponse) GetEpoch() Epoch {
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.shechain.epoch.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.shechain.epoch.QueryParamsResponse")
-	proto.RegisterType((*QueryEpochRequest)(nil), "sheprotocol.shechain.epoch.QueryEpochRequest")
-	proto.RegisterType((*QueryEpochResponse)(nil), "sheprotocol.shechain.epoch.QueryEpochResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.blk-chain.epoch.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.blk-chain.epoch.QueryParamsResponse")
+	proto.RegisterType((*QueryEpochRequest)(nil), "sheprotocol.blk-chain.epoch.QueryEpochRequest")
+	proto.RegisterType((*QueryEpochResponse)(nil), "sheprotocol.blk-chain.epoch.QueryEpochResponse")
 }
 
 func init() { proto.RegisterFile("epoch/query.proto", fileDescriptor_05537adf7c5c875f) }
@@ -258,7 +258,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Epoch(ctx context.Context, in *QueryEpochRequest, opts ...grpc.CallOption) (*QueryEpochResponse, error) {
 	out := new(QueryEpochResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.epoch.Query/Epoch", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.epoch.Query/Epoch", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -267,7 +267,7 @@ func (c *queryClient) Epoch(ctx context.Context, in *QueryEpochRequest, opts ...
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.epoch.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.epoch.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -307,7 +307,7 @@ func _Query_Epoch_Handler(srv interface{}, ctx context.Context, dec func(interfa
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.epoch.Query/Epoch",
+		FullMethod: "/sheprotocol.blk-chain.epoch.Query/Epoch",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Epoch(ctx, req.(*QueryEpochRequest))
@@ -325,7 +325,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.epoch.Query/Params",
+		FullMethod: "/sheprotocol.blk-chain.epoch.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -334,7 +334,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.epoch.Query",
+	ServiceName: "sheprotocol.blk-chain.epoch.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

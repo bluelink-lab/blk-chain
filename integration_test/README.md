@@ -27,7 +27,7 @@ A typical yaml test case would look like this:
     # Add comments for what this command is doing
     - cmd: <Replace with bash command>
       env: <Add if you want to store the output as an env variable>
-      node: <Optional, default is she-node-0>
+      node: <Optional, default is blk-node-0>
     # Add comments for what this command is doing
     - cmd: <Replace with bash command>
       env: RESULT
@@ -60,7 +60,7 @@ One simple example for verify chain is started and running fine:
 | inputs     | Yes      | Contains a list of command inputs to run one by one.                                                                                          |
 | cmd        | Yes      | Exact blkd or bash command to run.                                                                                                            |
 | env        | No       | If given, the command output will be persisted to this env variable, which can be referenced by all below commands                            |
-| node       | No       | If given, the command will be executed on a specific container, default to she-node-0                                                         |
+| node       | No       | If given, the command will be executed on a specific container, default to blk-node-0                                                         |
 | verifiers  | Yes      | Contains a list of verify functions to check correctness                                                                                      |
 | type       | Yes      | Currently support either `eval` or `regex`.                                                                                                   |
 | result     | Yes      | Pick any env variables you want to pass in for regex match                                                                                    |

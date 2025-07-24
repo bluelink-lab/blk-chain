@@ -18,7 +18,7 @@ blkd version # Uncomment the below line if there are any dependency issues
 # ldd build/blkd
 
 # Initialize validator node
-MONIKER="she-node-$NODE_ID"
+MONIKER="blk-node-$NODE_ID"
 
 blkd init "$MONIKER" --chain-id she >/dev/null 2>&1
 
@@ -50,7 +50,7 @@ blkd add-genesis-account "$GENESIS_ACCOUNT_ADDRESS" 10000000ublt,10000000uusdc,1
 
 # Create gentx
 printf "12345678\n" | blkd gentx "$ACCOUNT_NAME" 10000000ublt --chain-id she
-cp ~/.she/config/gentx/* build/generated/gentx/
+cp ~/.blt/config/gentx/* build/generated/gentx/
 
 # Creating some testing accounts
 echo "Creating $NUM_ACCOUNTS accounts"

@@ -931,27 +931,27 @@ func (m *QueryParamsResponse) GetParams() Params {
 }
 
 func init() {
-	proto.RegisterType((*QueryExchangeRateRequest)(nil), "sheprotocol.shechain.oracle.QueryExchangeRateRequest")
-	proto.RegisterType((*QueryExchangeRateResponse)(nil), "sheprotocol.shechain.oracle.QueryExchangeRateResponse")
-	proto.RegisterType((*QueryExchangeRatesRequest)(nil), "sheprotocol.shechain.oracle.QueryExchangeRatesRequest")
-	proto.RegisterType((*DenomOracleExchangeRatePair)(nil), "sheprotocol.shechain.oracle.DenomOracleExchangeRatePair")
-	proto.RegisterType((*QueryExchangeRatesResponse)(nil), "sheprotocol.shechain.oracle.QueryExchangeRatesResponse")
-	proto.RegisterType((*QueryActivesRequest)(nil), "sheprotocol.shechain.oracle.QueryActivesRequest")
-	proto.RegisterType((*QueryActivesResponse)(nil), "sheprotocol.shechain.oracle.QueryActivesResponse")
-	proto.RegisterType((*QueryVoteTargetsRequest)(nil), "sheprotocol.shechain.oracle.QueryVoteTargetsRequest")
-	proto.RegisterType((*QueryVoteTargetsResponse)(nil), "sheprotocol.shechain.oracle.QueryVoteTargetsResponse")
-	proto.RegisterType((*QueryPriceSnapshotHistoryRequest)(nil), "sheprotocol.shechain.oracle.QueryPriceSnapshotHistoryRequest")
-	proto.RegisterType((*QueryPriceSnapshotHistoryResponse)(nil), "sheprotocol.shechain.oracle.QueryPriceSnapshotHistoryResponse")
-	proto.RegisterType((*QueryTwapsRequest)(nil), "sheprotocol.shechain.oracle.QueryTwapsRequest")
-	proto.RegisterType((*QueryTwapsResponse)(nil), "sheprotocol.shechain.oracle.QueryTwapsResponse")
-	proto.RegisterType((*QueryFeederDelegationRequest)(nil), "sheprotocol.shechain.oracle.QueryFeederDelegationRequest")
-	proto.RegisterType((*QueryFeederDelegationResponse)(nil), "sheprotocol.shechain.oracle.QueryFeederDelegationResponse")
-	proto.RegisterType((*QueryVotePenaltyCounterRequest)(nil), "sheprotocol.shechain.oracle.QueryVotePenaltyCounterRequest")
-	proto.RegisterType((*QueryVotePenaltyCounterResponse)(nil), "sheprotocol.shechain.oracle.QueryVotePenaltyCounterResponse")
-	proto.RegisterType((*QuerySlashWindowRequest)(nil), "sheprotocol.shechain.oracle.QuerySlashWindowRequest")
-	proto.RegisterType((*QuerySlashWindowResponse)(nil), "sheprotocol.shechain.oracle.QuerySlashWindowResponse")
-	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.shechain.oracle.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.shechain.oracle.QueryParamsResponse")
+	proto.RegisterType((*QueryExchangeRateRequest)(nil), "sheprotocol.blk-chain.oracle.QueryExchangeRateRequest")
+	proto.RegisterType((*QueryExchangeRateResponse)(nil), "sheprotocol.blk-chain.oracle.QueryExchangeRateResponse")
+	proto.RegisterType((*QueryExchangeRatesRequest)(nil), "sheprotocol.blk-chain.oracle.QueryExchangeRatesRequest")
+	proto.RegisterType((*DenomOracleExchangeRatePair)(nil), "sheprotocol.blk-chain.oracle.DenomOracleExchangeRatePair")
+	proto.RegisterType((*QueryExchangeRatesResponse)(nil), "sheprotocol.blk-chain.oracle.QueryExchangeRatesResponse")
+	proto.RegisterType((*QueryActivesRequest)(nil), "sheprotocol.blk-chain.oracle.QueryActivesRequest")
+	proto.RegisterType((*QueryActivesResponse)(nil), "sheprotocol.blk-chain.oracle.QueryActivesResponse")
+	proto.RegisterType((*QueryVoteTargetsRequest)(nil), "sheprotocol.blk-chain.oracle.QueryVoteTargetsRequest")
+	proto.RegisterType((*QueryVoteTargetsResponse)(nil), "sheprotocol.blk-chain.oracle.QueryVoteTargetsResponse")
+	proto.RegisterType((*QueryPriceSnapshotHistoryRequest)(nil), "sheprotocol.blk-chain.oracle.QueryPriceSnapshotHistoryRequest")
+	proto.RegisterType((*QueryPriceSnapshotHistoryResponse)(nil), "sheprotocol.blk-chain.oracle.QueryPriceSnapshotHistoryResponse")
+	proto.RegisterType((*QueryTwapsRequest)(nil), "sheprotocol.blk-chain.oracle.QueryTwapsRequest")
+	proto.RegisterType((*QueryTwapsResponse)(nil), "sheprotocol.blk-chain.oracle.QueryTwapsResponse")
+	proto.RegisterType((*QueryFeederDelegationRequest)(nil), "sheprotocol.blk-chain.oracle.QueryFeederDelegationRequest")
+	proto.RegisterType((*QueryFeederDelegationResponse)(nil), "sheprotocol.blk-chain.oracle.QueryFeederDelegationResponse")
+	proto.RegisterType((*QueryVotePenaltyCounterRequest)(nil), "sheprotocol.blk-chain.oracle.QueryVotePenaltyCounterRequest")
+	proto.RegisterType((*QueryVotePenaltyCounterResponse)(nil), "sheprotocol.blk-chain.oracle.QueryVotePenaltyCounterResponse")
+	proto.RegisterType((*QuerySlashWindowRequest)(nil), "sheprotocol.blk-chain.oracle.QuerySlashWindowRequest")
+	proto.RegisterType((*QuerySlashWindowResponse)(nil), "sheprotocol.blk-chain.oracle.QuerySlashWindowResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.blk-chain.oracle.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.blk-chain.oracle.QueryParamsResponse")
 }
 
 func init() { proto.RegisterFile("oracle/query.proto", fileDescriptor_562b782cb9ac197e) }
@@ -1072,7 +1072,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) ExchangeRate(ctx context.Context, in *QueryExchangeRateRequest, opts ...grpc.CallOption) (*QueryExchangeRateResponse, error) {
 	out := new(QueryExchangeRateResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/ExchangeRate", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/ExchangeRate", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1081,7 +1081,7 @@ func (c *queryClient) ExchangeRate(ctx context.Context, in *QueryExchangeRateReq
 
 func (c *queryClient) ExchangeRates(ctx context.Context, in *QueryExchangeRatesRequest, opts ...grpc.CallOption) (*QueryExchangeRatesResponse, error) {
 	out := new(QueryExchangeRatesResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/ExchangeRates", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/ExchangeRates", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1090,7 +1090,7 @@ func (c *queryClient) ExchangeRates(ctx context.Context, in *QueryExchangeRatesR
 
 func (c *queryClient) Actives(ctx context.Context, in *QueryActivesRequest, opts ...grpc.CallOption) (*QueryActivesResponse, error) {
 	out := new(QueryActivesResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/Actives", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/Actives", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1099,7 +1099,7 @@ func (c *queryClient) Actives(ctx context.Context, in *QueryActivesRequest, opts
 
 func (c *queryClient) VoteTargets(ctx context.Context, in *QueryVoteTargetsRequest, opts ...grpc.CallOption) (*QueryVoteTargetsResponse, error) {
 	out := new(QueryVoteTargetsResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/VoteTargets", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/VoteTargets", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1108,7 +1108,7 @@ func (c *queryClient) VoteTargets(ctx context.Context, in *QueryVoteTargetsReque
 
 func (c *queryClient) PriceSnapshotHistory(ctx context.Context, in *QueryPriceSnapshotHistoryRequest, opts ...grpc.CallOption) (*QueryPriceSnapshotHistoryResponse, error) {
 	out := new(QueryPriceSnapshotHistoryResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/PriceSnapshotHistory", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/PriceSnapshotHistory", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1117,7 +1117,7 @@ func (c *queryClient) PriceSnapshotHistory(ctx context.Context, in *QueryPriceSn
 
 func (c *queryClient) Twaps(ctx context.Context, in *QueryTwapsRequest, opts ...grpc.CallOption) (*QueryTwapsResponse, error) {
 	out := new(QueryTwapsResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/Twaps", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/Twaps", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1126,7 +1126,7 @@ func (c *queryClient) Twaps(ctx context.Context, in *QueryTwapsRequest, opts ...
 
 func (c *queryClient) FeederDelegation(ctx context.Context, in *QueryFeederDelegationRequest, opts ...grpc.CallOption) (*QueryFeederDelegationResponse, error) {
 	out := new(QueryFeederDelegationResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/FeederDelegation", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/FeederDelegation", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1135,7 +1135,7 @@ func (c *queryClient) FeederDelegation(ctx context.Context, in *QueryFeederDeleg
 
 func (c *queryClient) VotePenaltyCounter(ctx context.Context, in *QueryVotePenaltyCounterRequest, opts ...grpc.CallOption) (*QueryVotePenaltyCounterResponse, error) {
 	out := new(QueryVotePenaltyCounterResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/VotePenaltyCounter", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/VotePenaltyCounter", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1144,7 +1144,7 @@ func (c *queryClient) VotePenaltyCounter(ctx context.Context, in *QueryVotePenal
 
 func (c *queryClient) SlashWindow(ctx context.Context, in *QuerySlashWindowRequest, opts ...grpc.CallOption) (*QuerySlashWindowResponse, error) {
 	out := new(QuerySlashWindowResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/SlashWindow", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/SlashWindow", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1153,7 +1153,7 @@ func (c *queryClient) SlashWindow(ctx context.Context, in *QuerySlashWindowReque
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.oracle.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.oracle.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1232,7 +1232,7 @@ func _Query_ExchangeRate_Handler(srv interface{}, ctx context.Context, dec func(
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/ExchangeRate",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/ExchangeRate",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).ExchangeRate(ctx, req.(*QueryExchangeRateRequest))
@@ -1250,7 +1250,7 @@ func _Query_ExchangeRates_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/ExchangeRates",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/ExchangeRates",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).ExchangeRates(ctx, req.(*QueryExchangeRatesRequest))
@@ -1268,7 +1268,7 @@ func _Query_Actives_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/Actives",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/Actives",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Actives(ctx, req.(*QueryActivesRequest))
@@ -1286,7 +1286,7 @@ func _Query_VoteTargets_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/VoteTargets",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/VoteTargets",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).VoteTargets(ctx, req.(*QueryVoteTargetsRequest))
@@ -1304,7 +1304,7 @@ func _Query_PriceSnapshotHistory_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/PriceSnapshotHistory",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/PriceSnapshotHistory",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PriceSnapshotHistory(ctx, req.(*QueryPriceSnapshotHistoryRequest))
@@ -1322,7 +1322,7 @@ func _Query_Twaps_Handler(srv interface{}, ctx context.Context, dec func(interfa
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/Twaps",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/Twaps",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Twaps(ctx, req.(*QueryTwapsRequest))
@@ -1340,7 +1340,7 @@ func _Query_FeederDelegation_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/FeederDelegation",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/FeederDelegation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).FeederDelegation(ctx, req.(*QueryFeederDelegationRequest))
@@ -1358,7 +1358,7 @@ func _Query_VotePenaltyCounter_Handler(srv interface{}, ctx context.Context, dec
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/VotePenaltyCounter",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/VotePenaltyCounter",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).VotePenaltyCounter(ctx, req.(*QueryVotePenaltyCounterRequest))
@@ -1376,7 +1376,7 @@ func _Query_SlashWindow_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/SlashWindow",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/SlashWindow",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).SlashWindow(ctx, req.(*QuerySlashWindowRequest))
@@ -1394,7 +1394,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.oracle.Query/Params",
+		FullMethod: "/sheprotocol.blk-chain.oracle.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -1403,7 +1403,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.oracle.Query",
+	ServiceName: "sheprotocol.blk-chain.oracle.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

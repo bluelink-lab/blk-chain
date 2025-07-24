@@ -213,9 +213,9 @@ func (m *PenaltyCounter) GetVotePenaltyCounter() *VotePenaltyCounter {
 }
 
 func init() {
-	proto.RegisterType((*GenesisState)(nil), "sheprotocol.shechain.oracle.GenesisState")
-	proto.RegisterType((*FeederDelegation)(nil), "sheprotocol.shechain.oracle.FeederDelegation")
-	proto.RegisterType((*PenaltyCounter)(nil), "sheprotocol.shechain.oracle.PenaltyCounter")
+	proto.RegisterType((*GenesisState)(nil), "sheprotocol.blk-chain.oracle.GenesisState")
+	proto.RegisterType((*FeederDelegation)(nil), "sheprotocol.blk-chain.oracle.FeederDelegation")
+	proto.RegisterType((*PenaltyCounter)(nil), "sheprotocol.blk-chain.oracle.PenaltyCounter")
 }
 
 func init() { proto.RegisterFile("oracle/genesis.proto", fileDescriptor_ce0b3a2b4a184fc3) }

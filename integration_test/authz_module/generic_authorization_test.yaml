@@ -3,14 +3,14 @@
     # Get admin addr
     - cmd: printf "12345678\n" | blkd keys list --output json | jq ".[] | select (.name==\"admin\")" | jq -r .address
       env: ADMIN_ADDR
-    # MSG type "/sheprotocol.shechain.tokenfactory.MsgCreateDenom"
+    # MSG type "/sheprotocol.blk-chain.tokenfactory.MsgCreateDenom"
     # create new grantee addr
     - cmd: printf "12345678\ny\n" | blkd keys add grantee --output json | jq -r ".address"
       env: GRANTEE_ADDR
     # send some funds to grantee for gas
     - cmd: printf "12345678\n" | blkd tx bank send admin $GRANTEE_ADDR 1she --fees 2000ublt -b block -y
     # create an authz grant for tokenfactory create denom
-    - cmd: printf "12345678\n" | blkd tx authz grant $GRANTEE_ADDR generic --msg-type "/sheprotocol.shechain.tokenfactory.MsgCreateDenom" --from admin --fees 2000ublt -b block -y
+    - cmd: printf "12345678\n" | blkd tx authz grant $GRANTEE_ADDR generic --msg-type "/sheprotocol.blk-chain.tokenfactory.MsgCreateDenom" --from admin --fees 2000ublt -b block -y
     - cmd: uuidgen
       env: TF_UUID
     # create TF create-denom tx and write to json

@@ -21,7 +21,7 @@ func (k *Keeper) VerifyBalance(ctx sdk.Context, addr common.Address) {
 		panic(err)
 	}
 	if totalSheBalance.Cmp(ethBalance) != 0 {
-		panic(fmt.Sprintf("difference for addr %s: she balance is %s, eth balance is %s", addr.Hex(), totalSheBalance, ethBalance))
+		panic(fmt.Sprintf("difference for addr %s: blt balance is %s, eth balance is %s", addr.Hex(), totalSheBalance, ethBalance))
 	}
 }
 

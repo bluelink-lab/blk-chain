@@ -617,18 +617,18 @@ func (m *MsgUpdateDenomResponse) XXX_DiscardUnknown() {
 var xxx_messageInfo_MsgUpdateDenomResponse proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*MsgCreateDenom)(nil), "sheprotocol.shechain.tokenfactory.MsgCreateDenom")
-	proto.RegisterType((*MsgCreateDenomResponse)(nil), "sheprotocol.shechain.tokenfactory.MsgCreateDenomResponse")
-	proto.RegisterType((*MsgMint)(nil), "sheprotocol.shechain.tokenfactory.MsgMint")
-	proto.RegisterType((*MsgMintResponse)(nil), "sheprotocol.shechain.tokenfactory.MsgMintResponse")
-	proto.RegisterType((*MsgBurn)(nil), "sheprotocol.shechain.tokenfactory.MsgBurn")
-	proto.RegisterType((*MsgBurnResponse)(nil), "sheprotocol.shechain.tokenfactory.MsgBurnResponse")
-	proto.RegisterType((*MsgChangeAdmin)(nil), "sheprotocol.shechain.tokenfactory.MsgChangeAdmin")
-	proto.RegisterType((*MsgChangeAdminResponse)(nil), "sheprotocol.shechain.tokenfactory.MsgChangeAdminResponse")
-	proto.RegisterType((*MsgSetDenomMetadata)(nil), "sheprotocol.shechain.tokenfactory.MsgSetDenomMetadata")
-	proto.RegisterType((*MsgSetDenomMetadataResponse)(nil), "sheprotocol.shechain.tokenfactory.MsgSetDenomMetadataResponse")
-	proto.RegisterType((*MsgUpdateDenom)(nil), "sheprotocol.shechain.tokenfactory.MsgUpdateDenom")
-	proto.RegisterType((*MsgUpdateDenomResponse)(nil), "sheprotocol.shechain.tokenfactory.MsgUpdateDenomResponse")
+	proto.RegisterType((*MsgCreateDenom)(nil), "sheprotocol.blk-chain.tokenfactory.MsgCreateDenom")
+	proto.RegisterType((*MsgCreateDenomResponse)(nil), "sheprotocol.blk-chain.tokenfactory.MsgCreateDenomResponse")
+	proto.RegisterType((*MsgMint)(nil), "sheprotocol.blk-chain.tokenfactory.MsgMint")
+	proto.RegisterType((*MsgMintResponse)(nil), "sheprotocol.blk-chain.tokenfactory.MsgMintResponse")
+	proto.RegisterType((*MsgBurn)(nil), "sheprotocol.blk-chain.tokenfactory.MsgBurn")
+	proto.RegisterType((*MsgBurnResponse)(nil), "sheprotocol.blk-chain.tokenfactory.MsgBurnResponse")
+	proto.RegisterType((*MsgChangeAdmin)(nil), "sheprotocol.blk-chain.tokenfactory.MsgChangeAdmin")
+	proto.RegisterType((*MsgChangeAdminResponse)(nil), "sheprotocol.blk-chain.tokenfactory.MsgChangeAdminResponse")
+	proto.RegisterType((*MsgSetDenomMetadata)(nil), "sheprotocol.blk-chain.tokenfactory.MsgSetDenomMetadata")
+	proto.RegisterType((*MsgSetDenomMetadataResponse)(nil), "sheprotocol.blk-chain.tokenfactory.MsgSetDenomMetadataResponse")
+	proto.RegisterType((*MsgUpdateDenom)(nil), "sheprotocol.blk-chain.tokenfactory.MsgUpdateDenom")
+	proto.RegisterType((*MsgUpdateDenomResponse)(nil), "sheprotocol.blk-chain.tokenfactory.MsgUpdateDenomResponse")
 }
 
 func init() { proto.RegisterFile("tokenfactory/tx.proto", fileDescriptor_51ab120c97d57038) }
@@ -710,7 +710,7 @@ func NewMsgClient(cc grpc1.ClientConn) MsgClient {
 
 func (c *msgClient) CreateDenom(ctx context.Context, in *MsgCreateDenom, opts ...grpc.CallOption) (*MsgCreateDenomResponse, error) {
 	out := new(MsgCreateDenomResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Msg/CreateDenom", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Msg/CreateDenom", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -719,7 +719,7 @@ func (c *msgClient) CreateDenom(ctx context.Context, in *MsgCreateDenom, opts ..
 
 func (c *msgClient) UpdateDenom(ctx context.Context, in *MsgUpdateDenom, opts ...grpc.CallOption) (*MsgUpdateDenomResponse, error) {
 	out := new(MsgUpdateDenomResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Msg/UpdateDenom", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Msg/UpdateDenom", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -728,7 +728,7 @@ func (c *msgClient) UpdateDenom(ctx context.Context, in *MsgUpdateDenom, opts ..
 
 func (c *msgClient) Mint(ctx context.Context, in *MsgMint, opts ...grpc.CallOption) (*MsgMintResponse, error) {
 	out := new(MsgMintResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Msg/Mint", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Msg/Mint", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -737,7 +737,7 @@ func (c *msgClient) Mint(ctx context.Context, in *MsgMint, opts ...grpc.CallOpti
 
 func (c *msgClient) Burn(ctx context.Context, in *MsgBurn, opts ...grpc.CallOption) (*MsgBurnResponse, error) {
 	out := new(MsgBurnResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Msg/Burn", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Msg/Burn", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -746,7 +746,7 @@ func (c *msgClient) Burn(ctx context.Context, in *MsgBurn, opts ...grpc.CallOpti
 
 func (c *msgClient) ChangeAdmin(ctx context.Context, in *MsgChangeAdmin, opts ...grpc.CallOption) (*MsgChangeAdminResponse, error) {
 	out := new(MsgChangeAdminResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Msg/ChangeAdmin", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Msg/ChangeAdmin", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -755,7 +755,7 @@ func (c *msgClient) ChangeAdmin(ctx context.Context, in *MsgChangeAdmin, opts ..
 
 func (c *msgClient) SetDenomMetadata(ctx context.Context, in *MsgSetDenomMetadata, opts ...grpc.CallOption) (*MsgSetDenomMetadataResponse, error) {
 	out := new(MsgSetDenomMetadataResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Msg/SetDenomMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Msg/SetDenomMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -809,7 +809,7 @@ func _Msg_CreateDenom_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Msg/CreateDenom",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Msg/CreateDenom",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).CreateDenom(ctx, req.(*MsgCreateDenom))
@@ -827,7 +827,7 @@ func _Msg_UpdateDenom_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Msg/UpdateDenom",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Msg/UpdateDenom",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).UpdateDenom(ctx, req.(*MsgUpdateDenom))
@@ -845,7 +845,7 @@ func _Msg_Mint_Handler(srv interface{}, ctx context.Context, dec func(interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Msg/Mint",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Msg/Mint",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).Mint(ctx, req.(*MsgMint))
@@ -863,7 +863,7 @@ func _Msg_Burn_Handler(srv interface{}, ctx context.Context, dec func(interface{
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Msg/Burn",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Msg/Burn",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).Burn(ctx, req.(*MsgBurn))
@@ -881,7 +881,7 @@ func _Msg_ChangeAdmin_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Msg/ChangeAdmin",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Msg/ChangeAdmin",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).ChangeAdmin(ctx, req.(*MsgChangeAdmin))
@@ -899,7 +899,7 @@ func _Msg_SetDenomMetadata_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Msg/SetDenomMetadata",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Msg/SetDenomMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(MsgServer).SetDenomMetadata(ctx, req.(*MsgSetDenomMetadata))
@@ -908,7 +908,7 @@ func _Msg_SetDenomMetadata_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 var _Msg_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.tokenfactory.Msg",
+	ServiceName: "sheprotocol.blk-chain.tokenfactory.Msg",
 	HandlerType: (*MsgServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

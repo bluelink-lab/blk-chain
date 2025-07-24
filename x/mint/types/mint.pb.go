@@ -408,12 +408,12 @@ func (m *Version2Params) GetTokenReleaseSchedule() []Version2ScheduledTokenRelea
 }
 
 func init() {
-	proto.RegisterType((*Minter)(nil), "sheprotocol.shechain.mint.Minter")
-	proto.RegisterType((*ScheduledTokenRelease)(nil), "sheprotocol.shechain.mint.ScheduledTokenRelease")
-	proto.RegisterType((*Params)(nil), "sheprotocol.shechain.mint.Params")
-	proto.RegisterType((*Version2Minter)(nil), "sheprotocol.shechain.mint.Version2Minter")
-	proto.RegisterType((*Version2ScheduledTokenRelease)(nil), "sheprotocol.shechain.mint.Version2ScheduledTokenRelease")
-	proto.RegisterType((*Version2Params)(nil), "sheprotocol.shechain.mint.Version2Params")
+	proto.RegisterType((*Minter)(nil), "sheprotocol.blk-chain.mint.Minter")
+	proto.RegisterType((*ScheduledTokenRelease)(nil), "sheprotocol.blk-chain.mint.ScheduledTokenRelease")
+	proto.RegisterType((*Params)(nil), "sheprotocol.blk-chain.mint.Params")
+	proto.RegisterType((*Version2Minter)(nil), "sheprotocol.blk-chain.mint.Version2Minter")
+	proto.RegisterType((*Version2ScheduledTokenRelease)(nil), "sheprotocol.blk-chain.mint.Version2ScheduledTokenRelease")
+	proto.RegisterType((*Version2Params)(nil), "sheprotocol.blk-chain.mint.Version2Params")
 }
 
 func init() { proto.RegisterFile("mint/v1beta1/mint.proto", fileDescriptor_06339c129491fd39) }

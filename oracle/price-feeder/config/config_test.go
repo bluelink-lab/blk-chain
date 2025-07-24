@@ -29,7 +29,7 @@ func TestValidate(t *testing.T) {
 			},
 			Keyring: config.Keyring{
 				Backend: "test",
-				Dir:     "/Users/username/.she",
+				Dir:     "/Users/username/.blt",
 			},
 			RPC: config.RPC{
 				TMRPCEndpoint: "http://localhost:26657",
@@ -188,7 +188,7 @@ prefix = "blt"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.she"
+dir = "/Users/username/.blt"
 pass = "keyringPassword"
 
 [rpc]
@@ -280,7 +280,7 @@ prefix = "blt"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.she"
+dir = "/Users/username/.blt"
 pass = "keyringPassword"
 
 [rpc]
@@ -435,7 +435,7 @@ prefix = "blt"
 
 [keyring]
 backend = "test"
-dir = "/Users/username/.she"
+dir = "/Users/username/.blt"
 pass = "keyringPassword"
 
 [rpc]

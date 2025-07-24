@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.epoch;
+package sheprotocol.blk-chain.epoch;
 
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
@@ -14,11 +14,11 @@ option go_package = "github.com/bluelink-lab/blk-chain/x/epoch/types";
 service Query {
   // Query the epoch in the chain
   rpc Epoch(QueryEpochRequest) returns (QueryEpochResponse) {
-    option (google.api.http).get = "/she-protocol/shechain/epoch/epoch";
+    option (google.api.http).get = "/bluelink-lab/blk-chain/epoch/epoch";
   }
   // Parameters queries the parameters of the module.
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
-    option (google.api.http).get = "/she-protocol/shechain/epoch/params";
+    option (google.api.http).get = "/bluelink-lab/blk-chain/epoch/params";
   }
   // this line is used by starport scaffolding # 2
 }

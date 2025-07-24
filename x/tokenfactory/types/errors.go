@@ -28,7 +28,7 @@ var (
 	ErrEncodeTokenFactorySetMetadata  = sdkerrors.Register(ModuleName, 17, "Error while encoding tokenfactory set metadata msg in wasmd")
 	ErrEncodingDenomAuthorityMetadata = sdkerrors.Register(ModuleName, 18, "Error encoding denom authority metadata as JSON")
 	ErrEncodingDenomsFromCreator      = sdkerrors.Register(ModuleName, 19, "Error encoding denoms from creator as JSON")
-	ErrUnknownSheTokenFactoryQuery    = sdkerrors.Register(ModuleName, 23, "Error unknown she token factory query")
+	ErrUnknownSheTokenFactoryQuery    = sdkerrors.Register(ModuleName, 23, "Error unknown blt token factory query")
 	ErrAllowListTooLarge              = sdkerrors.Register(ModuleName, 24, "allowlist too large")
 	ErrAllowListUndefined             = sdkerrors.Register(ModuleName, 25, "allowlist undefined")
 )

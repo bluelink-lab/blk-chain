@@ -8,7 +8,7 @@ BLT is the fastest general purpose L1 blockchain and the first parallelized EVM.
 **BLT** is a high-performance, low-fee, delegated proof-of-stake blockchain designed for developers. It supports optimistic parallel execution of both EVM and CosmWasm, opening up new design possibilities. With unique optimizations like twin turbo consensus and SheDB, BLT ensures consistent 400ms block times and a transaction throughput that’s orders of magnitude higher than Ethereum. This means faster, more cost-effective operations. Plus, BLT’s seamless interoperability between EVM and CosmWasm gives developers native access to the entire Cosmos ecosystem, including IBC tokens, multi-sig accounts, fee grants, and more.
 
 # Documentation
-For the most up to date documentation please visit https://www.docs.she.io/
+For the most up to date documentation please visit https://www.docs.blt.io/
 
 # BLT Optimizations
 BLT introduces four major innovations:
@@ -56,7 +56,7 @@ All these features combine to unlock a brand new, scalable design space for the 
 
 ```bash
 git clone https://github.com/bluelink-lab/blk-chain
-cd she-chain
+cd blk-chain
 git checkout $VERSION
 make install
 ```
@@ -74,9 +74,9 @@ make install
 
 * Initialize node: `blkd init <moniker> --chain-id blk-testnet-1`
 
-* Download the Genesis file: `wget https://github.com/she-protocol/testnet/raw/main/blk-testnet-1/genesis.json -P $HOME/.she/config/`
+* Download the Genesis file: `wget https://github.com/she-protocol/testnet/raw/main/blk-testnet-1/genesis.json -P $HOME/.blt/config/`
  
-* Edit the minimum-gas-prices in ${HOME}/.she/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01ublt"/g' $HOME/.she/config/app.toml`
+* Edit the minimum-gas-prices in ${HOME}/.blt/config/app.toml: `sed -i 's/minimum-gas-prices = ""/minimum-gas-prices = "0.01ublt"/g' $HOME/.blt/config/app.toml`
 
 * Start blkd by creating a systemd service to run the node in the background
 `nano /etc/systemd/system/blkd.service`

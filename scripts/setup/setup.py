@@ -19,7 +19,7 @@ logging.getLogger().setLevel(logging.INFO)
 
 HOME_PATH = os.path.expanduser('~')
 
-SHE_ROOT_DIR = f'{HOME_PATH}/.she'
+SHE_ROOT_DIR = f'{HOME_PATH}/.blt'
 SHE_CONFIG_DIR = f'{SHE_ROOT_DIR}/config'
 SHE_CONFIG_TOML_PATH = f'{SHE_CONFIG_DIR}/config.toml'
 

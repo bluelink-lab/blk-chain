@@ -317,7 +317,7 @@ func (m *QueryStaticCallResponse) GetData() []byte {
 }
 
 type QueryPointerRequest struct {
-	PointerType PointerType `protobuf:"varint,1,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.shechain.evm.PointerType" json:"pointer_type,omitempty"`
+	PointerType PointerType `protobuf:"varint,1,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.blk-chain.evm.PointerType" json:"pointer_type,omitempty"`
 	Pointee     string      `protobuf:"bytes,2,opt,name=pointee,proto3" json:"pointee,omitempty"`
 }
 
@@ -429,7 +429,7 @@ func (m *QueryPointerResponse) GetExists() bool {
 }
 
 type QueryPointerVersionRequest struct {
-	PointerType PointerType `protobuf:"varint,1,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.shechain.evm.PointerType" json:"pointer_type,omitempty"`
+	PointerType PointerType `protobuf:"varint,1,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.blk-chain.evm.PointerType" json:"pointer_type,omitempty"`
 }
 
 func (m *QueryPointerVersionRequest) Reset()         { *m = QueryPointerVersionRequest{} }
@@ -525,7 +525,7 @@ func (m *QueryPointerVersionResponse) GetCwCodeId() uint64 {
 }
 
 type QueryPointeeRequest struct {
-	PointerType PointerType `protobuf:"varint,1,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.shechain.evm.PointerType" json:"pointer_type,omitempty"`
+	PointerType PointerType `protobuf:"varint,1,opt,name=pointer_type,json=pointerType,proto3,enum=sheprotocol.blk-chain.evm.PointerType" json:"pointer_type,omitempty"`
 	Pointer     string      `protobuf:"bytes,2,opt,name=pointer,proto3" json:"pointer,omitempty"`
 }
 
@@ -637,18 +637,18 @@ func (m *QueryPointeeResponse) GetExists() bool {
 }
 
 func init() {
-	proto.RegisterType((*QuerySheAddressByEVMAddressRequest)(nil), "sheprotocol.shechain.evm.QuerySheAddressByEVMAddressRequest")
-	proto.RegisterType((*QuerySheAddressByEVMAddressResponse)(nil), "sheprotocol.shechain.evm.QuerySheAddressByEVMAddressResponse")
-	proto.RegisterType((*QueryEVMAddressBySheAddressRequest)(nil), "sheprotocol.shechain.evm.QueryEVMAddressBySheAddressRequest")
-	proto.RegisterType((*QueryEVMAddressBySheAddressResponse)(nil), "sheprotocol.shechain.evm.QueryEVMAddressBySheAddressResponse")
-	proto.RegisterType((*QueryStaticCallRequest)(nil), "sheprotocol.shechain.evm.QueryStaticCallRequest")
-	proto.RegisterType((*QueryStaticCallResponse)(nil), "sheprotocol.shechain.evm.QueryStaticCallResponse")
-	proto.RegisterType((*QueryPointerRequest)(nil), "sheprotocol.shechain.evm.QueryPointerRequest")
-	proto.RegisterType((*QueryPointerResponse)(nil), "sheprotocol.shechain.evm.QueryPointerResponse")
-	proto.RegisterType((*QueryPointerVersionRequest)(nil), "sheprotocol.shechain.evm.QueryPointerVersionRequest")
-	proto.RegisterType((*QueryPointerVersionResponse)(nil), "sheprotocol.shechain.evm.QueryPointerVersionResponse")
-	proto.RegisterType((*QueryPointeeRequest)(nil), "sheprotocol.shechain.evm.QueryPointeeRequest")
-	proto.RegisterType((*QueryPointeeResponse)(nil), "sheprotocol.shechain.evm.QueryPointeeResponse")
+	proto.RegisterType((*QuerySheAddressByEVMAddressRequest)(nil), "sheprotocol.blk-chain.evm.QuerySheAddressByEVMAddressRequest")
+	proto.RegisterType((*QuerySheAddressByEVMAddressResponse)(nil), "sheprotocol.blk-chain.evm.QuerySheAddressByEVMAddressResponse")
+	proto.RegisterType((*QueryEVMAddressBySheAddressRequest)(nil), "sheprotocol.blk-chain.evm.QueryEVMAddressBySheAddressRequest")
+	proto.RegisterType((*QueryEVMAddressBySheAddressResponse)(nil), "sheprotocol.blk-chain.evm.QueryEVMAddressBySheAddressResponse")
+	proto.RegisterType((*QueryStaticCallRequest)(nil), "sheprotocol.blk-chain.evm.QueryStaticCallRequest")
+	proto.RegisterType((*QueryStaticCallResponse)(nil), "sheprotocol.blk-chain.evm.QueryStaticCallResponse")
+	proto.RegisterType((*QueryPointerRequest)(nil), "sheprotocol.blk-chain.evm.QueryPointerRequest")
+	proto.RegisterType((*QueryPointerResponse)(nil), "sheprotocol.blk-chain.evm.QueryPointerResponse")
+	proto.RegisterType((*QueryPointerVersionRequest)(nil), "sheprotocol.blk-chain.evm.QueryPointerVersionRequest")
+	proto.RegisterType((*QueryPointerVersionResponse)(nil), "sheprotocol.blk-chain.evm.QueryPointerVersionResponse")
+	proto.RegisterType((*QueryPointeeRequest)(nil), "sheprotocol.blk-chain.evm.QueryPointeeRequest")
+	proto.RegisterType((*QueryPointeeResponse)(nil), "sheprotocol.blk-chain.evm.QueryPointeeResponse")
 }
 
 func init() { proto.RegisterFile("evm/query.proto", fileDescriptor_11c0d37eed5339f7) }
@@ -729,7 +729,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) SheAddressByEVMAddress(ctx context.Context, in *QuerySheAddressByEVMAddressRequest, opts ...grpc.CallOption) (*QuerySheAddressByEVMAddressResponse, error) {
 	out := new(QuerySheAddressByEVMAddressResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Query/SheAddressByEVMAddress", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Query/SheAddressByEVMAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -738,7 +738,7 @@ func (c *queryClient) SheAddressByEVMAddress(ctx context.Context, in *QuerySheAd
 
 func (c *queryClient) EVMAddressBySheAddress(ctx context.Context, in *QueryEVMAddressBySheAddressRequest, opts ...grpc.CallOption) (*QueryEVMAddressBySheAddressResponse, error) {
 	out := new(QueryEVMAddressBySheAddressResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Query/EVMAddressBySheAddress", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Query/EVMAddressBySheAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -747,7 +747,7 @@ func (c *queryClient) EVMAddressBySheAddress(ctx context.Context, in *QueryEVMAd
 
 func (c *queryClient) StaticCall(ctx context.Context, in *QueryStaticCallRequest, opts ...grpc.CallOption) (*QueryStaticCallResponse, error) {
 	out := new(QueryStaticCallResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Query/StaticCall", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Query/StaticCall", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -756,7 +756,7 @@ func (c *queryClient) StaticCall(ctx context.Context, in *QueryStaticCallRequest
 
 func (c *queryClient) Pointer(ctx context.Context, in *QueryPointerRequest, opts ...grpc.CallOption) (*QueryPointerResponse, error) {
 	out := new(QueryPointerResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Query/Pointer", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Query/Pointer", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -765,7 +765,7 @@ func (c *queryClient) Pointer(ctx context.Context, in *QueryPointerRequest, opts
 
 func (c *queryClient) PointerVersion(ctx context.Context, in *QueryPointerVersionRequest, opts ...grpc.CallOption) (*QueryPointerVersionResponse, error) {
 	out := new(QueryPointerVersionResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Query/PointerVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Query/PointerVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -774,7 +774,7 @@ func (c *queryClient) PointerVersion(ctx context.Context, in *QueryPointerVersio
 
 func (c *queryClient) Pointee(ctx context.Context, in *QueryPointeeRequest, opts ...grpc.CallOption) (*QueryPointeeResponse, error) {
 	out := new(QueryPointeeResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.evm.Query/Pointee", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.evm.Query/Pointee", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -828,7 +828,7 @@ func _Query_SheAddressByEVMAddress_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Query/SheAddressByEVMAddress",
+		FullMethod: "/sheprotocol.blk-chain.evm.Query/SheAddressByEVMAddress",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).SheAddressByEVMAddress(ctx, req.(*QuerySheAddressByEVMAddressRequest))
@@ -846,7 +846,7 @@ func _Query_EVMAddressBySheAddress_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Query/EVMAddressBySheAddress",
+		FullMethod: "/sheprotocol.blk-chain.evm.Query/EVMAddressBySheAddress",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).EVMAddressBySheAddress(ctx, req.(*QueryEVMAddressBySheAddressRequest))
@@ -864,7 +864,7 @@ func _Query_StaticCall_Handler(srv interface{}, ctx context.Context, dec func(in
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Query/StaticCall",
+		FullMethod: "/sheprotocol.blk-chain.evm.Query/StaticCall",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).StaticCall(ctx, req.(*QueryStaticCallRequest))
@@ -882,7 +882,7 @@ func _Query_Pointer_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Query/Pointer",
+		FullMethod: "/sheprotocol.blk-chain.evm.Query/Pointer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Pointer(ctx, req.(*QueryPointerRequest))
@@ -900,7 +900,7 @@ func _Query_PointerVersion_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Query/PointerVersion",
+		FullMethod: "/sheprotocol.blk-chain.evm.Query/PointerVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).PointerVersion(ctx, req.(*QueryPointerVersionRequest))
@@ -918,7 +918,7 @@ func _Query_Pointee_Handler(srv interface{}, ctx context.Context, dec func(inter
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.evm.Query/Pointee",
+		FullMethod: "/sheprotocol.blk-chain.evm.Query/Pointee",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Pointee(ctx, req.(*QueryPointeeRequest))
@@ -927,7 +927,7 @@ func _Query_Pointee_Handler(srv interface{}, ctx context.Context, dec func(inter
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.evm.Query",
+	ServiceName: "sheprotocol.blk-chain.evm.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

@@ -9,7 +9,7 @@ ORACLE_ACCOUNT="oracle"
 VALIDATOR_ACCOUNT="node_admin"
 
 # Create an oracle account
-printf "12345678\n" | "$HOME/go/bin/blkd" keys add $ORACLE_ACCOUNT --output json > "$HOME/.she/config/oracle_key.json"
+printf "12345678\n" | "$HOME/go/bin/blkd" keys add $ORACLE_ACCOUNT --output json > "$HOME/.blt/config/oracle_key.json"
 ORACLE_ACCOUNT_ADDRESS=$(printf "12345678\n" | "$HOME/go/bin/blkd" keys show $ORACLE_ACCOUNT -a)
 SHEVALOPER=$(printf "12345678\n" | "$HOME/go/bin/blkd" keys show $VALIDATOR_ACCOUNT --bech=val -a)
 printf "12345678\n" | "$HOME/go/bin/blkd" tx oracle set-feeder "$ORACLE_ACCOUNT_ADDRESS" --from $VALIDATOR_ACCOUNT --fees 2000ublt -b block -y --chain-id she >/dev/null 2>&1

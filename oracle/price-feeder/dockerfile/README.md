@@ -32,14 +32,14 @@ base = "USDT"
 threshold = "2"
 
 [account]
-address = "she..."
-chain_id = "she-chain"
-validator = "shevaloper..."
+address = "blt..."
+chain_id = "blk-chain"
+validator = "bltvaloper..."
 prefix = "blt"
 
 [keyring]
 backend = "file"
-dir = "/root/.she"
+dir = "/root/.blt"
 
 [rpc]
 grpc_endpoint = "localhost:9090"
@@ -78,7 +78,7 @@ change node to your favorite `rpc` node
 
 ```bash
 sudo tee client.toml <<EOF
-chain-id = "she-chain"
+chain-id = "blk-chain"
 keyring-backend = "file"
 output = "text"
 node = "tcp://localhost:26657"
@@ -90,14 +90,14 @@ EOF
 ```bash
 blkd keys add oracle --keyring-backend file --recover
 ```
-In the she home directory (~/.she/) you should see the `keyring-file` folder.  This will be mounted as a volume when running the docker container.
+In the she home directory (~/.blt/) you should see the `keyring-file` folder.  This will be mounted as a volume when running the docker container.
 
 ## Run Docker Image
 ```bash
 docker run \
 --env PRICE_FEEDER_PASS=password \
--v ~/.she/keyring-file:/root/.she/keyring-file \
+-v ~/.blt/keyring-file:/root/.blt/keyring-file \
 -v "$PWD"/config.toml:/root/price-feeder/config.toml \
--v "$PWD"/client.toml:/root/.she/config/client.toml \
+-v "$PWD"/client.toml:/root/.blt/config/client.toml \
 -it price-feeder /root/price-feeder/config.toml
 ```

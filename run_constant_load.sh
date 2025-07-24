@@ -1,1 +1,1 @@
-/home/ubuntu/she-chain/build/loadtest
+/home/ubuntu/blk-chain/build/loadtest

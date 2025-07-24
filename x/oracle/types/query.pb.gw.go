@@ -838,25 +838,25 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Query_ExchangeRate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"she-protocol", "she-chain", "oracle", "denoms", "denom", "exchange_rate"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_ExchangeRate_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"bluelink-lab", "blk-chain", "oracle", "denoms", "denom", "exchange_rate"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_ExchangeRates_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"she-protocol", "she-chain", "oracle", "denoms", "exchange_rates"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_ExchangeRates_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"bluelink-lab", "blk-chain", "oracle", "denoms", "exchange_rates"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_Actives_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"she-protocol", "she-chain", "oracle", "denoms", "actives"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_Actives_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"bluelink-lab", "blk-chain", "oracle", "denoms", "actives"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_VoteTargets_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"she-protocol", "she-chain", "oracle", "denoms", "vote_targets"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_VoteTargets_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"bluelink-lab", "blk-chain", "oracle", "denoms", "vote_targets"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_PriceSnapshotHistory_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"she-protocol", "she-chain", "oracle", "denoms", "price_snapshot_history"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_PriceSnapshotHistory_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4}, []string{"bluelink-lab", "blk-chain", "oracle", "denoms", "price_snapshot_history"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_Twaps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"she-protocol", "she-chain", "oracle", "denoms", "twaps", "lookback_seconds"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_Twaps_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 2, 4, 1, 0, 4, 1, 5, 5}, []string{"bluelink-lab", "blk-chain", "oracle", "denoms", "twaps", "lookback_seconds"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_FeederDelegation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"she-protocol", "she-chain", "oracle", "validators", "validator_addr", "feeder"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_FeederDelegation_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"bluelink-lab", "blk-chain", "oracle", "validators", "validator_addr", "feeder"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_VotePenaltyCounter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"she-protocol", "she-chain", "oracle", "validators", "validator_addr", "vote_penalty_counter"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_VotePenaltyCounter_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3, 1, 0, 4, 1, 5, 4, 2, 5}, []string{"bluelink-lab", "blk-chain", "oracle", "validators", "validator_addr", "vote_penalty_counter"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_SlashWindow_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "she-chain", "oracle", "slash_window"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_SlashWindow_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "oracle", "slash_window"}, "", runtime.AssumeColonVerbOpt(true)))
 
-	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"she-protocol", "she-chain", "oracle", "params"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_Params_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "oracle", "params"}, "", runtime.AssumeColonVerbOpt(true)))
 )
 
 var (

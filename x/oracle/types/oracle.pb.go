@@ -465,15 +465,15 @@ func (m *VotePenaltyCounter) GetSuccessCount() uint64 {
 }
 
 func init() {
-	proto.RegisterType((*Params)(nil), "sheprotocol.shechain.oracle.Params")
-	proto.RegisterType((*Denom)(nil), "sheprotocol.shechain.oracle.Denom")
-	proto.RegisterType((*AggregateExchangeRateVote)(nil), "sheprotocol.shechain.oracle.AggregateExchangeRateVote")
-	proto.RegisterType((*ExchangeRateTuple)(nil), "sheprotocol.shechain.oracle.ExchangeRateTuple")
-	proto.RegisterType((*OracleExchangeRate)(nil), "sheprotocol.shechain.oracle.OracleExchangeRate")
-	proto.RegisterType((*PriceSnapshotItem)(nil), "sheprotocol.shechain.oracle.PriceSnapshotItem")
-	proto.RegisterType((*PriceSnapshot)(nil), "sheprotocol.shechain.oracle.PriceSnapshot")
-	proto.RegisterType((*OracleTwap)(nil), "sheprotocol.shechain.oracle.OracleTwap")
-	proto.RegisterType((*VotePenaltyCounter)(nil), "sheprotocol.shechain.oracle.VotePenaltyCounter")
+	proto.RegisterType((*Params)(nil), "sheprotocol.blk-chain.oracle.Params")
+	proto.RegisterType((*Denom)(nil), "sheprotocol.blk-chain.oracle.Denom")
+	proto.RegisterType((*AggregateExchangeRateVote)(nil), "sheprotocol.blk-chain.oracle.AggregateExchangeRateVote")
+	proto.RegisterType((*ExchangeRateTuple)(nil), "sheprotocol.blk-chain.oracle.ExchangeRateTuple")
+	proto.RegisterType((*OracleExchangeRate)(nil), "sheprotocol.blk-chain.oracle.OracleExchangeRate")
+	proto.RegisterType((*PriceSnapshotItem)(nil), "sheprotocol.blk-chain.oracle.PriceSnapshotItem")
+	proto.RegisterType((*PriceSnapshot)(nil), "sheprotocol.blk-chain.oracle.PriceSnapshot")
+	proto.RegisterType((*OracleTwap)(nil), "sheprotocol.blk-chain.oracle.OracleTwap")
+	proto.RegisterType((*VotePenaltyCounter)(nil), "sheprotocol.blk-chain.oracle.VotePenaltyCounter")
 }
 
 func init() { proto.RegisterFile("oracle/oracle.proto", fileDescriptor_dc470b50b143d488) }

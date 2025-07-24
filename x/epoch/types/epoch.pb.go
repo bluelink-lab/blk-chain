@@ -105,7 +105,7 @@ func (m *Epoch) GetCurrentEpochHeight() int64 {
 }
 
 func init() {
-	proto.RegisterType((*Epoch)(nil), "sheprotocol.shechain.epoch.Epoch")
+	proto.RegisterType((*Epoch)(nil), "sheprotocol.blk-chain.epoch.Epoch")
 }
 
 func init() { proto.RegisterFile("epoch/epoch.proto", fileDescriptor_36a9d1673530db42) }

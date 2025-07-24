@@ -345,14 +345,14 @@ func (m *AddERCNativePointerProposalV2) XXX_DiscardUnknown() {
 var xxx_messageInfo_AddERCNativePointerProposalV2 proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*AddERCNativePointerProposal)(nil), "sheprotocol.shechain.evm.AddERCNativePointerProposal")
-	proto.RegisterType((*AddERCCW20PointerProposal)(nil), "sheprotocol.shechain.evm.AddERCCW20PointerProposal")
-	proto.RegisterType((*AddERCCW721PointerProposal)(nil), "sheprotocol.shechain.evm.AddERCCW721PointerProposal")
-	proto.RegisterType((*AddERCCW1155PointerProposal)(nil), "sheprotocol.shechain.evm.AddERCCW1155PointerProposal")
-	proto.RegisterType((*AddCWERC20PointerProposal)(nil), "sheprotocol.shechain.evm.AddCWERC20PointerProposal")
-	proto.RegisterType((*AddCWERC721PointerProposal)(nil), "sheprotocol.shechain.evm.AddCWERC721PointerProposal")
-	proto.RegisterType((*AddCWERC1155PointerProposal)(nil), "sheprotocol.shechain.evm.AddCWERC1155PointerProposal")
-	proto.RegisterType((*AddERCNativePointerProposalV2)(nil), "sheprotocol.shechain.evm.AddERCNativePointerProposalV2")
+	proto.RegisterType((*AddERCNativePointerProposal)(nil), "sheprotocol.blk-chain.evm.AddERCNativePointerProposal")
+	proto.RegisterType((*AddERCCW20PointerProposal)(nil), "sheprotocol.blk-chain.evm.AddERCCW20PointerProposal")
+	proto.RegisterType((*AddERCCW721PointerProposal)(nil), "sheprotocol.blk-chain.evm.AddERCCW721PointerProposal")
+	proto.RegisterType((*AddERCCW1155PointerProposal)(nil), "sheprotocol.blk-chain.evm.AddERCCW1155PointerProposal")
+	proto.RegisterType((*AddCWERC20PointerProposal)(nil), "sheprotocol.blk-chain.evm.AddCWERC20PointerProposal")
+	proto.RegisterType((*AddCWERC721PointerProposal)(nil), "sheprotocol.blk-chain.evm.AddCWERC721PointerProposal")
+	proto.RegisterType((*AddCWERC1155PointerProposal)(nil), "sheprotocol.blk-chain.evm.AddCWERC1155PointerProposal")
+	proto.RegisterType((*AddERCNativePointerProposalV2)(nil), "sheprotocol.blk-chain.evm.AddERCNativePointerProposalV2")
 }
 
 func init() { proto.RegisterFile("evm/gov.proto", fileDescriptor_fb66eb1aab5c39af) }

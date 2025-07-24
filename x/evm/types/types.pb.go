@@ -138,8 +138,8 @@ func (m *DeferredInfo) GetError() string {
 }
 
 func init() {
-	proto.RegisterType((*Whitelist)(nil), "sheprotocol.shechain.evm.Whitelist")
-	proto.RegisterType((*DeferredInfo)(nil), "sheprotocol.shechain.evm.DeferredInfo")
+	proto.RegisterType((*Whitelist)(nil), "sheprotocol.blk-chain.evm.Whitelist")
+	proto.RegisterType((*DeferredInfo)(nil), "sheprotocol.blk-chain.evm.DeferredInfo")
 }
 
 func init() { proto.RegisterFile("evm/types.proto", fileDescriptor_6eba926c274d8fd0) }

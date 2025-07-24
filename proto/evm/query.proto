@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.evm;
+package sheprotocol.blk-chain.evm;
 
 import "google/api/annotations.proto";
 import "evm/enums.proto";
@@ -9,27 +9,27 @@ option go_package = "github.com/bluelink-lab/blk-chain/x/evm/types";
 // Query defines the gRPC querier service.
 service Query {
     rpc SheAddressByEVMAddress(QuerySheAddressByEVMAddressRequest) returns (QuerySheAddressByEVMAddressResponse) {
-        option (google.api.http).get = "/she-protocol/shechain/evm/she_address";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/she_address";
     }
 
     rpc EVMAddressBySheAddress(QueryEVMAddressBySheAddressRequest) returns (QueryEVMAddressBySheAddressResponse) {
-        option (google.api.http).get = "/she-protocol/shechain/evm/evm_address";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/evm_address";
     }
 
     rpc StaticCall(QueryStaticCallRequest) returns (QueryStaticCallResponse) {
-        option (google.api.http).get = "/she-protocol/shechain/evm/static_call";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/static_call";
     }
 
     rpc Pointer(QueryPointerRequest) returns (QueryPointerResponse) {
-        option (google.api.http).get = "/she-protocol/shechain/evm/pointer";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/pointer";
     }
 
     rpc PointerVersion(QueryPointerVersionRequest) returns (QueryPointerVersionResponse) {
-        option (google.api.http).get = "/she-protocol/shechain/evm/pointer_version";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/pointer_version";
     }
 
     rpc Pointee(QueryPointeeRequest) returns (QueryPointeeResponse) {
-        option (google.api.http).get = "/she-protocol/shechain/evm/pointee";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/pointee";
     }
 }
 

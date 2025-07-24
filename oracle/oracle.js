@@ -14,7 +14,7 @@ const TOKEN_ADDR_MAP = {
 };
 
 /**
- * Price oracle class for posting prices to she-chain.
+ * Price oracle class for posting prices to blk-chain.
  */
 class PriceOracle {
   constructor(marketIDs, chainRpc, wallet, account, contractAddress, gasFee) {

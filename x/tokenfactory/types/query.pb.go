@@ -485,16 +485,16 @@ func (m *QueryDenomAllowListResponse) GetAllowList() types.AllowList {
 }
 
 func init() {
-	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.shechain.tokenfactory.QueryParamsRequest")
-	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.shechain.tokenfactory.QueryParamsResponse")
-	proto.RegisterType((*QueryDenomAuthorityMetadataRequest)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomAuthorityMetadataRequest")
-	proto.RegisterType((*QueryDenomAuthorityMetadataResponse)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomAuthorityMetadataResponse")
-	proto.RegisterType((*QueryDenomsFromCreatorRequest)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomsFromCreatorRequest")
-	proto.RegisterType((*QueryDenomsFromCreatorResponse)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomsFromCreatorResponse")
-	proto.RegisterType((*QueryDenomMetadataRequest)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomMetadataRequest")
-	proto.RegisterType((*QueryDenomMetadataResponse)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomMetadataResponse")
-	proto.RegisterType((*QueryDenomAllowListRequest)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomAllowListRequest")
-	proto.RegisterType((*QueryDenomAllowListResponse)(nil), "sheprotocol.shechain.tokenfactory.QueryDenomAllowListResponse")
+	proto.RegisterType((*QueryParamsRequest)(nil), "sheprotocol.blk-chain.tokenfactory.QueryParamsRequest")
+	proto.RegisterType((*QueryParamsResponse)(nil), "sheprotocol.blk-chain.tokenfactory.QueryParamsResponse")
+	proto.RegisterType((*QueryDenomAuthorityMetadataRequest)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomAuthorityMetadataRequest")
+	proto.RegisterType((*QueryDenomAuthorityMetadataResponse)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomAuthorityMetadataResponse")
+	proto.RegisterType((*QueryDenomsFromCreatorRequest)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomsFromCreatorRequest")
+	proto.RegisterType((*QueryDenomsFromCreatorResponse)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomsFromCreatorResponse")
+	proto.RegisterType((*QueryDenomMetadataRequest)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomMetadataRequest")
+	proto.RegisterType((*QueryDenomMetadataResponse)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomMetadataResponse")
+	proto.RegisterType((*QueryDenomAllowListRequest)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomAllowListRequest")
+	proto.RegisterType((*QueryDenomAllowListResponse)(nil), "sheprotocol.blk-chain.tokenfactory.QueryDenomAllowListResponse")
 }
 
 func init() { proto.RegisterFile("tokenfactory/query.proto", fileDescriptor_78516c77a1ba9513) }
@@ -588,7 +588,7 @@ func NewQueryClient(cc grpc1.ClientConn) QueryClient {
 
 func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error) {
 	out := new(QueryParamsResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Query/Params", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Query/Params", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -597,7 +597,7 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 
 func (c *queryClient) DenomAuthorityMetadata(ctx context.Context, in *QueryDenomAuthorityMetadataRequest, opts ...grpc.CallOption) (*QueryDenomAuthorityMetadataResponse, error) {
 	out := new(QueryDenomAuthorityMetadataResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Query/DenomAuthorityMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Query/DenomAuthorityMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -606,7 +606,7 @@ func (c *queryClient) DenomAuthorityMetadata(ctx context.Context, in *QueryDenom
 
 func (c *queryClient) DenomMetadata(ctx context.Context, in *QueryDenomMetadataRequest, opts ...grpc.CallOption) (*QueryDenomMetadataResponse, error) {
 	out := new(QueryDenomMetadataResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Query/DenomMetadata", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Query/DenomMetadata", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -615,7 +615,7 @@ func (c *queryClient) DenomMetadata(ctx context.Context, in *QueryDenomMetadataR
 
 func (c *queryClient) DenomsFromCreator(ctx context.Context, in *QueryDenomsFromCreatorRequest, opts ...grpc.CallOption) (*QueryDenomsFromCreatorResponse, error) {
 	out := new(QueryDenomsFromCreatorResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Query/DenomsFromCreator", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Query/DenomsFromCreator", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -624,7 +624,7 @@ func (c *queryClient) DenomsFromCreator(ctx context.Context, in *QueryDenomsFrom
 
 func (c *queryClient) DenomAllowList(ctx context.Context, in *QueryDenomAllowListRequest, opts ...grpc.CallOption) (*QueryDenomAllowListResponse, error) {
 	out := new(QueryDenomAllowListResponse)
-	err := c.cc.Invoke(ctx, "/sheprotocol.shechain.tokenfactory.Query/DenomAllowList", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/sheprotocol.blk-chain.tokenfactory.Query/DenomAllowList", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -684,7 +684,7 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Query/Params",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Query/Params",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).Params(ctx, req.(*QueryParamsRequest))
@@ -702,7 +702,7 @@ func _Query_DenomAuthorityMetadata_Handler(srv interface{}, ctx context.Context,
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Query/DenomAuthorityMetadata",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Query/DenomAuthorityMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).DenomAuthorityMetadata(ctx, req.(*QueryDenomAuthorityMetadataRequest))
@@ -720,7 +720,7 @@ func _Query_DenomMetadata_Handler(srv interface{}, ctx context.Context, dec func
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Query/DenomMetadata",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Query/DenomMetadata",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).DenomMetadata(ctx, req.(*QueryDenomMetadataRequest))
@@ -738,7 +738,7 @@ func _Query_DenomsFromCreator_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Query/DenomsFromCreator",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Query/DenomsFromCreator",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).DenomsFromCreator(ctx, req.(*QueryDenomsFromCreatorRequest))
@@ -756,7 +756,7 @@ func _Query_DenomAllowList_Handler(srv interface{}, ctx context.Context, dec fun
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/sheprotocol.shechain.tokenfactory.Query/DenomAllowList",
+		FullMethod: "/sheprotocol.blk-chain.tokenfactory.Query/DenomAllowList",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(QueryServer).DenomAllowList(ctx, req.(*QueryDenomAllowListRequest))
@@ -765,7 +765,7 @@ func _Query_DenomAllowList_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 var _Query_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "sheprotocol.shechain.tokenfactory.Query",
+	ServiceName: "sheprotocol.blk-chain.tokenfactory.Query",
 	HandlerType: (*QueryServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

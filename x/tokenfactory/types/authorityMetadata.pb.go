@@ -73,7 +73,7 @@ func (m *DenomAuthorityMetadata) GetAdmin() string {
 }
 
 func init() {
-	proto.RegisterType((*DenomAuthorityMetadata)(nil), "sheprotocol.shechain.tokenfactory.DenomAuthorityMetadata")
+	proto.RegisterType((*DenomAuthorityMetadata)(nil), "sheprotocol.blk-chain.tokenfactory.DenomAuthorityMetadata")
 }
 
 func init() {

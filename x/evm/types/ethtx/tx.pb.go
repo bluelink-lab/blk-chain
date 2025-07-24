@@ -395,14 +395,14 @@ func (m *ExtensionOptionsEthereumTx) XXX_DiscardUnknown() {
 var xxx_messageInfo_ExtensionOptionsEthereumTx proto.InternalMessageInfo
 
 func init() {
-	proto.RegisterType((*AccessTuple)(nil), "sheprotocol.shechain.eth.AccessTuple")
-	proto.RegisterType((*AssociateTx)(nil), "sheprotocol.shechain.eth.AssociateTx")
-	proto.RegisterType((*LegacyTx)(nil), "sheprotocol.shechain.eth.LegacyTx")
-	proto.RegisterType((*AccessListTx)(nil), "sheprotocol.shechain.eth.AccessListTx")
-	proto.RegisterType((*DynamicFeeTx)(nil), "sheprotocol.shechain.eth.DynamicFeeTx")
-	proto.RegisterType((*BlobTx)(nil), "sheprotocol.shechain.eth.BlobTx")
-	proto.RegisterType((*BlobTxSidecar)(nil), "sheprotocol.shechain.eth.BlobTxSidecar")
-	proto.RegisterType((*ExtensionOptionsEthereumTx)(nil), "sheprotocol.shechain.eth.ExtensionOptionsEthereumTx")
+	proto.RegisterType((*AccessTuple)(nil), "sheprotocol.blk-chain.eth.AccessTuple")
+	proto.RegisterType((*AssociateTx)(nil), "sheprotocol.blk-chain.eth.AssociateTx")
+	proto.RegisterType((*LegacyTx)(nil), "sheprotocol.blk-chain.eth.LegacyTx")
+	proto.RegisterType((*AccessListTx)(nil), "sheprotocol.blk-chain.eth.AccessListTx")
+	proto.RegisterType((*DynamicFeeTx)(nil), "sheprotocol.blk-chain.eth.DynamicFeeTx")
+	proto.RegisterType((*BlobTx)(nil), "sheprotocol.blk-chain.eth.BlobTx")
+	proto.RegisterType((*BlobTxSidecar)(nil), "sheprotocol.blk-chain.eth.BlobTxSidecar")
+	proto.RegisterType((*ExtensionOptionsEthereumTx)(nil), "sheprotocol.blk-chain.eth.ExtensionOptionsEthereumTx")
 }
 
 func init() { proto.RegisterFile("eth/tx.proto", fileDescriptor_5aa89218db340ee8) }

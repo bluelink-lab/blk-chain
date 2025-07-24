@@ -1,5 +1,5 @@
 syntax = "proto3";
-package sheprotocol.shechain.tokenfactory;
+package sheprotocol.blk-chain.tokenfactory;
 
 import "gogoproto/gogo.proto";
 import "tokenfactory/authorityMetadata.proto"; 
