@@ -9,7 +9,7 @@ option go_package = "github.com/bluelink-lab/blk-chain/x/evm/types";
 // Query defines the gRPC querier service.
 service Query {
     rpc SheAddressByEVMAddress(QuerySheAddressByEVMAddressRequest) returns (QuerySheAddressByEVMAddressResponse) {
-        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/she_address";
+        option (google.api.http).get = "/bluelink-lab/blk-chain/evm/blt_address";
     }
 
     rpc EVMAddressBySheAddress(QueryEVMAddressBySheAddressRequest) returns (QueryEVMAddressBySheAddressResponse) {
@@ -38,12 +38,12 @@ message QuerySheAddressByEVMAddressRequest {
 }
 
 message QuerySheAddressByEVMAddressResponse {
-    string she_address = 1;
+    string blt_address = 1;
     bool associated = 2;
 }
 
 message QueryEVMAddressBySheAddressRequest {
-    string she_address = 1;
+    string blt_address = 1;
 }
 
 message QueryEVMAddressBySheAddressResponse {

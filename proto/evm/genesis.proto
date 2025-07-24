@@ -8,7 +8,7 @@ option go_package = "github.com/bluelink-lab/blk-chain/x/evm/types";
 
 // AddressAssociation represents an association between a Cosmos and an Ethereum address.
 message AddressAssociation {
-  string she_address = 1;    // BLT address
+  string blt_address = 1;    // BLT address
   string eth_address = 2;    // Ethereum address
 }
 

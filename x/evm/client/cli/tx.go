@@ -126,7 +126,7 @@ func CmdAssociateAddress() *cobra.Command {
 			if err != nil {
 				return err
 			}
-			body := fmt.Sprintf("{\"jsonrpc\": \"2.0\",\"method\": \"she_associate\",\"params\":[%s],\"id\":\"associate_addr\"}", string(bz))
+			body := fmt.Sprintf("{\"jsonrpc\": \"2.0\",\"method\": \"blt_associate\",\"params\":[%s],\"id\":\"associate_addr\"}", string(bz))
 			rpc, err := cmd.Flags().GetString(FlagRPC)
 			if err != nil {
 				return err

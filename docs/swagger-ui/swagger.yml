@@ -34751,7 +34751,7 @@ paths:
                           "value": "1.212s"
                         }
       parameters:
-        - name: she_address
+        - name: blt_address
           in: query
           required: false
           type: string
@@ -35194,7 +35194,7 @@ paths:
           default: ERC20
       tags:
         - Query
-  /she-protocol/blk-chain/evm/she_address:
+  /she-protocol/blk-chain/evm/blt_address:
     get:
       operationId: SheprotocolShechainEvmSheAddressByEVMAddress
       responses:
@@ -35203,7 +35203,7 @@ paths:
           schema:
             type: object
             properties:
-              she_address:
+              blt_address:
                 type: string
               associated:
                 type: boolean
@@ -61440,7 +61440,7 @@ definitions:
   sheprotocol.blk-chain.evm.QuerySheAddressByEVMAddressResponse:
     type: object
     properties:
-      she_address:
+      blt_address:
         type: string
       associated:
         type: boolean

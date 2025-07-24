@@ -93,7 +93,7 @@ func NewShe2BlockAPI(
 	isPanicTx func(ctx context.Context, hash common.Hash) (bool, error),
 ) *SheBlockAPI {
 	blockAPI := NewSheBlockAPI(tmClient, k, ctxProvider, txConfig, connectionType, isPanicTx)
-	blockAPI.namespace = "she2"
+	blockAPI.namespace = "blt2"
 	blockAPI.includeBankTransfers = true
 	return blockAPI
 }
@@ -133,7 +133,7 @@ func (a *BlockAPI) GetBlockTransactionCountByHash(ctx context.Context, blockHash
 }
 
 func (a *BlockAPI) GetBlockByHash(ctx context.Context, blockHash common.Hash, fullTx bool) (result map[string]interface{}, returnErr error) {
-	// used for both: eth_ and she_ namespaces
+	// used for both: eth_ and blt_ namespaces
 	return a.getBlockByHash(ctx, blockHash, fullTx, a.includeShellReceipts, nil)
 }
 

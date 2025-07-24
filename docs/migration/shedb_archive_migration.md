@@ -191,9 +191,9 @@ blkd start --chain-id blk-mainnet
 During the State Store Migration, there are exported metrics that are helpful to keep track of
 the progress.
 
-`she_migration_leaf_nodes_exported` keeps track of how many nodes have been exported from iavl.
+`blt_migration_leaf_nodes_exported` keeps track of how many nodes have been exported from iavl.
 
-`she_migration_nodes_imported` keeps track of how many nodes have been imported into SheDB (pebbledb).
+`blt_migration_nodes_imported` keeps track of how many nodes have been imported into SheDB (pebbledb).
 
 Both of these metrics have a `module` label which indicates what module is currently being exported / imported.
 

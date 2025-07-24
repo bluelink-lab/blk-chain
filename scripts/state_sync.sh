@@ -18,12 +18,12 @@ cp $HOME/.blt/config/priv_validator_key.json $HOME/key_backup
 cp $HOME/.blt/data/priv_validator_state.json $HOME/key_backup
 
 # Create a backup directory for the entire .blt configuration
-mkdir -p $HOME/.she_backup
+mkdir -p $HOME/.blt_backup
 
 # Move existing config, data, and wasm directories to the backup directory
-mv $HOME/.blt/config $HOME/.she_backup
-mv $HOME/.blt/data $HOME/.she_backup
-mv $HOME/.blt/wasm $HOME/.she_backup
+mv $HOME/.blt/config $HOME/.blt_backup
+mv $HOME/.blt/data $HOME/.blt_backup
+mv $HOME/.blt/wasm $HOME/.blt_backup
 
 # Remove the data and wasm folder
 cd $HOME/.blt && ls | grep -xv "cosmovisor" | xargs rm -rf

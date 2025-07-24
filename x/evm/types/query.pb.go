@@ -73,7 +73,7 @@ func (m *QuerySheAddressByEVMAddressRequest) GetEvmAddress() string {
 }
 
 type QuerySheAddressByEVMAddressResponse struct {
-	SheAddress string `protobuf:"bytes,1,opt,name=she_address,json=sheAddress,proto3" json:"she_address,omitempty"`
+	SheAddress string `protobuf:"bytes,1,opt,name=blt_address,json=sheAddress,proto3" json:"blt_address,omitempty"`
 	Associated bool   `protobuf:"varint,2,opt,name=associated,proto3" json:"associated,omitempty"`
 }
 
@@ -125,7 +125,7 @@ func (m *QuerySheAddressByEVMAddressResponse) GetAssociated() bool {
 }
 
 type QueryEVMAddressBySheAddressRequest struct {
-	SheAddress string `protobuf:"bytes,1,opt,name=she_address,json=sheAddress,proto3" json:"she_address,omitempty"`
+	SheAddress string `protobuf:"bytes,1,opt,name=blt_address,json=sheAddress,proto3" json:"blt_address,omitempty"`
 }
 
 func (m *QueryEVMAddressBySheAddressRequest) Reset()         { *m = QueryEVMAddressBySheAddressRequest{} }

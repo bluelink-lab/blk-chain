@@ -80,7 +80,7 @@ func (api *DebugAPI) TraceTransaction(ctx context.Context, hash common.Hash, con
 
 func (api *SheDebugAPI) TraceBlockByNumberExcludeTraceFail(ctx context.Context, number rpc.BlockNumber, config *tracers.TraceConfig) (result interface{}, returnErr error) {
 	startTime := time.Now()
-	defer recordMetrics("she_traceBlockByNumberExcludeTraceFail", api.connectionType, startTime, returnErr == nil)
+	defer recordMetrics("blt_traceBlockByNumberExcludeTraceFail", api.connectionType, startTime, returnErr == nil)
 	result, returnErr = api.tracersAPI.TraceBlockByNumber(ctx, number, config)
 	traces, ok := result.([]*tracers.TxTraceResult)
 	if !ok {
@@ -98,7 +98,7 @@ func (api *SheDebugAPI) TraceBlockByNumberExcludeTraceFail(ctx context.Context, 
 
 func (api *SheDebugAPI) TraceBlockByHashExcludeTraceFail(ctx context.Context, hash common.Hash, config *tracers.TraceConfig) (result interface{}, returnErr error) {
 	startTime := time.Now()
-	defer recordMetrics("she_traceBlockByHashExcludeTraceFail", api.connectionType, startTime, returnErr == nil)
+	defer recordMetrics("blt_traceBlockByHashExcludeTraceFail", api.connectionType, startTime, returnErr == nil)
 	result, returnErr = api.tracersAPI.TraceBlockByHash(ctx, hash, config)
 	traces, ok := result.([]*tracers.TxTraceResult)
 	if !ok {

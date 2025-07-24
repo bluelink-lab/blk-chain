@@ -85,7 +85,7 @@ func Test_ParseAllowListJSON(t *testing.T) {
 	mockQueryClient := &MockQueryClient{}
 
 	sheAddr1 := sdk.AccAddress("she1_______________").String()
-	sheAddr2 := sdk.AccAddress("she2_______________").String()
+	sheAddr2 := sdk.AccAddress("blt2_______________").String()
 	evmAddr := "0x5c71b5577B9223d39ae0B7Dcb3f1BC8e1aC81f3e"
 	notAssociatedEvmAddr := "0x0CF3Bb7Da9fea6a881987A5018740500C7d4BAaE"
 	convertedSheAddr := "she1u8j4gaxyzhg39dk848q5w9h53tgggpcx74m762"
@@ -114,8 +114,8 @@ func Test_ParseAllowListJSON(t *testing.T) {
 		},
 		{
 			name:    "invalid BLT address",
-			json:    `{"addresses": ["invalid_she_address"]}`,
-			wantErr: "invalid address invalid_she_address: decoding bech32 failed: invalid separator index -1",
+			json:    `{"addresses": ["invalid_blt_address"]}`,
+			wantErr: "invalid address invalid_blt_address: decoding bech32 failed: invalid separator index -1",
 		},
 		{
 			name:    "invalid EVM address",

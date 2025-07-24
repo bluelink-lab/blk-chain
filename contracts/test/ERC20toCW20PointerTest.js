@@ -112,8 +112,8 @@ describe("ERC20 to CW20 Pointer", function () {
                     const ethlogs = await ethers.provider.send('eth_getLogs', [filter]);
                     expect(ethlogs.length).to.equal(1);
 
-                    // send via she_ endpoint - synthetic event shows up
-                    const shelogs = await ethers.provider.send('she_getLogs', [filter]);
+                    // send via blt_ endpoint - synthetic event shows up
+                    const shelogs = await ethers.provider.send('blt_getLogs', [filter]);
                     expect(shelogs.length).to.equal(1);
                     
                     const logs = [...ethlogs, ...shelogs];
@@ -125,12 +125,12 @@ describe("ERC20 to CW20 Pointer", function () {
                     });
 
                     const ethBlock = await ethers.provider.send('eth_getBlockByNumber', ['0x' + blockNumber.toString(16), false]);
-                    const sheBlock = await ethers.provider.send('she_getBlockByNumber', ['0x' + blockNumber.toString(16), false]);
+                    const sheBlock = await ethers.provider.send('blt_getBlockByNumber', ['0x' + blockNumber.toString(16), false]);
                     expect(ethBlock.transactions.length).to.equal(1);
                     expect(sheBlock.transactions.length).to.equal(1);
 
                     const ethReceipts = await ethers.provider.send('eth_getBlockReceipts', ['0x' + blockNumber.toString(16)]);
-                    const sheReceipts = await ethers.provider.send('she_getBlockReceipts', ['0x' + blockNumber.toString(16)]);
+                    const sheReceipts = await ethers.provider.send('blt_getBlockReceipts', ['0x' + blockNumber.toString(16)]);
                     expect(ethReceipts.length).to.equal(1);
                     expect(sheReceipts.length).to.equal(1);
                     expect(ethReceipts[0].transactionHash).to.equal(sheReceipts[0].transactionHash);
@@ -186,8 +186,8 @@ describe("ERC20 to CW20 Pointer", function () {
                     expect(ethlogs[0]["topics"][1].substring(26)).to.equal(owner.substring(2).toLowerCase());
                     expect(ethlogs[0]["topics"][2].substring(26)).to.equal(spender.substring(2).toLowerCase());
 
-                    // send via she_ endpoint - synthetic event shows up
-                    const shelogs = await ethers.provider.send('she_getLogs', [filter]);
+                    // send via blt_ endpoint - synthetic event shows up
+                    const shelogs = await ethers.provider.send('blt_getLogs', [filter]);
                     expect(shelogs.length).to.equal(1);
                 });
 

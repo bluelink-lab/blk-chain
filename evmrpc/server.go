@@ -76,7 +76,7 @@ func NewEVMHTTPServer(
 			Service:   NewSheBlockAPI(tmClient, k, ctxProvider, txConfig, ConnectionTypeHTTP, isPanicOrSyntheticTxFunc),
 		},
 		{
-			Namespace: "she2",
+			Namespace: "blt2",
 			Service:   NewShe2BlockAPI(tmClient, k, ctxProvider, txConfig, ConnectionTypeHTTP, isPanicOrSyntheticTxFunc),
 		},
 		{

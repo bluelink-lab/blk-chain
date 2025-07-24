@@ -12,7 +12,7 @@ import (
 	_ "github.com/gogo/protobuf/gogoproto"
 	grpc1 "github.com/gogo/protobuf/grpc"
 	proto "github.com/gogo/protobuf/proto"
-	github_com_she_protocol_she_chain_x_evm_derived "github.com/bluelink-lab/blk-chain/x/evm/derived"
+	github_com_blt_protocol_blt_chain_x_evm_derived "github.com/bluelink-lab/blk-chain/x/evm/derived"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -34,7 +34,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type MsgEVMTransaction struct {
 	Data    *types.Any                                               `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
-	Derived *github_com_she_protocol_she_chain_x_evm_derived.Derived `protobuf:"bytes,2,opt,name=derived,proto3,customtype=github.com/bluelink-lab/blk-chain/x/evm/derived.Derived" json:"derived,omitempty"`
+	Derived *github_com_blt_protocol_blt_chain_x_evm_derived.Derived `protobuf:"bytes,2,opt,name=derived,proto3,customtype=github.com/bluelink-lab/blk-chain/x/evm/derived.Derived" json:"derived,omitempty"`
 }
 
 func (m *MsgEVMTransaction) Reset()         { *m = MsgEVMTransaction{} }
@@ -1923,7 +1923,7 @@ func (m *MsgEVMTransaction) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			var v github_com_she_protocol_she_chain_x_evm_derived.Derived
+			var v github_com_blt_protocol_blt_chain_x_evm_derived.Derived
 			m.Derived = &v
 			if err := m.Derived.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err

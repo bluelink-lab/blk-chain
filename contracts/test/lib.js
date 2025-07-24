@@ -78,11 +78,11 @@ async function delay() {
 }
 
 async function getCosmosTx(provider, evmTxHash) {
-    return await provider.send("she_getCosmosTx", [evmTxHash])
+    return await provider.send("blt_getCosmosTx", [evmTxHash])
 }
 
 async function getEvmTx(provider, cosmosTxHash) {
-    return await provider.send("she_getEvmTx", [cosmosTxHash])
+    return await provider.send("blt_getEvmTx", [cosmosTxHash])
 }
 
 async function fundAddress(addr, amount="1000000000000000000000") {
@@ -431,7 +431,7 @@ async function getSheAddress(evmAddress) {
     const command = `blkd q evm she-addr ${evmAddress} -o json`
     const output = await execute(command);
     const response = JSON.parse(output)
-    return response.she_address
+    return response.blt_address
 }
 
 async function getEvmAddress(sheAddress) {

@@ -25,7 +25,7 @@ const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 // AddressAssociation represents an association between a Cosmos and an Ethereum address.
 type AddressAssociation struct {
-	SheAddress string `protobuf:"bytes,1,opt,name=she_address,json=sheAddress,proto3" json:"she_address,omitempty"`
+	SheAddress string `protobuf:"bytes,1,opt,name=blt_address,json=sheAddress,proto3" json:"blt_address,omitempty"`
 	EthAddress string `protobuf:"bytes,2,opt,name=eth_address,json=ethAddress,proto3" json:"eth_address,omitempty"`
 }
 

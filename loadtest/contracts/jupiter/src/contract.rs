@@ -7,7 +7,7 @@ use crate::msg::{
     BulkOrderPlacementsResponse, DepositInfo, InstantiateMsg, LiquidationRequest,
     LiquidationResponse, SettlementEntry, SudoMsg,
 };
-use she_cosmwasm::{
+use blt_cosmwasm::{
     Order, SheMsg, SheQueryWrapper, PositionDirection, OrderType,
 };
 
@@ -86,7 +86,7 @@ pub fn process_bulk_order_placements(
             status_description: "".to_string(),
             nominal: Decimal::zero(),
         };
-        let order = she_cosmwasm::SheMsg::PlaceOrders {
+        let order = blt_cosmwasm::SheMsg::PlaceOrders {
             funds: vec![],
             orders: vec![order_placement],
             contract_address: MARS_ADDR.load(deps.storage)?,

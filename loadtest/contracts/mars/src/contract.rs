@@ -7,7 +7,7 @@ use crate::msg::{
     BulkOrderPlacementsResponse, DepositInfo, InstantiateMsg, LiquidationRequest,
     LiquidationResponse, SettlementEntry, SudoMsg,
 };
-use she_cosmwasm::{
+use blt_cosmwasm::{
     Order, SheMsg, SheQueryWrapper,
 };
 

@@ -193,4 +193,4 @@ At the end of each epoch (defaults to 60s), the chain checks if it's the minting
 
 ### Metrics
 
-The minting module emits a `she_mint_coins{denom}` each time there's a successful minting event.
+The minting module emits a `blt_mint_coins{denom}` each time there's a successful minting event.

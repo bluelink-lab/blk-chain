@@ -40,7 +40,7 @@ const (
 	ERC1155UriType         EVMQueryType = "evm_query_erc1155_uri"
 	ERC1155RoyaltyInfoType EVMQueryType = "evm_query_erc1155_royalty_info"
 	GetEvmAddressType      EVMQueryType = "evm_query_get_evm_address"
-	GetSheAddressType      EVMQueryType = "evm_query_get_she_address"
+	GetSheAddressType      EVMQueryType = "evm_query_get_blt_address"
 	SupportsInterfaceType  EVMQueryType = "evm_query_supports_interface"
 )
 
@@ -175,7 +175,7 @@ type SheEVMQuery struct {
 	ERC1155Uri                   *ERC1155UriRequest                   `json:"erc1155_uri,omitempty"`
 	ERC1155RoyaltyInfo           *ERC1155RoyaltyInfoRequest           `json:"erc1155_royalty_info,omitempty"`
 	GetEvmAddress                *GetEvmAddressRequest                `json:"get_evm_address,omitempty"`
-	GetSheAddress                *GetSheAddressRequest                `json:"get_she_address,omitempty"`
+	GetSheAddress                *GetSheAddressRequest                `json:"get_blt_address,omitempty"`
 	SupportsInterface            *SupportsInterfaceRequest            `json:"supports_interface,omitempty"`
 }
 
@@ -351,7 +351,7 @@ type ERC1155RoyaltyInfoRequest struct {
 }
 
 type GetEvmAddressRequest struct {
-	SheAddress string `json:"she_address"`
+	SheAddress string `json:"blt_address"`
 }
 
 type GetSheAddressRequest struct {
@@ -461,7 +461,7 @@ type GetEvmAddressResponse struct {
 }
 
 type GetSheAddressResponse struct {
-	SheAddress string `json:"she_address"`
+	SheAddress string `json:"blt_address"`
 	Associated bool   `json:"associated"`
 }
 

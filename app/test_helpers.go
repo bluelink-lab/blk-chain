@@ -281,8 +281,8 @@ func SetupWithSc(isCheckTx bool, enableEVMCustomPrecompiles bool, baseAppOptions
 }
 
 func SetupTestingAppWithLevelDb(isCheckTx bool, enableEVMCustomPrecompiles bool) (*App, func()) {
-	dir := "she_testing"
-	db, err := sdk.NewLevelDB("she_leveldb_testing", dir)
+	dir := "blt_testing"
+	db, err := sdk.NewLevelDB("blt_leveldb_testing", dir)
 	if err != nil {
 		panic(err)
 	}

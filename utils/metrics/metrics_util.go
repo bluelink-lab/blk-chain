@@ -14,9 +14,9 @@ import (
 // Measures the time taken to execute a sudo msg
 // Metric Names:
 //
-//	she_sudo_duration_miliseconds
-//	she_sudo_duration_miliseconds_count
-//	she_sudo_duration_miliseconds_sum
+//	blt_sudo_duration_miliseconds
+//	blt_sudo_duration_miliseconds_count
+//	blt_sudo_duration_miliseconds_sum
 func MeasureSudoExecutionDuration(start time.Time, msgType string) {
 	metrics.MeasureSinceWithLabels(
 		[]string{"blt", "sudo", "duration", "milliseconds"},
@@ -28,7 +28,7 @@ func MeasureSudoExecutionDuration(start time.Time, msgType string) {
 // Measures failed sudo execution count
 // Metric Name:
 //
-//	she_sudo_error_count
+//	blt_sudo_error_count
 func IncrementSudoFailCount(msgType string) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "sudo", "error", "count"},
@@ -49,7 +49,7 @@ func GaugeShedVersionAndCommit(version string, commit string) {
 	)
 }
 
-// she_tx_process_type_count
+// blt_tx_process_type_count
 func IncrTxProcessTypeCounter(processType string) {
 	metrics.IncrCounterWithLabels(
 		[]string{"blt", "tx", "process", "type"},
@@ -61,9 +61,9 @@ func IncrTxProcessTypeCounter(processType string) {
 // Measures the time taken to process a block by the process type
 // Metric Names:
 //
-//	she_process_block_miliseconds
-//	she_process_block_miliseconds_count
-//	she_process_block_miliseconds_sum
+//	blt_process_block_miliseconds
+//	blt_process_block_miliseconds_count
+//	blt_process_block_miliseconds_sum
 func BlockProcessLatency(start time.Time, processType string) {
 	metrics.MeasureSinceWithLabels(
 		[]string{"blt", "process", "block", "milliseconds"},
@@ -75,7 +75,7 @@ func BlockProcessLatency(start time.Time, processType string) {
 // Measures the time taken to execute a sudo msg
 // Metric Names:
 //
-//	she_tx_process_type_count
+//	blt_tx_process_type_count
 func IncrDagBuildErrorCounter(reason string) {
 	metrics.IncrCounterWithLabels(
 		[]string{"blt", "dag", "build", "error"},
@@ -87,7 +87,7 @@ func IncrDagBuildErrorCounter(reason string) {
 // Counts the number of concurrent transactions that failed
 // Metric Names:
 //
-//	she_tx_concurrent_delivertx_error
+//	blt_tx_concurrent_delivertx_error
 func IncrFailedConcurrentDeliverTxCounter() {
 	metrics.IncrCounterWithLabels(
 		[]string{"blt", "tx", "concurrent", "delievertx", "error"},
@@ -99,7 +99,7 @@ func IncrFailedConcurrentDeliverTxCounter() {
 // Counts the number of operations that failed due to operation timeout
 // Metric Names:
 //
-//	she_log_not_done_after_counter
+//	blt_log_not_done_after_counter
 func IncrLogIfNotDoneAfter(label string) {
 	metrics.IncrCounterWithLabels(
 		[]string{"blt", "log", "not", "done", "after"},
@@ -113,9 +113,9 @@ func IncrLogIfNotDoneAfter(label string) {
 // Measures the time taken to execute a sudo msg
 // Metric Names:
 //
-//	she_deliver_tx_duration_miliseconds
-//	she_deliver_tx_duration_miliseconds_count
-//	she_deliver_tx_duration_miliseconds_sum
+//	blt_deliver_tx_duration_miliseconds
+//	blt_deliver_tx_duration_miliseconds_count
+//	blt_deliver_tx_duration_miliseconds_sum
 func MeasureDeliverTxDuration(start time.Time) {
 	metrics.MeasureSince(
 		[]string{"blt", "deliver", "tx", "milliseconds"},
@@ -126,9 +126,9 @@ func MeasureDeliverTxDuration(start time.Time) {
 // Measures the time taken to execute a batch tx
 // Metric Names:
 //
-//	she_deliver_batch_tx_duration_miliseconds
-//	she_deliver_batch_tx_duration_miliseconds_count
-//	she_deliver_batch_tx_duration_miliseconds_sum
+//	blt_deliver_batch_tx_duration_miliseconds
+//	blt_deliver_batch_tx_duration_miliseconds_count
+//	blt_deliver_batch_tx_duration_miliseconds_sum
 func MeasureDeliverBatchTxDuration(start time.Time) {
 	metrics.MeasureSince(
 		[]string{"blt", "deliver", "batch", "tx", "milliseconds"},
@@ -136,7 +136,7 @@ func MeasureDeliverBatchTxDuration(start time.Time) {
 	)
 }
 
-// she_oracle_vote_penalty_count
+// blt_oracle_vote_penalty_count
 func SetOracleVotePenaltyCount(count uint64, valAddr string, penaltyType string) {
 	metrics.SetGaugeWithLabels(
 		[]string{"blt", "oracle", "vote", "penalty", "count"},
@@ -148,7 +148,7 @@ func SetOracleVotePenaltyCount(count uint64, valAddr string, penaltyType string)
 	)
 }
 
-// she_epoch_new
+// blt_epoch_new
 func SetEpochNew(epochNum uint64) {
 	metrics.SetGauge(
 		[]string{"blt", "epoch", "new"},
@@ -159,7 +159,7 @@ func SetEpochNew(epochNum uint64) {
 // Measures throughput
 // Metric Name:
 //
-//	she_throughput_<metric_name>
+//	blt_throughput_<metric_name>
 func SetThroughputMetric(metricName string, value float32) {
 	telemetry.SetGauge(
 		value,
@@ -170,7 +170,7 @@ func SetThroughputMetric(metricName string, value float32) {
 // Measures number of new websocket connects
 // Metric Name:
 //
-//	she_websocket_connect
+//	blt_websocket_connect
 func IncWebsocketConnects() {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "websocket", "connect"},
@@ -182,7 +182,7 @@ func IncWebsocketConnects() {
 // Measures number of times a denom's price is updated
 // Metric Name:
 //
-//	she_oracle_price_update_count
+//	blt_oracle_price_update_count
 func IncrPriceUpdateDenom(denom string) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "oracle", "price", "update"},
@@ -194,7 +194,7 @@ func IncrPriceUpdateDenom(denom string) {
 // Measures throughput per message type
 // Metric Name:
 //
-//	she_throughput_<metric_name>
+//	blt_throughput_<metric_name>
 func SetThroughputMetricByType(metricName string, value float32, msgType string) {
 	telemetry.SetGaugeWithLabels(
 		[]string{"blt", "loadtest", "tps", metricName},
@@ -206,7 +206,7 @@ func SetThroughputMetricByType(metricName string, value float32, msgType string)
 // Measures the number of times the total block gas wanted in the proposal exceeds the max
 // Metric Name:
 //
-//	she_failed_total_gas_wanted_check
+//	blt_failed_total_gas_wanted_check
 func IncrFailedTotalGasWantedCheck(proposer string) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "failed", "total", "gas", "wanted", "check"},
@@ -218,7 +218,7 @@ func IncrFailedTotalGasWantedCheck(proposer string) {
 // Measures the number of times the total block gas wanted in the proposal exceeds the max
 // Metric Name:
 //
-//	she_failed_total_gas_wanted_check
+//	blt_failed_total_gas_wanted_check
 func IncrValidatorSlashed(proposer string) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "failed", "total", "gas", "wanted", "check"},
@@ -230,7 +230,7 @@ func IncrValidatorSlashed(proposer string) {
 // Measures number of times a denom's price is updated
 // Metric Name:
 //
-//	she_oracle_price_update_count
+//	blt_oracle_price_update_count
 func SetCoinsMinted(amount uint64, denom string) {
 	telemetry.SetGaugeWithLabels(
 		[]string{"blt", "mint", "coins"},
@@ -242,7 +242,7 @@ func SetCoinsMinted(amount uint64, denom string) {
 // Measures the number of times the total block gas wanted in the proposal exceeds the max
 // Metric Name:
 //
-//	she_tx_gas_counter
+//	blt_tx_gas_counter
 func IncrGasCounter(gasType string, value int64) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "tx", "gas", "counter"},
@@ -254,7 +254,7 @@ func IncrGasCounter(gasType string, value int64) {
 // Measures the number of times optimistic processing runs
 // Metric Name:
 //
-//	she_optimistic_processing_counter
+//	blt_optimistic_processing_counter
 func IncrementOptimisticProcessingCounter(enabled bool) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "optimistic", "processing", "counter"},
@@ -266,7 +266,7 @@ func IncrementOptimisticProcessingCounter(enabled bool) {
 // Measures RPC endpoint request throughput
 // Metric Name:
 //
-//	she_rpc_request_counter
+//	blt_rpc_request_counter
 func IncrementRpcRequestCounter(endpoint string, connectionType string, success bool) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "rpc", "request", "counter"},
@@ -305,7 +305,7 @@ func IncrementAssociationError(scenario string, err types.AssociationMissingErr)
 // Measures the RPC request latency in milliseconds
 // Metric Name:
 //
-//	she_rpc_request_latency_ms
+//	blt_rpc_request_latency_ms
 func MeasureRpcRequestLatency(endpoint string, connectionType string, startTime time.Time) {
 	metrics.MeasureSinceWithLabels(
 		[]string{"blt", "rpc", "request", "latency_ms"},
@@ -321,7 +321,7 @@ func MeasureRpcRequestLatency(endpoint string, connectionType string, startTime 
 // This metric counts the number of events produced by the system.
 // Metric Name:
 //
-//	she_loadtest_produce_count
+//	blt_loadtest_produce_count
 func IncrProducerEventCount(msgType string) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "loadtest", "produce", "count"},
@@ -334,7 +334,7 @@ func IncrProducerEventCount(msgType string) {
 // This metric counts the number of events consumed by the system.
 // Metric Name:
 //
-//	she_loadtest_consume_count
+//	blt_loadtest_consume_count
 func IncrConsumerEventCount(msgType string) {
 	telemetry.IncrCounterWithLabels(
 		[]string{"blt", "loadtest", "consume", "count"},
@@ -350,7 +350,7 @@ func AddHistogramMetric(key []string, value float32) {
 // Gauge for gas price paid for transactions
 // Metric Name:
 //
-// she_evm_effective_gas_price
+// blt_evm_effective_gas_price
 func HistogramEvmEffectiveGasPrice(gasPrice *big.Int) {
 	AddHistogramMetric(
 		[]string{"blt", "evm", "effective", "gas", "price"},
@@ -361,7 +361,7 @@ func HistogramEvmEffectiveGasPrice(gasPrice *big.Int) {
 // Gauge for block base fee
 // Metric Name:
 //
-// she_evm_block_base_fee
+// blt_evm_block_base_fee
 func GaugeEvmBlockBaseFee(baseFee *big.Int, blockHeight int64) {
 	metrics.SetGauge(
 		[]string{"blt", "evm", "block", "base", "fee"},

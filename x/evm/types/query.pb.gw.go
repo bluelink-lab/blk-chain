@@ -558,7 +558,7 @@ func RegisterQueryHandlerClient(ctx context.Context, mux *runtime.ServeMux, clie
 }
 
 var (
-	pattern_Query_SheAddressByEVMAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "she_address"}, "", runtime.AssumeColonVerbOpt(true)))
+	pattern_Query_SheAddressByEVMAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "blt_address"}, "", runtime.AssumeColonVerbOpt(true)))
 
 	pattern_Query_EVMAddressBySheAddress_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 2, 3}, []string{"bluelink-lab", "blk-chain", "evm", "evm_address"}, "", runtime.AssumeColonVerbOpt(true)))
 
